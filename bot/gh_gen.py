@@ -44,19 +44,33 @@ def _h():
     }
 
 
-def _req(method, path, json_body=None):
+def _req(method, path, json_body=None, tries=6):
     import json as _json
+    import http.client
     import urllib.error
     import urllib.request
 
     data = _json.dumps(json_body).encode() if json_body is not None else None
-    req = urllib.request.Request(API + path, data=data, headers=_h(), method=method)
-    try:
-        with urllib.request.urlopen(req, timeout=60) as r:
-            raw = r.read()
-    except urllib.error.HTTPError as e:
-        raise RuntimeError("gh %s %s -> %s %s" % (method, path, e.code, e.read()[:200]))
-    return _json.loads(raw) if raw else None
+    last = None
+    for attempt in range(tries):
+        req = urllib.request.Request(API + path, data=data, headers=_h(), method=method)
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                raw = r.read()
+            return _json.loads(raw) if raw else None
+        except urllib.error.HTTPError as e:
+            body = e.read()[:200]
+            if e.code in (403, 429) and attempt < tries - 1:      # rate limited
+                time.sleep(15 * (attempt + 1))
+                last = e
+                continue
+            raise RuntimeError("gh %s %s -> %s %s" % (method, path, e.code, body))
+        except (urllib.error.URLError, http.client.RemoteDisconnected,
+                ConnectionError, TimeoutError, OSError) as e:
+            last = e
+            if attempt < tries - 1:
+                time.sleep(min(40, 3 * (2 ** attempt)))            # 3,6,12,24,40
+    raise RuntimeError("gh %s %s failed after %s tries: %s" % (method, path, tries, last))
 
 
 def trigger(prompt, width=1280, height=720, model=None):
@@ -122,14 +136,25 @@ def _download(url, timeout=180):
 
 
 def download(run_id, out, log=print):
-    art = _req("GET", "/repos/%s/actions/artifacts?per_page=5" % REPO)
+    # run-scoped: repo-wide lists would hand back an older run's artifact
+    art = _req("GET", "/repos/%s/actions/runs/%s/artifacts" % (REPO, run_id))
     items = [a for a in art.get("artifacts", [])
              if a.get("expired") is False and a.get("size_in_bytes", 0) > 1000]
     if not items:
         raise RuntimeError("no artifact for run %s" % run_id)
     aid = items[0]["id"]
-    with _download("%s/repos/%s/actions/artifacts/%s/zip" % (API, REPO, aid)) as r:
-        blob = r.read()
+    url = "%s/repos/%s/actions/artifacts/%s/zip" % (API, REPO, aid)
+    blob, last = None, None
+    for attempt in range(4):
+        try:
+            with _download(url) as r:
+                blob = r.read()
+            break
+        except Exception as e:  # noqa: BLE001
+            last = e
+            time.sleep(5 * (attempt + 1))
+    if blob is None:
+        raise RuntimeError("artifact download failed: %s" % last)
     tmp = out + ".zip"
     with open(tmp, "wb") as f:
         f.write(blob)
