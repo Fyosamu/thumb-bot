@@ -278,11 +278,14 @@ def src_local(prompt, out, width=1280, height=720):
 
 
 SOURCES = [
+    # heavy generation runs on the GitHub runner (sd-gen, public repo, 16 GB RAM)
+    # so the local connection is never used for model work - everything else is
+    # only a lightweight fallback if GitHub is down.
+    ("github", src_github),
+    ("local-sd", src_local),
     ("pollinations", src_pollinations),
     ("pollinations-keyed", src_pollinations_keyed),
-    ("github", src_github),
     ("zimage", src_zimage),
-    ("local-sd", src_local),
     ("huggingface", src_huggingface),
     ("cloudflare", src_cloudflare),
     ("runware", src_runware),
