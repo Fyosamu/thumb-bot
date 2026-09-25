@@ -85,30 +85,46 @@ def trigger(prompt, width=1280, height=720, model=None):
     })
 
 
+def _wait_idle(max_wait=1800, log=print):
+    """Serialize dispatches: never start a run while another one is queued, so
+    two local jobs cannot pick up each other's run/artifact."""
+    t_end = time.time() + max_wait
+    while time.time() < t_end:
+        runs = _req("GET", "/repos/%s/actions/runs?per_page=30" % REPO)
+        busy = [r for r in runs.get("workflow_runs", [])
+                if r.get("event") == "workflow_dispatch"
+                and r.get("status") in ("queued", "in_progress", "waiting", "requested")]
+        if not busy:
+            return
+        log("[gh] %d other run(s) busy, waiting..." % len(busy))
+        time.sleep(20)
+    log("[gh] still busy after %ss - dispatching anyway" % max_wait)
+
+
 def wait_run(since, timeout=3600, log=print):
-    """Poll until the run created after `since` (epoch seconds) finishes."""
+    """Poll until MY run (the oldest dispatch created after `since`) finishes."""
     import calendar
 
-    started = None
+    def _c(r):
+        return calendar.timegm(time.strptime(r["created_at"], "%Y-%m-%dT%H:%M:%SZ"))
+
+    mine = None
     t_end = time.time() + timeout
     while time.time() < t_end:
-        runs = _req("GET", "/repos/%s/actions/runs?per_page=5" % REPO)
-        for r in runs.get("workflow_runs", []):
-            if not r.get("created_at"):
-                continue
-            created = calendar.timegm(time.strptime(r["created_at"], "%Y-%m-%dT%H:%M:%SZ"))
-            if created + 5 < since:
-                continue
-            if r["status"] in ("queued", "in_progress", "waiting", "requested"):
-                started = r
-                break
-            if started and r["id"] == started["id"] and r.get("conclusion"):
-                return r
-            if not started and r.get("conclusion") and created >= since:
-                return r
-        if started:
-            log("[gh] run %s %s..." % (started["id"], started["status"]))
-        time.sleep(30)
+        runs = _req("GET", "/repos/%s/actions/runs?per_page=30" % REPO)
+        cands = sorted([r for r in runs.get("workflow_runs", [])
+                        if r.get("created_at") and _c(r) + 5 >= since],
+                       key=_c)                       # oldest first
+        if cands and mine is None:
+            mine = cands[0]["id"]
+        run = next((r for r in cands if r["id"] == mine), None)
+        if run is None and mine is not None:
+            run = _req("GET", "/repos/%s/actions/runs/%s" % (REPO, mine))
+        if run and run.get("conclusion"):
+            return run
+        if run:
+            log("[gh] run %s %s..." % (mine, run.get("status")))
+        time.sleep(20 if mine is None else 30)
     raise RuntimeError("gh run did not finish in %ss" % timeout)
 
 
@@ -176,6 +192,7 @@ def generate(prompt, out, width=1280, height=720, steps=None, log=print):
         raise RuntimeError("GH_TOKEN is not set")
     prompt = "%s, ultra detailed, sharp focus, photorealistic" % prompt
     log("[gh] dispatch SDXL: %.60s..." % prompt)
+    _wait_idle(log=log)               # one run at a time -> no crossed wires
     t0 = time.time()
     trigger(prompt, width, height)
     run = wait_run(t0, log=log)
