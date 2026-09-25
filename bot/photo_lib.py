@@ -8,6 +8,14 @@ Everything is cached as URLs in bot/photo_lib.json so the repo never carries
 big binaries: a GitHub Actions run picks an id, downloads one image and uses it.
 """
 
+try:
+    import netfix  # noqa: F401  DNS self-heal (dead private IP answers)
+except ImportError:  # when imported as bot.photo_lib, bot/ is not on sys.path
+    import sys as _sys
+    import os as _os
+    _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+    import netfix  # noqa: F401
+
 import json
 import os
 import random

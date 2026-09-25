@@ -238,10 +238,38 @@ def src_zimage(prompt, out, width=1280, height=720):
     return _save(data, out)
 
 
+# ---------------------------------------------------------------- github actions (free, best quality)
+def src_github(prompt, out, width=1280, height=720):
+    """Render on a GitHub Actions runner (public repo = unlimited free minutes)."""
+    if not os.environ.get("GH_TOKEN"):
+        raise RuntimeError("github: GH_TOKEN missing")
+    try:
+        from gh_gen import generate as _gh
+    except ImportError:
+        from bot.gh_gen import generate as _gh
+    return _gh(prompt, out, width, height)
+
+
 # ---------------------------------------------------------------- local CPU (no key, unlimited)
+def _model_cached(model):
+    """True only if the model already sits in the local HF cache.
+
+    Downloads are supposed to happen on the GitHub runner, never on this PC,
+    so a missing model means "skip this source" instead of "start a 4 GB pull".
+    """
+    import glob
+    base = os.path.expanduser("~/.cache/huggingface/hub")
+    safe = "--".join(("models", model.replace("/", "--")))
+    hits = glob.glob(os.path.join(base, safe, "snapshots", "*", "*.safetensors"))
+    return bool(hits)
+
+
 def src_local(prompt, out, width=1280, height=720):
     if os.environ.get("SD_DISABLE") == "1":
         raise RuntimeError("local-sd: disabled by SD_DISABLE=1")
+    model = os.environ.get("SD_MODEL", "stabilityai/sdxl-base-1.0")
+    if not _model_cached(model):
+        raise RuntimeError("local-sd: %s not cached locally (downloads happen on GitHub)" % model)
     try:
         from local_sd import generate as _sd
     except ImportError:
@@ -250,10 +278,11 @@ def src_local(prompt, out, width=1280, height=720):
 
 
 SOURCES = [
-    ("local-sd", src_local),
-    ("zimage", src_zimage),
     ("pollinations", src_pollinations),
     ("pollinations-keyed", src_pollinations_keyed),
+    ("github", src_github),
+    ("zimage", src_zimage),
+    ("local-sd", src_local),
     ("huggingface", src_huggingface),
     ("cloudflare", src_cloudflare),
     ("runware", src_runware),
