@@ -24,8 +24,19 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    env:
+      HF_HUB_DISABLE_XET: "1"
+      HF_HUB_ENABLE_HF_TRANSFER: "0"
     steps:
       - uses: actions/checkout@v4
+
+      - name: Free disk space (model is 3.5 GB, runner only has 14 GB)
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android \
+                      /opt/hostedtoolcache/CodeQL /usr/local/share/boost \
+                      /usr/share/swift /usr/local/.ghcup || true
+          sudo docker image prune -af >/dev/null 2>&1 || true
+          df -h /
 
       - uses: actions/setup-python@v5
         with:

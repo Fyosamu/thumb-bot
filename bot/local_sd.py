@@ -37,12 +37,20 @@ def _pipe():
         torch.set_num_threads(n)
         print("[sd] loading %s on CPU (%d threads)..." % (MODEL, n), flush=True)
         t0 = time.time()
+        # prefer the fp16 variant files: half the download on a 14 GB runner,
+        # then upcast to float32 for CPU inference.
         kwargs = dict(safety_checker=None, requires_safety_checker=False)
-        try:
-            pipe = AutoPipelineForText2Image.from_pretrained(
-                MODEL, torch_dtype=torch.float32, **kwargs)
-        except TypeError:
-            pipe = AutoPipelineForText2Image.from_pretrained(MODEL, **kwargs)
+        pipe, err = None, None
+        for extra in ({"variant": "fp16"}, {}):
+            try:
+                pipe = AutoPipelineForText2Image.from_pretrained(
+                    MODEL, torch_dtype=torch.float32, **kwargs, **extra)
+                break
+            except Exception as e:  # noqa: BLE001
+                err = e
+                print("[sd] load failed (%s) -> retry" % type(e).__name__, flush=True)
+        if pipe is None:
+            raise err
         pipe.set_progress_bar_config(disable=True)
         STATE["pipe"] = pipe
         print("[sd] ready in %.0fs" % (time.time() - t0), flush=True)
