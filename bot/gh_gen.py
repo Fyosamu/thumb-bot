@@ -101,7 +101,7 @@ def _wait_idle(max_wait=1800, log=print):
     log("[gh] still busy after %ss - dispatching anyway" % max_wait)
 
 
-def wait_run(since, timeout=3600, log=print):
+def wait_run(since, timeout=7200, log=print):
     """Poll until MY run (the oldest dispatch created after `since`) finishes."""
     import calendar
 

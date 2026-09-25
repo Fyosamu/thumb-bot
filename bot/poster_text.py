@@ -53,8 +53,27 @@ def fit(text, max_w, start):
     return f
 
 
-def glow_line(canvas, text, col, cy, max_w, h):
-    """draw one centred line: shadow -> wide halo -> tight halo -> crisp text"""
+def _grad(w, h, top, mid, bot):
+    """vertical 3-stop gradient, used as the metallic fill of the glyphs"""
+    col = Image.new("RGB", (1, max(1, h)))
+    px = []
+    for i in range(max(1, h)):
+        t = i / max(1, h - 1)
+        if t < 0.5:
+            k = t / 0.5
+            c = tuple(int(top[j] + (mid[j] - top[j]) * k) for j in range(3))
+        else:
+            k = (t - 0.5) / 0.5
+            c = tuple(int(mid[j] + (bot[j] - mid[j]) * k) for j in range(3))
+        px.append(c)
+    col.putdata(px)
+    return col.resize((max(1, w), max(1, h)))
+
+
+def glow_line(canvas, text, col, cy, max_w, h, metal=None, stroke=None):
+    """draw one centred line: shadow -> wide halo -> tight halo -> outline ->
+    crisp text.  metal=(top,mid,bot) fills the glyphs with that gradient
+    (metallic gold) instead of the washed-out near-white core."""
     f = fit(text, max_w, int(h * 0.16))
     tmp = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
     d = ImageDraw.Draw(tmp)
@@ -64,7 +83,7 @@ def glow_line(canvas, text, col, cy, max_w, h):
     d.text((x, y), text, font=f, fill=col + (255,))
 
     shadow = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
-    ImageDraw.Draw(shadow).text((x + 5, y + 7), text, font=f, fill=(0, 0, 0, 190))
+    ImageDraw.Draw(shadow).text((x + 5, y + 7), text, font=f, fill=(0, 0, 0, 200))
     shadow = shadow.filter(ImageFilter.GaussianBlur(6))
     canvas.alpha_composite(shadow)
 
@@ -74,10 +93,28 @@ def glow_line(canvas, text, col, cy, max_w, h):
     halo2 = tmp.filter(ImageFilter.GaussianBlur(int(h * 0.016)))  # tight
     canvas.alpha_composite(halo2)
 
-    bright = tuple(min(255, int(c * 0.35 + 200)) for c in col)     # near-white core
-    core = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
-    ImageDraw.Draw(core).text((x, y), text, font=f, fill=bright + (255,))
-    canvas.alpha_composite(core)
+    if stroke is None:
+        stroke = max(3, int((bb[3] - bb[1]) * 0.075))            # dark outline
+    if stroke > 0:                                               # so it never blends in
+        outl = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+        ImageDraw.Draw(outl).text((x, y), text, font=f, fill=(8, 6, 2, 255),
+                                  stroke_width=stroke, stroke_fill=(8, 6, 2, 255))
+        canvas.alpha_composite(outl)
+
+    gw, gh = bb[2] - bb[0], bb[3] - bb[1]
+    mask = Image.new("L", (gw, gh), 0)
+    ImageDraw.Draw(mask).text((-bb[0], -bb[1]), text, font=f, fill=255)
+
+    if metal:                                                    # gradient core
+        fill = _grad(gw, gh, *metal)
+    else:                                                        # near-white core
+        fill = Image.new("RGB", (gw, gh),
+                         tuple(min(255, int(c * 0.35 + 200)) for c in col))
+    core = Image.new("RGBA", (gw, gh), (0, 0, 0, 0))
+    core.paste(fill.convert("RGBA"), (0, 0), mask)
+    layer = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+    layer.paste(core, (x + bb[0], y + bb[1]))
+    canvas.alpha_composite(layer)
 
 
 def build(bg, out, lines, anchor="bottom"):
