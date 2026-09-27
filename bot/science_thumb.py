@@ -44,15 +44,18 @@ def fit_cover(img, w, h):
     return img.crop(((nw - w) // 2, (nh - h) // 2, (nw - w) // 2 + w, (nh - h) // 2 + h))
 
 
-def _text_block(base, text, accent, mode):
+def _text_block(base, text, accent, mode, max_h=None):
+    """The headline sits in the reserved strip ABOVE the photo, so it never
+    covers the picture. `max_h` = how tall that strip is."""
     W, H = base.size
     probe = ImageDraw.Draw(Image.new("L", (8, 8)))
     maxw = W - (70 if mode == "long" else 44)
+    limit = max_h if max_h else int(H * 0.46)
     size = int(W * 0.075 if mode == "long" else W * 0.115)
     while size >= 30:
         f = load_font(size)
         lines = wrap(probe, text, f, maxw)
-        if len(lines) * int(size * 1.12) <= H * 0.46:
+        if len(lines) * int(size * 1.12) <= limit:
             break
         size -= 4
     font = load_font(size)
@@ -184,8 +187,13 @@ def make(out, mode="long", hook=None, category="science", accent=None, photo=Non
 
     text = (hook or _next_hook()).upper()
     if accent is None:
-        accent = next_color()[1]
-    base, _ = _text_block(base, text, accent, mode)
+        try:
+            import pin_lib                                  # noqa: PLC0415
+            accent = pin_lib.accent_of(img)                 # harmonises w/ photo
+        except Exception:                                   # noqa: BLE001
+            accent = next_color()[1]
+    base, _ = _text_block(base, text, accent, mode,
+                          max_h=int(H * zone[0]) - 14)
     base = add_glow(base, accent, strength=1.0, seed=abs(hash(text)) & 0xFFFF)
 
     os.makedirs(os.path.dirname(out) or ".", exist_ok=True)

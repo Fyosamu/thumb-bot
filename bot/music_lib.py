@@ -5,7 +5,7 @@ import os, math, wave, struct, json, random, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from board_renderer import render_board
+from board_renderer import render_board, render_frame_wide
 from PIL import Image as I
 
 def get_ffmpeg():
@@ -22,15 +22,22 @@ PROGRESSIONS = [
     [[58,62,65,70],[51,55,58,63],[56,60,63,68],[53,57,60,65]],
 ]
 
-def make_music(path, seconds=75, sr=44100, rng=None):
-    """One continuous calm piano + violin-like piece for the WHOLE video.
-    Each video gets its own random key/progression/tempo, but the music never
-    restarts mid-video."""
+def make_music(path, seconds=75, sr=44100, rng=None, style="calm", gain=0.9):
+    """One continuous piece for the WHOLE video.
+    style="calm"  : slow piano + violin pad (10-min long videos)
+    style="trend" : brighter, faster, beat-driven loop for Shorts - same chord
+                    vocabulary (still 100% original / copyright-free), but with
+                    a kick, off-beat hats and a sub bass so it feels catchy.
+    gain: peak level after normalisation (shorts sit quieter on purpose).
+    Each video gets its own random key/progression/tempo."""
     import random
     rng = rng or random.Random()
     key_shift = rng.choice([-5,-3,-2,0,2,3,5,7])
     chords = [[n + key_shift for n in ch] for ch in rng.choice(PROGRESSIONS)]
-    beat = rng.choice([0.55, 0.62, 0.7])          # calm tempo
+    if style == "trend":
+        beat = rng.choice([0.30, 0.34, 0.38])     # upbeat Shorts tempo
+    else:
+        beat = rng.choice([0.55, 0.62, 0.7])      # calm tempo
     steps_per_chord = 8
     total = int(seconds * sr)
     samples = [0.0] * total
@@ -73,9 +80,39 @@ def make_music(path, seconds=75, sr=44100, rng=None):
                 if start + j < total: samples[start + j] += v
         t0 += seg_len; ci += 1
 
+    # --- Shorts only: beat layer (kick + off-beat hats + sub bass) ---------
+    if style == "trend":
+        step = beat * sr
+        t0 = 0
+        while t0 < total:                          # kick on every beat
+            for j in range(int(0.14 * sr)):
+                if t0 + j >= total: break
+                tt = j / sr
+                fr = 78 * math.exp(-22 * tt) + 42  # pitch drop = punchy kick
+                samples[t0 + j] += 0.55 * math.exp(-16 * tt) * math.sin(
+                    2 * math.pi * fr * tt)
+            hs = t0 + int(step / 2)                # crisp hat on the off-beat
+            for j in range(int(0.05 * sr)):
+                if hs + j >= total: break
+                samples[hs + j] += 0.16 * math.exp(-70 * j / sr) * rng.uniform(-1, 1)
+            t0 += int(step)
+        t0, ci = 0, 0                              # sub bass on the chord root
+        while t0 < total:
+            root = f(chords[ci % len(chords)][0] - 24)
+            dur = int(step * 2)
+            for j in range(min(dur, total - t0)):
+                tt = j / sr
+                env = min(1, tt / 0.02) * math.exp(-2.2 * tt)
+                samples[t0 + j] += 0.34 * env * math.sin(2 * math.pi * root * tt)
+            t0 += dur; ci += 1
+
+    # peak-normalise -> predictable level, never clips
+    peak = max(1e-9, max(abs(s) for s in samples))
+    k = gain / peak
     with wave.open(path, "w") as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr)
-        w.writeframes(b"".join(struct.pack("<h", int(max(-1,min(1,s))*32000)) for s in samples))
+        w.writeframes(b"".join(
+            struct.pack("<h", int(max(-1, min(1, s * k)) * 32000)) for s in samples))
 
 # ---------------- frames ---------------------------------------------------------
 def to_bg(path, w, h):
@@ -90,13 +127,29 @@ def turn_text(fen):
     return "White to play" if fen.split()[1] == "w" else "Black to play"
 
 def board_frame(pz, i, out_dir, tag, w, h, suffix="q"):
+    """16:9 (long video) -> the board sits a bit to the LEFT covering that whole
+    side, every line of text on its RIGHT, all of it in gold.
+    9:16 (short)      -> the stacked layout that already works vertically.
+    The solution is never drawn, so the answer is not shown."""
     q = os.path.join(out_dir, f"{tag}_{suffix}{i}.png")
-    render_board(pz["fen"], title=f"Puzzle #{i}  •  Rating {pz['rating']}",
-                 top2=f"{turn_text(pz['fen'])} — Find the best move!",
-                 foot="Answer in the comments  👇",
-                 foot2="Subscribe & Follow — don't forget!").save(q)
+    title = f"Puzzle #{i}  •  Rating {pz['rating']}"
+    top2 = f"{turn_text(pz['fen'])} — Find the best move!"
+    foot = "Answer in the comments"
+    foot2 = "Subscribe & Follow — don't forget!"
+    wide = (w, h) == (1920, 1080)
+    if wide:
+        render_frame_wide(pz["fen"], w, h, title=title, top2=top2, foot=foot,
+                          foot2=foot2, reveal=False).save(q)
+    else:
+        render_board(pz["fen"], title=title, top2=top2, foot=foot,
+                     foot2=foot2, gold=True).save(q)
     frame = os.path.join(out_dir, f"{tag}_{suffix}{i}_f.png")
-    to_bg(q, w, h).save(frame); os.remove(q)
+    if wide:
+        I.open(q).convert("RGB").save(frame)
+        os.remove(q)
+    else:
+        to_bg(q, w, h).save(frame)
+        os.remove(q)
     return frame
 
 # ---------------- videos ----------------------------------------------------------
@@ -107,7 +160,8 @@ def make_video(puzzles, out_dir, tag, seg=15, ff=None):
     # one continuous piece of music for the whole video
     total = seg * len(puzzles)
     music = os.path.join(out_dir, f"{tag}_music.wav")
-    make_music(music, seconds=total, rng=random.Random(tag))
+    make_music(music, seconds=total, rng=random.Random(tag),
+               style="calm", gain=0.85)   # long video: calm + not loud
     parts = []
     for i, pz in enumerate(puzzles, 1):
         frame = board_frame(pz, i, out_dir, tag, W, H)
@@ -140,7 +194,8 @@ def make_short(pz, out_dir, tag, i, ff=None, seg=15):
     sw, sh = 1080, 1920
     frame = board_frame(pz, i, out_dir, tag, sw, sh, suffix="s")
     music = os.path.join(out_dir, f"{tag}_sm{i}.wav")
-    make_music(music, seconds=seg, rng=random.Random(f"{tag}short{i}"))  # own piece per short
+    make_music(music, seconds=seg, rng=random.Random(f"{tag}short{i}"),
+               style="trend", gain=0.55)  # catchy beat, but deliberately quiet
     final = os.path.join(out_dir, f"{tag}_short{i}.mp4")
     subprocess.run([ff, "-y", "-loop","1","-t",str(seg),"-i",frame,"-i",music,
         "-filter_complex", f"[0:v]scale={sw}:{sh},fps=25[v]",
@@ -152,7 +207,8 @@ def make_short(pz, out_dir, tag, i, ff=None, seg=15):
 
 if __name__ == "__main__":
     ff = get_ffmpeg()
-    demo = json.loads(open(os.path.join(HERE, "puzzles.jsonl"), encoding="utf-8").readline())
+    demo = json.loads(open(os.path.join(HERE, "..", "puzzles_pool.jsonl"),
+                           encoding="utf-8").readline())
     demo = [demo] * 5
     v = make_video(demo, os.path.join(HERE, "out"), "test", ff=ff)
     s = make_short(demo[0], os.path.join(HERE, "out"), "test", 1, ff=ff)

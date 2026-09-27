@@ -53,6 +53,52 @@ def color_by_seed(seed):
     return name, PALETTE[name]
 
 
+def _hue_shift(c, deg):
+    import colorsys
+    r, g, b = [max(0.0, min(255.0, v)) / 255.0 for v in c]
+    h, l, s = colorsys.rgb_to_hls(r, g, b)
+    h = (h + (deg % 360) / 360.0) % 1.0
+    r, g, b = colorsys.hls_to_rgb(h, l, s)
+    return tuple(min(255, int(v * 255)) for v in (r, g, b))
+
+
+def part_color(part):
+    """ONE colour per part number -> the frame AND the headline change together
+    every time a new video of the series is made (PART 1, 2, 3 ...).
+
+    Parts 1-10 use the palette as-is; 11+ wrap around with a small hue shift so
+    they are still different from the first ten.
+    """
+    i = max(0, int(part) - 1)
+    name, c = color_by_seed(i)
+    extra = (i // len(ORDER)) * 26
+    if extra:
+        c = _hue_shift(c, extra)
+    return name, c
+
+
+# the gold the user picked for EVERY chess video / short headline
+GOLD = ((255, 244, 178), (255, 205, 74), (196, 130, 8))
+
+
+def metal_gradient(w, h, stops=GOLD):
+    """3-stop polished-gold vertical gradient used as the fill of the glyphs
+    (light top -> saturated gold -> deep gold), same look as puzzle_thumb."""
+    top, mid, bot = stops
+    g = Image.new("RGB", (1, max(1, h)))
+    px = g.load()
+    for y in range(max(1, h)):
+        t = y / max(1, h - 1)
+        if t < 0.5:
+            k = t / 0.5
+            c = tuple(int(top[i] + (mid[i] - top[i]) * k) for i in range(3))
+        else:
+            k = (t - 0.5) / 0.5
+            c = tuple(int(mid[i] + (bot[i] - mid[i]) * k) for i in range(3))
+        px[0, y] = c
+    return g.resize((max(1, w), max(1, h)))
+
+
 def _ring(w, h, thick):
     m = Image.new("L", (w, h), 0)
     d = ImageDraw.Draw(m)

@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 """16:9 chess thumbnail from a REAL puzzle position.
 
-- gold hook text glued to the very top
-- real board with the solution arrow (the sacrifice move)
-- move number notation + rating pill + difficulty label
+- the board sits a bit to the LEFT and covers that whole side (the whole
+  board is inside its square, never cut)
+- gold hook + move notation + rating / difficulty pills on the RIGHT
+- the solution is NEVER drawn (no arrow, no last-move highlight) so the
+  answer is not shown
 """
 import json
 import os
@@ -92,7 +94,8 @@ def vignette(w, h):
     return v.filter(ImageFilter.GaussianBlur(120))
 
 
-def draw_gold_block(base, text, y0, maxw, size_hint=None, align="center", x_left=None):
+def draw_gold_block(base, text, y0, maxw, size_hint=None, align="center",
+                    x_left=None, gy=None):
     probe = ImageDraw.Draw(Image.new("L", (10, 10)))
     size = size_hint or int(W * 0.072)
     while size >= 34:
@@ -135,7 +138,11 @@ def draw_gold_block(base, text, y0, maxw, size_hint=None, align="center", x_left
         md.text((bx + pad_x, yy + pad_y - int(lh * 0.14)), ln, font=font, fill=255)
         yy += bh + gap
 
-    base.paste(gold_gradient(W, H), (0, 0), mask)
+    if gy:
+        g0, g1 = int(gy[0]), int(max(gy[0] + 1, gy[1]))
+        base.paste(gold_gradient(W, g1 - g0), (0, g0), mask.crop((0, g0, W, g1)))
+    else:
+        base.paste(gold_gradient(W, H), (0, 0), mask)
     shine = mask.filter(ImageFilter.GaussianBlur(3)).point(lambda v: int(v * 0.25))
     base.paste((255, 255, 255), (0, 0), shine)
     return total
@@ -154,6 +161,8 @@ def make(puzzle, out, hook_text):
     fen, uci = puzzle["fen"], puzzle["uci"]
     rating = int(puzzle.get("rating", 2000))
     label, move_no = move_label(fen, uci)
+    # the SAN notation IS the solution -> never show the answer on the thumb
+    label = "FIND THE BEST MOVE!"
     diff = difficulty(rating)
 
     canvas = Image.new("RGB", (W, H), (17, 18, 20))
@@ -162,12 +171,12 @@ def make(puzzle, out, hook_text):
         k = i / H
         d0.line([(0, i), (W, i)], fill=(int(24 - 12 * k), int(25 - 12 * k), int(28 - 13 * k)))
 
-    # board with solution arrow
-    bimg = br.render_board(fen, size=430,
-                           sol=[uci[0][:2], uci[0][2:]],
-                           last=[uci[0][:2], uci[0][2:]])
-    bx = W - bimg.width - 24
-    by = H - bimg.height - 20
+    # board: a bit to the LEFT, big enough to cover that whole side; the whole
+    # board sits inside its square.  NO solution arrow and NO last-move
+    # highlight -> the answer is never shown.
+    bimg = br.render_board(fen, size=600)
+    bx = 20
+    by = (H - bimg.height) // 2
     shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     ImageDraw.Draw(shadow).rounded_rectangle(
         [bx + 8, by + 10, bx + bimg.width + 8, by + bimg.height + 10],
@@ -184,18 +193,28 @@ def make(puzzle, out, hook_text):
         bimg = bimg.convert("RGB")
     canvas.paste(bimg, (bx, by))
 
-    # text glued to the very top
-    draw_gold_block(canvas, hook_text, y0=8, maxw=W - 60)
-
-    # left column: move notation + rating + difficulty
+    # right column: gold hook + move notation + rating / difficulty pills
     d = ImageDraw.Draw(canvas)
-    big = load_font(72)
-    draw_gold_block(canvas, label, y0=250, maxw=560, size_hint=72, x_left=36)
+    cl = bx + bimg.width + 28
+    cw = W - 24 - cl
+    cx = (cl + W - 24) // 2
+    GY = (40, 615)                       # gold ramp mapped over the text block
 
-    pill(d, 190, 420, "RATING  %d" % rating, load_font(40))
-    pill(d, 190, 500, diff, load_font(44), outline=(255, 255, 255))
-    pill(d, 190, 580, "WHITE TO MOVE" if fen.split()[1] == "w" else "BLACK TO MOVE",
-         load_font(34), outline=(120, 170, 255))
+    y = 40
+    y += draw_gold_block(canvas, hook_text, y0=y, maxw=cw, x_left=cl, gy=GY) + 26
+    y += draw_gold_block(canvas, label, y0=y, maxw=cw, size_hint=64,
+                         x_left=cl, gy=GY) + 34
+
+    f1, f2, f3 = load_font(40), load_font(44), load_font(32)
+    t1, t2 = "RATING  %d" % rating, diff
+    t3 = "WHITE TO MOVE" if fen.split()[1] == "w" else "BLACK TO MOVE"
+    w1 = d.textlength(t1, font=f1) + 44
+    w2 = d.textlength(t2, font=f2) + 44
+    x0 = cx - (w1 + 14 + w2) / 2
+    cy = min(H - 78, y + 30)
+    pill(d, x0 + w1 / 2, cy, t1, f1)
+    pill(d, x0 + w1 + 14 + w2 / 2, cy, t2, f2, outline=(255, 255, 255))
+    pill(d, cx, min(H - 44, cy + 80), t3, f3, outline=(120, 170, 255))
 
     vig = vignette(W, H)
     canvas = Image.composite(canvas, Image.new("RGB", (W, H), (4, 4, 5)), vig)
