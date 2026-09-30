@@ -1,0 +1,87 @@
+# Render queued videos on a GitHub runner instead of the owner's machine.
+#
+#   slugs   space-separated script slugs, or "all"
+#   upload  "true" to push what was rendered to YouTube when the job is done
+#
+# The runner needs two repo secrets:
+#   PEXELS_KEY       stock-footage search key
+#   YT1_TOKEN_JSON   channel-1 OAuth token, stored as a JSON string
+#
+# state/uploaded.json is committed back after every run so the local
+# publish.py and this job share one dedupe ledger.
+name: render-video
+
+on:
+  workflow_dispatch:
+    inputs:
+      slugs:
+        description: "space-separated slugs, or 'all'"
+        required: true
+        default: "all"
+      upload:
+        description: "upload to YouTube when rendering finishes"
+        required: false
+        default: "true"
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: ffmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          ffmpeg -version | head -1
+
+      - name: python deps
+        run: |
+          pip install -q -r factory/requirements.txt
+          pip install -q google-api-python-client google-auth
+
+      - name: show queue
+        run: python factory/factory.py --list
+
+      - name: render
+        env:
+          PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
+        run: python factory/factory.py --batch --only "${{ inputs.slugs }}"
+
+      - name: upload
+        if: ${{ inputs.upload == 'true' }}
+        env:
+          YT_TOKEN_JSON: ${{ secrets.YT1_TOKEN_JSON }}
+        run: python factory/upload.py
+
+      # kept only as a safety net - the video itself is not downloaded back,
+      # so the owner's connection never carries a render
+      - name: keep thumbnails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: thumbs-${{ github.run_number }}
+          path: factory/out/*.jpg
+          retention-days: 3
+          if-no-files-found: ignore
+
+      - name: record state
+        if: always()
+        run: |
+          git config user.name "render-bot"
+          git config user.email "render-bot@users.noreply.github.com"
+          git add factory/state || true
+          if git diff --cached --quiet; then
+            echo "no state change"
+          else
+            git commit -m "state: run ${{ github.run_number }}"
+            git push
+          fi

@@ -192,9 +192,11 @@ def make(out, mode="long", hook=None, category="science", accent=None, photo=Non
             accent = pin_lib.accent_of(img)                 # harmonises w/ photo
         except Exception:                                   # noqa: BLE001
             accent = next_color()[1]
-    base, _ = _text_block(base, text, accent, mode,
-                          max_h=int(H * zone[0]) - 14)
-    base = add_glow(base, accent, strength=1.0, seed=abs(hash(text)) & 0xFFFF)
+    # house style: 50% black band over the bottom half + BOLD GOLD text on top
+    # of it (same recipe as ffff\yt_factory - see thumbstyle.py).
+    # The old glow/coloured text block is gone on purpose - one style only.
+    import thumbstyle                                  # noqa: PLC0415
+    base = thumbstyle.render(base, text, mode=mode, blur=0)
 
     os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
     base.save(out, quality=95)

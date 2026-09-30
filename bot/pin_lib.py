@@ -518,8 +518,8 @@ def compose(img_path, text, out, mode="long", band_frac=0.20, accent=None,
     W, H = MODES[mode]
     src = Image.open(img_path).convert("RGB")
     sw, sh = src.size
-    band = int(H * band_frac)
-    aw, ah = W, H - band
+    band = 0                      # house style: the text band is at the BOTTOM
+    aw, ah = W, H
 
     s = min(aw / sw, ah / sh)                      # contain -> never cropped
     nw, nh = max(1, int(sw * s)), max(1, int(sh * s))
@@ -538,19 +538,10 @@ def compose(img_path, text, out, mode="long", band_frac=0.20, accent=None,
     probe = ImageDraw.Draw(Image.new("L", (8, 8)))
     maxw = int(W * 0.90)
 
-    if band:                                        # headline in a band above
-        d = ImageDraw.Draw(canvas)
-        d.rectangle([0, 0, W, band], fill=_dark(
-            tuple(int(0.62 * dom[i] + 0.38 * accent[i]) for i in range(3)), 0.34))
-        d.rectangle([0, band - 3, W, band], fill=accent)       # rule = accent
-        room, size = band * 0.80, int(band * 0.44)
-        y0 = (band - 0) // 2
-        plate = 225
-    else:                                           # text written ON the photo
-        canvas = _veil(canvas)                      # soft wash, no black bar
-        d = ImageDraw.Draw(canvas)
-        room, size = H * 0.34, int(H * 0.085)
-        y0, plate = int(H * 0.055), 165
+    if band:                                        # (unused - see thumbstyle)
+        pass
+    else:                                           # headline in the bottom band
+        pass
 
     blocks = [[(text or "").upper(), 1.00]]
     if sub:
@@ -558,49 +549,14 @@ def compose(img_path, text, out, mode="long", band_frac=0.20, accent=None,
     if part:
         blocks.append(["PART %d" % int(part), 0.70])
 
-    while size >= 20:
-        f = _font(size)
-        lines = _wrap(probe, blocks[0][0], f, maxw)
-        extra = 0
-        for txt, k in blocks[1:]:
-            sub_size = max(14, int(size * k))
-            extra += len(_wrap(probe, txt, _font(sub_size), maxw)) * \
-                int(sub_size * 1.15) + 8
-        if len(lines) * int(size * 1.12) + extra <= room:
-            break
-        size -= 2
-
-    rows = []                                          # [(lines, font, lh)]
-    f = _font(size)
-    lh = int(size * 1.12)
-    rows.append((_wrap(probe, blocks[0][0], f, maxw), f, lh))
-    for txt, k in blocks[1:]:
-        ss = max(14, int(size * k))
-        fs = _font(ss)
-        rows.append((_wrap(probe, txt, fs, maxw), fs, int(ss * 1.15)))
-
-    gap = max(4, size // 8)
-    total = sum(len(r[0]) * r[2] + (gap if i else 0)
-                for i, r in enumerate(rows))
-    if band:
-        y = (band - total) // 2
-    else:
-        y = max(int(H * 0.030), y0 - total // 2)
-    for i, (lns, fnt, lh_) in enumerate(rows):
-        if i:
-            y += gap
-        colour = accent if i == 0 else tuple(
-            min(255, int(c * 0.78 + 60)) for c in accent)
-        if part and i == len(rows) - 1 and not sub:
-            colour = accent                       # PART line glows too
-        for ln in lns:
-            tw = int(probe.textlength(ln, font=fnt))
-            bx = (W - tw) // 2
-            d.rounded_rectangle([bx - 12, y - 4, bx + tw + 12, y + lh_ + 2],
-                                radius=8, fill=(0, 0, 0, plate))
-            d.text((bx + 2, y + 2), ln, font=fnt, fill=(0, 0, 0))   # shadow
-            d.text((bx, y), ln, font=fnt, fill=colour)
-            y += lh_
+    # ---- house style: 50% black band (bottom -> middle) + BOLD GOLD text ---
+    # same recipe as ffff\yt_factory\out\age.jpg -> thumbstyle.py
+    import sys as _sys
+    import os as _os
+    if _os.path.dirname(_os.path.abspath(__file__)) not in _sys.path:
+        _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+    import thumbstyle                                  # noqa: PLC0415
+    canvas = thumbstyle.render(canvas, (text or ""), mode=mode, sub=sub, blur=0)
 
     if glow:
         canvas = _glow(canvas, accent)
