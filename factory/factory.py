@@ -20,8 +20,10 @@ import sys
 import textwrap
 from pathlib import Path
 
+import channels as channel_profiles
+
 HERE = Path(__file__).resolve().parent
-CONTENT = HERE / "content"          # script JSONs live here
+CONTENT = HERE / "content"          # script JSONs live here (channel 1)
 WORK = HERE / "work"                # per-video scratch space
 OUT = HERE / "out"                  # finished mp4s
 for d in (CONTENT, WORK, OUT):
@@ -234,6 +236,7 @@ def make_thumbnail(script: dict, dest: Path, vw: int, vh: int) -> Path:
 
 
 def main() -> int:
+    global CONTENT, WORK, OUT
     ap = argparse.ArgumentParser()
     ap.add_argument("--render")
     ap.add_argument("--batch", action="store_true")
@@ -241,10 +244,20 @@ def main() -> int:
     ap.add_argument("--only", default="",
                     help="space-separated slugs to render (or 'all'); skips "
                          "anything already sitting in out/")
+    ap.add_argument("--channel", default=None,
+                    help="channel profile: 1 = science, 3 = biography "
+                         "(each keeps its own folders, so nothing crosses)")
     args = ap.parse_args()
+
+    # switch the whole run onto one channel's folders before touching them
+    prof = channel_profiles.profile(args.channel)
+    CONTENT, WORK, OUT = prof["content"], prof["work"], prof["out"]
+    channel_profiles.ensure(prof)
 
     scripts = sorted(CONTENT.glob("*.json"))
     if args.list:
+        print(f"channel {prof['channel']} ({prof['label']}) -> {CONTENT.name}/"
+              f"  out={OUT.name}/")
         for s in scripts:
             d = json.loads(s.read_text(encoding="utf-8"))
             done = (OUT / f"{d['slug']}.mp4").exists()

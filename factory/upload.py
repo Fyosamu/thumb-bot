@@ -24,12 +24,19 @@ import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+import channels as channel_profiles
+
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "out"
 CONTENT = HERE / "content"
 STATE = HERE / "state"
 MANIFEST = STATE / "uploaded.json"
 COUNT = STATE / "upload_count.json"
+
+# filled in per channel by main() from channels.PROFILES
+TOKEN_ENV = "YT1_TOKEN_JSON"
+TOKEN_USED = STATE / "token_used.json"
+DEFAULT_CATEGORY = "27"
 
 DAILY_CAP = 4
 SPACING_HOURS = 6
@@ -79,9 +86,11 @@ def publish_slot() -> str | None:
 
 def creds():
     from google.oauth2.credentials import Credentials
-    raw = os.environ.get("YT_TOKEN_JSON", "").strip()
+    # each channel carries its own token; never fall back to another's
+    raw = os.environ.get(TOKEN_ENV, "").strip()
     if not raw:
-        raise SystemExit("YT_TOKEN_JSON is not set")
+        raise SystemExit(f"{TOKEN_ENV} is not set - this channel cannot "
+                         "publish without its own token")
     data = json.loads(raw)
     c = Credentials(token=data.get("access_token"),
                     refresh_token=data.get("refresh_token"),
@@ -93,8 +102,8 @@ def creds():
         from google.auth.transport.requests import Request
         c.refresh(Request())
         data["access_token"] = c.token
-        save(STATE / "token_used.json", {k: data.get(k) for k in
-                                         ("client_id", "refresh_token")})
+        save(TOKEN_USED, {k: data.get(k) for k in
+                          ("client_id", "refresh_token")})
     return c
 
 
@@ -102,7 +111,7 @@ def category_for(slug: str) -> str:
     f = slug.lower()
     if "bio" in f or "trump" in f:
         return "24"
-    return CATEGORY.get(f.split("_")[0], "27")
+    return CATEGORY.get(f.split("_")[0], DEFAULT_CATEGORY)
 
 
 def collect(uploaded: dict) -> tuple[list[dict], list[str]]:
@@ -122,10 +131,24 @@ def collect(uploaded: dict) -> tuple[list[dict], list[str]]:
 
 
 def main() -> int:
+    global OUT, CONTENT, STATE, MANIFEST, COUNT
+    global TOKEN_ENV, TOKEN_USED, DEFAULT_CATEGORY
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--only", default="")
+    ap.add_argument("--channel", default=None,
+                    help="channel profile: 1 = science, 3 = biography - "
+                         "separate folders, separate ledger, separate token")
     args = ap.parse_args()
+
+    # park this run on exactly one channel's folders and token
+    prof = channel_profiles.profile(args.channel)
+    OUT, CONTENT = prof["out"], prof["content"]
+    STATE = Path(prof["manifest"]).parent
+    MANIFEST, COUNT = prof["manifest"], prof["count"]
+    TOKEN_ENV, TOKEN_USED = prof["token_env"], prof["token_used"]
+    DEFAULT_CATEGORY = prof["category"]
+    channel_profiles.ensure(prof)
 
     from googleapiclient.discovery import build
     from googleapiclient.errors import HttpError
@@ -134,6 +157,8 @@ def main() -> int:
     manifest = load(MANIFEST, {"uploaded": {}})
     uploaded = manifest["uploaded"]
     pending, dup = collect(uploaded)
+    print(f"channel {prof['channel']} ({prof['label']}) -> {OUT.name}/ "
+          f"token {TOKEN_ENV}")
     if args.only:
         want = set(args.only.split())
         pending = [p for p in pending if p["slug"] in want]

@@ -1,6 +1,9 @@
 # One episode a day, rendered and published on GitHub's Linux runner.
 #
-#   channel   1 = science (default), 3 = biography
+# Channel 1 (science) only.  Channel 3 has its own workflow
+# (daily-bio.yml), its own folders and its own token, so the two can
+# never publish to each other.
+#
 #   dry_run   "true" renders but never touches YouTube
 #
 # The queue is walked by factory/pick.py (state/cursor.json), so a rerun
@@ -12,10 +15,6 @@ on:
     - cron: "30 9 * * *"   # 09:30 UTC = 12:00 Tehran
   workflow_dispatch:
     inputs:
-      channel:
-        description: "1 = science, 3 = biography"
-        required: false
-        default: "1"
       dry_run:
         description: "render only, do not upload"
         required: false
@@ -23,6 +22,9 @@ on:
 
 permissions:
   contents: write
+
+env:
+  YT_CHANNEL: "1"
 
 jobs:
   daily:
@@ -48,24 +50,24 @@ jobs:
 
       - name: pick today's episode
         id: pick
-        run: python factory/pick.py next
+        run: python factory/pick.py next --channel 1
 
       - name: render
         if: ${{ steps.pick.outputs.slugs != '' }}
         env:
           PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
-        run: python factory/factory.py --batch --only "${{ steps.pick.outputs.slugs }}"
+        run: python factory/factory.py --batch --channel 1 --only "${{ steps.pick.outputs.slugs }}"
 
-      - name: upload
+      - name: upload to the science channel only
         if: ${{ steps.pick.outputs.slugs != '' && inputs.dry_run != 'true' }}
         env:
-          YT_TOKEN_JSON: ${{ inputs.channel == '3' && secrets.YT3_TOKEN_JSON || secrets.YT1_TOKEN_JSON }}
-        run: python factory/upload.py --only "${{ steps.pick.outputs.slugs }}"
+          YT_TOKEN_JSON: ${{ secrets.YT1_TOKEN_JSON }}
+        run: python factory/upload.py --channel 1 --only "${{ steps.pick.outputs.slugs }}"
 
       # only after a real upload, so a failed day retries the same episode
       - name: advance the queue
         if: ${{ steps.pick.outputs.slugs != '' && inputs.dry_run != 'true' && success() }}
-        run: python factory/pick.py advance
+        run: python factory/pick.py advance --channel 1
 
       - name: keep thumbnails
         if: always()

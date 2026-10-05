@@ -18,6 +18,8 @@ import json
 import sys
 from pathlib import Path
 
+import channels as channel_profiles
+
 HERE = Path(__file__).resolve().parent
 CONTENT = HERE / "content"
 STATE = HERE / "state"
@@ -42,15 +44,27 @@ def cursor() -> int:
 
 
 def main() -> int:
+    global CONTENT, STATE, CURSOR
     ap = argparse.ArgumentParser()
     ap.add_argument("action", choices=["next", "advance", "status"])
+    ap.add_argument("--channel", default=None,
+                    help="channel profile: 1 = science, 3 = biography - "
+                         "each walks its own queue and its own cursor")
     args = ap.parse_args()
+
+    # every channel has its own script folder and its own cursor
+    prof = channel_profiles.profile(args.channel)
+    CONTENT = prof["content"]
+    CURSOR = prof["cursor"]
+    STATE = CURSOR.parent
+    channel_profiles.ensure(prof)
 
     eps = episodes()
     i = cursor()
 
     if args.action == "status":
-        print(f"cursor {i}/{len(eps)}")
+        print(f"channel {prof['channel']} ({prof['label']}) "
+              f"cursor {i}/{len(eps)} in {CONTENT.name}/")
         return 0
 
     if args.action == "advance":
@@ -77,8 +91,9 @@ def main() -> int:
     gh_out = Path(__import__("os").environ.get("GITHUB_OUTPUT", ""))
     if gh_out.is_file():
         with gh_out.open("a", encoding="utf-8") as fh:
-            fh.write(f"slugs={pair}\nepisodes={len(eps)}\nindex={i}\n")
-    print(pair or "(queue empty)")
+            fh.write(f"slugs={pair}\nepisodes={len(eps)}\nindex={i}\n"
+                     f"channel={prof['channel']}\n")
+    print(f"[{prof['label']}] {pair or '(queue empty)'}")
     return 0
 
 
