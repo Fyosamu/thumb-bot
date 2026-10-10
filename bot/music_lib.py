@@ -22,97 +22,197 @@ PROGRESSIONS = [
     [[58,62,65,70],[51,55,58,63],[56,60,63,68],[53,57,60,65]],
 ]
 
+# Short melodic shapes - the melody walks these instead of jumping to random
+# chord tones, which is the difference between a tune and a beeping machine.
+MOTIFS = [[0,1,2,1],[0,2,1,3],[2,1,0,1],[3,2,1,0],[0,1,3,2],[1,2,0,1]]
+ARP = [0,1,2,3,2,1]          # eighth-note arpeggio over root-3rd-5th-octave
+
+# Soft limiter. The signal is scaled so its peak lands on LIMIT_REF and then
+# bent by x/(1 + KNEE|x|); 0 reference disables the limiter entirely.
+LIMIT_REF = 1.6
+LIMIT_KNEE = 0.55
+# Feedback room (seconds), one delay per channel, and its decay.
+ROOM_L, ROOM_R, ROOM_FB = 0.113, 0.137, 0.30
+
 def make_music(path, seconds=75, sr=44100, rng=None, style="calm", gain=0.9):
-    """One continuous piece for the WHOLE video.
-    style="calm"  : slow piano + violin pad (10-min long videos)
-    style="trend" : brighter, faster, beat-driven loop for Shorts - same chord
-                    vocabulary (still 100% original / copyright-free), but with
-                    a kick, off-beat hats and a sub bass so it feels catchy.
+    """One continuous STEREO piece for the WHOLE video.
+
+    style="calm"  : the long-video bed - string pad, a piano motif, an
+                     eighth-note arpeggio, sub bass and a soft kick/shaker,
+                     with an energy arc that breathes every 8 chords so a
+                     long track never flatlines into wallpaper.
+    style="trend" : the Shorts bed - the same chord vocabulary but a driving
+                     kick, off-beat hats, claps on 2 and 4 and a brighter
+                     hook, so it reads as a hook inside the first second.
+
+    Everything is synthesised from PROGRESSIONS below - no samples, no
+    third-party audio - so every track is 100% original and copyright-free.
+    Only key, tempo, motif and energy shape change per video, so no two
+    uploads share a soundtrack.
+
     gain: peak level after normalisation (shorts sit quieter on purpose).
-    Each video gets its own random key/progression/tempo."""
+    """
     import random
     rng = rng or random.Random()
     key_shift = rng.choice([-5,-3,-2,0,2,3,5,7])
     chords = [[n + key_shift for n in ch] for ch in rng.choice(PROGRESSIONS)]
+    steps = 8                              # eighth-notes per chord
+
     if style == "trend":
-        beat = rng.choice([0.30, 0.34, 0.38])     # upbeat Shorts tempo
+        beat = rng.choice([0.30, 0.34, 0.38])   # upbeat Shorts tempo
+        g_pad, g_mel, g_arp = 0.040, 0.190, 0.070
+        g_kick, g_hat, g_clap, g_bass = 0.42, 0.16, 0.24, 0.26
+        root_oct, e_lo = -24, 0.86
     else:
-        beat = rng.choice([0.55, 0.62, 0.7])      # calm tempo
-    steps_per_chord = 8
+        # The bed sits UNDER narration-less puzzle music: bright melody and
+        # arpeggio lead, rhythm only supports. Bass and kick stay low so the
+        # track does not collapse into sub-bass rumble.
+        beat = rng.choice([0.55, 0.62, 0.7])    # unhurried long-video tempo
+        g_pad, g_mel, g_arp = 0.045, 0.135, 0.065
+        g_kick, g_hat, g_clap, g_bass = 0.11, 0.05, 0.06, 0.085
+        root_oct, e_lo = -12, 0.72
+
     total = int(seconds * sr)
-    samples = [0.0] * total
-    vib_hz, vib_amt = rng.uniform(4.5, 5.5), 0.004  # violin vibrato
+    L, R = [0.0] * total, [0.0] * total
+    seg_len = int(steps * beat * sr)             # samples per chord
+    motif = MOTIFS[rng.randrange(len(MOTIFS))]
+    vib_hz, vib_amt = rng.uniform(4.5, 5.5), 0.004
 
     def f(n): return 440.0 * 2**((n - 69) / 12.0)
 
-    # --- violin pad: slow attack, sustained, vibrato (one note per chord, top voice)
+    def put(i, v, pl=1.0, pr=1.0):
+        if 0 <= i < total:
+            L[i] += v * pl
+            R[i] += v * pr
+
+    def energy(ci):
+        """Build over 8 chords then reset - keeps a long bed alive."""
+        return e_lo + (1.0 - e_lo) * min(1.0, (ci % 8) / 5.0)
+
+    # --- string pad: slow attack, vibrato, spread across the stereo field ---
     t0, ci = 0, 0
     while t0 < total:
         chord = chords[ci % len(chords)]
-        seg_len = int(steps_per_chord*beat*sr)
         for k, note in enumerate(chord):
             fr = f(note - 12)
             for j in range(min(seg_len, total - t0)):
                 t = j / sr
                 env = min(1, t/1.2) * min(1, (seg_len/sr - t)/1.5)
                 vib = 1 + vib_amt*math.sin(2*math.pi*vib_hz*t)
-                samples[t0 + j] += 0.045 * env * (
-                    math.sin(2*math.pi*fr*vib*t) + 0.3*math.sin(2*math.pi*2.001*fr*t))
+                v = g_pad * env * (
+                    math.sin(2*math.pi*fr*vib*t)
+                    + 0.3*math.sin(2*math.pi*2.001*fr*t))
+                put(t0 + j, v, 1.0, 0.80 + 0.06*k)
         t0 += seg_len; ci += 1
 
-    # --- piano: gentle melody notes (decaying harmonics), one per beat
+    # --- piano motif: one shaped phrase per chord, beats 1-4 ---------------
     t0, ci = 0, 0
     while t0 < total:
         chord = chords[ci % len(chords)]
-        seg_len = int(steps_per_chord*beat*sr)
-        pattern = [rng.choice(chord) + 12 for _ in range(steps_per_chord)]
-        for s, note in enumerate(pattern):
-            fr = f(note)
-            start = t0 + int(s*beat*sr)
-            dur = int(rng.uniform(1.2, 2.0)*sr)
+        tones = [chord[0], chord[1], chord[2], chord[0] + 12]
+        e = energy(ci)
+        for m in range(4):
+            fr = f(tones[motif[m] % 4] + 12)
+            start = t0 + int(m * 2 * beat * sr)
+            dur = int(rng.uniform(1.1, 1.7)*sr)
             for j in range(min(dur, total - start)):
                 t = j / sr
                 env = math.exp(-1.8*t)
-                v = 0.11 * env * (
+                v = g_mel * e * env * (
                     math.sin(2*math.pi*fr*t)
                     + 0.5*math.sin(2*math.pi*2*fr*t)*math.exp(-2*t)
                     + 0.25*math.sin(2*math.pi*3*fr*t)*math.exp(-4*t))
-                if start + j < total: samples[start + j] += v
+                put(start + j, v, 0.9, 1.0)
         t0 += seg_len; ci += 1
 
-    # --- Shorts only: beat layer (kick + off-beat hats + sub bass) ---------
-    if style == "trend":
-        step = beat * sr
-        t0 = 0
-        while t0 < total:                          # kick on every beat
-            for j in range(int(0.14 * sr)):
-                if t0 + j >= total: break
+    # --- arpeggio: eighth notes, panned right, the bed's sense of motion ---
+    t0, ci = 0, 0
+    while t0 < total:
+        chord = chords[ci % len(chords)]
+        e = energy(ci)
+        for s in range(steps):
+            fr = f(chord[ARP[s % len(ARP)]])
+            start = t0 + int(s * beat * sr)
+            dur = int(1.6 * beat * sr)
+            for j in range(min(dur, total - start)):
                 tt = j / sr
-                fr = 78 * math.exp(-22 * tt) + 42  # pitch drop = punchy kick
-                samples[t0 + j] += 0.55 * math.exp(-16 * tt) * math.sin(
-                    2 * math.pi * fr * tt)
-            hs = t0 + int(step / 2)                # crisp hat on the off-beat
-            for j in range(int(0.05 * sr)):
-                if hs + j >= total: break
-                samples[hs + j] += 0.16 * math.exp(-70 * j / sr) * rng.uniform(-1, 1)
-            t0 += int(step)
-        t0, ci = 0, 0                              # sub bass on the chord root
-        while t0 < total:
-            root = f(chords[ci % len(chords)][0] - 24)
-            dur = int(step * 2)
-            for j in range(min(dur, total - t0)):
-                tt = j / sr
-                env = min(1, tt / 0.02) * math.exp(-2.2 * tt)
-                samples[t0 + j] += 0.34 * env * math.sin(2 * math.pi * root * tt)
-            t0 += dur; ci += 1
+                v = g_arp * e * math.exp(-6.0*tt) * (
+                    math.sin(2*math.pi*fr*tt)
+                    + 0.35*math.sin(2*math.pi*2*fr*tt))
+                put(start + j, v, 0.55, 1.0)
+        t0 += seg_len; ci += 1
 
-    # peak-normalise -> predictable level, never clips
-    peak = max(1e-9, max(abs(s) for s in samples))
+    # --- sub bass on the chord root, re-struck every quarter --------------
+    step = int(beat * sr)
+    t0, ci = 0, 0
+    while t0 < total:
+        root = f(chords[ci % len(chords)][0] + root_oct)
+        e = energy(ci)
+        for s in range(0, steps, 2):
+            start = t0 + int(s * beat * sr)
+            for j in range(min(2*step, total - start)):
+                tt = j / sr
+                env = min(1, tt/0.02) * math.exp(-1.6*tt)
+                put(start + j, g_bass * e * env * math.sin(2*math.pi*root*tt))
+        t0 += seg_len; ci += 1
+
+    # --- percussion: kick every beat, shaker on the off-beat, clap on 2/4 --
+    t0, ci = 0, 0
+    while t0 < total:
+        e = energy(ci)
+        for s in range(0, steps, 2):                       # kick
+            k0 = t0 + int(s * beat * sr)
+            for j in range(int(0.14*sr)):
+                if k0 + j >= total: break
+                tt = j / sr
+                fr = 78*math.exp(-22*tt) + 42
+                put(k0 + j, g_kick*e*math.exp(-16*tt)*math.sin(2*math.pi*fr*tt))
+            sh = k0 + step//2                              # shaker / hat
+            for j in range(int(0.05*sr)):
+                if sh + j >= total: break
+                put(sh + j, g_hat*e*math.exp(-70*j/sr)*rng.uniform(-1, 1),
+                    1.0, 0.5)
+        if style == "trend":                               # clap on 2 and 4
+            for s in (2, 6):
+                c0 = t0 + int(s * beat * sr)
+                for j in range(int(0.09*sr)):
+                    if c0 + j >= total: break
+                    put(c0 + j, g_clap*e*math.exp(-45*j/sr)*rng.uniform(-1, 1),
+                        0.8, 0.8)
+        t0 += seg_len; ci += 1
+
+    # --- short stereo room: feedback combs, one delay per channel ---------
+    # O(samples), no library needed, and it is what turns a dry synth stack
+    # into something that sounds produced. Different times L/R for width.
+    for buf, dt in ((L, ROOM_L), (R, ROOM_R)):
+        d = int(dt * sr)
+        if d:
+            for i in range(d, total):
+                buf[i] += ROOM_FB * buf[i - d]
+
+    # --- soft limiter: the kick peaks would otherwise drag the whole track
+    # down ~3 dB when we peak-normalise. Scale first so the knee sits at a
+    # known place, then bend loud samples only; quiet parts pass untouched
+    # and pick up a little harmonic warmth on the way through.
+    if LIMIT_REF:
+        peak0 = max(max(abs(v) for v in L), max(abs(v) for v in R)) or 1e-9
+        sc = LIMIT_REF / peak0
+        for i in range(total):
+            a = L[i] * sc
+            b = R[i] * sc
+            L[i] = a / (1.0 + LIMIT_KNEE * abs(a))
+            R[i] = b / (1.0 + LIMIT_KNEE * abs(b))
+
+    # peak-normalise each channel -> predictable level, never clips
+    peak = max(1e-9, max(max(abs(s) for s in L), max(abs(s) for s in R)))
     k = gain / peak
     with wave.open(path, "w") as w:
-        w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr)
+        w.setnchannels(2); w.setsampwidth(2); w.setframerate(sr)
         w.writeframes(b"".join(
-            struct.pack("<h", int(max(-1, min(1, s * k)) * 32000)) for s in samples))
+            struct.pack("<hh",
+                        int(max(-1, min(1, L[i] * k)) * 32000),
+                        int(max(-1, min(1, R[i] * k)) * 32000))
+            for i in range(total)))
 
 # ---------------- frames ---------------------------------------------------------
 def to_bg(path, w, h):

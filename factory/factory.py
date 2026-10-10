@@ -183,6 +183,25 @@ def build(script: dict, work: Path, orientation: str) -> Path:
     return final
 
 
+def part_number(script: dict) -> int:
+    """Episode number for the thumbnail stamp.
+
+    The long and the short that summarises it share one number, and the
+    number comes from the alphabetically ordered long list rather than
+    from the daily cursor - so re-rendering an episode never renumbers
+    it, and two channels never inherit each other's numbering (each
+    reads its own CONTENT folder).
+    """
+    slug = str(script.get("slug", ""))
+    stem = slug[:-6] if slug.endswith("_short") else slug
+    longs = sorted(p.stem for p in CONTENT.glob("*.json")
+                   if not p.stem.endswith("_short"))
+    try:
+        return longs.index(stem) + 1
+    except ValueError:
+        return 0
+
+
 def make_thumbnail(script: dict, dest: Path, vw: int, vh: int) -> Path:
     from PIL import Image, ImageDraw, ImageFilter, ImageFont
     import requests
@@ -231,6 +250,31 @@ def make_thumbnail(script: dict, dest: Path, vw: int, vh: int) -> Path:
         draw.text((x + 4, y + 4), line, font=font, fill=(0, 0, 0, 230))
         draw.text((x, y), line, font=font, fill=(255, 214, 10, 255))
         y += int(font_size * 1.12)
+
+    # PART stamp: the long and the short summarising it share one number.
+    # Top-right, because YouTube draws the video length in the bottom-right.
+    part = part_number(script)
+    if part:
+        m = int(min(vw, vh) * 0.030)
+        psize = int(min(vw, vh) * 0.055)
+        pfont = None
+        for fp in (r"C:\Windows\Fonts\arialbd.ttf",
+                   r"C:\Windows\Fonts\arial.ttf"):
+            if Path(fp).exists():
+                pfont = ImageFont.truetype(fp, psize)
+                break
+        if pfont is None:
+            pfont = ImageFont.load_default()
+        label = f"PART {part}"
+        pad_x, pad_y = psize // 2, psize // 3
+        bx2, by1 = vw - m, m
+        bx1, by2 = bx2 - draw.textlength(label, font=pfont) - pad_x * 2, \
+            m + psize + pad_y * 2
+        draw.rounded_rectangle([bx1, by1, bx2, by2], radius=(by2 - by1) // 3,
+                               fill=(255, 214, 10, 255))
+        draw.text((bx1 + pad_x, by1 + pad_y), label, font=pfont,
+                  fill=(8, 8, 12, 255))
+
     photo.save(dest, quality=93)
     return dest
 
