@@ -1,0 +1,252 @@
+{
+  "slug": "chess_part11",
+  "title": "12 Chess Puzzles That Look Safe and Are Not (Part 11)",
+  "orientation": "landscape",
+  "thumb_text": "LOOKS SAFE",
+  "description": "12 tactical positions, one after another, each with a single best move. Nothing is randomised: every board is taken from a real game and rated between 1557 and 2553, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each position and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "q7mrv",
+      "fen": "6k1/4p3/p5p1/5N2/5nqp/PP6/3R3P/4RB1K b - - 0 33",
+      "rating": 2471,
+      "uci": [
+        "g6f5",
+        "f1c4",
+        "g8h7",
+        "e1e7",
+        "h7h6",
+        "d2d6",
+        "f4g6",
+        "e7e6"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "qb6cn",
+      "fen": "4r1k1/1b3ppp/p4q2/1p1r1N2/8/P5Q1/1PP3PP/4RR1K b - - 3 23",
+      "rating": 2199,
+      "uci": [
+        "d5e5",
+        "e1e5",
+        "e8e5",
+        "f5h6",
+        "f6h6",
+        "g3e5"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "kingsideAttack",
+        "long"
+      ]
+    },
+    {
+      "id": "thbkt",
+      "fen": "r2qr1k1/4nppp/p1pb4/1p6/1Pp1BPb1/P3P3/1B1P2PP/RN2QRK1 b - - 0 16",
+      "rating": 2093,
+      "uci": [
+        "e7d5",
+        "e4d5",
+        "c6d5",
+        "e1g3",
+        "f7f5",
+        "h2h3"
+      ],
+      "themes": [
+        "advantage",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "WNn8T",
+      "fen": "6k1/7p/2r3pP/p7/P1R5/2K5/1P6/8 b - - 0 39",
+      "rating": 2548,
+      "uci": [
+        "c6c4",
+        "c3c4",
+        "g8f8",
+        "b2b4",
+        "f8e7",
+        "b4a5",
+        "e7d6",
+        "c4b5",
+        "d6c7",
+        "a5a6",
+        "c7b8",
+        "b5b6"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "p77Kh",
+      "fen": "r3k2r/pppqbpp1/3p4/4P1p1/PPB1Pn2/2P5/2Q2PNP/R1B1R1K1 b kq - 0 17",
+      "rating": 2110,
+      "uci": [
+        "f4g2",
+        "e5e6",
+        "f7e6",
+        "g1g2"
+      ],
+      "themes": [
+        "advantage",
+        "intermezzo",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "pg6KY",
+      "fen": "2r2rk1/p4pp1/1p5p/3PqR2/3Nn2P/4P3/PPQKB3/7R w - - 13 30",
+      "rating": 2450,
+      "uci": [
+        "d2d1",
+        "e4f2",
+        "d1e1",
+        "e5e3",
+        "d4c6",
+        "f2h1"
+      ],
+      "themes": [
+        "crushing",
+        "discoveredAttack",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "RqOQN",
+      "fen": "r3r3/ppp2p1k/6pp/3p4/3bq3/7R/PPPQ2P1/5R1K b - - 5 24",
+      "rating": 1867,
+      "uci": [
+        "e4e2",
+        "d2h6",
+        "h7g8",
+        "h6h7",
+        "g8f8",
+        "h7f7"
+      ],
+      "themes": [
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "x64GT",
+      "fen": "8/8/2k5/p1Bp1p2/1p1K1P2/8/8/8 b - - 7 54",
+      "rating": 2553,
+      "uci": [
+        "b4b3",
+        "c5a3",
+        "c6b5",
+        "d4c3"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "master"
+      ]
+    },
+    {
+      "id": "sXaSc",
+      "fen": "r7/pp1Q2k1/2pb1rb1/3p4/3P4/5q2/PP3P2/K3R2R b - - 3 29",
+      "rating": 1557,
+      "uci": [
+        "g6f7",
+        "e1g1",
+        "d6g3",
+        "g1g3",
+        "f3g3",
+        "f2g3"
+      ],
+      "themes": [
+        "advantage",
+        "exposedKing",
+        "fork",
+        "long"
+      ]
+    },
+    {
+      "id": "T3y46",
+      "fen": "8/pp6/2p1k3/4P1P1/2P1K3/3n3N/1P6/8 b - - 2 39",
+      "rating": 1728,
+      "uci": [
+        "d3e5",
+        "h3f4",
+        "e6d6",
+        "c4c5"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "knightEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "MaC0H",
+      "fen": "8/7p/4k1p1/3p2P1/1p1K3P/6P1/P7/8 w - - 0 41",
+      "rating": 2418,
+      "uci": [
+        "g3g4",
+        "e6d6",
+        "h4h5",
+        "d6c6",
+        "h5h6",
+        "c6d6"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "F31Q6",
+      "fen": "8/2Q4p/1p4bk/p1n5/6PP/1P3P2/P3B2K/q7 b - - 0 43",
+      "rating": 2472,
+      "uci": [
+        "a1a2",
+        "c7e7",
+        "a2e2",
+        "e7e2"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "short"
+      ]
+    }
+  ]
+}

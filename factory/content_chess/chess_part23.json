@@ -1,0 +1,233 @@
+{
+  "slug": "chess_part23",
+  "title": "12 Chess Puzzles That Still Surprise Strong Players (Part 23)",
+  "orientation": "landscape",
+  "thumb_text": "STILL SHOCKS",
+  "description": "12 tactical positions, one after another, each with a single best move. Nothing is randomised: every board is taken from a real game and rated between 1535 and 2532, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each position and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "RhRjN",
+      "fen": "rnb2rk1/5pbp/pq2p1p1/1p1n4/3N4/P1N1P3/1PQ1BPPP/R1BR2K1 b - - 0 13",
+      "rating": 2069,
+      "uci": [
+        "b8c6",
+        "c3d5",
+        "c6d4",
+        "d5e7"
+      ],
+      "themes": [
+        "advantage",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "yhqfz",
+      "fen": "2r3k1/p3qpp1/1p5p/3r4/6Q1/2P2P2/PP4PP/1BR3K1 b - - 0 24",
+      "rating": 2202,
+      "uci": [
+        "e7g5",
+        "g4c8",
+        "d5d8",
+        "f3f4",
+        "g5e7",
+        "c8h3"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "hangingPiece",
+        "long"
+      ]
+    },
+    {
+      "id": "sr9kA",
+      "fen": "rnbq1rk1/pp3ppp/5n2/4N3/4N3/1B1p4/PPPP1KPP/R1BQR3 w - - 0 11",
+      "rating": 2532,
+      "uci": [
+        "e5d3",
+        "c8g4",
+        "e4f6",
+        "d8f6"
+      ],
+      "themes": [
+        "advantage",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "PdEWG",
+      "fen": "1r4k1/3q2pp/p3p2r/3p1p2/nP1N4/2P2PP1/P3Q2P/4RRK1 w - - 1 23",
+      "rating": 1888,
+      "uci": [
+        "e2a6",
+        "e6e5",
+        "a6d3",
+        "e5d4"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "3GWCd",
+      "fen": "4rr1k/p5bp/1pp3p1/6q1/5p2/1QP1nP2/PP1RBBPP/4R1K1 w - - 7 24",
+      "rating": 2465,
+      "uci": [
+        "f2e3",
+        "f4e3",
+        "d2d3",
+        "g7e5"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "ldvt8",
+      "fen": "8/8/7p/2k5/p7/P3K2P/8/8 w - - 1 52",
+      "rating": 2444,
+      "uci": [
+        "e3d2",
+        "c5d4",
+        "h3h4",
+        "h6h5",
+        "d2e2",
+        "d4e4"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "kY7xA",
+      "fen": "8/5pk1/6p1/6P1/6K1/8/5P2/8 b - - 2 49",
+      "rating": 1913,
+      "uci": [
+        "f7f5",
+        "g4f4",
+        "g7f7",
+        "f4e5"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "pawnEndgame"
+      ]
+    },
+    {
+      "id": "QMRXl",
+      "fen": "6k1/2p3p1/1pq4p/p3Rr1r/P1P2p2/3P4/2P1QPPK/4R3 w - - 0 28",
+      "rating": 2193,
+      "uci": [
+        "h2g1",
+        "f5e5",
+        "e2e5",
+        "h5e5"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "EiRe4",
+      "fen": "8/8/p1p1p3/1p1p1k2/3P4/PPP1KPp1/6P1/8 b - - 0 44",
+      "rating": 2382,
+      "uci": [
+        "a6a5",
+        "f3f4",
+        "f5g4",
+        "a3a4",
+        "g4f5",
+        "e3f3"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "pawnEndgame"
+      ]
+    },
+    {
+      "id": "s9AZt",
+      "fen": "2k5/1p3p2/p3p3/P1q1Ppr1/8/2N4r/2Q2RP1/R5K1 b - - 1 26",
+      "rating": 2466,
+      "uci": [
+        "c5c3",
+        "a1a3",
+        "c3c2",
+        "f2c2",
+        "c8b8",
+        "a3h3"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "pin"
+      ]
+    },
+    {
+      "id": "GI7Lv",
+      "fen": "r3r1k1/1pp2ppp/p3b3/3p4/2qP2P1/P1PQ4/2PKBP1P/R5R1 w - - 1 17",
+      "rating": 1609,
+      "uci": [
+        "d3h3",
+        "c4e2",
+        "d2e2",
+        "e6g4",
+        "e2d2",
+        "g4h3"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "discoveredCheck",
+        "doubleCheck"
+      ]
+    },
+    {
+      "id": "oVwPk",
+      "fen": "4K3/7Q/1p3r2/4pk2/P2b4/8/8/8 b - - 8 74",
+      "rating": 1535,
+      "uci": [
+        "f5e6",
+        "h7d7"
+      ],
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn1",
+        "oneMove"
+      ]
+    }
+  ]
+}

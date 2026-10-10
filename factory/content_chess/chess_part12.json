@@ -1,0 +1,246 @@
+{
+  "slug": "chess_part12",
+  "title": "12 Chess Puzzles Decided by a Single Tempo (Part 12)",
+  "orientation": "landscape",
+  "thumb_text": "ONE TEMPO",
+  "description": "12 tactical positions, one after another, each with a single best move. Nothing is randomised: every board is taken from a real game and rated between 1578 and 2433, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each position and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "ilNv2",
+      "fen": "2k2r2/2b5/8/1Q4P1/4p3/3p3r/PP1B4/2R4K w - - 0 42",
+      "rating": 1802,
+      "uci": [
+        "h1g2",
+        "h3g3",
+        "g2h2",
+        "f8h8"
+      ],
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "short"
+      ]
+    },
+    {
+      "id": "2tV0l",
+      "fen": "6k1/4q1pp/1p1p4/p1pPpr2/P1P2r2/2P2PnP/2Q2RPN/4R1K1 b - - 3 27",
+      "rating": 2222,
+      "uci": [
+        "f4c4",
+        "h2f1",
+        "f5g5",
+        "f3f4"
+      ],
+      "themes": [
+        "crushing",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "QqpS3",
+      "fen": "r1b2rk1/pp2bpp1/1qNn1n1p/8/3PPB2/2NQ4/P1B3PP/R4RK1 b - - 0 17",
+      "rating": 2177,
+      "uci": [
+        "b6c6",
+        "f4d6",
+        "e7d6",
+        "e4e5"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "yi6pP",
+      "fen": "r5k1/ppn3q1/2p5/2PpRQ2/3P4/8/PP3PPP/6K1 b - - 0 25",
+      "rating": 1936,
+      "uci": [
+        "a8f8",
+        "f5h5",
+        "f8e8",
+        "e5e8",
+        "c7e8",
+        "h5e8"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "exposedKing",
+        "long"
+      ]
+    },
+    {
+      "id": "zRNbD",
+      "fen": "r2k1r2/ppp2pQ1/3q1N2/3b4/1n6/5N2/1P3PPP/K1R4R w - - 2 24",
+      "rating": 1931,
+      "uci": [
+        "c1c3",
+        "d6a6",
+        "c3a3",
+        "b4c2",
+        "a1b1",
+        "c2a3",
+        "b2a3",
+        "a6d3"
+      ],
+      "themes": [
+        "crushing",
+        "fork",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "NulKd",
+      "fen": "2kr4/ppp1pp2/5n1B/3q2pp/NQ6/1P3n2/P1P2PPP/R4R1K w - - 0 22",
+      "rating": 2353,
+      "uci": [
+        "g2f3",
+        "d5f3",
+        "h1g1",
+        "f6d5",
+        "a1d1",
+        "d5b4"
+      ],
+      "themes": [
+        "crushing",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "6heq8",
+      "fen": "8/1p1k4/8/1pK5/pP6/P7/8/8 b - - 0 45",
+      "rating": 2424,
+      "uci": [
+        "d7c7",
+        "c5b5",
+        "b7b6",
+        "b5a6",
+        "c7c6",
+        "a6a7",
+        "c6b5",
+        "a7b7",
+        "b5c4",
+        "b7b6"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "pawnEndgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "g4XFI",
+      "fen": "3r2kn/Q5pb/1pB4p/3pNr1P/2pP1p1q/P1P1P3/5PP1/2R2RK1 w - - 1 26",
+      "rating": 2129,
+      "uci": [
+        "a7b7",
+        "f5h5",
+        "c6d5",
+        "g8f8"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "nsOaH",
+      "fen": "8/2b5/8/2P1N3/p3K3/1k3P2/8/8 w - - 0 38",
+      "rating": 2091,
+      "uci": [
+        "e4d5",
+        "c7e5",
+        "d5e5",
+        "a4a3",
+        "c5c6",
+        "a3a2",
+        "c6c7",
+        "a2a1q"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "promotion"
+      ]
+    },
+    {
+      "id": "xTEMj",
+      "fen": "r3k2r/ppqn1ppp/2p1pnb1/8/2PP4/5NPP/PP1BB1P1/R1Q2RK1 b kq - 0 14",
+      "rating": 1578,
+      "uci": [
+        "c7g3",
+        "d2f4",
+        "f6h5",
+        "f4g3"
+      ],
+      "themes": [
+        "crushing",
+        "middlegame",
+        "short",
+        "trappedPiece"
+      ]
+    },
+    {
+      "id": "jJAnk",
+      "fen": "2k2r1r/pp1n4/2p1Q3/6p1/3P2Pq/2P4P/PP4B1/R3R1K1 w - - 1 22",
+      "rating": 2433,
+      "uci": [
+        "d4d5",
+        "h4f2",
+        "g1h1",
+        "f8f3",
+        "e6e8",
+        "h8e8"
+      ],
+      "themes": [
+        "advantage",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "xoUMk",
+      "fen": "6k1/5p1p/6p1/4p3/1R1rP3/P7/6PP/6K1 b - - 0 37",
+      "rating": 2297,
+      "uci": [
+        "d4b4",
+        "a3b4",
+        "g8f8",
+        "g2g4"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "short"
+      ]
+    }
+  ]
+}

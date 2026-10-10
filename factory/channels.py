@@ -38,6 +38,20 @@ PROFILES: dict[str, dict] = {
         "category": "27",          # Education
         "cron": "30 9 * * *",
     },
+    "2": {
+        "key": "2_chess",
+        "label": "chess",
+        "content": HERE / "content_chess",
+        "out": HERE / "out_chess",
+        "work": HERE / "work_chess",
+        "cursor": _state("cursor_chess.json"),
+        "manifest": _state("uploaded_chess.json"),
+        "count": _state("upload_count_chess.json"),
+        "token_used": _state("token_used_chess.json"),
+        "token_env": "YT2_TOKEN_JSON",
+        "category": "27",          # Education
+        "cron": "30 8 * * *",      # 08:30 UTC = 11:00 Tehran, before the others
+    },
     "3": {
         "key": "3_biography",
         "label": "biography",

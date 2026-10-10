@@ -9,8 +9,16 @@ from board_renderer import render_board, render_frame_wide
 from PIL import Image as I
 
 def get_ffmpeg():
-    import imageio_ffmpeg
-    return imageio_ffmpeg.get_ffmpeg_exe()
+    try:
+        import imageio_ffmpeg
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except Exception:
+        # CI runners install ffmpeg with apt; no need to ship another binary
+        import shutil
+        exe = shutil.which("ffmpeg")
+        if exe:
+            return exe
+        raise
 
 # ---------------- music (randomized; every track is different) --------------------
 PROGRESSIONS = [
@@ -73,8 +81,13 @@ def make_music(path, seconds=75, sr=44100, rng=None, style="calm", gain=0.9):
         root_oct, e_lo = -12, 0.72
 
     total = int(seconds * sr)
+    # snap to a whole number of chords: the pad already fades in and out per
+    # chord, so a whole-chord file loops seamlessly in ffmpeg (-stream_loop)
+    # and a 12-minute bed costs one chord-loop to synthesise instead of 12
+    # minutes of sample-by-sample Python.
+    seg_len = int(steps * beat * sr)
+    total = max(seg_len, -(-total // seg_len) * seg_len)
     L, R = [0.0] * total, [0.0] * total
-    seg_len = int(steps * beat * sr)             # samples per chord
     motif = MOTIFS[rng.randrange(len(MOTIFS))]
     vib_hz, vib_amt = rng.uniform(4.5, 5.5), 0.004
 
@@ -260,7 +273,11 @@ def make_video(puzzles, out_dir, tag, seg=15, ff=None):
     # one continuous piece of music for the whole video
     total = seg * len(puzzles)
     music = os.path.join(out_dir, f"{tag}_music.wav")
-    make_music(music, seconds=total, rng=random.Random(tag),
+    # one whole-chord loop is enough: ffmpeg tiles it for the whole runtime,
+    # so a 12-minute episode still only costs ~45 s of synthesis.  The file
+    # length is snapped to a chord boundary inside make_music, so the seam
+    # lands where the pad is already faded out.
+    make_music(music, seconds=min(total, 45), rng=random.Random(tag),
                style="calm", gain=0.85)   # long video: calm + not loud
     parts = []
     for i, pz in enumerate(puzzles, 1):
@@ -278,11 +295,12 @@ def make_video(puzzles, out_dir, tag, seg=15, ff=None):
     with open(lst, "w") as f:
         for p in parts: f.write(f"file '{os.path.abspath(p).replace(chr(92), '/')}'\n")
     final = os.path.join(out_dir, f"{tag}_video.mp4")
-    subprocess.run([ff, "-y", "-f","concat","-safe","0","-i",lst,"-i",music,
-        "-map","0:v","-map","1:a",
+    subprocess.run([ff, "-y", "-f","concat","-safe","0","-i",lst,
+        "-stream_loop","-1","-i",music,
+        "-map","0:v","-map","1:a","-t",str(total),
         "-af","afade=t=out:st={:.1f}:d=2".format(total-2),
         "-c:v","libx264","-preset","veryfast","-pix_fmt","yuv420p",
-        "-c:a","aac","-shortest", final],
+        "-c:a","aac", final],
         check=True, capture_output=True)
     for p in parts: os.remove(p)
     os.remove(lst); os.remove(music)
