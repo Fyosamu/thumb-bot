@@ -1,0 +1,57 @@
+daily run 2026-10-13 17:53
+
+science: published confidence + confidence_short
+p  cold
+  SKIP dup  cold_short
+  uploading confidence (255.3 MB)...
+    3%
+    6%
+    9%
+    13%
+    16%
+    19%
+    23%
+    26%
+    29%
+    32%
+    36%
+    39%
+    42%
+    46%
+    49%
+    52%
+    55%
+    59%
+    62%
+    65%
+    69%
+    72%
+    75%
+    78%
+    82%
+    85%
+    88%
+    92%
+    95%
+    98%
+    thumbnail skipped (403)
+  OK confidence -> https://youtu.be/SZmdvSLQ79M
+  confidence_short: scheduled -> 2026-10-13T20:43:44Z
+  uploading confidence_short (11.9 MB)...
+    70%
+    thumbnail skipped (403)
+  OK confidence_short -> https://youtu.be/tpQ-oatFBXg
+
+uploaded 2; state has 16 entries
+
+chess: render failed
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\chess-repo\factory\factory.py", line 394, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "C:\Users\USER\Desktop\chess-repo\factory\factory.py", line 383, in main
+    print(f"\n== {script['slug']} ({orient}, {len(script['scenes'])} scenes)")
+                                                  ~~~~~~^^^^^^^^^^
+KeyError: 'scenes'
+
+bio: skipped - no token (bio_token.json)

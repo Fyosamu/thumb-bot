@@ -27,11 +27,11 @@ CURSOR = STATE / "cursor.json"
 
 
 def episodes() -> list[str]:
-    """Long-form slugs in a stable order; a long leads its own short."""
+    """Long-form slugs in a stable order; a long leads its own shorts."""
     slugs = sorted(p.stem for p in CONTENT.glob("*.json"))
-    longs = [s for s in slugs if not s.endswith("_short")]
-    return [s for s in longs if f"{s}_short" in slugs] + \
-        [s for s in longs if f"{s}_short" not in slugs]
+    longs = [s for s in slugs if "_short" not in s]
+    return [s for s in longs if any(x.startswith(s + "_short") for x in slugs)] + \
+        [s for s in longs if not any(x.startswith(s + "_short") for x in slugs)]
 
 
 def cursor() -> int:
@@ -84,8 +84,9 @@ def main() -> int:
         pair = ""
     else:
         slug = eps[i]
-        pair = f"{slug} {slug}_short" if f"{slug}_short" in \
-            [p.stem for p in CONTENT.glob("*.json")] else slug
+        stems = [p.stem for p in CONTENT.glob("*.json")]
+        shorts = sorted(s for s in stems if s.startswith(slug + "_short"))
+        pair = " ".join([slug] + shorts)
 
     # GitHub Actions reads this file as the step's outputs
     gh_out = Path(__import__("os").environ.get("GITHUB_OUTPUT", ""))

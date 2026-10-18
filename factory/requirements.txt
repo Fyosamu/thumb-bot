@@ -1,3 +1,6 @@
-edge-tts>=6.1.0
-pillow>=10.0.0
-requests>=2.31.0
+# what the runner needs on top of the preinstalled ffmpeg + python 3.12
+edge-tts>=6.1
+requests>=2.31
+pillow>=10.3
+google-api-python-client>=2.130
+google-auth>=2.29

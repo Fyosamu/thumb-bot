@@ -37,6 +37,9 @@ PROFILES: dict[str, dict] = {
         "token_env": "YT1_TOKEN_JSON",
         "category": "27",          # Education
         "cron": "30 9 * * *",
+        # one long plus its Short a day, spread six hours apart
+        "daily_cap": 1,
+        "spacing_hours": 6,
     },
     "2": {
         "key": "2_chess",
@@ -51,6 +54,10 @@ PROFILES: dict[str, dict] = {
         "token_env": "YT2_TOKEN_JSON",
         "category": "27",          # Education
         "cron": "30 8 * * *",      # 08:30 UTC = 11:00 Tehran, before the others
+        # one long plus its Short a day, six hours apart so both land
+        # inside the same day - the owner's pace is one pair per channel
+        "daily_cap": 1,
+        "spacing_hours": 6,
     },
     "3": {
         "key": "3_biography",
@@ -65,6 +72,9 @@ PROFILES: dict[str, dict] = {
         "token_env": "YT3_TOKEN_JSON",
         "category": "24",          # Entertainment
         "cron": "0 10 * * *",
+        # one long plus its Short a day, like the other two channels
+        "daily_cap": 1,
+        "spacing_hours": 6,
     },
 }
 

@@ -1,0 +1,49 @@
+2026-10-16T15:32:35  channel 2 start
+2026-10-16T15:38:36  channel 2 start
+chess: published chess_part0003 + chess_part0003_short
+channel 2 (chess) -> out_chess/ token YT2_TOKEN_JSON
+pending 2 | dup 4 | cap 4/4 left
+  SKIP dup  chess_part0001
+  SKIP dup  chess_part0001_short
+  SKIP dup  chess_part0002
+  SKIP dup  chess_part0002_short
+  uploading chess_part0003 (18.2 MB)...
+    45%
+    91%
+  OK chess_part0003 -> https://youtu.be/0oBX4ZE4gQ8
+  chess_part0003_short: scheduled -> 2026-10-16T18:14:04Z
+  uploading chess_part0003_short (1.2 MB)...
+  OK chess_part0003_short -> https://youtu.be/ydUn_qrCnc4
+
+uploaded 2; state has 10 entries
+2026-10-16T15:44:14  channel 2 done
+2026-10-16T15:44:14  channel 1 start
+science: render failed
+== focus (landscape, 32 scenes)
+  [1/4] tts (edge-tts, free)
+    edge-tts failed (WSServerHandshakeError) - falling back to the local piper voice
+        32 segments, 566.1s total
+  [2/4] stock footage (pexels, free)
+  [3/4] assemble (ffmpeg)
+  [4/4] thumbnail (PIL)
+        thumbnail skipped: HTTPSConnectionPool(host='api.pexels.com', port=443): Max retries exceeded with url: /v1/search?query=focused+work+desk&per_page=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.pexels.com', port=443) at 0x27dc58e2090>, 'Connection to api.pexels.com timed out. (connect timeout=30)'))
+  -> C:\Users\USER\Desktop\chess-repo\factory\out\focus.mp4
+
+== focus_short (portrait, 6 scenes)
+  [1/4] tts (edge-tts, free)
+    edge-tts failed (ConnectionTimeoutError) - falling back to the local piper voice
+        6 segments, 34.7s total
+  [2/4] stock footage (pexels, free)
+  FAILED: ConnectTimeout: HTTPSConnectionPool(host='api.pexels.com', port=443): Max retries exceeded with url: /videos/search?query=focused+work+desk&per_page=6&orientation=portrait (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.pexels.com', port=443) at 0x27dc58e3a40>, 'Connection to api.pexels.com timed out. (connect timeout=30)'))
+
+rendered 1/2
+2026-10-16T15:56:14  channel 1 done
+2026-10-16T15:56:14  skip bio (no token)
+2026-10-16T15:56:14  chain finished
+daily run 2026-10-16 18:13
+
+chess: daily cap reached (0 left)
+
+science: daily cap reached (0 left)
+
+bio: skipped - no token (bio_token.json)

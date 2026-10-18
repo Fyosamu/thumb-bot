@@ -116,13 +116,17 @@ def category_for(slug: str) -> str:
 
 def collect(uploaded: dict) -> tuple[list[dict], list[str]]:
     pending, dup = [], []
+    # a re-render produces identical content at a different hash, so the
+    # ledger is also checked by file name - a slug on the channel stays on
+    # the channel no matter how many times it is rebuilt
+    by_name = {u.get("file") for u in uploaded.values()}
     for video in sorted(OUT.glob("*.mp4")):
         meta = CONTENT / f"{video.stem}.json"
         if not meta.exists():
             continue
         d = json.loads(meta.read_text(encoding="utf-8"))
         digest = sha256(video)
-        if digest in uploaded:
+        if digest in uploaded or video.name in by_name:
             dup.append(video.stem)
             continue
         pending.append({"slug": video.stem, "path": video, "meta": d,
@@ -133,6 +137,7 @@ def collect(uploaded: dict) -> tuple[list[dict], list[str]]:
 def main() -> int:
     global OUT, CONTENT, STATE, MANIFEST, COUNT
     global TOKEN_ENV, TOKEN_USED, DEFAULT_CATEGORY
+    global DAILY_CAP, SPACING_HOURS
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--only", default="")
@@ -148,6 +153,8 @@ def main() -> int:
     MANIFEST, COUNT = prof["manifest"], prof["count"]
     TOKEN_ENV, TOKEN_USED = prof["token_env"], prof["token_used"]
     DEFAULT_CATEGORY = prof["category"]
+    DAILY_CAP = int(prof.get("daily_cap", 4))
+    SPACING_HOURS = float(prof.get("spacing_hours", 6))
     channel_profiles.ensure(prof)
 
     from googleapiclient.discovery import build
@@ -186,6 +193,8 @@ def main() -> int:
                 "description": str(meta.get("description", ""))[:4900],
                 "tags": list(meta.get("tags", []))[:40],
                 "categoryId": category_for(slug),
+                "defaultLanguage": "en",
+                "defaultAudioLanguage": "en",
             },
             "status": {"privacyStatus": "public",
                        "selfDeclaredMadeForKids": False,
@@ -232,16 +241,9 @@ def main() -> int:
             break
 
         vid = resp["id"]
-        thumb = OUT / f"{slug}.jpg"
-        if thumb.exists():
-            try:
-                yt.thumbnails().set(
-                    videoId=vid,
-                    media_body=MediaFileUpload(str(thumb), mimetype="image/jpeg")
-                ).execute()
-            except HttpError as exc:
-                print(f"    thumbnail skipped ({exc.resp.status})")
 
+        # record the upload before touching the thumbnail: any crash in there
+        # must not lose the entry, or the next run pushes the same file twice
         uploaded[item["sha256"]] = {
             "videoId": vid, "url": f"https://youtu.be/{vid}",
             "title": title, "folder": "ci", "file": path.name,
@@ -250,6 +252,17 @@ def main() -> int:
         }
         save(MANIFEST, manifest)
         save(COUNT, {"date": today(), "count": uploads_today() + 1})
+
+        thumb = OUT / f"{slug}.jpg"
+        if thumb.exists():
+            try:
+                yt.thumbnails().set(
+                    videoId=vid,
+                    media_body=MediaFileUpload(str(thumb), mimetype="image/jpeg")
+                ).execute()
+            except Exception as exc:
+                print(f"    thumbnail skipped ({exc})")
+
         print(f"  OK {slug} -> https://youtu.be/{vid}")
         done += 1
 

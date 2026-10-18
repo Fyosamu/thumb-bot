@@ -1,9 +1,21 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """Lichess-exact board renderer (official cburnett pieces, brown theme)."""
 import os, math
 from PIL import Image, ImageDraw, ImageFont
 
 PIECE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", "pieces")
+# the Windows box has Georgia and Segoe; the Linux runner swaps DejaVu
+_LIN = {"georgia.ttf": "DejaVuSerif-Bold.ttf",
+        "segoeuib.ttf": "DejaVuSans-Bold.ttf",
+        "segoeui.ttf": "DejaVuSans.ttf"}
+
+
+def _fp(name):
+    win = "C:/Windows/Fonts/" + name
+    if os.path.exists(win):
+        return win
+    lin = os.path.join("/usr/share/fonts/truetype/dejavu", _LIN[name])
+    return lin if os.path.exists(lin) else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 LIGHT = (240, 217, 181)   # lichess brown light  #f0d9b5
 DARK  = (181, 136, 99)    # lichess brown dark   #b58863
 HLMASK = (255, 213, 79, 96)
@@ -72,7 +84,7 @@ def render_board(fen, size=1440, title=None, top2=None, foot=None, foot2=None,
         img.alpha_composite(piece_img(p, S), (x, y))
     d = ImageDraw.Draw(img)
     fs = max(18, int(S*0.20))
-    fnt = ImageFont.truetype("C:/Windows/Fonts/georgia.ttf", fs)
+    fnt = ImageFont.truetype(_fp("georgia.ttf"), fs)
     for i in range(8):
         x, y = ox + i*S, oy + 7*S
         d.text((x + S - fs*0.35, y + S - fs*0.35), chr(97+i), font=fnt,
@@ -81,26 +93,26 @@ def render_board(fen, size=1440, title=None, top2=None, foot=None, foot2=None,
         d.text((x + fs*0.35, y + fs*0.3), str(i+1), font=fnt,
                anchor="ls", fill=LIGHT if i % 2 == 0 else DARK)
     if title:
-        tf = ImageFont.truetype("C:/Windows/Fonts/segoeuib.ttf", int(size*0.085))
+        tf = ImageFont.truetype(_fp("segoeuib.ttf"), int(size*0.085))
         if gold:
             metal_text(img, title, tf, (W//2, int(pad_top*0.10)), anchor="ma")
         else:
             d.text((W//2, int(pad_top*0.10)), title, font=tf, anchor="ma", fill=(255,255,255))
     if top2:
-        tf2 = ImageFont.truetype("C:/Windows/Fonts/segoeui.ttf", int(size*0.052))
+        tf2 = ImageFont.truetype(_fp("segoeui.ttf"), int(size*0.052))
         if gold:
             metal_text(img, top2, tf2, (W//2, int(pad_top*0.52)), anchor="ma",
                        stroke=max(2, int(size*0.010)))
         else:
             d.text((W//2, int(pad_top*0.52)), top2, font=tf2, anchor="ma", fill=(255, 196, 0))
     if foot:
-        ff = ImageFont.truetype("C:/Windows/Fonts/segoeuib.ttf", int(size*0.052))
+        ff = ImageFont.truetype(_fp("segoeuib.ttf"), int(size*0.052))
         if gold:
             metal_text(img, foot, ff, (W//2, H - int(pad_bot*0.66)), anchor="ms")
         else:
             d.text((W//2, H - int(pad_bot*0.66)), foot, font=ff, anchor="ms", fill=(255,255,255))
     if foot2:
-        ff2 = ImageFont.truetype("C:/Windows/Fonts/segoeui.ttf", int(size*0.042))
+        ff2 = ImageFont.truetype(_fp("segoeui.ttf"), int(size*0.042))
         d.text((W//2, H - int(pad_bot*0.20)), foot2, font=ff2, anchor="ms", fill=(170, 170, 170))
     return img.convert("RGB")
 
@@ -148,7 +160,7 @@ def metal_text(img, text, font, xy, anchor="la", stroke=4, stops=GOLD):
 
 
 def _fit_font(draw, text, max_w, start, bold=True, floor=20):
-    path = "C:/Windows/Fonts/segoeuib.ttf" if bold else "C:/Windows/Fonts/segoeui.ttf"
+    path = _fp("segoeuib.ttf" if bold else "segoeui.ttf")
     size = int(start)
     while size > floor:
         f = ImageFont.truetype(path, size)
@@ -200,7 +212,7 @@ def _paint_board(img, fen, S, ox, oy, last=None, sol=None):
         img.alpha_composite(piece_img(p, S), (x, y))
     d = ImageDraw.Draw(img)
     fs = max(18, int(S * 0.20))
-    fnt = ImageFont.truetype("C:/Windows/Fonts/georgia.ttf", fs)
+    fnt = ImageFont.truetype(_fp("georgia.ttf"), fs)
     for i in range(8):
         x, y = ox + i * S, oy + 7 * S
         d.text((x + S - fs * 0.35, y + S - fs * 0.35), chr(97 + i), font=fnt,

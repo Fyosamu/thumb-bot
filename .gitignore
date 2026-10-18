@@ -13,3 +13,14 @@ factory/work_*/
 yt_auth/*token.pickle
 yt_auth/*client_secrets.json
 yt_auth/*.json
+# the chess queue past ~5 years stays in the local archive; the runner
+# keeps the first 1999 episodes in git - decades of daily runway at
+# one episode a day, and the checkout stays seconds instead of minutes
+factory/content_chess/chess_part[2-9][0-9][0-9][0-9]*
+factory/content_chess/chess_part1[0-9][0-9][0-9][0-9]*
+# regenerable data blobs - never in git (the wiki cache alone is
+# 70 MB of crawl output and it single-handedly killed every push)
+wiki_cache/
+puzzles_db.zst
+puzzles_pool_big.jsonl
+topics_sci_old_generic.txt

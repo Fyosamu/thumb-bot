@@ -53,9 +53,53 @@ def pick_scenes(scenes: list[dict]) -> list[dict]:
             picked += 1
         chosen.append(n - 1)
 
-    out = [scenes[i] for i in sorted(set(chosen))]
-    total = sum(len(s["narration"].split()) for s in out)
-    return out, total
+    chosen = sorted(set(chosen))
+    out = [dict(scenes[i]) for i in chosen]
+    return trim_to_budget(out, WORD_BUDGET)
+
+
+def sentences(text: str) -> list[str]:
+    parts, buf = [], ""
+    for word in text.split():
+        buf += (" " if buf else "") + word
+        if word.endswith((".", "!", "?", ":")):
+            parts.append(buf)
+            buf = ""
+    if buf:
+        parts.append(buf)
+    return parts
+
+
+def trim_to_budget(scenes: list[dict], budget: int) -> tuple[list[dict], int]:
+    """Keep every chosen beat but cut its narration down to whole sentences.
+
+    A Short has to stay under a minute, and the long's opening scene alone
+    can run past that, so each beat is reduced to as many whole sentences
+    as still fit.  The first and the last beat always keep one sentence,
+    because a Short without its hook or its payoff is just a fragment.
+    """
+    keep: list[dict] = []
+    spent = 0
+    last = len(scenes) - 1
+    for i, scene in enumerate(scenes):
+        edge = i in (0, last)
+        room = budget - spent
+        taken: list[str] = []
+        for sent in sentences(scene["narration"]):
+            cost = len(sent.split())
+            if taken:
+                if cost > room:
+                    break
+            elif not edge:
+                break                       # a middle beat that does not
+                                            # fit is simply dropped
+            taken.append(sent)
+            room -= cost
+        if not taken:
+            continue
+        keep.append({**scene, "narration": " ".join(taken)})
+        spent += sum(len(s.split()) for s in taken)
+    return keep, spent
 
 
 def make_short(meta: dict) -> dict:
@@ -84,6 +128,9 @@ def make_short(meta: dict) -> dict:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--force", action="store_true")
+    ap.add_argument("--prefix", default="",
+                    help="only touch slugs starting with this, e.g. m0 - "
+                         "keeps hand-written shorts from being rebuilt")
     args = ap.parse_args()
 
     made = 0
@@ -91,6 +138,8 @@ def main() -> int:
         meta = json.loads(path.read_text(encoding="utf-8"))
         slug = meta.get("slug", path.stem)
         if not is_long(slug):
+            continue
+        if args.prefix and not slug.startswith(args.prefix):
             continue
         dest = CONTENT / f"{slug}_short.json"
         if dest.exists() and not args.force:

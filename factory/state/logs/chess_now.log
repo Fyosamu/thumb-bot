@@ -1,0 +1,12 @@
+chess: published chess_part0001 + chess_part0001_short
+channel 2 (chess) -> out_chess/ token YT2_TOKEN_JSON
+pending 2 | dup 0 | cap 4/4 left
+  uploading chess_part0001 (18.2 MB)...
+    46%
+    92%
+  OK chess_part0001 -> https://youtu.be/-NTgsOCOB9w
+  chess_part0001_short: scheduled -> 2026-10-13T21:37:44Z
+  uploading chess_part0001_short (1.1 MB)...
+  OK chess_part0001_short -> https://youtu.be/eOTk1OMox7U
+
+uploaded 2; state has 6 entries
