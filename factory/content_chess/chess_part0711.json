@@ -1,0 +1,247 @@
+{
+  "slug": "chess_part0711",
+  "title": "12 Chess Puzzles: Crack the Castled King (Part 711)",
+  "orientation": "landscape",
+  "thumb_text": "KINGSIDE",
+  "description": "Twelve kingside attacking patterns, one after another, each with a single best move. Every position comes from a real game and is rated between 1259 and 2720, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "2SNCh",
+      "fen": "rn1q1rk1/pp2bppb/2pp2P1/4p2p/P3n2N/3P3P/BPP1NP2/R1BQK2R b KQ - 0 13",
+      "rating": 1769,
+      "uci": [
+        "e7h4",
+        "g6h7",
+        "g8h8",
+        "d3e4"
+      ],
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "kingsideAttack",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "3Lca1",
+      "fen": "r3r1k1/p1qn1p2/1p1b1n1Q/3p1B2/2pP4/2P2N1P/PP3PP1/R3R1K1 b - - 0 19",
+      "rating": 1766,
+      "uci": [
+        "d6f4",
+        "f3g5",
+        "f4g5",
+        "h6g5"
+      ],
+      "themes": [
+        "advantage",
+        "kingsideAttack",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "1uSTI",
+      "fen": "r1q2rk1/pb3ppp/8/2p5/Q1P3n1/B3p3/P3BPPP/1R3RK1 w - - 0 21",
+      "rating": 1458,
+      "uci": [
+        "b1b7",
+        "e3f2",
+        "f1f2",
+        "g4f2"
+      ],
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "kingsideAttack",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "1Ejbv",
+      "fen": "3r1qk1/3n1p1p/ppbN2r1/4P3/1PpP1P2/6RQ/P5PP/5RK1 b - - 0 27",
+      "rating": 1608,
+      "uci": [
+        "b6b5",
+        "g3g6",
+        "h7g6",
+        "f4f5"
+      ],
+      "themes": [
+        "crushing",
+        "kingsideAttack",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "02jBE",
+      "fen": "r5k1/4ppb1/4qnp1/2p1B3/1pN5/1P1P1Q2/r1P2RPP/1R5K w - - 3 22",
+      "rating": 1947,
+      "uci": [
+        "b1f1",
+        "f6g4",
+        "e5g7",
+        "g4f2"
+      ],
+      "themes": [
+        "crushing",
+        "kingsideAttack",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "0AuI5",
+      "fen": "4r1k1/1p5p/pq1p2p1/3P2N1/6Q1/4p3/PbP2PPP/1R4K1 w - - 0 24",
+      "rating": 1259,
+      "uci": [
+        "g4d7",
+        "e3f2",
+        "g1f1",
+        "e8e1"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "kingsideAttack",
+        "short"
+      ]
+    },
+    {
+      "id": "0mSO8",
+      "fen": "r5k1/1pp3pp/2n5/p2p1bq1/2PPpp2/PPB1P2Q/5P1P/R4R1K w - - 0 20",
+      "rating": 1339,
+      "uci": [
+        "f1g1",
+        "g5g1",
+        "a1g1",
+        "f5h3"
+      ],
+      "themes": [
+        "advantage",
+        "kingsideAttack",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "0xJlu",
+      "fen": "3r1q1k/p1p2ppp/1p2n3/4pN1P/2P1P2Q/1P6/P4PP1/4R1K1 b - - 4 26",
+      "rating": 1982,
+      "uci": [
+        "g7g6",
+        "h4f6",
+        "h8g8",
+        "f5e7",
+        "f8e7",
+        "f6e7"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "kingsideAttack",
+        "long"
+      ]
+    },
+    {
+      "id": "1fGZx",
+      "fen": "r3r1k1/p1pQ1p2/1p1p1q1p/6p1/1PPN4/N1P1p3/P2B2PP/R5K1 w - - 0 19",
+      "rating": 2134,
+      "uci": [
+        "a1f1",
+        "f6f1",
+        "g1f1",
+        "e3d2",
+        "d7a4",
+        "e8e1"
+      ],
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "kingsideAttack",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "0LdQm",
+      "fen": "r4rk1/ppp2ppp/2n5/b2q4/3PRB2/2P2Q2/PP3PPP/R5K1 b - - 0 15",
+      "rating": 1269,
+      "uci": [
+        "a8e8",
+        "e4e8",
+        "d5f3",
+        "e8f8",
+        "g8f8",
+        "g2f3"
+      ],
+      "themes": [
+        "advantage",
+        "kingsideAttack",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "1VDDA",
+      "fen": "r5k1/7p/p2p2p1/1p2p1q1/3nP1b1/2N5/PPP1R1PP/R2Q2K1 w - - 0 23",
+      "rating": 1487,
+      "uci": [
+        "d1d2",
+        "d4e2",
+        "d2e2",
+        "g4e2"
+      ],
+      "themes": [
+        "crushing",
+        "kingsideAttack",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "27pXM",
+      "fen": "1r3rk1/2p2ppp/2ppb2P/p3n1P1/q3P3/1P1BP3/P1PQ4/1K1R3R b - - 0 20",
+      "rating": 2720,
+      "uci": [
+        "c6c5",
+        "h6g7",
+        "f8d8",
+        "d2h2",
+        "g8g7",
+        "h2h6",
+        "g7g8",
+        "g5g6",
+        "f7g6",
+        "h6h7"
+      ],
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "kingsideAttack",
+        "middlegame",
+        "veryLong"
+      ]
+    }
+  ]
+}

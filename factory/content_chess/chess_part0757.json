@@ -1,0 +1,280 @@
+{
+  "slug": "chess_part0757",
+  "title": "12 Chess Puzzles: Lure Him to His Own Grave (Part 757)",
+  "orientation": "landscape",
+  "thumb_text": "ATTRACTION",
+  "description": "Twelve attraction sacrifices that drag a piece where it hurts, one after another, each with a single best move. Every position comes from a real game and is rated between 1300 and 2118, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "0Yven",
+      "fen": "r5k1/p1p3p1/1pNr4/1R1n2p1/3Ppp2/8/P4PPP/2R2K2 b - - 3 25",
+      "rating": 1300,
+      "uci": [
+        "a7a6",
+        "b5d5",
+        "d6d5",
+        "c6e7",
+        "g8h7",
+        "e7d5"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "fork",
+        "long",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1XvPv",
+      "fen": "8/1k1n1QK1/p3N3/1p1pq2P/8/1P6/P7/8 w - - 4 46",
+      "rating": 1619,
+      "uci": [
+        "g7h7",
+        "e5e6",
+        "f7e6",
+        "d7f8",
+        "h7g7",
+        "f8e6"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "fork",
+        "long",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "2eDoS",
+      "fen": "2b5/8/p1q1Pkn1/1p4N1/1P1R3P/P3pPP1/8/4R1K1 b - - 2 39",
+      "rating": 2024,
+      "uci": [
+        "c8e6",
+        "d4d6",
+        "c6d6",
+        "g5e4",
+        "f6e7",
+        "e4d6"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "exposedKing",
+        "fork",
+        "long",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0ilD3",
+      "fen": "r2q1rk1/pp4np/2p3p1/3pQ1Nb/8/6PP/PP3P2/R3RBK1 b - - 2 21",
+      "rating": 1592,
+      "uci": [
+        "f8f5",
+        "e5g7",
+        "g8g7",
+        "g5e6",
+        "g7f6",
+        "e6d8"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "fork",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0PM1V",
+      "fen": "r3k2r/pp1bppbp/1q1p4/2pPnp2/8/2P1P1P1/PPQN1PBP/R3K1NR w KQkq - 1 11",
+      "rating": 2118,
+      "uci": [
+        "g1f3",
+        "b6b2",
+        "c2b2",
+        "e5d3",
+        "e1e2",
+        "d3b2"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "fork",
+        "long",
+        "master",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0o4VB",
+      "fen": "Q1bqr1k1/p1p2pp1/5n1p/b7/8/PQ2PN2/2B2PPP/q1B2RK1 w - - 0 15",
+      "rating": 1363,
+      "uci": [
+        "c1b2",
+        "a1f1",
+        "g1f1",
+        "c8a6",
+        "f1g1",
+        "d8a8"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "discoveredAttack",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "101fV",
+      "fen": "r1b2rk1/p3ppbp/2pp1npB/q7/4P1P1/2N5/PPPQBP2/R3K2R b KQ - 0 13",
+      "rating": 1570,
+      "uci": [
+        "a8b8",
+        "h6g7",
+        "g8g7",
+        "d2h6",
+        "g7g8",
+        "g4g5"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "kingsideAttack",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "0STSJ",
+      "fen": "4k2r/p2r1q2/2p1pb2/1pPp1P2/1P1P4/4P1Q1/P5PP/1R3RK1 b k - 0 22",
+      "rating": 1892,
+      "uci": [
+        "h8g8",
+        "f5e6",
+        "f7e6",
+        "f1f6",
+        "g8g3",
+        "f6e6"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "discoveredAttack",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "0RK2b",
+      "fen": "6k1/pp3pp1/7p/3qrN2/1P2nQ2/2P4P/1P4P1/5R1K w - - 9 35",
+      "rating": 1794,
+      "uci": [
+        "f4g4",
+        "e5f5",
+        "f1f5",
+        "d5f5",
+        "g4f5",
+        "e4g3",
+        "h1g1",
+        "g3f5"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "endgame",
+        "fork",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2HfGP",
+      "fen": "2kr1b1r/1pp1p2p/p3bp2/3Pq3/2P1N3/2NQP3/PP4P1/R4RK1 b - - 4 17",
+      "rating": 1559,
+      "uci": [
+        "e6f5",
+        "f1f5",
+        "e5f5",
+        "e4d6",
+        "c7d6",
+        "d3f5"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "discoveredAttack",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1BgDx",
+      "fen": "r4rk1/pppR2p1/2n1R2p/8/7Q/5N2/2q2PPP/6K1 b - - 1 19",
+      "rating": 1822,
+      "uci": [
+        "a8e8",
+        "d7g7",
+        "g8g7",
+        "h4h6"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "master",
+        "middlegame",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "1bWOA",
+      "fen": "6k1/pb3p1p/1p2pnp1/2q1N3/2P2P2/1P4N1/P5PP/3Q3K b - - 0 24",
+      "rating": 1833,
+      "uci": [
+        "c5f2",
+        "d1d8",
+        "g8g7",
+        "d8f6",
+        "g7f6",
+        "e5g4",
+        "f6e7",
+        "g4f2"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "fork",
+        "sacrifice",
+        "veryLong"
+      ]
+    }
+  ]
+}
