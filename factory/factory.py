@@ -22,11 +22,13 @@ import textwrap
 from pathlib import Path
 
 import channels as channel_profiles
+from make_music import ensure_bed
 
 HERE = Path(__file__).resolve().parent
 CONTENT = HERE / "content"          # script JSONs live here (channel 1)
 WORK = HERE / "work"                # per-video scratch space
 OUT = HERE / "out"                  # finished mp4s
+ASSETS = HERE / "assets"            # generated audio (music bed)
 for d in (CONTENT, WORK, OUT):
     d.mkdir(parents=True, exist_ok=True)
 
@@ -461,6 +463,19 @@ def build(script: dict, work: Path, orientation: str) -> Path:
     run([FFMPEG, "-y", "-f", "concat", "-safe", "0", "-i", str(concat_list),
          "-c", "copy", str(merged)])
 
+    # mellow pad under the narration: bed peaks land ~20 dB below the voice,
+    # so the words stay completely forward and the music is pure texture
+    print("        + mellow music bed (low, under the voice)")
+    bed = ensure_bed(ASSETS / "mellow_bed.wav")
+    mixed = work / "mixed.mp4"
+    run([FFMPEG, "-y", "-i", str(merged), "-stream_loop", "-1", "-i", str(bed),
+         "-filter_complex",
+         "[1:a]volume=0.10[bg];"
+         "[0:a][bg]amix=inputs=2:duration=first:normalize=0[m]",
+         "-map", "0:v", "-map", "[m]",
+         "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "44100",
+         "-ac", "2", str(mixed)])
+
     print("  [5/5] thumbnail (PIL)")
     thumb = None
     try:
@@ -472,7 +487,7 @@ def build(script: dict, work: Path, orientation: str) -> Path:
     final = OUT / f"{script['slug']}.mp4"
     if final.exists():
         final.unlink()
-    shutil.move(str(merged), str(final))
+    shutil.move(str(mixed), str(final))
     if thumb:
         shutil.copyfile(thumb, OUT / f"{script['slug']}.jpg")
     print(f"  -> {final}")
