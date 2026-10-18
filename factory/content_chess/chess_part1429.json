@@ -1,0 +1,258 @@
+{
+  "slug": "chess_part1429",
+  "title": "12 Chess Puzzles: The Move Before the Move (Part 1429)",
+  "orientation": "landscape",
+  "thumb_text": "INTERMEZZO",
+  "description": "Twelve intermezzos - the forcing move you play before recapturing, one after another, each with a single best move. Every position comes from a real game and is rated between 1309 and 2654, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1SB0w",
+      "fen": "r3k2r/p1q1pp1p/2p3p1/3bb3/4B3/1P3Q2/P1PN2P1/1R3R1K b kq - 1 20",
+      "rating": 1328,
+      "uci": [
+        "d5e4",
+        "f3f7",
+        "e8d7",
+        "d2e4"
+      ],
+      "themes": [
+        "attackingF2F7",
+        "crushing",
+        "intermezzo",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "0jaWv",
+      "fen": "2r2r2/pp1qbp2/7k/3pB2p/3P1Rn1/2N4Q/PP4PP/R5K1 b - - 5 23",
+      "rating": 2438,
+      "uci": [
+        "g4e5",
+        "f4f5",
+        "e7g5",
+        "d4e5"
+      ],
+      "themes": [
+        "advantage",
+        "intermezzo",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "23LlK",
+      "fen": "r4rk1/p1p2pp1/2p4p/4P3/3p1P2/2Q4P/qPP3P1/2KR1R2 w - - 0 17",
+      "rating": 2229,
+      "uci": [
+        "c3d4",
+        "a8d8",
+        "d4d8",
+        "a2a1",
+        "c1d2",
+        "f8d8"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "interference",
+        "intermezzo",
+        "long",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "37Jsd",
+      "fen": "1r6/2n4p/r4k2/P1ppRp2/5B2/RP5P/8/6K1 w - - 0 32",
+      "rating": 1781,
+      "uci": [
+        "e5d5",
+        "b8g8",
+        "g1f1",
+        "c7d5"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "intermezzo",
+        "master",
+        "masterVsMaster",
+        "short"
+      ]
+    },
+    {
+      "id": "2tPAg",
+      "fen": "r1bq1rk1/5pb1/p2p4/1p2n2p/6p1/2NB1N2/PPP3P1/R2Q1RBK w - - 0 18",
+      "rating": 1715,
+      "uci": [
+        "f3e5",
+        "d8h4",
+        "g1h2",
+        "g7e5",
+        "g2g3",
+        "e5g3"
+      ],
+      "themes": [
+        "advantage",
+        "intermezzo",
+        "kingsideAttack",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "1PTmN",
+      "fen": "5rk1/1ppbq3/1p2p3/4Nnp1/3Pn3/1BP1B2Q/PP5P/6RK w - - 0 25",
+      "rating": 2090,
+      "uci": [
+        "e3g5",
+        "e4f2",
+        "h1g2",
+        "e7g5"
+      ],
+      "themes": [
+        "crushing",
+        "fork",
+        "interference",
+        "intermezzo",
+        "master",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2bgwA",
+      "fen": "r2q1rk1/1p3pp1/pbn1b2p/3pNn2/N2P4/PB2B2P/1P3PP1/R2Q1RK1 b - - 4 17",
+      "rating": 1387,
+      "uci": [
+        "b6d4",
+        "e5c6",
+        "b7c6",
+        "e3d4",
+        "f5d4",
+        "d1d4"
+      ],
+      "themes": [
+        "advantage",
+        "intermezzo",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "2WOE0",
+      "fen": "rnb2rk1/5pp1/p2ppN2/1p1nP1BQ/3q3P/8/PP3PP1/R4RK1 b - - 1 16",
+      "rating": 1969,
+      "uci": [
+        "g7f6",
+        "g5f6",
+        "d5f6",
+        "h5g5",
+        "g8h7",
+        "e5f6",
+        "d4f6",
+        "g5f6"
+      ],
+      "themes": [
+        "crushing",
+        "fork",
+        "intermezzo",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "3GC7N",
+      "fen": "3q4/6k1/6r1/2p1pb2/2Pp3R/1Q1P2P1/1P2B2K/8 b - - 0 38",
+      "rating": 2654,
+      "uci": [
+        "g6g3",
+        "b3b7",
+        "g7f8",
+        "h2g3",
+        "d8g5",
+        "h4g4",
+        "f5g4",
+        "e2g4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "intermezzo",
+        "master",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0yzqM",
+      "fen": "6k1/R4p2/4q1p1/7p/1P6/5Q2/P2r1PK1/8 b - - 0 34",
+      "rating": 1309,
+      "uci": [
+        "d2a2",
+        "f3a8",
+        "g8g7",
+        "a7a2"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "intermezzo",
+        "master",
+        "short"
+      ]
+    },
+    {
+      "id": "1Hz7V",
+      "fen": "r2q1rk1/1bp2pp1/p1np3p/1p2p2n/4P3/PBBP1N1P/1PP1QPP1/R4RK1 w - - 2 14",
+      "rating": 1909,
+      "uci": [
+        "f3e5",
+        "h5f4",
+        "e2f3",
+        "d6e5"
+      ],
+      "themes": [
+        "advantage",
+        "intermezzo",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "1eRvN",
+      "fen": "1r4k1/1p1n1rbp/p2N1qp1/2PQ4/2P5/1P5P/P2B1PP1/5RK1 b - - 2 21",
+      "rating": 1621,
+      "uci": [
+        "d7c5",
+        "d6f7",
+        "f6f7",
+        "d5c5"
+      ],
+      "themes": [
+        "crushing",
+        "intermezzo",
+        "master",
+        "middlegame",
+        "short"
+      ]
+    }
+  ]
+}

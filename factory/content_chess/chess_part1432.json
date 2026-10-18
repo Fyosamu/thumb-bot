@@ -1,0 +1,289 @@
+{
+  "slug": "chess_part1432",
+  "title": "12 Chess Puzzles: Pull Him In, Then Take Him (Part 1432)",
+  "orientation": "landscape",
+  "thumb_text": "ATTRACTION",
+  "description": "Twelve attraction sacrifices that drag a piece where it hurts, one after another, each with a single best move. Every position comes from a real game and is rated between 1441 and 2616, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1IMDe",
+      "fen": "r2q1r2/1bp2pbk/ppn1p1pB/6N1/P1B1P3/3P4/2PQ2PP/5RK1 b - - 2 19",
+      "rating": 2469,
+      "uci": [
+        "h7g8",
+        "h6g7",
+        "g8g7",
+        "f1f7",
+        "f8f7",
+        "g5e6",
+        "g7g8",
+        "e6d8"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "fork",
+        "middlegame",
+        "pin",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1RfTS",
+      "fen": "rn2kb1r/pp2p2p/2p1pnp1/4q1N1/4N3/5Q2/PPP2P1P/2KR2R1 b kq - 3 17",
+      "rating": 1901,
+      "uci": [
+        "h7h6",
+        "d1d8",
+        "e8d8",
+        "g5f7",
+        "d8c7",
+        "f7e5"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "fork",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "3GpXe",
+      "fen": "6k1/prq3pp/2p5/2pp2Q1/4bNRP/1P5K/P1r5/6R1 b - - 7 33",
+      "rating": 2005,
+      "uci": [
+        "c7f7",
+        "g5d8",
+        "f7f8",
+        "g4g7",
+        "b7g7",
+        "g1g7",
+        "g8g7",
+        "f4e6",
+        "g7f7",
+        "e6f8"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "discoveredAttack",
+        "fork",
+        "middlegame",
+        "pin",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "07KSG",
+      "fen": "r1bq2k1/ppp1p3/4prpR/4N3/8/8/P1P1KPP1/Q4B2 b - - 2 18",
+      "rating": 2168,
+      "uci": [
+        "d8f8",
+        "h6h8",
+        "g8h8",
+        "e5g6",
+        "h8g8",
+        "g6f8"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "exposedKing",
+        "kingsideAttack",
+        "long",
+        "middlegame",
+        "pin",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1U894",
+      "fen": "5rk1/5p1p/5p2/1b1qp3/8/2P1Q3/Pr2PPPP/R3KB1R w KQ - 0 18",
+      "rating": 2227,
+      "uci": [
+        "a1d1",
+        "d5d1",
+        "e1d1",
+        "b5a4",
+        "d1e1",
+        "b2b1",
+        "e3c1",
+        "b1c1"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1Dqhp",
+      "fen": "2kr1b1r/Qpq2ppb/1n2p2p/2P1N2P/2P5/P3BP2/1P2B1P1/2KR2R1 b - - 0 21",
+      "rating": 1672,
+      "uci": [
+        "c7e5",
+        "d1d8",
+        "c8d8",
+        "a7b6"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "middlegame",
+        "queensideAttack",
+        "short"
+      ]
+    },
+    {
+      "id": "0gRNF",
+      "fen": "r1b3k1/p4rp1/2p1p2p/2npP2P/1p3B2/4PQ2/qPP2P2/1NKR2R1 b - - 1 18",
+      "rating": 1987,
+      "uci": [
+        "c5e4",
+        "g1g7",
+        "f7g7",
+        "f4h6",
+        "c8a6",
+        "h6g7"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "kingsideAttack",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1vCdz",
+      "fen": "3rk2r/pp3ppp/2p1bq2/4n3/3BB3/8/PPPQ1PPP/R3K2R w KQk - 1 15",
+      "rating": 1609,
+      "uci": [
+        "d2e3",
+        "d8d4",
+        "e3d4",
+        "e5f3",
+        "e4f3",
+        "f6d4"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "discoveredAttack",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "2TTnW",
+      "fen": "2q3k1/ppb2p1p/2p3p1/2Nn1BB1/3P4/P4P2/1P4PP/4Q1K1 b - - 0 25",
+      "rating": 2333,
+      "uci": [
+        "c8f5",
+        "e1e8",
+        "g8g7",
+        "g5h6",
+        "g7h6",
+        "e8f8",
+        "h6g5",
+        "c5e4"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "endgame",
+        "kingsideAttack",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0ykU9",
+      "fen": "r2q1rk1/3nbppp/p1n1p3/3pP3/1p1P4/1NPBBQ1N/PP5P/2K3R1 b - - 1 18",
+      "rating": 2616,
+      "uci": [
+        "b4c3",
+        "d3h7",
+        "g8h7",
+        "f3h5",
+        "h7g8",
+        "e3h6"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "kingsideAttack",
+        "long",
+        "middlegame",
+        "pin",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0nzQ8",
+      "fen": "6k1/pp2p1b1/7p/3qP3/3P2p1/2P4r/PP1BQ2P/5RK1 w - - 0 29",
+      "rating": 2118,
+      "uci": [
+        "e2f2",
+        "g4g3",
+        "f2g2",
+        "d5g2",
+        "g1g2",
+        "h3h2",
+        "g2g3",
+        "h2d2"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "skewer",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1MRZP",
+      "fen": "5rk1/3b3p/3p2p1/3Pb3/1BP1p1P1/Q6P/5qB1/5R1K b - - 5 39",
+      "rating": 1441,
+      "uci": [
+        "f2h4",
+        "f1f8",
+        "g8f8",
+        "b4d6",
+        "e5d6",
+        "a3d6"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "long",
+        "middlegame"
+      ]
+    }
+  ]
+}

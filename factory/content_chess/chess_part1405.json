@@ -1,0 +1,284 @@
+{
+  "slug": "chess_part1405",
+  "title": "12 Chess Puzzles: Lure Him to His Own Grave (Part 1405)",
+  "orientation": "landscape",
+  "thumb_text": "ATTRACTION",
+  "description": "Twelve attraction sacrifices that drag a piece where it hurts, one after another, each with a single best move. Every position comes from a real game and is rated between 1378 and 2242, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "34MlD",
+      "fen": "3Qr2k/pb4qp/1p4p1/5p2/1PB1p3/6PP/P1P4K/3R4 b - - 5 31",
+      "rating": 2014,
+      "uci": [
+        "g7e7",
+        "d8d4",
+        "e7g7",
+        "d4g7",
+        "h8g7",
+        "d1d7"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "long",
+        "master"
+      ]
+    },
+    {
+      "id": "2UVEs",
+      "fen": "2k2r2/1b4p1/1p1QPn2/p7/P2P2Np/2P4P/2Bq2P1/R5K1 w - - 1 30",
+      "rating": 1733,
+      "uci": [
+        "g4f2",
+        "d2f2",
+        "g1f2",
+        "f6e4",
+        "f2g1",
+        "e4d6"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "discoveredCheck",
+        "doubleCheck",
+        "fork",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1dPJG",
+      "fen": "3r1rk1/p4p1p/2p4b/3nP2q/3PQ1p1/2P3B1/PPKN2PP/R4R2 w - - 2 21",
+      "rating": 1827,
+      "uci": [
+        "f1f5",
+        "h5f5",
+        "e4f5",
+        "d5e3",
+        "c2d3",
+        "e3f5"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "fork",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0Pygf",
+      "fen": "5k2/2N2p1p/p2P2p1/8/r3P2P/5KP1/8/8 b - - 0 45",
+      "rating": 2242,
+      "uci": [
+        "f7f6",
+        "c7e6",
+        "f8e8",
+        "d6d7",
+        "e8d7",
+        "e6c5",
+        "d7c6",
+        "c5a4"
+      ],
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "attraction",
+        "endgame",
+        "exposedKing",
+        "fork",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0mPnP",
+      "fen": "8/2k5/7b/4p3/1n2P2p/5P1P/1P4P1/1K1R4 w - - 0 35",
+      "rating": 1949,
+      "uci": [
+        "d1c1",
+        "h6c1",
+        "b1c1",
+        "b4d3",
+        "c1d2",
+        "d3f4"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "2Qsvr",
+      "fen": "r3k2r/pp1n1ppp/q1p1p3/3p1b2/1PPPnB2/PQ2P3/5PPP/2R1KBNR w Kkq - 3 12",
+      "rating": 1397,
+      "uci": [
+        "c4d5",
+        "a6f1",
+        "e1f1",
+        "e4d2",
+        "f1e1",
+        "d2b3"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "fork",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "11Hxt",
+      "fen": "r3k2r/p1R1bp1p/1qp1p1pB/2np4/5Q2/5N2/5PPP/5RK1 b kq - 5 21",
+      "rating": 1608,
+      "uci": [
+        "c5d3",
+        "c7e7",
+        "e8e7",
+        "h6g5"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "middlegame",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "0Y9jh",
+      "fen": "2b1r3/p5k1/3p3p/2nB1p2/2P2R2/P1qPp1P1/4Q2P/4R1K1 w - - 6 26",
+      "rating": 1536,
+      "uci": [
+        "e2h5",
+        "c3e1",
+        "f4f1",
+        "e1f1",
+        "g1f1",
+        "e3e2",
+        "h5e2",
+        "e8e2"
+      ],
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "attraction",
+        "hangingPiece",
+        "kingsideAttack",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0oNZK",
+      "fen": "2Q5/5ppk/p3p3/8/8/8/Prp2PPP/3r1RK1 w - - 3 31",
+      "rating": 1409,
+      "uci": [
+        "c8c3",
+        "d1f1",
+        "g1f1",
+        "b2b1",
+        "f1e2",
+        "c2c1q",
+        "c3c1",
+        "b1c1"
+      ],
+      "themes": [
+        "advancedPawn",
+        "attraction",
+        "crushing",
+        "endgame",
+        "promotion",
+        "queenRookEndgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1DeIK",
+      "fen": "r2qr1k1/p1p2pp1/2p2nbp/4p3/2P2B2/P2B1P2/2P3PP/R2QR1K1 w - - 0 16",
+      "rating": 1378,
+      "uci": [
+        "f4e5",
+        "e8e5",
+        "e1e5",
+        "d8d4",
+        "g1h1",
+        "d4e5"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "fork",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "2sZA4",
+      "fen": "8/2r3k1/1Q4p1/1p2q2p/3NpRbP/4P1P1/8/1K6 b - - 24 51",
+      "rating": 2099,
+      "uci": [
+        "b5b4",
+        "f4g4",
+        "h5g4",
+        "b6c7",
+        "e5c7",
+        "d4e6",
+        "g7h6",
+        "e6c7"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "endgame",
+        "fork",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1JlVL",
+      "fen": "6rk/1p1q4/p2pNb1p/3Pn2n/P1P1bp2/1P3N1P/1B1Q1PBK/3R4 w - - 3 29",
+      "rating": 1826,
+      "uci": [
+        "d2e2",
+        "g8g2",
+        "h2g2",
+        "e4f3",
+        "e2f3",
+        "e5f3"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "fork",
+        "long",
+        "middlegame"
+      ]
+    }
+  ]
+}
