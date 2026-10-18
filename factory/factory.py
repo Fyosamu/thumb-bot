@@ -47,7 +47,7 @@ FFMPEG = shutil.which("ffmpeg") or str(
     Path(r"C:\Users\USER\AppData\Local\Microsoft\WinGet\Packages"
          r"\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe"
          r"\ffmpeg-9.0.1-full_build\bin\ffmpeg.exe"))
-FFPROBE = shutil.which("ffprobe") or str(Path(FFMPEG).with_name("ffprobe.exe"))
+FFPROBE = shutil.which("ffprobe") or "ffprobe"
 
 PEXELS_KEY = os.environ.get(
     "PEXELS_KEY",

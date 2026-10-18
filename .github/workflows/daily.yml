@@ -34,7 +34,10 @@ jobs:
       - name: system deps
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq fonts-dejavu
+          # ffmpeg + ffprobe are NOT on the runner image by default; every
+          # renderer shells out to them (chess music_lib uses imageio-ffmpeg
+          # as a second net, but the science pipeline probes with ffprobe)
+          sudo apt-get install -y -qq fonts-dejavu ffmpeg
 
       - name: python deps
         run: pip install -r factory/requirements.txt

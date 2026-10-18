@@ -1,6 +1,8 @@
-# what the runner needs on top of the preinstalled ffmpeg + python 3.12
+# what the runner needs on top of python 3.12 (ffmpeg itself is apt-installed
+# by the workflow; imageio-ffmpeg is the in-process fallback for music_lib)
 edge-tts>=6.1
 requests>=2.31
 pillow>=10.3
 google-api-python-client>=2.130
 google-auth>=2.29
+imageio-ffmpeg>=4.9
