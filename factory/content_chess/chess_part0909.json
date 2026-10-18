@@ -1,0 +1,232 @@
+{
+  "slug": "chess_part0909",
+  "title": "12 Chess Puzzles: Grind the Position Down (Part 909)",
+  "orientation": "landscape",
+  "thumb_text": "ENDGAME",
+  "description": "Twelve endgame technique, one after another, each with a single best move. Every position comes from a real game and is rated between 1327 and 2484, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "0S45f",
+      "fen": "6r1/Qpk5/1p1p4/2p1n1r1/P3P3/8/1PP3P1/3BR1K1 w - - 3 31",
+      "rating": 1716,
+      "uci": [
+        "e1e2",
+        "e5c6",
+        "a7b7",
+        "c7b7"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "short",
+        "trappedPiece"
+      ]
+    },
+    {
+      "id": "15qV9",
+      "fen": "5k2/1R6/1P1p1Np1/1r2b1Kp/5p2/8/5P2/8 b - - 2 40",
+      "rating": 1691,
+      "uci": [
+        "e5f6",
+        "g5f6",
+        "f8e8",
+        "f6e6"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "0lUIA",
+      "fen": "2q3k1/5r1p/3b2p1/3Pp1P1/7Q/Pp1B4/1P6/1K5R w - - 2 33",
+      "rating": 2209,
+      "uci": [
+        "d3c4",
+        "c8f5",
+        "b1a1",
+        "f5c2",
+        "c4b3",
+        "c2b3"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "002LF",
+      "fen": "7r/p2q1pk1/1pp3p1/8/6P1/4Q3/PP1R1P1r/5KN1 b - - 0 38",
+      "rating": 2185,
+      "uci": [
+        "d7g4",
+        "e3e5",
+        "f7f6",
+        "e5c7",
+        "g7h6",
+        "c7h2"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "interference",
+        "long"
+      ]
+    },
+    {
+      "id": "075GK",
+      "fen": "6k1/3n1p1p/r1p2qp1/p3p3/8/1Q2PBP1/PP4K1/5R2 b - - 4 24",
+      "rating": 2484,
+      "uci": [
+        "f6d6",
+        "f3e2",
+        "a6a8",
+        "b3f7",
+        "g8h8",
+        "f1d1"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "2ZYqI",
+      "fen": "3r1k2/r6p/1p2B2q/1P6/3p1pQ1/3P4/2P1R1PP/6K1 b - - 1 34",
+      "rating": 2218,
+      "uci": [
+        "a7a1",
+        "g1f2",
+        "f4f3",
+        "e2e4",
+        "h6d2",
+        "f2f3"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "0KTJF",
+      "fen": "rr4k1/6pp/3p4/2bPp3/PPP5/2K5/R5PP/1R6 b - - 8 31",
+      "rating": 1386,
+      "uci": [
+        "g8f7",
+        "b1f1",
+        "f7e7",
+        "b4c5"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "1cZGK",
+      "fen": "r2q1rk1/8/p2p4/1p2ppp1/3Q3P/5P2/PPP5/2KR2R1 w - - 0 21",
+      "rating": 1327,
+      "uci": [
+        "g1g5",
+        "d8g5",
+        "h4g5",
+        "e5d4"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "1vuX3",
+      "fen": "2k5/1p4p1/p6p/2q5/2P5/6P1/PP1P2QK/R1B1r3 w - - 3 26",
+      "rating": 2272,
+      "uci": [
+        "g3g4",
+        "c5d6",
+        "h2h3",
+        "d6d3"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "1swGf",
+      "fen": "6k1/p4p1p/1p2nBp1/PR2P3/1Pr4P/8/8/6K1 b - - 0 36",
+      "rating": 1475,
+      "uci": [
+        "e6c7",
+        "a5b6",
+        "a7b6",
+        "b5b6"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "1eWgK",
+      "fen": "3R4/1p1Q1kp1/p6p/2p2P2/4q3/P3r3/1P6/K7 b - - 3 30",
+      "rating": 1499,
+      "uci": [
+        "e4e7",
+        "d7d5",
+        "f7f6",
+        "d8d6",
+        "e7d6",
+        "d5d6"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "1wuSP",
+      "fen": "2k3r1/Qpp5/4p3/1P1pPn1p/5P2/R7/1PP1q2K/5R2 w - - 0 26",
+      "rating": 1779,
+      "uci": [
+        "f1f2",
+        "e2g4",
+        "a7a8",
+        "c8d7",
+        "a8g8",
+        "g4g8"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "long"
+      ]
+    }
+  ]
+}

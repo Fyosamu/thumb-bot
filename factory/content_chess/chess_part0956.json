@@ -1,0 +1,258 @@
+{
+  "slug": "chess_part0956",
+  "title": "12 Chess Puzzles: Hold It by a Single Thread (Part 956)",
+  "orientation": "landscape",
+  "thumb_text": "DEFENCE",
+  "description": "Twelve the single defensive resource that saves the game, one after another, each with a single best move. Every position comes from a real game and is rated between 1313 and 2797, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "0njXq",
+      "fen": "8/8/8/8/4p3/1N2k1K1/2p5/8 w - - 0 54",
+      "rating": 2309,
+      "uci": [
+        "g3g2",
+        "e3e2",
+        "g2g3",
+        "e4e3",
+        "g3f4",
+        "e2f2"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "knightEndgame",
+        "long"
+      ]
+    },
+    {
+      "id": "2iPtH",
+      "fen": "r3k2r/ppp2ppp/8/5b2/2B3nq/1QN1P3/PP3PP1/R1B1R1K1 w kq - 3 14",
+      "rating": 1622,
+      "uci": [
+        "b3b5",
+        "f5d7",
+        "b5d7",
+        "e8d7"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "0d7aK",
+      "fen": "8/7q/3R1pk1/1p1Pp1p1/2p1Pr2/2P1Q3/1PBK2Rr/8 w - - 1 43",
+      "rating": 2253,
+      "uci": [
+        "e3g3",
+        "h2g2",
+        "g3g2",
+        "h7a7"
+      ],
+      "themes": [
+        "advantage",
+        "defensiveMove",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2fvup",
+      "fen": "8/6pk/7p/pr6/R7/4PK1P/6P1/8 w - - 2 43",
+      "rating": 1663,
+      "uci": [
+        "f3e4",
+        "b5b4",
+        "a4b4",
+        "a5b4",
+        "e4d3",
+        "h7g6",
+        "d3c4",
+        "g6f5"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "rookEndgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2iATB",
+      "fen": "8/6pk/7p/3p4/2pPq3/2P3QP/6PK/8 w - - 4 39",
+      "rating": 1532,
+      "uci": [
+        "g3f3",
+        "e4f3",
+        "g2f3",
+        "h7g6",
+        "h2g3",
+        "g6f5"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "long",
+        "queenEndgame"
+      ]
+    },
+    {
+      "id": "07Uyt",
+      "fen": "8/p3kp2/4b3/2P3p1/3KB1Pp/7P/P7/8 b - - 0 47",
+      "rating": 2797,
+      "uci": [
+        "e7d7",
+        "e4d5",
+        "e6d5",
+        "d4d5",
+        "f7f5",
+        "g4f5",
+        "g5g4",
+        "d5e4"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1IwYj",
+      "fen": "2k3rr/3b4/2p1p2q/3pnp2/2PP4/P1P1P1QN/3N1PP1/1R3RK1 w - - 1 25",
+      "rating": 2360,
+      "uci": [
+        "b1b8",
+        "c8b8",
+        "g3e5",
+        "b8a8"
+      ],
+      "themes": [
+        "advantage",
+        "defensiveMove",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2ZR5P",
+      "fen": "r7/5p2/5pkp/8/8/p1R2P1P/K5P1/8 w - - 4 44",
+      "rating": 2100,
+      "uci": [
+        "c3a3",
+        "a8a3",
+        "a2a3",
+        "g6f5",
+        "g2g3",
+        "f5e5",
+        "a3b3",
+        "e5d4"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "rookEndgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0iQwc",
+      "fen": "8/8/7P/8/k1p5/p1B5/K1b5/8 b - - 7 74",
+      "rating": 2224,
+      "uci": [
+        "c2b3",
+        "a2b1",
+        "a3a2",
+        "b1c1"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "0VUHj",
+      "fen": "8/1p6/p1p3k1/P2p2pp/1P1P3P/2Pr2P1/6K1/5R2 w - - 2 38",
+      "rating": 2198,
+      "uci": [
+        "f1f3",
+        "d3f3",
+        "g2f3",
+        "g5h4",
+        "g3h4",
+        "g6f5"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "long",
+        "rookEndgame",
+        "zugzwang"
+      ]
+    },
+    {
+      "id": "1d6NI",
+      "fen": "6k1/5pp1/r6p/p1p1PP2/Rp5r/3P1K2/2P1R2P/8 b - - 2 31",
+      "rating": 1724,
+      "uci": [
+        "h4h3",
+        "f3g4",
+        "h3d3",
+        "c2d3"
+      ],
+      "themes": [
+        "advantage",
+        "defensiveMove",
+        "endgame",
+        "rookEndgame",
+        "short",
+        "trappedPiece"
+      ]
+    },
+    {
+      "id": "2hAdp",
+      "fen": "6k1/4qpp1/4p3/2rn2p1/1p6/4P2P/3Q1PP1/RR4K1 w - - 0 31",
+      "rating": 1313,
+      "uci": [
+        "b1b4",
+        "d5b4",
+        "a1a8",
+        "g8h7"
+      ],
+      "themes": [
+        "advantage",
+        "defensiveMove",
+        "endgame",
+        "short"
+      ]
+    }
+  ]
+}
