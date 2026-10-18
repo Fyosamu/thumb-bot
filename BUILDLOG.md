@@ -43,11 +43,16 @@ materializes them at startup from env secrets (`CHESS_TOKEN_JSON`,
   rounded, max 2 lines, y=79% landscape / 59% portrait, **never two
   captions in one frame** (sequential windows, GAP 0.04 s,
   `_verify_subs.py` counts overlaps).
-- **Audio (added 2026-10-19):** every science/bio video gets a mellow
+- **Audio (added 2026-10-19):** ALL three channels play the same mellow
   pad loop (`factory/make_music.py` → `assets/mellow_bed.wav`, 32 s,
-  pure-stdlib synthesis, no copyright) mixed at `volume=0.10`
-  (≈ −20 dB under voice peaks) with `amix … normalize=0` so narration
-  levels are bit-identical to before. Chess keeps its own chiptune.
+  pure-stdlib synthesis, no copyright, seamless tiling):
+  - science/bio: mixed at `volume=0.10` (≈ −20 dB under voice peaks) with
+    `amix … normalize=0` so narration levels are bit-identical to before —
+    pure background, never tiresome.
+  - chess: plays the bed as its FULL soundtrack, `volume=2.5` capped by
+    `alimiter=limit=0.95` → measured mean −26 dB / peak −0.9 dB: clearly
+    audible and warm, no clipping. The old chiptune generator
+    (`music_lib.make_music`) is now unused but kept for reference.
 
 ## Push history lesson (the 408s)
 
@@ -133,6 +138,22 @@ held.
 - `factory/_verify_subs.py`, `factory/_check_uploads.py` — QA tools.
 - `factory/state/` — cursors, upload manifests, daily counts.
   **This directory is the dedupe authority; the runner commits it back.**
+
+## Local backup + cleanup (2026-10-19)
+
+Owner asked for a tidy system: everything OpenCode produced outside the
+live repo is wiped, but first a backup was taken —
+
+- `C:\Users\USER\Desktop\BACKUP-thumb-bot-2026-10-19.zip` — code,
+  workflows, banks (incl. chess 2000+ which exists ONLY locally),
+  state/manifests, tokens, BUILDLOG.
+- `C:\Users\USER\Desktop\BACKUP-NEW-CHANNELS-2026-10-19.zip` — the 3
+  concepts, scripts, plan and the 6 sample renders.
+
+Deleted on purpose (all regenerable): `%TEMP%\opencode\`, `%TEMP%\gh_*`
+logs, `factory/work/`, `factory/out/`, `factory/_musictest.py`,
+`wiki_cache/`, `puzzles_db.zst`. KEPT: `puzzles_pool*.jsonl` (runtime
+input), topic lists, all banks, `yt_auth/`.
 
 ## Operator cheat-sheet
 
