@@ -48,6 +48,9 @@ jobs:
         run: python -u daily_local.py
 
       - name: chess thumbnail drip
+        # the daily quota decides whether this succeeds; a 429 must never
+        # paint the whole run red
+        continue-on-error: true
         working-directory: factory
         env:
           YT2_TOKEN_JSON: ${{ secrets.CHESS_TOKEN_JSON }}
@@ -60,4 +63,12 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add factory/state
           git diff --cached --quiet || git commit -m "state: daily run $(date -u +%F)"
-          git push
+          # the bank-sync on the owner's machine can push mid-run; rebase
+          # and retry instead of losing the cursor
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && exit 0
+            echo "push attempt $i rejected, retrying"
+            git rebase --abort 2>/dev/null || true
+            sleep 20
+          done
+          exit 1

@@ -96,7 +96,14 @@ def do_channel(key: str) -> str:
     label, token_name, renderer = CHANNELS[key]
     token = YT_AUTH / token_name
     if not token.exists():
-        return f"{label}: skipped - no token ({token_name})"
+        # CI carries the token as an env secret (yt_auth is gitignored,
+        # so the file never reaches the runner).  Write it down once and
+        # every tool that reads the file keeps working unchanged.
+        raw = os.environ.get(f"YT{key}_TOKEN_JSON", "").strip()
+        if not raw:
+            return f"{label}: skipped - no token ({token_name})"
+        YT_AUTH.mkdir(parents=True, exist_ok=True)
+        token.write_text(raw, encoding="utf-8")
 
     env = dict(os.environ)
     env["PYTHONIOENCODING"] = "utf-8"
