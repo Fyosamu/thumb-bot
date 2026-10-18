@@ -1,0 +1,277 @@
+{
+  "slug": "chess_part0886",
+  "title": "12 Chess Puzzles: The Mate in Three Nobody Finishes (Part 886)",
+  "orientation": "landscape",
+  "thumb_text": "MATE IN 3",
+  "description": "Twelve deeper mates that need real calculation, one after another, each with a single best move. Every position comes from a real game and is rated between 1256 and 1819, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "09fzv",
+      "fen": "5b1k/p1p4p/1p2B1p1/3P4/7Q/1P2q3/P1P3PP/6K1 w - - 1 26",
+      "rating": 1267,
+      "uci": [
+        "h4f2",
+        "e3c1",
+        "f2f1",
+        "f8c5",
+        "g1h1",
+        "c1f1"
+      ],
+      "themes": [
+        "deflection",
+        "endgame",
+        "long",
+        "mate",
+        "mateIn3"
+      ]
+    },
+    {
+      "id": "1wdhJ",
+      "fen": "2r1N1k1/p3Qp2/3p2p1/qp1P1b2/2r2PpP/8/PP3P2/K2R3R w - - 10 28",
+      "rating": 1510,
+      "uci": [
+        "e8d6",
+        "a5a2",
+        "a1a2",
+        "c4a4",
+        "a2b3",
+        "f5c2"
+      ],
+      "themes": [
+        "attraction",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "2FuLy",
+      "fen": "6k1/1r1N3p/p3p1pP/3p4/2p2q1b/8/PPP2r2/RK2Q1R1 b - - 2 29",
+      "rating": 1711,
+      "uci": [
+        "f4d4",
+        "e1e6",
+        "f2f7",
+        "e6e8",
+        "f7f8",
+        "e8f8"
+      ],
+      "themes": [
+        "kingsideAttack",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "2m40a",
+      "fen": "r5k1/3R1rpb/1qp1Np1p/1p2p3/7N/P3P2P/4K1P1/3R4 b - - 13 29",
+      "rating": 1256,
+      "uci": [
+        "a8a3",
+        "d7d8",
+        "b6d8",
+        "d1d8",
+        "f7f8",
+        "d8f8"
+      ],
+      "themes": [
+        "backRankMate",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "01FmQ",
+      "fen": "3r2k1/2B3pp/1Q2Pp2/2b5/P3n3/5N2/2q2PPP/5RK1 w - - 4 32",
+      "rating": 1595,
+      "uci": [
+        "e6e7",
+        "c2f2",
+        "f1f2",
+        "d8d1",
+        "f3e1",
+        "d1e1"
+      ],
+      "themes": [
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "pin",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "3CXF1",
+      "fen": "4r1k1/pp3p1p/5qp1/2QRb3/8/8/PPP1R1PP/1K6 w - - 1 28",
+      "rating": 1387,
+      "uci": [
+        "d5e5",
+        "f6f1",
+        "e2e1",
+        "f1e1",
+        "e5e1",
+        "e8e1"
+      ],
+      "themes": [
+        "backRankMate",
+        "endgame",
+        "long",
+        "mate",
+        "mateIn3",
+        "xRayAttack"
+      ]
+    },
+    {
+      "id": "0XdPS",
+      "fen": "8/2B3pp/3P1k2/5p2/p4R1K/r7/7P/8 w - - 3 36",
+      "rating": 1533,
+      "uci": [
+        "d6d7",
+        "g7g5",
+        "h4h5",
+        "a3h3",
+        "f4h4",
+        "h3h4"
+      ],
+      "themes": [
+        "endgame",
+        "fork",
+        "long",
+        "mate",
+        "mateIn3"
+      ]
+    },
+    {
+      "id": "31z62",
+      "fen": "r2q1rk1/5pb1/4p1p1/2p3P1/3p3Q/Pp2P3/1P4PR/1NK4R b - - 1 27",
+      "rating": 1493,
+      "uci": [
+        "f8e8",
+        "h4h8",
+        "g7h8",
+        "h2h8",
+        "g8g7",
+        "h1h7"
+      ],
+      "themes": [
+        "blindSwineMate",
+        "kingsideAttack",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0sAcK",
+      "fen": "r5k1/1b3p1p/p3pBp1/2q4r/2Q5/P7/5PPP/2RR2K1 b - - 0 27",
+      "rating": 1819,
+      "uci": [
+        "c5f5",
+        "c4c8",
+        "a8c8",
+        "c1c8",
+        "b7c8",
+        "d1d8"
+      ],
+      "themes": [
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "pillsburysMate",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "00J1t",
+      "fen": "r1qr3k/pp3pB1/1np1pb2/8/3P3P/2N2PR1/PP1Q2P1/2KR4 b - - 0 22",
+      "rating": 1638,
+      "uci": [
+        "f6g7",
+        "d2g5",
+        "d8g8",
+        "g5h5",
+        "g7h6",
+        "h5h6"
+      ],
+      "themes": [
+        "exposedKing",
+        "kingsideAttack",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "27MP5",
+      "fen": "5rk1/6pp/p4r2/3pN3/Q3b3/2P1P3/PP3qPP/R5RK w - - 7 24",
+      "rating": 1729,
+      "uci": [
+        "e5g4",
+        "f2g2",
+        "g1g2",
+        "f6f1",
+        "a1f1",
+        "f8f1"
+      ],
+      "themes": [
+        "clearance",
+        "kingsideAttack",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "pin",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "3ABD1",
+      "fen": "5rk1/2R1bqp1/p1pB3p/8/P3Q3/6Pb/1P2PP1P/R5K1 w - - 2 27",
+      "rating": 1368,
+      "uci": [
+        "c7e7",
+        "f7f2",
+        "g1h1",
+        "f2f1",
+        "a1f1",
+        "f8f1"
+      ],
+      "themes": [
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "pillsburysMate",
+        "sacrifice"
+      ]
+    }
+  ]
+}

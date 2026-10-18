@@ -1,0 +1,258 @@
+{
+  "slug": "chess_part0864",
+  "title": "12 Chess Puzzles: Deflect the Guard, Take the Prize (Part 864)",
+  "orientation": "landscape",
+  "thumb_text": "DEFLECTION",
+  "description": "Twelve deflection of the piece that holds everything, one after another, each with a single best move. Every position comes from a real game and is rated between 1258 and 2428, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1kgGU",
+      "fen": "2kq2rr/2p4p/2n1b3/p2pP1P1/P2P2p1/8/2PQN1P1/R4RK1 b - - 1 21",
+      "rating": 1395,
+      "uci": [
+        "d8g5",
+        "f1f8",
+        "g8f8",
+        "d2g5"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "1Xjh3",
+      "fen": "3r2k1/ppr2pp1/6p1/P2Pq3/8/5Q2/5PPP/1R2R1K1 b - - 1 31",
+      "rating": 1469,
+      "uci": [
+        "e5d5",
+        "e1e8",
+        "d8e8",
+        "f3d5"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "1vule",
+      "fen": "2k5/8/5K2/P7/1P4p1/3b4/5pB1/8 w - - 0 50",
+      "rating": 2121,
+      "uci": [
+        "f6g5",
+        "d3e4",
+        "g2e4",
+        "f2f1q"
+      ],
+      "themes": [
+        "advancedPawn",
+        "bishopEndgame",
+        "crushing",
+        "deflection",
+        "endgame",
+        "promotion",
+        "short"
+      ]
+    },
+    {
+      "id": "0q7aw",
+      "fen": "8/2p5/2P3B1/p3p3/P3K2p/4bP1P/5k2/8 b - - 0 43",
+      "rating": 1329,
+      "uci": [
+        "e3d4",
+        "f3f4",
+        "e5f4",
+        "e4d4"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "deflection",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "2S278",
+      "fen": "r4r1k/1pp2qpp/2b4b/8/3B4/pPQ3NP/P1P5/1K2R1R1 b - - 5 26",
+      "rating": 2068,
+      "uci": [
+        "a8e8",
+        "e1e8",
+        "f8e8",
+        "g3f5",
+        "f7f5",
+        "d4g7"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "kingsideAttack",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "15Duk",
+      "fen": "8/7p/1p1p2p1/p1pPk3/2P5/PP2K1P1/b6P/3B4 w - - 0 40",
+      "rating": 1426,
+      "uci": [
+        "d1c2",
+        "a5a4",
+        "b3a4",
+        "a2c4",
+        "a4a5",
+        "b6a5"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "deflection",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "2gtkd",
+      "fen": "8/p3kpp1/1pnN3p/2p5/3pK3/3P2PP/PPP2P2/8 w - - 5 28",
+      "rating": 1258,
+      "uci": [
+        "e4d5",
+        "c6b4",
+        "d5c4",
+        "e7d6"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "endgame",
+        "knightEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "2OMq1",
+      "fen": "r4rk1/1pp2pp1/p2p1q1B/8/P1PnP3/5P2/1PP3Q1/R4K1R b - - 0 21",
+      "rating": 1780,
+      "uci": [
+        "d4f3",
+        "h6g7",
+        "f6g7",
+        "g2f3",
+        "a8e8",
+        "h1g1"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "fork",
+        "long",
+        "middlegame",
+        "pin"
+      ]
+    },
+    {
+      "id": "0Di12",
+      "fen": "1k1r1n1r/pP3p2/2Pb4/3p1Bp1/N2P4/4PPqp/P1Q3P1/R1B1R1K1 w - - 0 25",
+      "rating": 1792,
+      "uci": [
+        "c2f2",
+        "h3h2",
+        "g1h1",
+        "g3f2"
+      ],
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "deflection",
+        "kingsideAttack",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2v543",
+      "fen": "r6r/3k1p2/2p1p3/3pP2p/pP1P2K1/P1P2Q1R/4q1P1/7R w - - 0 34",
+      "rating": 2428,
+      "uci": [
+        "h3h5",
+        "a8g8",
+        "g4f4",
+        "e2d2",
+        "f3e3",
+        "d2g2"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "endgame",
+        "long",
+        "pin"
+      ]
+    },
+    {
+      "id": "1QkLe",
+      "fen": "2r5/8/3k2p1/2p2p2/P2p1P2/1PKR2P1/7P/8 w - - 0 51",
+      "rating": 1576,
+      "uci": [
+        "c3c4",
+        "c8b8",
+        "d3d1",
+        "b8b4",
+        "c4d3",
+        "b4b3"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "endgame",
+        "long",
+        "rookEndgame"
+      ]
+    },
+    {
+      "id": "0ydEv",
+      "fen": "8/P7/7p/6p1/2B1b3/2p1k1P1/7P/2K5 b - - 3 46",
+      "rating": 1377,
+      "uci": [
+        "e3f2",
+        "c4d3",
+        "e4d3",
+        "a7a8q"
+      ],
+      "themes": [
+        "advancedPawn",
+        "bishopEndgame",
+        "crushing",
+        "deflection",
+        "endgame",
+        "master",
+        "promotion",
+        "short"
+      ]
+    }
+  ]
+}

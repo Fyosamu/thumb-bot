@@ -1,0 +1,227 @@
+{
+  "slug": "chess_part0881",
+  "title": "12 Chess Puzzles: The Attack That Never Stops (Part 881)",
+  "orientation": "landscape",
+  "thumb_text": "CRUSHING",
+  "description": "Twelve crushing attacking games, one after another, each with a single best move. Every position comes from a real game and is rated between 1312 and 2185, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1bKZw",
+      "fen": "8/2Q5/4q2k/1P4pp/K7/8/8/8 b - - 0 43",
+      "rating": 1673,
+      "uci": [
+        "g5g4",
+        "c7c6",
+        "e6g6",
+        "c6g6",
+        "h6g6",
+        "b5b6"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "queenEndgame"
+      ]
+    },
+    {
+      "id": "0RY6k",
+      "fen": "3r2k1/6p1/2q1p1pp/ppn1P3/2pN4/2P1B2P/P4PP1/4Q1K1 b - - 1 30",
+      "rating": 1446,
+      "uci": [
+        "c5d3",
+        "d4c6",
+        "d3e1",
+        "c6d8",
+        "b5b4",
+        "c3b4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "2WYxy",
+      "fen": "8/4kP2/8/p2p4/2p5/2P2n2/P6P/6BK w - - 0 45",
+      "rating": 2085,
+      "uci": [
+        "h1g2",
+        "f3g1",
+        "g2g1",
+        "d5d4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "2jGpU",
+      "fen": "1r2r1k1/ppq2n1p/6p1/3Q4/2P5/5BP1/P6P/1R3RK1 b - - 2 28",
+      "rating": 1700,
+      "uci": [
+        "b8d8",
+        "b1b7",
+        "d8d5",
+        "b7c7"
+      ],
+      "themes": [
+        "crushing",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "29tNT",
+      "fen": "r1b1k2r/pp3ppp/1bpp1qn1/4p3/1PBPP3/P1P3Q1/4NPPP/R1B2RK1 b kq - 0 12",
+      "rating": 1427,
+      "uci": [
+        "e8g8",
+        "c1g5",
+        "f6e6",
+        "c4e6"
+      ],
+      "themes": [
+        "crushing",
+        "middlegame",
+        "short",
+        "trappedPiece"
+      ]
+    },
+    {
+      "id": "0glpM",
+      "fen": "7k/3q1np1/p2p1b2/2pP1r1p/1pP1pP2/1P2B1QP/P7/3R2RK w - - 4 37",
+      "rating": 1808,
+      "uci": [
+        "g3g6",
+        "f5g5",
+        "h1h2",
+        "g5g6"
+      ],
+      "themes": [
+        "crushing",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "10uoO",
+      "fen": "6k1/8/4pK1p/3bP3/2P1pp2/8/R5Pr/8 b - - 1 51",
+      "rating": 2124,
+      "uci": [
+        "g8h7",
+        "c4d5",
+        "f4f3",
+        "a2a7"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "0AH9h",
+      "fen": "1r4r1/kpR2p2/pNpq4/3b2p1/3P2Q1/8/PP3PPP/R5K1 w - - 5 25",
+      "rating": 2111,
+      "uci": [
+        "c7d7",
+        "d6e6",
+        "g4e6",
+        "d5e6"
+      ],
+      "themes": [
+        "crushing",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "1IYHQ",
+      "fen": "6k1/2q1ppbp/8/pQPp2p1/3PpPP1/B3P2P/P7/6K1 b - - 0 25",
+      "rating": 2185,
+      "uci": [
+        "g5f4",
+        "b5b6",
+        "c7c8",
+        "c5c6"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "2Ziuf",
+      "fen": "r4rk1/7p/p1bqpppP/1p4P1/2pP2N1/2P5/PP1Q1P2/R3R1K1 w - - 2 25",
+      "rating": 1473,
+      "uci": [
+        "g5f6",
+        "d6d5",
+        "f2f3",
+        "d5f3"
+      ],
+      "themes": [
+        "crushing",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "0hqe7",
+      "fen": "8/p1p5/2Rr1Kp1/1P1P4/1kP5/8/8/8 w - - 1 38",
+      "rating": 2128,
+      "uci": [
+        "c6d6",
+        "c7d6",
+        "f6e6",
+        "b4c5",
+        "b5b6",
+        "a7b6"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "1blhH",
+      "fen": "3r1rk1/1b1p1ppp/1pB1pqn1/p1b5/P1N1P3/2P2NP1/1P3P1P/R1BQ1RK1 b - - 0 13",
+      "rating": 1312,
+      "uci": [
+        "b7c6",
+        "c1g5",
+        "f6g5",
+        "f3g5"
+      ],
+      "themes": [
+        "crushing",
+        "middlegame",
+        "short",
+        "trappedPiece"
+      ]
+    }
+  ]
+}

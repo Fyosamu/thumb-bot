@@ -1,0 +1,260 @@
+{
+  "slug": "chess_part0837",
+  "title": "12 Chess Puzzles: Send the Defender Away (Part 837)",
+  "orientation": "landscape",
+  "thumb_text": "DEFLECTION",
+  "description": "Twelve deflection of the piece that holds everything, one after another, each with a single best move. Every position comes from a real game and is rated between 1298 and 2466, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "2keXB",
+      "fen": "8/2k1b1R1/p2q1p2/1pp1p1P1/P1n1P3/1Q3P2/1PPB4/2KB3r w - - 1 30",
+      "rating": 1331,
+      "uci": [
+        "b3d3",
+        "h1d1",
+        "c1d1",
+        "c4b2",
+        "d1e2",
+        "b2d3"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "deflection",
+        "fork",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "229Wn",
+      "fen": "1r2r1k1/1p3ppp/p2p2n1/2pPpN2/PqP5/3BPQ2/1P2K2P/R5R1 w - - 1 22",
+      "rating": 1597,
+      "uci": [
+        "a1b1",
+        "e5e4",
+        "d3e4",
+        "b4c4"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "fork",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "0m6Sf",
+      "fen": "r3r1k1/1pp2ppp/p1n3b1/2b5/3pPqP1/1P1P1N1P/PBPNKP2/R1Q4R w - - 5 16",
+      "rating": 1751,
+      "uci": [
+        "d2c4",
+        "e8e4",
+        "d3e4",
+        "f4e4",
+        "e2f1",
+        "e4f3"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "3FoJH",
+      "fen": "5r2/1R5p/3kp3/1p1r2p1/5P2/4K1P1/PP3R1P/8 w - - 0 28",
+      "rating": 1330,
+      "uci": [
+        "f4g5",
+        "d5e5",
+        "e3d3",
+        "f8f2"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "endgame",
+        "rookEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "0iikG",
+      "fen": "N1bkr3/Bp1p1ppp/8/7n/2P5/5P2/P3qPPP/3R1RK1 b - - 0 15",
+      "rating": 2004,
+      "uci": [
+        "e2a2",
+        "a7b6",
+        "d8e7",
+        "f1e1",
+        "e7f6",
+        "e1e8"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "long",
+        "middlegame",
+        "skewer"
+      ]
+    },
+    {
+      "id": "1h9pE",
+      "fen": "8/8/1R2ppp1/1P3k1p/1r5P/4PKP1/8/8 b - - 1 40",
+      "rating": 1398,
+      "uci": [
+        "e6e5",
+        "e3e4",
+        "b4e4",
+        "b6f6",
+        "f5f6",
+        "f3e4"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "endgame",
+        "long",
+        "master",
+        "rookEndgame"
+      ]
+    },
+    {
+      "id": "0OB89",
+      "fen": "8/8/7P/6p1/8/6k1/r7/5RK1 b - - 7 71",
+      "rating": 1350,
+      "uci": [
+        "a2h2",
+        "f1f3",
+        "g3f3",
+        "g1h2"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "endgame",
+        "master",
+        "rookEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "2FKlx",
+      "fen": "2r1rbk1/1b3ppp/p7/1p2P3/4N2q/P1B4P/1P4P1/R2QR1K1 w - - 1 22",
+      "rating": 2466,
+      "uci": [
+        "d1f3",
+        "c8c3",
+        "f3c3",
+        "b7e4",
+        "c3d4",
+        "f7f5"
+      ],
+      "themes": [
+        "advantage",
+        "defensiveMove",
+        "deflection",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "11PWj",
+      "fen": "r1q1k2r/2b3pp/p4pn1/1p6/8/1P1NP2P/PB1QBPb1/2R2RK1 w kq - 0 22",
+      "rating": 1821,
+      "uci": [
+        "g1g2",
+        "g6h4",
+        "g2g1",
+        "c8h3",
+        "e2h5",
+        "g7g6",
+        "f2f4",
+        "g6h5"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2f5Q2",
+      "fen": "5k2/pp3pp1/4p3/4q3/3pr3/2P3r1/PPKB1R1Q/R7 w - - 0 35",
+      "rating": 2351,
+      "uci": [
+        "d2f4",
+        "d4d3",
+        "c2d1",
+        "e4e1",
+        "d1d2",
+        "e1e2",
+        "f2e2",
+        "e5f4"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1gZud",
+      "fen": "5rk1/4qp2/p2Rn1pP/1p6/4r2P/4B1Q1/PPP5/1K5R w - - 0 26",
+      "rating": 1298,
+      "uci": [
+        "h4h5",
+        "e4e3",
+        "g3e3",
+        "e7d6"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "197Wp",
+      "fen": "3r4/2p2p1k/p5p1/1p1q1nQp/8/1B4P1/PP3P1P/5RK1 b - - 5 32",
+      "rating": 2102,
+      "uci": [
+        "d5d7",
+        "b3f7",
+        "d7f7",
+        "g5d8"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "endgame",
+        "short"
+      ]
+    }
+  ]
+}

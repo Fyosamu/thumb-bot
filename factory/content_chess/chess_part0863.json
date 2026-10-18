@@ -1,0 +1,288 @@
+{
+  "slug": "chess_part0863",
+  "title": "12 Chess Puzzles: Make Room for the Winner (Part 863)",
+  "orientation": "landscape",
+  "thumb_text": "CLEARANCE",
+  "description": "Twelve clearance sacrifices that free a square or a line, one after another, each with a single best move. Every position comes from a real game and is rated between 1482 and 2450, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "2x92k",
+      "fen": "r3rkn1/pb4qQ/1p3pP1/3pP3/8/2P5/PPB3PP/R3R1K1 b - - 0 37",
+      "rating": 1542,
+      "uci": [
+        "e8e5",
+        "e1e5",
+        "f6e5",
+        "a1f1"
+      ],
+      "themes": [
+        "clearance",
+        "crushing",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "1gD7o",
+      "fen": "rn2kb1N/p1p4p/3p4/1p3b2/4n1pq/1B1P1p2/PPP1Q1PP/RNB2K1R w q - 0 12",
+      "rating": 1805,
+      "uci": [
+        "g2f3",
+        "g4f3",
+        "e2f3",
+        "f5h3",
+        "f1e2",
+        "h3g4"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "exposedKing",
+        "long",
+        "middlegame",
+        "pin"
+      ]
+    },
+    {
+      "id": "2FN66",
+      "fen": "4r3/1ppbq1pk/p1np3p/4p3/3PP2N/1BP3PP/PP2Q2K/5R2 b - - 0 22",
+      "rating": 2450,
+      "uci": [
+        "e5d4",
+        "f1f7",
+        "e7d8",
+        "e4e5",
+        "c6e5",
+        "e2e4",
+        "h7h8",
+        "h4g6",
+        "e5g6",
+        "e4g6",
+        "d8g5",
+        "g6g5",
+        "h6g5",
+        "f7d7"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2wKeb",
+      "fen": "3r4/3r2pk/p1p2p1p/P1P1p3/1P2P1PP/2BpKP2/2b4R/6R1 w - - 7 40",
+      "rating": 1935,
+      "uci": [
+        "g1f1",
+        "d3d2",
+        "h2d2",
+        "d7d3",
+        "e3f2",
+        "d3d2"
+      ],
+      "themes": [
+        "advancedPawn",
+        "attraction",
+        "clearance",
+        "collinearMove",
+        "crushing",
+        "deflection",
+        "endgame",
+        "fork",
+        "long"
+      ]
+    },
+    {
+      "id": "0YWy3",
+      "fen": "1r3rk1/5pbp/p1pp2p1/q7/P1PB1P2/2PQ3P/6P1/3R1RK1 b - - 1 21",
+      "rating": 2429,
+      "uci": [
+        "a5a4",
+        "d4g7",
+        "g8g7",
+        "d1a1",
+        "a4b3",
+        "f1b1",
+        "b3b1",
+        "a1b1",
+        "b8b1",
+        "d3b1"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "middlegame",
+        "trappedPiece",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "00UI2",
+      "fen": "2r3nr/p5pp/b3kp2/3p4/4p3/BP3P2/P1PN2PP/2KR3R b - - 0 18",
+      "rating": 1947,
+      "uci": [
+        "f6f5",
+        "f3e4",
+        "f5e4",
+        "d2e4",
+        "d5e4",
+        "d1d6",
+        "e6f7",
+        "d6a6"
+      ],
+      "themes": [
+        "clearance",
+        "crushing",
+        "fork",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0njoQ",
+      "fen": "6k1/1p1qn1p1/pbp3rp/3p2n1/1P1P4/P3B1Nb/B2Q1PPP/2R2RK1 w - - 6 29",
+      "rating": 2427,
+      "uci": [
+        "e3f4",
+        "h3g2",
+        "f4g5",
+        "d7h3",
+        "f2f4",
+        "g2f1",
+        "c1f1",
+        "h6g5"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2uMKL",
+      "fen": "r2qk2r/pb1nnppp/1p1p4/4p3/2N1P3/3B1N1P/PP3PP1/R2Q1RK1 b kq - 1 14",
+      "rating": 1482,
+      "uci": [
+        "d7f6",
+        "c4d6",
+        "d8d6",
+        "d3b5"
+      ],
+      "themes": [
+        "clearance",
+        "crushing",
+        "middlegame",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "2AAbT",
+      "fen": "6k1/1p3pp1/p4n1p/3Nn3/2P5/Pr5P/1P1R2P1/3B3K b - - 5 24",
+      "rating": 2382,
+      "uci": [
+        "f6e4",
+        "d5f6",
+        "g7f6",
+        "d2d8",
+        "g8g7",
+        "d1b3"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "endgame",
+        "long",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "3FRZx",
+      "fen": "6kr/p4p2/1nq1Pb1p/6p1/3PR3/P2Q4/3B2PP/7K b - - 0 28",
+      "rating": 1648,
+      "uci": [
+        "f7e6",
+        "e4e6",
+        "c6e6",
+        "d3g6",
+        "g8f8",
+        "d2b4",
+        "f6e7",
+        "g6e6"
+      ],
+      "themes": [
+        "clearance",
+        "crushing",
+        "exposedKing",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2nN31",
+      "fen": "r4k2/1b3pN1/p1p2q2/6R1/P1p2PQ1/2PPr1Pp/1P5P/R6K w - - 0 26",
+      "rating": 1968,
+      "uci": [
+        "g4h3",
+        "c6c5",
+        "h1g1",
+        "f6c6"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "discoveredAttack",
+        "discoveredCheck",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "1itdm",
+      "fen": "r1b1r2k/p1pp2pp/1b3q2/8/8/1QP5/PP1PB1PP/RNB1K2R w KQ - 2 14",
+      "rating": 2199,
+      "uci": [
+        "h1f1",
+        "e8e2",
+        "e1e2",
+        "c8a6",
+        "c3c4",
+        "a8e8",
+        "e2d1",
+        "f6f1"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "clearance",
+        "deflection",
+        "opening",
+        "sacrifice",
+        "veryLong"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "slug": "chess_part0880",
+  "title": "12 Chess Puzzles: Grandmaster Positions to Solve (Part 880)",
+  "orientation": "landscape",
+  "thumb_text": "MASTER GAME",
+  "description": "Twelve positions taken from master games, one after another, each with a single best move. Every position comes from a real game and is rated between 1265 and 2233, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "0kwj8",
+      "fen": "1k1r1b1r/p5p1/2p5/3pp3/4n2P/2P4Q/PPKN1q1R/R1B5 b - - 3 21",
+      "rating": 2091,
+      "uci": [
+        "f2e1",
+        "d2f3",
+        "e4f2",
+        "f3e1"
+      ],
+      "themes": [
+        "advantage",
+        "master",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2M4EO",
+      "fen": "8/pkb5/3p4/PPpPp3/N1K1Pp1p/5PpP/6P1/8 w - - 8 51",
+      "rating": 1265,
+      "uci": [
+        "a4c5",
+        "d6c5",
+        "c4c5",
+        "c7a5"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "master",
+        "short"
+      ]
+    },
+    {
+      "id": "1jM5r",
+      "fen": "8/pp5p/2p5/4k2P/6P1/1P2K3/PP2N3/3b4 w - - 5 33",
+      "rating": 1327,
+      "uci": [
+        "b3b4",
+        "d1e2",
+        "e3e2",
+        "e5f4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "master",
+        "short"
+      ]
+    },
+    {
+      "id": "2YMDw",
+      "fen": "r1r3k1/pp3ppb/q6p/3p4/4n2B/1P2PN2/P1N1QnPP/R4RK1 w - - 0 23",
+      "rating": 1599,
+      "uci": [
+        "f1f2",
+        "e4f2",
+        "e2a6",
+        "b7a6"
+      ],
+      "themes": [
+        "advantage",
+        "master",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "1AOW6",
+      "fen": "r3k1r1/1b2bp1p/p1nppp2/q7/1p2P3/1B2BN2/1PQ2PPP/2RR2K1 b q - 1 20",
+      "rating": 1947,
+      "uci": [
+        "a5h5",
+        "b3a4",
+        "a8c8",
+        "f3d4"
+      ],
+      "themes": [
+        "crushing",
+        "master",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2rDr4",
+      "fen": "r3r1k1/4npp1/1p1q3p/2pp1b2/8/P1PB1N1P/1P3PP1/R2QR1K1 b - - 2 19",
+      "rating": 1672,
+      "uci": [
+        "a8d8",
+        "e1e7",
+        "e8e7",
+        "d3f5"
+      ],
+      "themes": [
+        "advantage",
+        "capturingDefender",
+        "master",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "1ZZJh",
+      "fen": "1k6/1rr2p1p/Q3p1p1/3p3n/3P1q1P/1RR2P2/PPP2P2/1K6 b - - 8 29",
+      "rating": 1846,
+      "uci": [
+        "f4d4",
+        "b3b7",
+        "c7b7",
+        "a6d6"
+      ],
+      "themes": [
+        "crushing",
+        "master",
+        "middlegame",
+        "queensideAttack",
+        "short"
+      ]
+    },
+    {
+      "id": "11TD3",
+      "fen": "3r2k1/3r1pbp/p2Bq1p1/1p1R2Pn/4P3/5P2/PP1QB2P/1K1R4 w - - 5 25",
+      "rating": 1991,
+      "uci": [
+        "e4e5",
+        "g7e5",
+        "d5e5",
+        "e6e5",
+        "d6e5",
+        "d7d2"
+      ],
+      "themes": [
+        "crushing",
+        "long",
+        "master",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "1jF8p",
+      "fen": "8/8/1q6/2k2PKp/3p4/6P1/6Q1/8 b - - 0 56",
+      "rating": 2233,
+      "uci": [
+        "d4d3",
+        "g2f2",
+        "c5b5",
+        "f2b2",
+        "b5c6",
+        "b2c3",
+        "b6c5",
+        "c3d3"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "master",
+        "masterVsMaster",
+        "queenEndgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1bH6S",
+      "fen": "8/3r1k1p/p3Rp2/P1b1qp2/1p3N2/1Q2PP2/7P/6K1 b - - 0 38",
+      "rating": 1475,
+      "uci": [
+        "c5e3",
+        "b3e3",
+        "e5e3",
+        "e6e3"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "master",
+        "short",
+        "xRayAttack"
+      ]
+    },
+    {
+      "id": "3Eaw6",
+      "fen": "5b2/pp3k2/3p4/q2PpKR1/4Pp2/8/1P6/7R b - - 1 38",
+      "rating": 2190,
+      "uci": [
+        "a5a4",
+        "h1h7",
+        "f7e8",
+        "g5g8",
+        "a4d7",
+        "h7d7"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "master"
+      ]
+    },
+    {
+      "id": "0BNL7",
+      "fen": "4r1k1/2R2pp1/7p/1P6/5Q2/1q5P/2p2PPK/8 b - - 0 36",
+      "rating": 2182,
+      "uci": [
+        "e8e1",
+        "c7c8",
+        "g8h7",
+        "f4f5",
+        "g7g6",
+        "f5f6",
+        "e1h1",
+        "h2h1",
+        "c2c1q",
+        "c8c1"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "master",
+        "veryLong"
+      ]
+    }
+  ]
+}
