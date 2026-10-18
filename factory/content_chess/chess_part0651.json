@@ -1,0 +1,243 @@
+{
+  "slug": "chess_part0651",
+  "title": "12 Chess Puzzles: Squeeze the Pinned Piece (Part 651)",
+  "orientation": "landscape",
+  "thumb_text": "THE PIN",
+  "description": "Twelve pins that freeze a defender, one after another, each with a single best move. Every position comes from a real game and is rated between 1403 and 2369, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1qRPt",
+      "fen": "2r3k1/R4pp1/4p2p/3pPn2/3PbPP1/5N2/7P/4R2K w - - 1 26",
+      "rating": 1745,
+      "uci": [
+        "h1g2",
+        "f5h4",
+        "g2g3",
+        "h4f3"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "id": "3CoSd",
+      "fen": "2Q5/q6k/6pp/2n1p3/3bP2P/5P2/6P1/1R5K b - - 0 40",
+      "rating": 1688,
+      "uci": [
+        "a7d7",
+        "c8d7",
+        "c5d7",
+        "b1b7"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "master",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "id": "09BVh",
+      "fen": "2bq3k/4PQbp/p4np1/2p2p2/P4P2/2P1B3/6PP/1R4K1 b - - 0 28",
+      "rating": 1626,
+      "uci": [
+        "d8g8",
+        "f7g8",
+        "h8g8",
+        "b1b8"
+      ],
+      "themes": [
+        "crushing",
+        "middlegame",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "id": "2Zt4S",
+      "fen": "3b2k1/Q7/q1PN4/2nPppp1/8/5P1P/6P1/6K1 w - - 1 37",
+      "rating": 1432,
+      "uci": [
+        "a7c5",
+        "d8b6",
+        "c5b6",
+        "a6b6"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "master",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "id": "1EbO2",
+      "fen": "2r1r3/p2k1p1p/8/4Q3/8/2PqP3/PP4PP/RN2K2R w KQ - 1 20",
+      "rating": 1403,
+      "uci": [
+        "e5d4",
+        "d3d4",
+        "c3d4",
+        "c8c1",
+        "e1d2",
+        "c1h1"
+      ],
+      "themes": [
+        "advantage",
+        "exposedKing",
+        "long",
+        "middlegame",
+        "pin",
+        "skewer"
+      ]
+    },
+    {
+      "id": "2oCCO",
+      "fen": "r5k1/pp4bp/3p2p1/2pPp2r/2P2B1q/2N5/PP3P2/R2QNRK1 w - - 1 21",
+      "rating": 1644,
+      "uci": [
+        "d1f3",
+        "e5f4",
+        "f3g2",
+        "h5g5"
+      ],
+      "themes": [
+        "crushing",
+        "master",
+        "middlegame",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "id": "3EcXp",
+      "fen": "1k4r1/ppq4p/4p1r1/8/PR2Q3/2P5/7P/1R5K b - - 4 31",
+      "rating": 1799,
+      "uci": [
+        "b8c8",
+        "b4c4",
+        "c7c4",
+        "e4c4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "id": "1emDY",
+      "fen": "2r5/6p1/p2k2P1/1p1P2BQ/3bp3/P7/1P3qBK/R7 w - - 0 37",
+      "rating": 1984,
+      "uci": [
+        "h5h4",
+        "d4e5",
+        "h2h1",
+        "f2h4",
+        "g5h4",
+        "c8h8"
+      ],
+      "themes": [
+        "advantage",
+        "exposedKing",
+        "long",
+        "middlegame",
+        "pin"
+      ]
+    },
+    {
+      "id": "0WJCx",
+      "fen": "1r3rk1/p1pbqppp/5n2/8/2N1P2Q/2P2P2/P6P/R1B1K1R1 b Q - 0 18",
+      "rating": 2369,
+      "uci": [
+        "e7c5",
+        "c1e3",
+        "c5h5",
+        "h4f6"
+      ],
+      "themes": [
+        "crushing",
+        "middlegame",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "id": "1uuQJ",
+      "fen": "5Rk1/8/6p1/p3bp1p/5q2/2pr4/P3QB2/5RK1 b - - 0 43",
+      "rating": 1442,
+      "uci": [
+        "g8f8",
+        "f2c5",
+        "e5d6",
+        "f1f4"
+      ],
+      "themes": [
+        "advantage",
+        "discoveredAttack",
+        "endgame",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "id": "1v6DN",
+      "fen": "4kb1r/5p1p/2P2p2/3p4/1n6/5N1P/5PP1/4KB1R b Kk - 0 21",
+      "rating": 1549,
+      "uci": [
+        "b4c6",
+        "f1b5",
+        "e8d7",
+        "f3d4",
+        "f8c5",
+        "d4c6"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "pin"
+      ]
+    },
+    {
+      "id": "0nCKD",
+      "fen": "r5k1/pp3rp1/4pn1p/3p4/7q/P6N/1PP3Q1/1K3RR1 b - - 2 24",
+      "rating": 2076,
+      "uci": [
+        "a8f8",
+        "f1f4",
+        "h4h5",
+        "f4f6"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "pin",
+        "short"
+      ]
+    }
+  ]
+}

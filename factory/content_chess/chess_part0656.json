@@ -1,0 +1,282 @@
+{
+  "slug": "chess_part0656",
+  "title": "12 Chess Puzzles: No Shelter Left for the King (Part 656)",
+  "orientation": "landscape",
+  "thumb_text": "EXPOSED KING",
+  "description": "Twelve attacks on an exposed king, one after another, each with a single best move. Every position comes from a real game and is rated between 1402 and 2796, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1OG3h",
+      "fen": "2kr4/2n5/1RQ1p2p/3p4/2P5/P7/2q1KP2/1R6 w - - 7 36",
+      "rating": 2342,
+      "uci": [
+        "e2e3",
+        "d5d4",
+        "e3f3",
+        "d8f8",
+        "f3g2",
+        "c2f2",
+        "g2h1",
+        "f2h4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1B1vy",
+      "fen": "3k4/3r1p2/2pq3p/pR1P2p1/P1Q1Pp2/7P/2K2PP1/8 w - - 3 37",
+      "rating": 2288,
+      "uci": [
+        "d5c6",
+        "d6d1",
+        "c2c3",
+        "d1d2",
+        "c3b3",
+        "d7d3",
+        "c4d3",
+        "d2d3"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2aYsJ",
+      "fen": "2k4r/p2r3p/Ppp2p2/2b3q1/8/5Q2/4R1PP/5R1K b - - 5 27",
+      "rating": 1653,
+      "uci": [
+        "h8g8",
+        "f3c6",
+        "c8d8",
+        "c6a8",
+        "d8c7",
+        "a8b7",
+        "c7d6",
+        "f1d1"
+      ],
+      "themes": [
+        "crushing",
+        "exposedKing",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0uHeO",
+      "fen": "2kr3r/4bR1p/p3p1p1/1p2P3/2qBQ3/P1N5/1PP3PP/7K b - - 0 22",
+      "rating": 2015,
+      "uci": [
+        "c4d4",
+        "e4a8",
+        "c8c7",
+        "f7e7",
+        "d8d7",
+        "e7d7",
+        "d4d7",
+        "a8h8"
+      ],
+      "themes": [
+        "crushing",
+        "exposedKing",
+        "middlegame",
+        "queensideAttack",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2JYLQ",
+      "fen": "2R5/8/pk1p4/4p1b1/4P3/PpN1q3/1P5P/4KQ2 w - - 8 42",
+      "rating": 1816,
+      "uci": [
+        "c3e2",
+        "g5h4",
+        "e1d1",
+        "e3d3",
+        "d1c1",
+        "h4g5"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "long"
+      ]
+    },
+    {
+      "id": "3IDoU",
+      "fen": "r5k1/ppp2ppp/3bqnr1/8/4p3/2PPBQN1/PP3P1N/R5RK w - - 0 23",
+      "rating": 1817,
+      "uci": [
+        "f3f5",
+        "g6g3",
+        "f5e6",
+        "g3g1",
+        "a1g1",
+        "f7e6"
+      ],
+      "themes": [
+        "advantage",
+        "exposedKing",
+        "kingsideAttack",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "0SHht",
+      "fen": "6rk/1p1P4/p2bP2p/3N2pq/P1p1b3/4Q2P/1P6/3RR2K w - - 4 40",
+      "rating": 1402,
+      "uci": [
+        "e3e4",
+        "h5h3",
+        "h1g1",
+        "h3h2",
+        "g1f1",
+        "g8f8"
+      ],
+      "themes": [
+        "crushing",
+        "exposedKing",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "17tsD",
+      "fen": "4r1k1/ppR5/1q4p1/5r2/3pp3/1P4Q1/P4PP1/2R3K1 b - - 1 27",
+      "rating": 2363,
+      "uci": [
+        "d4d3",
+        "c1c6",
+        "b6f2",
+        "g3f2",
+        "f5f2",
+        "c6g6",
+        "g8f8",
+        "g1f2",
+        "e4e3",
+        "f2e1"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "exposedKing",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2Q1bz",
+      "fen": "8/pp6/2k1p2P/5p2/4pP2/3nP1P1/Pqp5/R4QK1 b - - 0 39",
+      "rating": 2054,
+      "uci": [
+        "c2c1q",
+        "a1c1",
+        "d3c1",
+        "f1c4",
+        "c6d7",
+        "c4d4",
+        "b2d4",
+        "e3d4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1pyhb",
+      "fen": "8/8/8/N7/1k2p3/1p3p2/3K1P2/8 w - - 6 69",
+      "rating": 2796,
+      "uci": [
+        "a5c6",
+        "b4a4",
+        "c6d4",
+        "e4e3",
+        "d2e3",
+        "b3b2",
+        "d4f3",
+        "b2b1q"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "exposedKing",
+        "knightEndgame",
+        "promotion",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1mIIC",
+      "fen": "2kr4/ppp1R3/2p2Ppr/2P2b2/3B1N2/5QP1/qPP2P1p/3R3K w - - 0 24",
+      "rating": 2216,
+      "uci": [
+        "d4e5",
+        "d8d1",
+        "f3d1",
+        "f5e4",
+        "f2f3",
+        "e4f3",
+        "f4g2",
+        "f3g2"
+      ],
+      "themes": [
+        "crushing",
+        "exposedKing",
+        "kingsideAttack",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2TpQw",
+      "fen": "6k1/R7/6PK/p4r2/8/8/8/8 b - - 0 77",
+      "rating": 1663,
+      "uci": [
+        "f5f1",
+        "a7a8",
+        "f1f8",
+        "a8f8",
+        "g8f8",
+        "h6h7"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "exposedKing",
+        "long",
+        "rookEndgame"
+      ]
+    }
+  ]
+}

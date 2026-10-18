@@ -1,0 +1,229 @@
+{
+  "slug": "chess_part0609",
+  "title": "12 Chess Puzzles: Punish the Opening Mistake (Part 609)",
+  "orientation": "landscape",
+  "thumb_text": "OPENING",
+  "description": "Twelve punishing opening mistakes, one after another, each with a single best move. Every position comes from a real game and is rated between 1373 and 2604, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "0nxTG",
+      "fen": "r1bqkb1r/1pp1pppp/pnnp4/4P3/2BP4/1P3N2/P1P2PPP/RNBQK2R b KQkq - 0 7",
+      "rating": 1549,
+      "uci": [
+        "c6e5",
+        "d4e5",
+        "b6c4",
+        "b3c4"
+      ],
+      "themes": [
+        "advantage",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "2OEz2",
+      "fen": "r1bq1b1r/2pp1kpp/p1n2n2/1p2p3/4P3/1P1P1N2/PBP2PPP/RN1QK2R b KQ - 1 7",
+      "rating": 1459,
+      "uci": [
+        "c6d4",
+        "f3e5",
+        "f7g8",
+        "b2d4"
+      ],
+      "themes": [
+        "advantage",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "2ovT0",
+      "fen": "r1b1kbnr/pp3ppp/4p3/3pP1N1/3B4/3B4/P4PPP/qN1QK2R b Kkq - 0 10",
+      "rating": 1787,
+      "uci": [
+        "a1d4",
+        "d3b5",
+        "c8d7",
+        "b5d7",
+        "e8d7",
+        "d1d4"
+      ],
+      "themes": [
+        "advantage",
+        "long",
+        "opening"
+      ]
+    },
+    {
+      "id": "326Kf",
+      "fen": "r2qkb1r/1bp1np2/3p1Qpp/p3n1B1/Pp1NP3/1BP5/1P3PPP/RN3RK1 b kq - 3 14",
+      "rating": 2330,
+      "uci": [
+        "h8g8",
+        "f2f4",
+        "f8g7",
+        "f6e7",
+        "d8e7",
+        "g5e7"
+      ],
+      "themes": [
+        "advantage",
+        "long",
+        "opening"
+      ]
+    },
+    {
+      "id": "2LSoJ",
+      "fen": "r3kbnr/pp1b1ppp/4p3/3pP3/3P4/3NP3/q2NK1PP/1R1Q1B1R b kq - 2 13",
+      "rating": 1755,
+      "uci": [
+        "d7c6",
+        "b1a1",
+        "a2a1",
+        "d1a1"
+      ],
+      "themes": [
+        "advantage",
+        "opening",
+        "short",
+        "trappedPiece"
+      ]
+    },
+    {
+      "id": "0C12L",
+      "fen": "2kr1b1r/ppp2ppp/2nq4/3Np3/1PB3b1/3P1N2/P1PB1P2/R2QR1K1 w - - 1 15",
+      "rating": 2442,
+      "uci": [
+        "c2c3",
+        "d6g6",
+        "f3h4",
+        "g6h5",
+        "f2f3",
+        "g4e6"
+      ],
+      "themes": [
+        "crushing",
+        "long",
+        "opening"
+      ]
+    },
+    {
+      "id": "2tHGh",
+      "fen": "r2qr1k1/ppp2ppp/2n2b2/8/1P4b1/P1PB1N2/1B1P1PPP/R2Q1RK1 w - - 1 15",
+      "rating": 1811,
+      "uci": [
+        "h2h3",
+        "g4f3",
+        "d1f3",
+        "c6e5",
+        "d3h7",
+        "g8h7"
+      ],
+      "themes": [
+        "advantage",
+        "long",
+        "opening"
+      ]
+    },
+    {
+      "id": "2LSwM",
+      "fen": "r1b1kbnr/pp2pppp/2p5/8/3n4/2N1P3/PP3PPP/1RB1KBNR b Kkq - 0 7",
+      "rating": 1836,
+      "uci": [
+        "c8f5",
+        "e3d4",
+        "f5b1",
+        "c3b1"
+      ],
+      "themes": [
+        "advantage",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "3GLxF",
+      "fen": "rnbq1b1r/pp1kpQpp/1np5/4p1N1/8/2N5/PPPP1PPP/R1B2RK1 b - - 1 10",
+      "rating": 2604,
+      "uci": [
+        "h7h6",
+        "g5e6",
+        "d8e8",
+        "f7f5"
+      ],
+      "themes": [
+        "advantage",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "08GDa",
+      "fen": "r1bqk1nr/pp1p1pbp/2n1p1p1/1N4N1/2B1P3/8/PP3PPP/R1BQK2R b KQkq - 1 8",
+      "rating": 1554,
+      "uci": [
+        "h7h6",
+        "b5d6",
+        "e8f8",
+        "g5f7"
+      ],
+      "themes": [
+        "crushing",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "2kTr4",
+      "fen": "r2q1rk1/2p2pp1/1pnpb2p/p2NP3/7b/5N1P/PPP1QPP1/2KR1B1R w - - 0 17",
+      "rating": 2191,
+      "uci": [
+        "d5c7",
+        "d8c7",
+        "e5d6",
+        "c7d8"
+      ],
+      "themes": [
+        "advantage",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "1jsLW",
+      "fen": "N1bk2nr/pp1p1p1p/6p1/3P4/3b4/8/q2B1PPP/1R1QKB1R w K - 0 15",
+      "rating": 1373,
+      "uci": [
+        "d2e3",
+        "d4c3",
+        "e3d2",
+        "c3d2",
+        "d1d2",
+        "a2b1"
+      ],
+      "themes": [
+        "crushing",
+        "long",
+        "opening"
+      ]
+    }
+  ]
+}

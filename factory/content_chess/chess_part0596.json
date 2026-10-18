@@ -1,0 +1,262 @@
+{
+  "slug": "chess_part0596",
+  "title": "12 Chess Puzzles: The Double Attack That Wins (Part 596)",
+  "orientation": "landscape",
+  "thumb_text": "THE FORK",
+  "description": "Twelve forks and double attacks, one after another, each with a single best move. Every position comes from a real game and is rated between 1286 and 2601, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1kQ2p",
+      "fen": "r1k4r/3bR3/pB1N4/1p2n3/4n2b/8/qPP4Q/2KR1B2 b - - 0 25",
+      "rating": 1695,
+      "uci": [
+        "e4d6",
+        "h2e5",
+        "a2a1",
+        "c1d2",
+        "d6e4",
+        "e5e4"
+      ],
+      "themes": [
+        "crushing",
+        "fork",
+        "hangingPiece",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "0Y5tN",
+      "fen": "4r1k1/4qp1p/3p2p1/2nPr3/1p6/1P1R3P/5PP1/2QR1BK1 w - - 2 35",
+      "rating": 1372,
+      "uci": [
+        "d3d4",
+        "c5b3",
+        "d4b4",
+        "b3c1"
+      ],
+      "themes": [
+        "crushing",
+        "fork",
+        "master",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2oARQ",
+      "fen": "2kr3r/pbp3pp/1pq4n/4Pp2/8/2NP4/PPP1NQPP/R1B4K b - - 0 17",
+      "rating": 1608,
+      "uci": [
+        "h6g4",
+        "f2f5",
+        "c6d7",
+        "e5e6"
+      ],
+      "themes": [
+        "advantage",
+        "fork",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2USP6",
+      "fen": "r4r2/1bbp1p1p/p4knN/1p2n3/8/P1N5/BPP3PP/R2Q3K w - - 0 23",
+      "rating": 1865,
+      "uci": [
+        "d1h5",
+        "b7g2",
+        "h1g1",
+        "c7b6",
+        "g1g2",
+        "g6f4",
+        "g2h1",
+        "f4h5"
+      ],
+      "themes": [
+        "crushing",
+        "fork",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1WcfF",
+      "fen": "r2q1rk1/pp3pp1/4p3/4nb1P/3RN2b/1BN5/PP3P2/2KQ3R b - - 1 19",
+      "rating": 1684,
+      "uci": [
+        "d8g5",
+        "e4g5",
+        "h4g5",
+        "f2f4",
+        "g5f4",
+        "d4f4"
+      ],
+      "themes": [
+        "advantage",
+        "fork",
+        "long",
+        "master",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "231kX",
+      "fen": "r3k1nr/1ppq1ppp/p1n5/2p1p3/2B1PPb1/5N2/PPPP2PP/R1BQ1RK1 w kq - 2 9",
+      "rating": 1836,
+      "uci": [
+        "f4e5",
+        "g4f3",
+        "d1f3",
+        "d7d4",
+        "f3f2",
+        "d4c4"
+      ],
+      "themes": [
+        "advantage",
+        "fork",
+        "long",
+        "opening"
+      ]
+    },
+    {
+      "id": "2ju4a",
+      "fen": "2r5/p3npk1/bp2p1pp/4P3/q2P3N/P3Q3/1P4PP/1B2R1K1 b - - 8 26",
+      "rating": 1554,
+      "uci": [
+        "c8c4",
+        "b2b3",
+        "a4a3",
+        "b3c4",
+        "a3e3",
+        "e1e3"
+      ],
+      "themes": [
+        "advantage",
+        "fork",
+        "long",
+        "master",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "0AOqz",
+      "fen": "8/1p2q1kp/4p1p1/p3N1n1/b2Pr3/3K2Q1/PPr1B2R/7R b - - 9 31",
+      "rating": 1875,
+      "uci": [
+        "c2b2",
+        "h2h7",
+        "g5h7",
+        "g3g6",
+        "g7h8",
+        "e5f7",
+        "e7f7",
+        "g6f7"
+      ],
+      "themes": [
+        "crushing",
+        "fork",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2oBV9",
+      "fen": "2n3k1/1p2p1b1/p2pp1pp/Pqp5/3PP1Q1/2P1P3/1P4PP/5RK1 b - - 0 20",
+      "rating": 2601,
+      "uci": [
+        "b5b2",
+        "g4g6",
+        "b2c3",
+        "g6e6",
+        "g8h8",
+        "e6c8"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "fork",
+        "long"
+      ]
+    },
+    {
+      "id": "2Tk58",
+      "fen": "r2q1r1k/1pp3pb/p1np3B/5N2/3bN1Q1/1B5P/PP3PP1/R3R1K1 b - - 0 18",
+      "rating": 1716,
+      "uci": [
+        "h7f5",
+        "h6g7",
+        "d4g7",
+        "g4h5",
+        "f5h7",
+        "e4g5",
+        "d8g5",
+        "h5g5"
+      ],
+      "themes": [
+        "crushing",
+        "fork",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2KeHE",
+      "fen": "4r1k1/pp3p1p/6p1/8/5QP1/1BP3KP/PP2q3/8 b - - 3 36",
+      "rating": 1286,
+      "uci": [
+        "e2e5",
+        "b3f7",
+        "g8g7",
+        "f7e8"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "fork",
+        "short"
+      ]
+    },
+    {
+      "id": "05IS6",
+      "fen": "r2qk2r/ppp2ppp/3b4/4Nb2/3QnB2/P6P/NPP1PPP1/R3KB1R w KQkq - 1 12",
+      "rating": 1939,
+      "uci": [
+        "f2f3",
+        "d8h4",
+        "g2g3",
+        "e4g3",
+        "e1c1",
+        "g3h1"
+      ],
+      "themes": [
+        "advantage",
+        "fork",
+        "long",
+        "opening"
+      ]
+    }
+  ]
+}
