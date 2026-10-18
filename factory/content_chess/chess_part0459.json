@@ -1,0 +1,281 @@
+{
+  "slug": "chess_part0459",
+  "title": "12 Chess Puzzles: Uncover the Check, Take the Piece (Part 459)",
+  "orientation": "landscape",
+  "thumb_text": "DISCOVERED CHK",
+  "description": "Twelve discovered checks that win material, one after another, each with a single best move. Every position comes from a real game and is rated between 1462 and 2796, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1zyYe",
+      "fen": "3Q4/2p3k1/p3P2p/2Pb2p1/4q3/P7/6rP/R5RK w - - 9 32",
+      "rating": 2796,
+      "uci": [
+        "d8c7",
+        "g7f6",
+        "c7d8",
+        "f6g6",
+        "d8d5",
+        "g2g1",
+        "h1g1",
+        "e4d5"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "discoveredCheck",
+        "doubleCheck",
+        "endgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0DXNY",
+      "fen": "1k5r/p1r4p/Bp1p1p1p/PQp5/2PqP3/3P3P/1P2bRP1/4R1K1 b - - 2 30",
+      "rating": 1589,
+      "uci": [
+        "e2d3",
+        "a5b6",
+        "c7g7",
+        "b6a7",
+        "b8a8",
+        "b5c6"
+      ],
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "discoveredCheck",
+        "doubleCheck",
+        "long",
+        "middlegame",
+        "queensideAttack"
+      ]
+    },
+    {
+      "id": "20axF",
+      "fen": "8/1q3k2/6p1/3n2P1/3BQ3/8/5PK1/8 w - - 1 54",
+      "rating": 2106,
+      "uci": [
+        "e4e5",
+        "d5e3",
+        "g2g3",
+        "b7g2",
+        "g3f4",
+        "e3d5",
+        "e5d5",
+        "g2d5"
+      ],
+      "themes": [
+        "crushing",
+        "discoveredCheck",
+        "doubleCheck",
+        "endgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2PYiQ",
+      "fen": "r1b3r1/pp3k2/3Np2p/8/7Q/8/PqP2PPP/5RK1 b - - 15 27",
+      "rating": 1662,
+      "uci": [
+        "f7g7",
+        "h4e7",
+        "g7h8",
+        "d6f7",
+        "h8h7",
+        "f7g5"
+      ],
+      "themes": [
+        "crushing",
+        "discoveredCheck",
+        "doubleCheck",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "2oPvA",
+      "fen": "r1b1kb1r/pp1np1pp/4Nn2/2p1q3/2B5/4B3/PPP2PPP/RN1QK2R b KQkq - 0 11",
+      "rating": 1992,
+      "uci": [
+        "d7b6",
+        "d1d8",
+        "e8f7",
+        "e6g5"
+      ],
+      "themes": [
+        "crushing",
+        "discoveredCheck",
+        "doubleCheck",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "20H7W",
+      "fen": "2r3k1/1p5b/p3R2p/2q3p1/r7/1Q6/1PP3RP/1K6 b - - 1 31",
+      "rating": 1918,
+      "uci": [
+        "a4b4",
+        "e6e8",
+        "g8g7",
+        "e8c8",
+        "b4b3",
+        "c8c5"
+      ],
+      "themes": [
+        "advantage",
+        "discoveredCheck",
+        "doubleCheck",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "0esic",
+      "fen": "rnb2rk1/1p1p1pbN/p3p1p1/q3n2P/8/3B4/PPP2PP1/RNBQ1K1R b - - 0 12",
+      "rating": 2478,
+      "uci": [
+        "g8h7",
+        "h5g6",
+        "h7g8",
+        "d1h5",
+        "f7g6",
+        "h5h7",
+        "g8f7",
+        "c1h6"
+      ],
+      "themes": [
+        "advantage",
+        "discoveredCheck",
+        "doubleCheck",
+        "opening",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1zA0m",
+      "fen": "6k1/1bn2p2/3p3p/2pP2p1/2Bq4/2N3P1/PP2QnP1/2N3K1 w - - 0 23",
+      "rating": 1462,
+      "uci": [
+        "c1b3",
+        "f2h3",
+        "g1h2",
+        "d4g1"
+      ],
+      "themes": [
+        "crushing",
+        "discoveredCheck",
+        "doubleCheck",
+        "kingsideAttack",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "0bPMu",
+      "fen": "2rqr1kb/4p2p/p2p2pB/5RN1/1p6/2N5/PPP3B1/2K2R2 b - - 0 24",
+      "rating": 1821,
+      "uci": [
+        "g6f5",
+        "g2d5",
+        "e7e6",
+        "g5e6",
+        "g8f7",
+        "e6d8"
+      ],
+      "themes": [
+        "advantage",
+        "discoveredCheck",
+        "doubleCheck",
+        "kingsideAttack",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "1Ayib",
+      "fen": "r4r2/p2qp1kp/2pp2p1/4R2n/3Q4/1P6/P1P2PPP/R5K1 b - - 0 19",
+      "rating": 1951,
+      "uci": [
+        "c6c5",
+        "e5e7",
+        "g7g8",
+        "d4d5",
+        "g8h8",
+        "e7d7"
+      ],
+      "themes": [
+        "crushing",
+        "discoveredCheck",
+        "doubleCheck",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "12cla",
+      "fen": "1r3b2/4kbn1/q2p1N1R/4p1P1/4P3/1pP1BP1Q/8/1K1R4 w - - 1 33",
+      "rating": 2790,
+      "uci": [
+        "d1d2",
+        "f7e6",
+        "f6d5",
+        "e6d5",
+        "h6d6",
+        "a6a2",
+        "d2a2",
+        "b3a2",
+        "b1c2",
+        "d5b3"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "discoveredCheck",
+        "doubleCheck",
+        "exposedKing",
+        "middlegame",
+        "queensideAttack",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "24Zkd",
+      "fen": "rq3k1r/pp1n1pbp/2nNp1p1/3pP3/3B4/3B1Q1P/PPP2PP1/R3R1K1 b - - 12 16",
+      "rating": 1618,
+      "uci": [
+        "f7f5",
+        "e5f6",
+        "c6d4",
+        "f6g7"
+      ],
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "discoveredCheck",
+        "doubleCheck",
+        "enPassant",
+        "middlegame",
+        "short"
+      ]
+    }
+  ]
+}
