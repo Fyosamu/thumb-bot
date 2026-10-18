@@ -2,6 +2,7 @@
 """Generate music (copyright-free, randomized per track), long video and shorts.
 Video style: static board frames, hard cuts (no zoom, no fade), 15s per puzzle."""
 import os, math, wave, struct, json, random, subprocess, sys
+from pathlib import Path
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -228,6 +229,18 @@ def make_music(path, seconds=75, sr=44100, rng=None, style="calm", gain=0.9):
             for i in range(total)))
 
 # ---------------- frames ---------------------------------------------------------
+def _mellow_bed():
+    """The shared mellow pad from factory/make_music.py — the SAME song all
+    three channels use. Chess plays it as the full soundtrack (mixed hot at
+    the call sites), science/bio tuck it under the narration."""
+    factory = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "..", "factory"))
+    if factory not in sys.path:
+        sys.path.insert(0, factory)
+    from make_music import ensure_bed
+    return str(ensure_bed(Path(factory) / "assets" / "mellow_bed.wav"))
+
+
 def to_bg(path, w, h):
     img = I.open(path)
     scale = min(w/img.width, h/img.height)*0.95
@@ -272,13 +285,7 @@ def make_video(puzzles, out_dir, tag, seg=15, ff=None):
     W, H = 1920, 1080
     # one continuous piece of music for the whole video
     total = seg * len(puzzles)
-    music = os.path.join(out_dir, f"{tag}_music.wav")
-    # one whole-chord loop is enough: ffmpeg tiles it for the whole runtime,
-    # so a 12-minute episode still only costs ~45 s of synthesis.  The file
-    # length is snapped to a chord boundary inside make_music, so the seam
-    # lands where the pad is already faded out.
-    make_music(music, seconds=min(total, 45), rng=random.Random(tag),
-               style="calm", gain=0.85)   # long video: calm + not loud
+    music = _mellow_bed()   # shared seamless pad, ffmpeg tiles it for runtime
     parts = []
     for i, pz in enumerate(puzzles, 1):
         frame = board_frame(pz, i, out_dir, tag, W, H)
@@ -298,12 +305,13 @@ def make_video(puzzles, out_dir, tag, seg=15, ff=None):
     subprocess.run([ff, "-y", "-f","concat","-safe","0","-i",lst,
         "-stream_loop","-1","-i",music,
         "-map","0:v","-map","1:a","-t",str(total),
-        "-af","afade=t=out:st={:.1f}:d=2".format(total-2),
+        "-af","volume=2.5,alimiter=limit=0.95:attack=5:release=50,"
+              "afade=t=out:st={:.1f}:d=2".format(total-2),
         "-c:v","libx264","-preset","veryfast","-pix_fmt","yuv420p",
         "-c:a","aac", final],
         check=True, capture_output=True)
     for p in parts: os.remove(p)
-    os.remove(lst); os.remove(music)
+    os.remove(lst)
     return final
 
 def make_short(pz, out_dir, tag, i, ff=None, seg=15):
@@ -311,16 +319,17 @@ def make_short(pz, out_dir, tag, i, ff=None, seg=15):
     os.makedirs(out_dir, exist_ok=True)
     sw, sh = 1080, 1920
     frame = board_frame(pz, i, out_dir, tag, sw, sh, suffix="s")
-    music = os.path.join(out_dir, f"{tag}_sm{i}.wav")
-    make_music(music, seconds=seg, rng=random.Random(f"{tag}short{i}"),
-               style="trend", gain=0.55)  # catchy beat, but deliberately quiet
+    music = _mellow_bed()
     final = os.path.join(out_dir, f"{tag}_short{i}.mp4")
     subprocess.run([ff, "-y", "-loop","1","-t",str(seg),"-i",frame,"-i",music,
         "-filter_complex", f"[0:v]scale={sw}:{sh},fps=25[v]",
-        "-map","[v]","-map","1:a","-t",str(seg),"-c:v","libx264","-preset","veryfast",
+        "-map","[v]","-map","1:a","-t",str(seg),
+        "-af","volume=2.5,alimiter=limit=0.95:attack=5:release=50,"
+              f"afade=t=out:st={seg-2}:d=2",
+        "-c:v","libx264","-preset","veryfast",
         "-pix_fmt","yuv420p","-c:a","aac","-shortest", final],
         check=True, capture_output=True)
-    os.remove(frame); os.remove(music)
+    os.remove(frame)
     return final
 
 if __name__ == "__main__":
