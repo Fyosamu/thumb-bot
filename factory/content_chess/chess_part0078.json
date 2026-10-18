@@ -1,0 +1,237 @@
+{
+  "slug": "chess_part0078",
+  "title": "12 Chess Puzzles: The Opening Trap You Can Use (Part 78)",
+  "orientation": "landscape",
+  "thumb_text": "OPENING",
+  "description": "Twelve punishing opening mistakes, one after another, each with a single best move. Every position comes from a real game and is rated between 1315 and 1962, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1iNyY",
+      "fen": "rnb2rk1/ppp3p1/3p2qp/2bPp3/2P1N3/3B1N2/PP3PPP/R2QK2R w KQ - 1 11",
+      "rating": 1821,
+      "uci": [
+        "e4c5",
+        "g6g2",
+        "h1g1",
+        "g2f3",
+        "d1f3",
+        "f8f3"
+      ],
+      "themes": [
+        "advantage",
+        "long",
+        "opening"
+      ]
+    },
+    {
+      "id": "28UD5",
+      "fen": "rnb2rk1/pp1p1ppp/1q2pn2/2b5/8/2N1PN2/PPPB1PPP/R2QKB1R b KQ - 8 8",
+      "rating": 1375,
+      "uci": [
+        "b8c6",
+        "c3a4",
+        "b6c7",
+        "a4c5"
+      ],
+      "themes": [
+        "advantage",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "2KvrU",
+      "fen": "rn1qk1nr/1bppbppp/1p2p3/p7/2B1P3/3PBN2/PPP2PPP/RN1QK2R w KQkq - 0 6",
+      "rating": 1619,
+      "uci": [
+        "b1d2",
+        "d7d5",
+        "e4d5",
+        "e6d5",
+        "c4b5",
+        "c7c6",
+        "b5a4",
+        "b6b5",
+        "a4b3",
+        "a5a4",
+        "c2c3",
+        "a4b3"
+      ],
+      "themes": [
+        "advantage",
+        "opening",
+        "trappedPiece",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2RyC2",
+      "fen": "r1b2rk1/pp3ppp/1q2p3/2b1n1N1/4pQ2/2P5/PP3PPP/RNB2RK1 b - - 1 12",
+      "rating": 1869,
+      "uci": [
+        "e5d3",
+        "f4e4",
+        "c5f2",
+        "g1h1",
+        "f7f5",
+        "e4d3"
+      ],
+      "themes": [
+        "advantage",
+        "long",
+        "master",
+        "opening"
+      ]
+    },
+    {
+      "id": "2k3Fe",
+      "fen": "r2q1rk1/1pp2pp1/p6p/2pNp2b/2BnP1n1/3P1N1P/PPP2P2/R2Q1RK1 w - - 0 14",
+      "rating": 1522,
+      "uci": [
+        "h3g4",
+        "h5g4",
+        "f3d4",
+        "g4d1"
+      ],
+      "themes": [
+        "advantage",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "1UE4X",
+      "fen": "r2qk1nr/p2bppbp/2p3p1/8/2Q5/6P1/PP2PPBP/RNB1K2R w KQkq - 0 10",
+      "rating": 1722,
+      "uci": [
+        "g2c6",
+        "a8c8",
+        "c6d7",
+        "d8d7",
+        "c4c8",
+        "d7c8"
+      ],
+      "themes": [
+        "advantage",
+        "long",
+        "opening"
+      ]
+    },
+    {
+      "id": "21WJx",
+      "fen": "r1b1r1k1/pp1nppBp/1q1p1npQ/8/4P3/1Pp2N1P/P1P2PP1/1R2KB1R b K - 0 12",
+      "rating": 1672,
+      "uci": [
+        "f6e4",
+        "g7d4",
+        "d7f6",
+        "d4b6"
+      ],
+      "themes": [
+        "advantage",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "1U05A",
+      "fen": "rn1qk2r/pppbb1pp/4p3/4P3/2P3n1/2N2N2/PP4PP/R1BQKB1R w KQkq - 1 10",
+      "rating": 1315,
+      "uci": [
+        "h2h3",
+        "e7h4",
+        "e1e2",
+        "g4f2"
+      ],
+      "themes": [
+        "advantage",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "0vKHx",
+      "fen": "r1b1k1nr/pppp1ppp/3b4/3N4/8/P4P2/1qPBBP1P/R2QK2R b KQkq - 3 11",
+      "rating": 1474,
+      "uci": [
+        "g8f6",
+        "d2c3",
+        "b2c3",
+        "d5c3"
+      ],
+      "themes": [
+        "advantage",
+        "opening",
+        "short",
+        "trappedPiece"
+      ]
+    },
+    {
+      "id": "3N4CK",
+      "fen": "r3kbnr/ppp1qppp/8/2Pp4/3n4/4B3/PP3PPP/RN1QKB1R b KQkq - 1 9",
+      "rating": 1962,
+      "uci": [
+        "d4f5",
+        "d1d5",
+        "c7c6",
+        "d5f5"
+      ],
+      "themes": [
+        "advantage",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "1jpMV",
+      "fen": "rnbq1rk1/2p1bppp/p3p3/1p4B1/3Pn3/2N2N1P/PPP2PP1/R2Q1RK1 w - - 0 11",
+      "rating": 1661,
+      "uci": [
+        "g5e7",
+        "e4c3",
+        "e7d8",
+        "c3d1",
+        "d8c7",
+        "d1b2"
+      ],
+      "themes": [
+        "advantage",
+        "long",
+        "opening"
+      ]
+    },
+    {
+      "id": "2nZmx",
+      "fen": "rnb1kb1r/pp2pppp/2p5/8/B2P4/2P2Q2/P1P2PqP/R1B1K1NR b KQkq - 1 8",
+      "rating": 1735,
+      "uci": [
+        "c8h3",
+        "f3h3",
+        "g2h3",
+        "g1h3"
+      ],
+      "themes": [
+        "advantage",
+        "opening",
+        "short"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "slug": "chess_part0012",
+  "title": "12 Chess Puzzles: One Piece Too Far From Home (Part 12)",
+  "orientation": "landscape",
+  "thumb_text": "LOOSE PIECE",
+  "description": "Twelve hanging and unprotected pieces, one after another, each with a single best move. Every position comes from a real game and is rated between 1284 and 2607, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "2OkEb",
+      "fen": "4k3/R7/3rB3/5K1P/3b1P2/8/P7/8 w - - 5 45",
+      "rating": 1284,
+      "uci": [
+        "h5h6",
+        "d4a7",
+        "h6h7",
+        "a7d4"
+      ],
+      "themes": [
+        "advantage",
+        "defensiveMove",
+        "endgame",
+        "hangingPiece",
+        "master",
+        "short"
+      ]
+    },
+    {
+      "id": "0xIPS",
+      "fen": "1r3k2/5pp1/rB1Rn2p/p7/8/1PP5/P4PPP/4R1K1 w - - 1 26",
+      "rating": 1537,
+      "uci": [
+        "b6c7",
+        "e6c7",
+        "d6a6",
+        "c7a6"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "hangingPiece",
+        "short"
+      ]
+    },
+    {
+      "id": "1fbaq",
+      "fen": "r5rk/5p1n/pq5P/1ppQ4/3pP3/3P4/PPP2PP1/R3K2R b KQ - 0 22",
+      "rating": 1686,
+      "uci": [
+        "g8g2",
+        "d5a8",
+        "g2g8",
+        "a8d5"
+      ],
+      "themes": [
+        "crushing",
+        "hangingPiece",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2Lt5S",
+      "fen": "r4rk1/pp3ppp/3qpn2/4N3/3n4/1P5P/PB1Q1PP1/R4RK1 b - - 1 17",
+      "rating": 1325,
+      "uci": [
+        "d4f3",
+        "e5f3",
+        "d6d2",
+        "f3d2"
+      ],
+      "themes": [
+        "crushing",
+        "hangingPiece",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "1lKq3",
+      "fen": "7k/1p6/1R6/8/2P3p1/5rP1/PPr2pK1/5B2 b - - 0 37",
+      "rating": 1634,
+      "uci": [
+        "c2c4",
+        "f1c4",
+        "f2f1b",
+        "c4f1"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "hangingPiece",
+        "short"
+      ]
+    },
+    {
+      "id": "0s8yS",
+      "fen": "8/p1R2P2/3P4/1p2n2p/4Pkp1/1P1pn3/P6K/8 b - - 0 38",
+      "rating": 1285,
+      "uci": [
+        "e5f7",
+        "c7f7",
+        "f4e5",
+        "d6d7"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "hangingPiece",
+        "short"
+      ]
+    },
+    {
+      "id": "1lQQ0",
+      "fen": "2rqkbnr/1p1n1pp1/p3p2p/3pPb2/3P3P/NP2BN2/P3BPP1/2RQ1RK1 w k - 1 14",
+      "rating": 1372,
+      "uci": [
+        "d1d2",
+        "f8a3",
+        "c1c8",
+        "d8c8"
+      ],
+      "themes": [
+        "advantage",
+        "hangingPiece",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2LmfD",
+      "fen": "2b1k2r/pr1p1ppp/4pn2/8/2R2B2/P7/1bP1PPPP/3K1BNR b k - 3 17",
+      "rating": 1623,
+      "uci": [
+        "b2a3",
+        "c4c8",
+        "e8e7",
+        "c8h8",
+        "b7b1",
+        "d1d2"
+      ],
+      "themes": [
+        "advantage",
+        "hangingPiece",
+        "long",
+        "middlegame",
+        "skewer"
+      ]
+    },
+    {
+      "id": "1w6n6",
+      "fen": "rn1qr1k1/1p4pp/2p2p2/p4p2/2pPnB2/P3QP2/1P2P1PP/2KR1B1R b - - 0 15",
+      "rating": 1413,
+      "uci": [
+        "e4c5",
+        "d4c5",
+        "d8d1",
+        "c1d1",
+        "e8e3",
+        "f4e3"
+      ],
+      "themes": [
+        "advantage",
+        "hangingPiece",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "3Mg8G",
+      "fen": "3r3k/6pp/R2BB3/1p1n4/2b5/7P/1P3PP1/6K1 w - - 7 32",
+      "rating": 1607,
+      "uci": [
+        "d6e7",
+        "d5e7",
+        "e6c4",
+        "b5c4"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "hangingPiece",
+        "short"
+      ]
+    },
+    {
+      "id": "1RVZL",
+      "fen": "6k1/5p2/p1p4r/2brP3/6P1/7n/PPP1RpKP/5Q2 b - - 0 36",
+      "rating": 2607,
+      "uci": [
+        "h6f6",
+        "e5f6",
+        "h3f4",
+        "g2g3",
+        "f4e2",
+        "f1e2"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "hangingPiece",
+        "long"
+      ]
+    },
+    {
+      "id": "1kfH8",
+      "fen": "r5k1/ppp1b1p1/7p/3P1q1n/2P1R3/1P3N1P/P1Q2P2/R5K1 b - - 0 27",
+      "rating": 2121,
+      "uci": [
+        "f5f3",
+        "e4e7",
+        "h5f4",
+        "c2e4",
+        "f4h3",
+        "g1h2"
+      ],
+      "themes": [
+        "advantage",
+        "hangingPiece",
+        "long",
+        "master",
+        "middlegame"
+      ]
+    }
+  ]
+}

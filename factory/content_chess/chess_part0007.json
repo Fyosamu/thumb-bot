@@ -1,0 +1,286 @@
+{
+  "slug": "chess_part0007",
+  "title": "12 Chess Puzzles: The Attraction Tactic (Part 7)",
+  "orientation": "landscape",
+  "thumb_text": "ATTRACTION",
+  "description": "Twelve attraction sacrifices that drag a piece where it hurts, one after another, each with a single best move. Every position comes from a real game and is rated between 1321 and 2665, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1oJWF",
+      "fen": "2R5/pR4bk/4p1pp/3p1n2/4p3/3qP1PQ/5P1P/r4BK1 b - - 9 32",
+      "rating": 1952,
+      "uci": [
+        "f5e3",
+        "b7g7",
+        "h7g7",
+        "c8c7",
+        "g7f6",
+        "h3h4",
+        "g6g5",
+        "h4h6"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1Vcm5",
+      "fen": "3B1rk1/1p4bp/p6q/2P2pp1/1P6/P1N2P2/3Q1P1r/2R1R1K1 w - - 0 28",
+      "rating": 2241,
+      "uci": [
+        "g1f1",
+        "h6h3",
+        "f1e2",
+        "h2f2",
+        "e2f2",
+        "h3h2",
+        "f2f1",
+        "h2d2"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "middlegame",
+        "sacrifice",
+        "skewer",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "27AHY",
+      "fen": "3k3r/1b1p4/NP6/p3P2p/2R5/3QK1P1/6qP/8 w - - 2 31",
+      "rating": 1662,
+      "uci": [
+        "c4c7",
+        "g2f3",
+        "e3d2",
+        "f3d3",
+        "d2d3",
+        "b7a6"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "exposedKing",
+        "long"
+      ]
+    },
+    {
+      "id": "2tbhD",
+      "fen": "rn3rk1/pp3p1p/2p1pp2/2P5/8/q2B1P1P/P1P1QP2/R4R1K b - - 1 16",
+      "rating": 2665,
+      "uci": [
+        "a3c5",
+        "d3h7",
+        "g8h7",
+        "e2e4",
+        "h7h6",
+        "f1g1",
+        "b8d7",
+        "e4f4",
+        "c5g5",
+        "g1g5"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "kingsideAttack",
+        "middlegame",
+        "quietMove",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2e6iZ",
+      "fen": "2kr4/1q3pp1/1p4r1/2pnQ2p/5B2/5P1P/1P4P1/R2R3K b - - 1 32",
+      "rating": 2017,
+      "uci": [
+        "d5f4",
+        "d1d8",
+        "c8d8",
+        "a1d1",
+        "f4d5",
+        "d1d5",
+        "b7d5",
+        "e5d5"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "exposedKing",
+        "master",
+        "middlegame",
+        "queensideAttack",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0cvDR",
+      "fen": "5k1r/pp3rpp/1q6/3pP3/3P1NPP/1pP1B3/1Q6/5RK1 w - - 0 27",
+      "rating": 1340,
+      "uci": [
+        "f4d5",
+        "f7f1",
+        "g1f1",
+        "b6b5",
+        "c3c4",
+        "b5c4"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "exposedKing",
+        "fork",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "2e8cB",
+      "fen": "r1b1kb1r/pppq1pp1/3p3p/3N4/2B1P3/8/PPP2PPP/R1B1R1K1 b kq - 2 11",
+      "rating": 1945,
+      "uci": [
+        "d7a4",
+        "c4b5",
+        "a4b5",
+        "d5c7",
+        "e8d7",
+        "c7b5"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "fork",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "03DTp",
+      "fen": "8/2B2pk1/5q1p/1p1r2p1/pQ6/P6P/5PP1/6K1 b - - 1 39",
+      "rating": 1321,
+      "uci": [
+        "f6d4",
+        "b4d4",
+        "d5d4",
+        "c7e5",
+        "g7g6",
+        "e5d4"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "fork",
+        "long"
+      ]
+    },
+    {
+      "id": "31RWN",
+      "fen": "3r2k1/p1Q2p2/1pR2bpp/3qp3/1B6/P6P/1P3PP1/6K1 b - - 0 25",
+      "rating": 1766,
+      "uci": [
+        "g8g7",
+        "c6f6",
+        "g7f6",
+        "b4e7"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "master",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "37sA7",
+      "fen": "1r3r2/1p2kpQp/1Np1b3/1p2R3/3p4/3P4/PPP2P1q/1K4R1 b - - 0 21",
+      "rating": 1750,
+      "uci": [
+        "e7d6",
+        "e5e6",
+        "d6e6",
+        "g1e1"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "master",
+        "middlegame",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "0UFM5",
+      "fen": "r1b1r1k1/1p4p1/1pq2p1p/1Np1n3/P2p1B2/6Q1/1PP2PPP/R3R1K1 b - - 1 21",
+      "rating": 2309,
+      "uci": [
+        "e5f7",
+        "e1e8",
+        "c6e8",
+        "b5c7",
+        "a8a4",
+        "g3g7",
+        "g8g7",
+        "c7e8",
+        "g7f8",
+        "a1a4"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "fork",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2VmY7",
+      "fen": "6k1/1p2bppp/rB6/8/5Pn1/2N5/PPPr2PP/2R2RK1 w - - 5 20",
+      "rating": 1600,
+      "uci": [
+        "b6f2",
+        "g4f2",
+        "f1f2",
+        "e7c5",
+        "c3e4",
+        "c5f2"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "kingsideAttack",
+        "long",
+        "middlegame",
+        "pin"
+      ]
+    }
+  ]
+}

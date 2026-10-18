@@ -1,0 +1,257 @@
+{
+  "slug": "chess_part0049",
+  "title": "12 Chess Puzzles: The Bishop Picks the Corner (Part 49)",
+  "orientation": "landscape",
+  "thumb_text": "BISHOP END",
+  "description": "Twelve bishop endings, one after another, each with a single best move. Every position comes from a real game and is rated between 1334 and 2427, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1MHh2",
+      "fen": "8/8/p3p1k1/P5p1/3P4/2p1BP1P/1bK5/8 w - - 1 53",
+      "rating": 1884,
+      "uci": [
+        "e3c1",
+        "b2c1",
+        "c2c1",
+        "g6f5",
+        "c1c2",
+        "f5f4",
+        "h3h4",
+        "g5h4"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0kxFB",
+      "fen": "8/3kb3/7p/ppBPp3/4PpP1/PP3K2/8/8 w - - 2 41",
+      "rating": 1700,
+      "uci": [
+        "c5b6",
+        "a5a4",
+        "b3a4",
+        "b5a4",
+        "b6a5",
+        "e7a3"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "1YPNf",
+      "fen": "8/6p1/1B4kp/8/ppp5/5P2/PP5K/8 w - - 0 50",
+      "rating": 2074,
+      "uci": [
+        "b6a5",
+        "c4c3",
+        "b2c3",
+        "b4b3"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "14LHk",
+      "fen": "8/7p/7K/3p4/3PkP2/4B3/1b6/8 w - - 3 44",
+      "rating": 2316,
+      "uci": [
+        "e3g1",
+        "b2d4",
+        "g1d4",
+        "e4d4",
+        "h6g5",
+        "d4e4",
+        "f4f5",
+        "e4e5",
+        "f5f6",
+        "e5e6"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2n4V2",
+      "fen": "8/8/p4k2/P1p5/2Pp1p2/3P1Bp1/2b1K1P1/8 b - - 16 54",
+      "rating": 2205,
+      "uci": [
+        "f6g5",
+        "f3b7",
+        "c2b1",
+        "b7a6",
+        "f4f3",
+        "e2f3"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "10CyU",
+      "fen": "8/7p/p5p1/1p1p4/2p3P1/4k3/PPP1B3/5K2 w - - 0 42",
+      "rating": 2085,
+      "uci": [
+        "c2c3",
+        "e3d2",
+        "e2f3",
+        "d2c2",
+        "f3d5",
+        "c2b2"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "1D6Dn",
+      "fen": "8/6p1/pp5p/2pPk3/2P4P/P2BK1P1/8/3b4 w - - 0 36",
+      "rating": 1933,
+      "uci": [
+        "d3e2",
+        "d1e2",
+        "e3e2",
+        "b6b5"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "master",
+        "short"
+      ]
+    },
+    {
+      "id": "28viJ",
+      "fen": "8/1p2B3/2bK4/7p/p5pP/2Pk4/1P4P1/8 w - - 4 45",
+      "rating": 1334,
+      "uci": [
+        "g2g3",
+        "d3c2",
+        "c3c4",
+        "c2b2"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "master",
+        "short"
+      ]
+    },
+    {
+      "id": "2UtGp",
+      "fen": "8/8/p4b2/1p6/1Pk1p2P/2P3B1/2K5/8 w - - 2 41",
+      "rating": 2427,
+      "uci": [
+        "g3e1",
+        "e4e3",
+        "h4h5",
+        "f6g7"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "short",
+        "zugzwang"
+      ]
+    },
+    {
+      "id": "1pmP2",
+      "fen": "8/p3b1p1/Pk3p2/5P1P/1pBK4/8/8/8 b - - 2 56",
+      "rating": 1366,
+      "uci": [
+        "b6a5",
+        "d4d5",
+        "a5b6",
+        "d5e6",
+        "e7c5",
+        "e6f7"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "1fSLy",
+      "fen": "1b6/1P1B4/6K1/8/3k1pp1/8/6P1/8 w - - 0 51",
+      "rating": 1924,
+      "uci": [
+        "g6f5",
+        "f4f3",
+        "g2f3",
+        "g4g3"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "1oImk",
+      "fen": "8/3bkppp/8/1p2P1P1/1P5P/p1K5/P7/5B2 b - - 0 33",
+      "rating": 1998,
+      "uci": [
+        "e7e6",
+        "f1h3",
+        "e6e7",
+        "h3d7",
+        "e7d7",
+        "c3d4",
+        "d7e6",
+        "d4c5",
+        "e6e5",
+        "c5b5"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "veryLong"
+      ]
+    }
+  ]
+}

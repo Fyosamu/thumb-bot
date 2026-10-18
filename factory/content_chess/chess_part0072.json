@@ -1,0 +1,240 @@
+{
+  "slug": "chess_part0072",
+  "title": "12 Chess Puzzles: Attack Where It Hurts Most (Part 72)",
+  "orientation": "landscape",
+  "thumb_text": "KINGSIDE",
+  "description": "Twelve kingside attacking patterns, one after another, each with a single best move. Every position comes from a real game and is rated between 1253 and 2394, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "0bc98",
+      "fen": "r4rk1/pbq1bp1p/1p2p2Q/6P1/7P/2PB4/P1P5/2KRR3 b - - 2 24",
+      "rating": 2394,
+      "uci": [
+        "f7f5",
+        "h6e6",
+        "g8h8",
+        "e6e7",
+        "c7e7",
+        "e1e7"
+      ],
+      "themes": [
+        "advantage",
+        "kingsideAttack",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "3GYQi",
+      "fen": "3rr1k1/2p2p2/pbn2P1p/1p1N2p1/1P6/P5BP/2B2PP1/5RK1 b - - 5 24",
+      "rating": 1581,
+      "uci": [
+        "c6e5",
+        "d5e7",
+        "g8f8",
+        "g3e5"
+      ],
+      "themes": [
+        "advantage",
+        "interference",
+        "kingsideAttack",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "3JuCF",
+      "fen": "r1bq1rk1/1p3pp1/p1n1pP2/b5p1/2P4P/3B1N2/P3KPP1/RN1Q3R b - - 0 14",
+      "rating": 2202,
+      "uci": [
+        "d8f6",
+        "d3h7",
+        "g8h8",
+        "h4g5"
+      ],
+      "themes": [
+        "crushing",
+        "kingsideAttack",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "339Z2",
+      "fen": "3r1r2/4qp1k/p2p2np/1ppP3R/6P1/2P3NB/PP1Q3K/8 b - - 2 33",
+      "rating": 1861,
+      "uci": [
+        "h7g8",
+        "d2h6",
+        "f8e8",
+        "h6h7"
+      ],
+      "themes": [
+        "crushing",
+        "kingsideAttack",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "0hduH",
+      "fen": "r5rk/2n2pp1/3p3p/3PpN2/p1p2q2/7Q/PP3PR1/6RK b - - 3 29",
+      "rating": 2046,
+      "uci": [
+        "c7e8",
+        "f5h6",
+        "f4h6",
+        "h3h6",
+        "g7h6",
+        "g2g8"
+      ],
+      "themes": [
+        "crushing",
+        "kingsideAttack",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "0TzHq",
+      "fen": "r1br2k1/pp3p1n/5q2/4B2Q/2Pnp1BP/2P5/P4PP1/R3K1NR b KQ - 1 18",
+      "rating": 1533,
+      "uci": [
+        "c8g4",
+        "h5g4",
+        "f6g6",
+        "g4g6"
+      ],
+      "themes": [
+        "advantage",
+        "kingsideAttack",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "0KMaQ",
+      "fen": "r5k1/p1b2ppp/1ppq4/8/2PP4/1P3B1P/P2Q1PP1/R3r1K1 w - - 0 19",
+      "rating": 1253,
+      "uci": [
+        "d2e1",
+        "d6h2",
+        "g1f1",
+        "h2h1",
+        "f1e2",
+        "a8e8"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "kingsideAttack",
+        "long"
+      ]
+    },
+    {
+      "id": "14QeU",
+      "fen": "rqb2rk1/pp3p1p/1n1b4/3p2pQ/3Pp2N/PN2P1B1/1P3PPP/2R1K2R b K - 1 16",
+      "rating": 1587,
+      "uci": [
+        "g5h4",
+        "h5g5",
+        "g8h8",
+        "g5f6"
+      ],
+      "themes": [
+        "advantage",
+        "kingsideAttack",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2F8ZS",
+      "fen": "r2qr1k1/1b3pp1/8/4P3/p1pb1B2/7P/P1BR1PP1/2Q2RK1 w - - 0 28",
+      "rating": 2052,
+      "uci": [
+        "f4e3",
+        "d8d5",
+        "f2f3",
+        "d4e3"
+      ],
+      "themes": [
+        "crushing",
+        "kingsideAttack",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2kz9K",
+      "fen": "3b3k/1R4pp/3pb3/1B2p1Bq/PP2P2r/3Q4/5rPP/5N1K w - - 0 29",
+      "rating": 1501,
+      "uci": [
+        "g5d8",
+        "f2f1",
+        "d3f1",
+        "h4h2",
+        "h1g1",
+        "h2h1"
+      ],
+      "themes": [
+        "advantage",
+        "kingsideAttack",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "2vIv4",
+      "fen": "r2q1rk1/1p1bbppp/p1npp3/4P1N1/5Pn1/2NBB3/PPP3PP/R2Q1RK1 b - - 2 12",
+      "rating": 1653,
+      "uci": [
+        "g4e3",
+        "d3h7",
+        "g8h8",
+        "d1h5"
+      ],
+      "themes": [
+        "advantage",
+        "kingsideAttack",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "2x099",
+      "fen": "5rk1/1p2bn1p/p3p1p1/1q1pP3/1PbB4/P4N1Q/5PPP/1BR3K1 b - - 4 24",
+      "rating": 1255,
+      "uci": [
+        "f7g5",
+        "f3g5",
+        "e7g5",
+        "h3e6"
+      ],
+      "themes": [
+        "capturingDefender",
+        "crushing",
+        "kingsideAttack",
+        "middlegame",
+        "short"
+      ]
+    }
+  ]
+}
