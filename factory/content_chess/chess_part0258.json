@@ -1,0 +1,278 @@
+{
+  "slug": "chess_part0258",
+  "title": "12 Chess Puzzles: The Defender Had One Job (Part 258)",
+  "orientation": "landscape",
+  "thumb_text": "DEFLECTION",
+  "description": "Twelve deflection of the piece that holds everything, one after another, each with a single best move. Every position comes from a real game and is rated between 1361 and 2289, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "3MJyD",
+      "fen": "4R3/pp4kr/1q6/3p1p2/5P2/2P3P1/PP3Q2/5nK1 w - - 2 34",
+      "rating": 1361,
+      "uci": [
+        "g1f1",
+        "h7h1",
+        "f1g2",
+        "h1h2",
+        "g2h2",
+        "b6f2"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "deflection",
+        "endgame",
+        "exposedKing",
+        "long"
+      ]
+    },
+    {
+      "id": "0IpFe",
+      "fen": "r1bqkbnr/pp3ppp/2n5/8/2BN4/5Q2/PP3PPP/RNB1K2R b KQkq - 2 8",
+      "rating": 1771,
+      "uci": [
+        "d8d4",
+        "f3f7",
+        "e8d8",
+        "f7f8"
+      ],
+      "themes": [
+        "attackingF2F7",
+        "crushing",
+        "deflection",
+        "opening",
+        "short"
+      ]
+    },
+    {
+      "id": "2MFgV",
+      "fen": "5rk1/5rpp/6q1/8/2R1p3/7P/PPP1QnPK/2B1R3 w - - 0 27",
+      "rating": 2150,
+      "uci": [
+        "c1e3",
+        "g6d6",
+        "h2g1",
+        "f2h3",
+        "g1h1",
+        "h3f2",
+        "e3f2",
+        "f7f2"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0St9q",
+      "fen": "8/6p1/p2k1p1p/Pp1p1P1P/3K2P1/1PP5/8/8 w - - 1 40",
+      "rating": 1766,
+      "uci": [
+        "c3c4",
+        "d5c4",
+        "b3c4",
+        "b5b4",
+        "c4c5",
+        "d6c6",
+        "d4c4",
+        "b4b3",
+        "c4b3",
+        "c6c5"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "endgame",
+        "pawnEndgame",
+        "quietMove",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1ocEv",
+      "fen": "r1b2rk1/1p3pp1/p1p4p/2Q3q1/8/3BP1P1/PP3PP1/2RR2K1 b - - 7 19",
+      "rating": 1443,
+      "uci": [
+        "g5f6",
+        "d3h7",
+        "g8h7",
+        "c5f8"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "kingsideAttack",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "1KYFD",
+      "fen": "8/1Pk5/2P1Kp2/2B5/4P3/6p1/3r4/8 b - - 2 47",
+      "rating": 2056,
+      "uci": [
+        "g3g2",
+        "c5b6",
+        "c7b6",
+        "b7b8q"
+      ],
+      "themes": [
+        "advancedPawn",
+        "attraction",
+        "crushing",
+        "deflection",
+        "endgame",
+        "master",
+        "promotion",
+        "short"
+      ]
+    },
+    {
+      "id": "1aZhp",
+      "fen": "5r2/pr4k1/2p2p1p/7q/4Q2N/1PP3P1/P7/5RK1 b - - 0 36",
+      "rating": 2232,
+      "uci": [
+        "h5e5",
+        "e4g6",
+        "g7h8",
+        "g6h6",
+        "h8g8",
+        "h6f8",
+        "g8f8",
+        "h4g6",
+        "f8g7",
+        "g6e5"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "deflection",
+        "endgame",
+        "fork",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "3Fe0P",
+      "fen": "6r1/1k3p1p/p3pp2/P2p1n2/3P1r2/1Q4P1/5P1P/6K1 b - - 1 31",
+      "rating": 2289,
+      "uci": [
+        "b7a7",
+        "b3b6",
+        "a7a8",
+        "b6a6",
+        "a8b8",
+        "a6b6",
+        "b8c8",
+        "b6c6"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "endgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2jJAa",
+      "fen": "5r2/1p2p1k1/1qp2n1r/7p/p1BP1QP1/P3P3/1P6/2K3R1 b - - 0 23",
+      "rating": 2237,
+      "uci": [
+        "f6g4",
+        "f4g5",
+        "h6g6",
+        "g5e7",
+        "g7h6",
+        "e7f8"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "exposedKing",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "0RNrD",
+      "fen": "5r1k/pp4pp/3b2q1/3P4/8/2Q3P1/PB3PK1/7R w - - 6 34",
+      "rating": 2078,
+      "uci": [
+        "b2a3",
+        "g6e4",
+        "f2f3",
+        "e4e2",
+        "g2h3",
+        "f8f3",
+        "c3c8",
+        "f3f8"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "endgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2W38T",
+      "fen": "r1b1r3/1pkn1pp1/2pb1n1p/4p3/p1P5/P1N1BNPP/1P1RPPB1/R5K1 b - - 4 14",
+      "rating": 1988,
+      "uci": [
+        "d7c5",
+        "d2d6",
+        "c7d6",
+        "a1d1",
+        "d6c7",
+        "e3c5"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "deflection",
+        "long",
+        "master",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0ZIt4",
+      "fen": "8/7p/1P4p1/3R4/8/P3p1K1/3Bkr1P/8 b - - 0 50",
+      "rating": 1378,
+      "uci": [
+        "e3d2",
+        "d5d2",
+        "e2d2",
+        "g3f2"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "endgame",
+        "rookEndgame",
+        "short"
+      ]
+    }
+  ]
+}
