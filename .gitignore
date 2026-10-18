@@ -24,3 +24,6 @@ wiki_cache/
 puzzles_db.zst
 puzzles_pool_big.jsonl
 topics_sci_old_generic.txt
+
+# local chess backups never belong in git
+factory/content_chess_backup_*/

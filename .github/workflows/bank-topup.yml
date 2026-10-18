@@ -1,0 +1,48 @@
+# The banks feed themselves.  Twice a day the runner scrapes fresh
+# Wikipedia topics into scripts for the science and biography queues,
+# then commits them back - so the 10k-per-channel stock keeps growing
+# even while the owner's machine is off.
+name: bank-topup
+
+on:
+  schedule:
+    - cron: "0 3,15 * * *"   # 03:00 and 15:00 UTC, between upload runs
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bank-topup
+  cancel-in-progress: false
+
+jobs:
+  grow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 170
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: generate scripts
+        working-directory: factory
+        run: |
+          python -u gen_mass.py sci --limit 12000 --minutes 60
+          python -u gen_mass.py bio --limit 12000 --minutes 60
+
+      - name: commit banks
+        run: |
+          git config user.name "factory-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add factory/content factory/content_bio
+          git diff --cached --quiet || git commit -m "bank: fresh scripts $(date -u '+%F %H:%M')"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && exit 0
+            echo "push attempt $i rejected, retrying"
+            git rebase --abort 2>/dev/null || true
+            sleep 20
+          done
+          exit 1
