@@ -19,27 +19,135 @@
   "scenes": [
     {
       "stock": "stressed person work",
-      "narration": "Stress itself is not harmful. Your body was built for it. The damage comes from stress that never ends."
+      "narration": "Stress itself is not harmful. Your body was built for it. The damage comes from stress that never ends. Understanding the difference between the two is the difference between a system that protects you and a system that quietly wears you down over years. Every part of that response has a job, and every job has an end."
     },
     {
-      "stock": "athlete focused intensity",
-      "narration": "A short burst of pressure sharpens focus, boosts reaction time, and clears fog. That response saved lives for a hundred thousand years."
+      "stock": "heart rate monitor screen",
+      "narration": "When the brain reads a threat, the sympathetic nervous system answers within seconds. Adrenaline from the adrenal glands raises heart rate and blood pressure, pupils dilate, digestion pauses, and blood is routed toward the muscles that will be doing the work. It is a coordinated, expensive and very old response, and it does not wait for permission."
     },
     {
-      "stock": "person overwhelmed paperwork",
-      "narration": "Chronic stress keeps the same chemistry switched on, so recovery never happens. Cortisol stays high while the system waits for a resolution that never arrives."
+      "stock": "runner sprinting city street",
+      "narration": "The liver adds glucose to the blood at the same moment, so the fuel arrives just before the demand does. This is why the shaking tends to start after a scare rather than during it. The chemistry was tuned for a short burst of movement, and it is calibrated for minutes rather than for months."
+    },
+    {
+      "stock": "exam hall students writing",
+      "narration": "Attention narrows as well. Under acute stress the senses favour whatever is central and threatening, and the amygdala tags the moment so that the hippocampus files it with extra weight. That is why you remember the detail of a frightening scene and lose the surrounding hour. The system is optimising for lessons, not for comfort."
+    },
+    {
+      "stock": "lion resting savanna",
+      "narration": "The response assumes an ending. In the situation it evolved for, the predator eventually leaves, the muscles work through the adrenaline, and the parasympathetic branch returns the body to baseline within minutes. Recovery is not a bonus feature. It is the second half of the response, and it is the half that does the repair."
+    },
+    {
+      "stock": "unpaid bills on table",
+      "narration": "Modern stressors do not leave. A mortgage, an inbox and a difficult colleague do not eventually give up and walk into the grass. The chemistry built to resolve in minutes gets switched on for years, and the body keeps waiting for a finish line that the situation never draws."
     },
     {
       "stock": "hourglass endless sand",
-      "narration": "The deciding factor is control. Stress with an endpoint is manageable. Stress with no visible end is what breaks people."
+      "narration": "Researchers describe the accumulated cost as allostatic load. Each activation cycle is fine on its own. Repeated without recovery, the same processes start costing something: sustained blood pressure, altered immune signalling, disturbed sleep, and a body that spends more energy maintaining itself than the original task ever required."
+    },
+    {
+      "stock": "person awake in bed",
+      "narration": "Sleep is usually the first casualty. Chronic stress tends to extend the time it takes to fall asleep and to fragment the second half of the night, because a body still running a threat assessment does not hand over to deep sleep easily. Tiredness then lowers the threshold for everything the following day."
+    },
+    {
+      "stock": "rain on window night",
+      "narration": "The loop that keeps it alive is thought, not circumstance. Rumination, meaning the replay of an unresolved problem without reaching anything, appears to sustain the physiological response long after the event has ended. The body answers the rehearsal as if the problem were still in the room, which is why evenings are often worse than afternoons."
+    },
+    {
+      "stock": "empty hospital corridor",
+      "narration": "Under prolonged strain people report more infections, and studies of sustained pressure find shifts in immune markers that point in the same direction. The effect is not dramatic in any single month. It is the kind of change that shows up across years, in a population, rather than in one person on one afternoon."
+    },
+    {
+      "stock": "traffic jam morning commute",
+      "narration": "The cardiovascular picture follows the same pattern. Short raises in blood pressure are normal and useful. Sustained ones are not, and long term occupational studies find the highest risk in the jobs with the highest demand and the least control over how the work gets done. Demand is not the whole variable. Control over demand is the part that predicts outcomes."
+    },
+    {
+      "stock": "laboratory mice research cage",
+      "narration": "In animal research, sustained exposure to stress hormones produces measurable changes in the hippocampus, a region central to memory and to shutting the stress response down. The findings are consistent in rodents, and they are one of the reasons chronic stress is taken seriously in medicine rather than dismissed as a mood."
+    },
+    {
+      "stock": "repetitive factory line work",
+      "narration": "Human imaging tells a messier story, with smaller and less consistent effects. What is better established is a shift in control. Under acute pressure, behaviour moves away from deliberate, considered action and toward whatever has been practised most, which is useful for trained performers and costly for everybody else."
+    },
+    {
+      "stock": "noise headphones loud music",
+      "narration": "Control is the variable that shows up most reliably. In a well known experiment, two groups endured the same unpredictable loud noise. One group was told they could switch it off at any time and never did. That group habituated. The group without the option did not, and their performance suffered for it."
+    },
+    {
+      "stock": "shelter dog behind fence",
+      "narration": "From work like that came the idea of learned helplessness, first demonstrated in animals with no way to escape an unpleasant stimulus, and later applied to people who have learned that their actions do not change outcomes. The translation to humans is imperfect, but the expectancy at the centre of it does appear to matter."
+    },
+    {
+      "stock": "office cubicle night lamp",
+      "narration": "Occupational research has spent decades testing this. The demand and control model predicts that the most strained jobs combine high pressure with low discretion, and large studies across many industries have found the same pattern in blood pressure, sleep and reported health. It is a finding about situations before it is a finding about personalities."
+    },
+    {
+      "stock": "payslip calculator on desk",
+      "narration": "A second model adds reward. Effort and reward are compared continuously, and where effort is high and reward, whether pay, recognition or progression, is low, strain markers rise. The effect appears in studies across countries and industries, which is why unfairness is a physiological variable and not only a moral one."
+    },
+    {
+      "stock": "meeting room boss argument",
+      "narration": "Unfairness has been tested directly. People exposed to unfair treatment in experimental settings show larger cardiovascular responses than people doing the same task under fair conditions, and the difference does not require the unfairness to be severe. Small, repeated indignities carry a cost out of proportion to their size."
+    },
+    {
+      "stock": "hospital waiting clock wall",
+      "narration": "Uncertainty does similar work. Unpredictable stressors are consistently harder to tolerate than predictable ones of the same magnitude, even when the predictable version is objectively worse. A known difficult meeting is easier on the body than a vague sense that one might be arriving. Ambiguity is expensive."
+    },
+    {
+      "stock": "lonely person bench park",
+      "narration": "Social threat works through much of the same machinery. Experiments in which people are excluded from a simple group task report distress and show activity in regions also involved in physical pain. The body does not clearly distinguish between a broken arm and a room that has quietly stopped including you."
+    },
+    {
+      "stock": "athlete focused intensity",
+      "narration": "The strongest counterargument is not that stress is harmless. It is that the popular picture treats all arousal as poison. Short, resolved bursts of pressure sharpen focus and improve performance, and people who avoid every uncomfortable situation are not protecting their health so much as shrinking their range."
+    },
+    {
+      "stock": "lecture hall university notes",
+      "narration": "Newer work on stress mindsets suggests that how arousal is interpreted changes the cardiovascular response slightly, with people who read their own racing heart as useful showing a different pattern from those who read it as damage. The effects are real in short experiments and modest in size, and the paradigm is still young."
+    },
+    {
+      "stock": "speaker backstage waiting",
+      "narration": "This matters in practice because the same body can be in challenge or in threat. Challenge is the state in which the response is fuel, and threat is the state in which it is fear of the outcome. The difference is mostly appraisal, and appraisal is the one part of this people genuinely have influence over."
     },
     {
       "stock": "checklist complete success",
-      "narration": "You cannot always remove the pressure, but you can rebuild the ending. Small completed loops tell the brain the threat is over."
+      "narration": "You cannot always remove the pressure, but you can rebuild the ending. Small completed loops tell the brain the threat is over. A finished task, a sent message, an hour that ends on schedule, each of them gives the nervous system a finish line to point at and a reason to stand down."
+    },
+    {
+      "stock": "calendar marked deadline pen",
+      "narration": "Deadlines perform a similar function, which is one reason unfinished work is more tiring than finished work of the same size. The open loop is being rehearsed in the background at odd hours. Closing it does not remove the load. It removes the uncertainty about when the load will end, and that turns out to matter more."
+    },
+    {
+      "stock": "person walking briskly park",
+      "narration": "Movement is one of the few reliable ways to complete the cycle the way it was designed to complete. Muscles work through the glucose and the adrenaline, heart rate rises and then falls, and the body receives the evidence it was waiting for, which is that the effort is over."
+    },
+    {
+      "stock": "cycling class gym training",
+      "narration": "Recovery speed is itself informative. Studies that measure cardiovascular responses to stressors find that people whose arousal returns to baseline quickly differ from those who stay elevated for hours, and slower recovery has been associated with worse outcomes in occupational cohorts over years. The response matters less than the return."
+    },
+    {
+      "stock": "writing in journal hands",
+      "narration": "Expressive writing has produced one of the more durable findings in this literature. People who write about a difficult event for a few short sessions on consecutive days show differences in later health service use and immune markers compared with those who write about neutral topics. The effect is modest, and it repeats."
+    },
+    {
+      "stock": "calm breathing exercise",
+      "narration": "Breathing is the one lever that needs no equipment and no delay. The exhale is linked to the calming branch of the autonomic system, which is why slow breathing with a longer outbreath changes heart rate within a single minute. It does not remove the problem. It changes the state you bring to it."
+    },
+    {
+      "stock": "friends talking park bench",
+      "narration": "Presence helps too. Studies of social support find that a trusted person nearby, or even a short conversation with one, attenuates the physiological response to stressors that are otherwise completely unchanged. The stressor is identical. The body's interpretation of it is not, and co regulation shows up in heart rate rather than only in mood."
+    },
+    {
+      "stock": "forest path morning light",
+      "narration": "Time in green space shows the same modest, consistent pattern. Short walks in places with trees and open sky are associated with lower physiological arousal than the same walk beside traffic, and the difference appears in repeated measurements rather than only in self report. The effect is small, and it is real."
     },
     {
       "stock": "sunset calm completion",
-      "narration": "Finish something small today. Not because it matters, but because your nervous system needs to see a finish line."
+      "narration": "Finish something small today. Not because it matters in itself, but because your nervous system needs to see a finish line. One closed loop does more for the evening than an hour of trying to relax while the loops stay open. Completion is a signal long before it is an achievement."
+    },
+    {
+      "stock": "quiet street evening light",
+      "narration": "Stress is not the problem. Unending stress is. Used briefly, it is the system that got you out of the room. Left running with no ending, it becomes the thing quietly taking the room apart, one year and one unbroken evening at a time. The difference between the two is not the intensity. It is whether the response is ever allowed to finish."
     }
   ]
 }

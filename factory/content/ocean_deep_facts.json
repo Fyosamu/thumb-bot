@@ -19,27 +19,131 @@
   "scenes": [
     {
       "stock": "deep ocean dark water",
-      "narration": "We have mapped the surface of Mars in greater detail than the floor of our own ocean. Eighty percent of the sea has never been seen by a single human being."
+      "narration": "We have mapped the surface of Mars in greater detail than the floor of our own ocean. Eighty percent of the sea has never been seen by a single human being, and much of what has been mapped was measured with sound rather than light. The largest habitat on the planet is also the least observed, and the gap is closing slowly."
     },
     {
-      "stock": "spaceship mars surface",
-      "narration": "That is not poetry. It is a measurement. Mars is fully photographed. The ocean is a guess, drawn mostly from sound."
+      "stock": "mars surface craters",
+      "narration": "A satellite orbiting Mars can photograph the ground beneath it at a resolution of a few meters. A research ship mapping the ocean floor drags a fan of sonar beams across a narrow strip of seabed and moves on. One well equipped vessel would need years to cover what a satellite covers in a season."
     },
     {
-      "stock": "diver descending underwater",
-      "narration": "Sunlight dies at about one thousand meters. Below that there is no warmth, no color, and pressure high enough to crush a submarine in seconds."
+      "stock": "sonar research vessel",
+      "narration": "Almost everything we know about the seabed came from sound. A ship sends a pulse downward, times how long the echo takes to come back, and turns that delay into a depth. Light cannot travel far in seawater, even in the clearest tropical water it fades within a hundred meters, so no camera works at ocean scale. The maps that result are accurate and they are sparse, measured along the ship's path rather than across the whole basin."
     },
     {
-      "stock": "jellyfish glowing dark",
-      "narration": "And yet life is everywhere. Most deep sea creatures make their own light. On this planet, glowing is not rare. Being visible is."
+      "stock": "ocean waves from boat",
+      "narration": "The ocean holds more than a billion cubic kilometers of water and covers about seventy percent of the planet. Its average depth is close to three thousand seven hundred meters, which means most of the living space on Earth is cold, dark and under pressure, and the thin bright layer we swim in is almost a rounding error."
     },
     {
-      "stock": "underwater canyon abyss",
-      "narration": "We have found canyons deeper than the Grand Canyon and mountains taller than anything on land. None of it has a name."
+      "stock": "sunlight underwater beams",
+      "narration": "Descending is a lesson in how fast light disappears. Red vanishes within the first few meters. Orange and yellow follow shortly after. Blue penetrates furthest, and by two hundred meters there is not enough light left for a plant to photosynthesise. Below that line, the sun is a rumour."
     },
     {
-      "stock": "surface of the sea horizon",
-      "narration": "So the next time someone says the frontier is in space, remember: the largest world we have is the one we live on top of, and we have barely looked."
+      "stock": "diver deep blue water",
+      "narration": "Oceanographers split the water column into named layers. The top two hundred meters is the sunlight zone. Below it comes the twilight zone, down to a thousand meters, then the midnight zone, then the abyss, and finally the hadal trenches. The names are honest. Each one describes exactly what you would see there."
+    },
+    {
+      "stock": "submarine interior instruments",
+      "narration": "Pressure is the second thing you notice. It rises by roughly one atmosphere every ten meters, so at a thousand meters the weight pressing on your body equals a hundred atmospheres, about the same as a car balanced on your thumbnail. At full ocean depth the figure passes a thousand atmospheres."
+    },
+    {
+      "stock": "freediver descending rope",
+      "narration": "The human body is mostly water, and water does not compress much, which is why a diver at depth feels the pressure without being flattened. What does compress is air. A free diver's lungs shrink to a small fraction of their surface volume on the way down, and the ears and sinuses demand constant attention."
+    },
+    {
+      "stock": "anglerfish glowing lure",
+      "narration": "Life in the dark has its own answer. The majority of animals in the deep sea make their own light, using a chemical reaction in specialised organs called photophores. Down there, glow is used for hunting, for mating and for hiding, which is the opposite of what light does at the surface."
+    },
+    {
+      "stock": "hatchetfish silver deep sea",
+      "narration": "Some animals use light as camouflage. Hatchetfish line their bellies with photophores that match the faint blue coming from above, erasing their silhouette for any predator looking up. Others dangle a glowing lure in the dark. The anglerfish is the famous case, a small patient predator waiting for something to swim toward the light."
+    },
+    {
+      "stock": "siphonophore drifting underwater",
+      "narration": "Much of what looks like one glowing creature is actually a colony. Siphonophores are chains of specialised individuals, some for feeding, some for propulsion, some for stinging, drifting as a single body that can stretch longer than a blue whale. They are common in the deep and almost never seen alive."
+    },
+    {
+      "stock": "fish school rising surface",
+      "narration": "Every dusk, the largest animal migration on the planet happens without a single witness. Billions of fish, squid and crustaceans rise from the twilight zone to feed near the surface, then sink back before dawn. It happens in every ocean, every night, and it moves more biomass than every whale migration combined."
+    },
+    {
+      "stock": "research vessel fishing net",
+      "narration": "The migration has an economic edge. Many of the animals that rise at night are fished commercially, and their daily vertical commute is why deep scattering layers were first picked up on wartime sonar, where they were mistaken for a false bottom that moved. The false bottom rose at dusk and sank again before dawn, which took sonar operators a while to explain."
+    },
+    {
+      "stock": "hydrothermal vent underwater",
+      "narration": "Then there are the hydrothermal vents, discovered in nineteen seventy seven near the Galapagos Rift. They were not supposed to exist. The water leaving them is hot, black with dissolved minerals and loaded with sulfur, and it is pouring into four degree seawater along fractures in the crust."
+    },
+    {
+      "stock": "giant tube worms vent",
+      "narration": "Around the vents lives a food chain that does not use the sun at all. Bacteria take energy from the sulfur in the vent water, and tube worms, clams and shrimp farm those bacteria inside their own bodies. It was the first ecosystem anyone found that runs entirely on chemistry instead of light."
+    },
+    {
+      "stock": "submarine exploring seafloor",
+      "narration": "The discovery changed what biologists thought was possible. If an ecosystem can run without sunlight, then the oceans beneath the ice of moons like Europa and Enceladus, which have water, chemistry and heat, become reasonable places to look. The vent animals entered the argument about alien life before any telescope did."
+    },
+    {
+      "stock": "whale skeleton seabed",
+      "narration": "When a whale dies it sinks, and a carcass on the seabed is an event that lasts a decade. A whale fall passes through stages, large scavengers first, then enrichment opportunists, then a slow sulfophilic stage where bacteria break down the fats and produce the same chemistry as a vent. Some species seem to depend on these falls."
+    },
+    {
+      "stock": "giant isopod deep sea",
+      "narration": "The deep also produces giants. Antarctic isopods the size of a forearm, squid that reach thirteen meters including their tentacles, and single celled organisms visible without a magnifier. Cold, oxygen and scarce food are the usual explanations, along with the simple fact that in the deep, growing slowly and living long beats growing fast."
+    },
+    {
+      "stock": "baited camera seafloor",
+      "narration": "Camera drops have changed the picture more than any other method. A baited lander sits on the bottom for hours and records whatever comes to it, and the recordings have produced species after species that nobody had described. A great deal of the deep sea's visible biodiversity was first filmed rather than caught. The landers also cost a fraction of a crewed submersible, which is why there are so many more of them."
+    },
+    {
+      "stock": "atlantic deep water current",
+      "narration": "The deep ocean is not still either. Cold, salty water sinks in the North Atlantic and near Antarctica and creeps along the bottom at a few centimeters per second, carrying dissolved carbon and oxygen into the interior. One circuit of that conveyor takes on the order of a thousand years."
+    },
+    {
+      "stock": "research vessel deck equipment",
+      "narration": "Mapping is now an organised effort. A global project called Seabed 2030 aims to produce a complete map of the ocean floor, and its published figures show detailed coverage rising from around six percent at the start of the work to somewhere between a quarter and a third. The rest is not unmeasurable. It is expensive."
+    },
+    {
+      "stock": "satellite ocean mapping",
+      "narration": "Satellites can help with the broad shape. Tiny variations in the height of the sea surface reveal the mountains and trenches underneath, which gives a useful general map and almost no detail about what is sitting on the bottom. The difference between the two maps is the difference between a country and a street."
+    },
+    {
+      "stock": "remotely operated vehicle",
+      "narration": "Remotely operated vehicles fill the gap where it matters. They inspect cables, pipelines and wrecks, and they visit the deepest points of the trenches for a few hours at a time. Every serious claim about the deepest place on Earth has come from one of a handful of crewed or robotic descents."
+    },
+    {
+      "stock": "mariana trench seabed",
+      "narration": "The Challenger Deep, in the Mariana Trench west of Guam, is the deepest measured point, close to eleven thousand meters. For most of the twentieth century, more people had walked on the Moon than had stood on that floor. The pressure there is over a thousand atmospheres, and the water is just above freezing."
+    },
+    {
+      "stock": "submersible underwater descent",
+      "narration": "The first crewed descent was in nineteen sixty, in a two man steel sphere that took nearly five hours to reach the bottom. The crew could see sediment and a little movement in the water, and they left after about twenty minutes. The next serious descent did not come for more than fifty years."
+    },
+    {
+      "stock": "plastic waste seabed",
+      "narration": "The deep is also where the surface's rubbish ends up. A plastic bag was filmed on the floor of the Mariana Trench, and microplastics have been recovered from tiny animals living at almost eleven thousand meters. Sediment cores from the abyss carry a chemical signature of industry that reaches back decades."
+    },
+    {
+      "stock": "cold water coral reef",
+      "narration": "Cold water corals grow in the dark at depths from a few hundred to a few thousand meters, at a few millimeters a year. They build structures that shelter fish and shrimp in places no sunlight reaches, and a single pass of a bottom trawl can undo centuries of that growth."
+    },
+    {
+      "stock": "researcher sonar screen",
+      "narration": "What we do not know is still the larger category. New species are being described faster than the habitats can be surveyed, and the seabed is often treated as uniform when it is not. Sediment, slope, current and chemistry can change over tens of meters, and so does what lives there."
+    },
+    {
+      "stock": "seabed nodule field",
+      "narration": "This matters commercially now. Polymetallic nodules lie across parts of the abyssal plain, and cobalt rich crusts sit on seamounts, and several countries have licensed exploration. Experiments that scraped a patch of seabed decades ago still show the difference today, because deep recovery runs on a slower clock than anything on land."
+    },
+    {
+      "stock": "calm ocean from shore",
+      "narration": "So the frontier is not only in space. The largest living space on the planet sits a few kilometers beneath the surface of water you can see from any beach, and almost none of it has ever been watched directly. Mars is a fine place to look for life. The better funded question may be the one underneath the water."
+    },
+    {
+      "stock": "research boat open sea",
+      "narration": "Most of what exists down there has never been seen, photographed, named or counted. That sentence is not meant to be frightening. It is meant to be accurate. The dark half of the planet is not empty. It is simply unobserved, and we are the first generation that could say so honestly."
+    },
+    {
+      "stock": "ocean waves shore calm",
+      "narration": "Every mapping season moves the boundary a little. A survey turns a smooth gray patch into terrain with ridges and valleys, and a descent adds a handful of species to a list that is still mostly blank. The ocean is not hiding one secret. It is hiding almost everything."
     }
   ]
 }
