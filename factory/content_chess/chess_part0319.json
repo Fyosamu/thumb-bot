@@ -1,0 +1,271 @@
+{
+  "slug": "chess_part0319",
+  "title": "12 Chess Puzzles: Uncover the Check, Take the Piece (Part 319)",
+  "orientation": "landscape",
+  "thumb_text": "DISCOVERED CHK",
+  "description": "Twelve discovered checks that win material, one after another, each with a single best move. Every position comes from a real game and is rated between 1278 and 2705, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "2tpW0",
+      "fen": "r5k1/ppp3bp/3pq3/8/1P4p1/P1N2nP1/1BQ3KP/1R5R w - - 0 26",
+      "rating": 2705,
+      "uci": [
+        "c3a4",
+        "e6d5",
+        "h1d1",
+        "g7d4",
+        "b2d4",
+        "f3e1",
+        "g2g1",
+        "e1c2"
+      ],
+      "themes": [
+        "collinearMove",
+        "crushing",
+        "discoveredCheck",
+        "doubleCheck",
+        "middlegame",
+        "quietMove",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2Z2m7",
+      "fen": "r4rk1/ppq3p1/2nb4/3p2Np/5pb1/2P3P1/PP2BK1P/R1BQ3R w - - 0 18",
+      "rating": 1918,
+      "uci": [
+        "e2g4",
+        "f4g3",
+        "f2g2",
+        "f8f2",
+        "g2h3",
+        "h5g4"
+      ],
+      "themes": [
+        "advantage",
+        "discoveredCheck",
+        "doubleCheck",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "1DV7e",
+      "fen": "1k6/2p2p2/Qp1r1q2/6p1/PP2pP2/4P3/4BK2/7R w - - 2 32",
+      "rating": 1418,
+      "uci": [
+        "a6c4",
+        "g5f4",
+        "c4e4",
+        "f4e3"
+      ],
+      "themes": [
+        "advantage",
+        "discoveredCheck",
+        "doubleCheck",
+        "endgame",
+        "master",
+        "short"
+      ]
+    },
+    {
+      "id": "12hwh",
+      "fen": "6rk/p1p4q/1p1p1R1B/3Pp3/4b1PQ/2P5/8/6K1 b - - 0 36",
+      "rating": 2240,
+      "uci": [
+        "e4f5",
+        "f6f5",
+        "h7f5",
+        "h6g7",
+        "h8g7",
+        "g4f5"
+      ],
+      "themes": [
+        "crushing",
+        "discoveredCheck",
+        "doubleCheck",
+        "endgame",
+        "exposedKing",
+        "long",
+        "master",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1Rhi7",
+      "fen": "3r1rk1/pp3pp1/2pqp1p1/3nN3/3P2R1/2P2R1P/PPQ2PP1/6K1 b - - 9 24",
+      "rating": 2295,
+      "uci": [
+        "d5f6",
+        "f3f6",
+        "g7f6",
+        "e5g6",
+        "f6f5",
+        "g6e7"
+      ],
+      "themes": [
+        "crushing",
+        "discoveredCheck",
+        "doubleCheck",
+        "kingsideAttack",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "1iuuK",
+      "fen": "6rk/3Q4/3N1q2/p1pPp2p/P3Pb1p/1PR2P2/8/7K b - - 0 41",
+      "rating": 1278,
+      "uci": [
+        "h4h3",
+        "d6f7",
+        "h8h7",
+        "f7g5"
+      ],
+      "themes": [
+        "advantage",
+        "discoveredCheck",
+        "doubleCheck",
+        "endgame",
+        "master",
+        "short"
+      ]
+    },
+    {
+      "id": "2HpXC",
+      "fen": "7r/B3ppbk/2Bp1np1/R2P3p/1r2P3/5P2/1PK3PP/7R w - - 3 25",
+      "rating": 1999,
+      "uci": [
+        "c2c3",
+        "f6d5",
+        "c3d3",
+        "d5f4"
+      ],
+      "themes": [
+        "crushing",
+        "discoveredCheck",
+        "doubleCheck",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "1zcM1",
+      "fen": "2k3r1/ppq2p2/2P1p1p1/4P2r/3pQ3/8/PP4P1/2R2RK1 b - - 0 24",
+      "rating": 1593,
+      "uci": [
+        "c7e5",
+        "c6b7",
+        "c8b8",
+        "c1c8"
+      ],
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "discoveredCheck",
+        "doubleCheck",
+        "endgame",
+        "queensideAttack",
+        "short"
+      ]
+    },
+    {
+      "id": "0XT0z",
+      "fen": "rb2k2r/p2b1ppp/1p1Np3/2Qp4/5P2/2P3Pq/PP1N3P/2KR3R b kq - 1 19",
+      "rating": 1481,
+      "uci": [
+        "e8e7",
+        "d6f5",
+        "e7d8",
+        "c5e7"
+      ],
+      "themes": [
+        "advantage",
+        "discoveredCheck",
+        "doubleCheck",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2s7gW",
+      "fen": "4R1rk/1R3Q1p/p5p1/8/3b4/3q2KP/P5P1/8 w - - 6 35",
+      "rating": 2479,
+      "uci": [
+        "g3g4",
+        "d3f5",
+        "f7f5",
+        "g6f5",
+        "g4f5",
+        "g8e8"
+      ],
+      "themes": [
+        "advantage",
+        "discoveredCheck",
+        "doubleCheck",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "2QLt3",
+      "fen": "8/6pk/7p/3pq3/8/5QPP/Pr3n1K/R4R2 w - - 0 36",
+      "rating": 1315,
+      "uci": [
+        "a1b1",
+        "f2g4",
+        "h2h1",
+        "b2h2",
+        "h1g1",
+        "e5d4"
+      ],
+      "themes": [
+        "crushing",
+        "discoveredCheck",
+        "doubleCheck",
+        "endgame",
+        "long",
+        "master"
+      ]
+    },
+    {
+      "id": "2kHcf",
+      "fen": "r1bq1rk1/pp2np1N/2n1p1p1/2p4P/5P2/P1Pp4/B1P3P1/R1BQK2R b KQ - 0 13",
+      "rating": 2526,
+      "uci": [
+        "d3c2",
+        "d1c2",
+        "g8h7",
+        "h5g6",
+        "h7g7",
+        "h1h7"
+      ],
+      "themes": [
+        "advantage",
+        "discoveredCheck",
+        "doubleCheck",
+        "kingsideAttack",
+        "long",
+        "middlegame"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "slug": "chess_part0337",
+  "title": "12 Chess Puzzles: Calculate Three Moves Deep (Part 337)",
+  "orientation": "landscape",
+  "thumb_text": "MATE IN 3",
+  "description": "Twelve deeper mates that need real calculation, one after another, each with a single best move. Every position comes from a real game and is rated between 1275 and 2075, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "2UsgG",
+      "fen": "6rk/5R1p/4pP2/4Bb2/8/1P1pb3/P1r5/K6R b - - 1 43",
+      "rating": 1493,
+      "uci": [
+        "d3d2",
+        "f7h7",
+        "f5h7",
+        "f6f7",
+        "g8g7",
+        "f7f8q"
+      ],
+      "themes": [
+        "advancedPawn",
+        "deflection",
+        "discoveredAttack",
+        "discoveredCheck",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "pin",
+        "promotion",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0RSOk",
+      "fen": "2r1b1k1/6p1/1q2p1NP/p3N3/1b1p4/1P2RQ1P/5P2/6K1 b - - 0 36",
+      "rating": 1858,
+      "uci": [
+        "d4e3",
+        "h6h7",
+        "g8h7",
+        "f3h5",
+        "h7g8",
+        "h5h8"
+      ],
+      "themes": [
+        "advancedPawn",
+        "attraction",
+        "long",
+        "master",
+        "mate",
+        "mateIn3",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "2oMLg",
+      "fen": "4Rn1k/p5p1/5r1p/8/3PQ1PK/1P2RP1P/8/6q1 w - - 4 43",
+      "rating": 1578,
+      "uci": [
+        "e4e7",
+        "g1f2",
+        "h4h5",
+        "g7g6",
+        "h5h6",
+        "f2h4"
+      ],
+      "themes": [
+        "endgame",
+        "killBoxMate",
+        "long",
+        "mate",
+        "mateIn3"
+      ]
+    },
+    {
+      "id": "3GNEL",
+      "fen": "2r1k2r/pQ1bPppp/4q3/3pn3/8/7P/PP1BBPP1/RN2K2R w KQk - 1 19",
+      "rating": 1917,
+      "uci": [
+        "e2b5",
+        "e5d3",
+        "e1f1",
+        "c8c1",
+        "d2c1",
+        "e6e1"
+      ],
+      "themes": [
+        "discoveredCheck",
+        "doubleCheck",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0n68t",
+      "fen": "2r2r2/1p3R1k/p5pp/4P3/2P1Q1R1/7p/P2q4/6K1 b - - 0 32",
+      "rating": 1808,
+      "uci": [
+        "h7h8",
+        "f7h7",
+        "h8h7",
+        "e4g6",
+        "h7h8",
+        "g6g7"
+      ],
+      "themes": [
+        "attraction",
+        "endgame",
+        "exposedKing",
+        "long",
+        "mate",
+        "mateIn3",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "3Awn0",
+      "fen": "4k3/2Q2p1p/3p2pP/p3p1K1/3pP3/P5r1/5q2/5R1R w - - 7 41",
+      "rating": 1877,
+      "uci": [
+        "g5h4",
+        "g6g5",
+        "h4h5",
+        "f2e2",
+        "f1f3",
+        "e2f3"
+      ],
+      "themes": [
+        "endgame",
+        "long",
+        "mate",
+        "mateIn3"
+      ]
+    },
+    {
+      "id": "2tuTf",
+      "fen": "4r2k/p5pp/1pQ5/2b2p2/P4P2/2qrB2P/4R1P1/4R2K b - - 7 28",
+      "rating": 1275,
+      "uci": [
+        "d3e3",
+        "c6e8",
+        "e3e8",
+        "e2e8",
+        "c5f8",
+        "e8f8"
+      ],
+      "themes": [
+        "backRankMate",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "xRayAttack"
+      ]
+    },
+    {
+      "id": "2kHjT",
+      "fen": "2r4r/1Rqk3p/B2pp1p1/4n1Q1/p7/2P4P/6P1/7K b - - 4 29",
+      "rating": 2026,
+      "uci": [
+        "h8f8",
+        "a6b5",
+        "e5c6",
+        "b5c6",
+        "d7c6",
+        "g5b5"
+      ],
+      "themes": [
+        "attraction",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "pin",
+        "triangleMate"
+      ]
+    },
+    {
+      "id": "1Qerw",
+      "fen": "r2q1r2/p3n1k1/1p2pNpp/2p1Pp2/2Pp1P2/3R3Q/PP3PPP/5RK1 b - - 1 21",
+      "rating": 1737,
+      "uci": [
+        "d8c7",
+        "h3h6",
+        "g7h6",
+        "d3h3",
+        "h6g7",
+        "h3h7"
+      ],
+      "themes": [
+        "attraction",
+        "hookMate",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "2yoY5",
+      "fen": "r1b2nk1/pp3p1p/2p3p1/2bPr3/2P2p1q/2NB1P2/PP4PP/R2QBRK1 w - - 3 17",
+      "rating": 1401,
+      "uci": [
+        "g1h1",
+        "h4h2",
+        "h1h2",
+        "e5h5",
+        "e1h4",
+        "h5h4"
+      ],
+      "themes": [
+        "attraction",
+        "kingsideAttack",
+        "long",
+        "master",
+        "mate",
+        "mateIn3",
+        "opening",
+        "pillsburysMate",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0OxOX",
+      "fen": "r3r1k1/p3qpp1/1p2pn2/2p2bN1/3P1P1Q/4PR2/PP4PP/5RK1 b - - 11 19",
+      "rating": 1782,
+      "uci": [
+        "f6e4",
+        "f3h3",
+        "f5h3",
+        "h4h7",
+        "g8f8",
+        "h7h8"
+      ],
+      "themes": [
+        "fork",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "quietMove",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1ZrNv",
+      "fen": "r5r1/p6Q/8/4p2k/2P1P3/3P1P1b/P2K4/4B1q1 b - - 6 45",
+      "rating": 2075,
+      "uci": [
+        "h5g5",
+        "e1h4",
+        "g5f4",
+        "h7f7",
+        "h3f5",
+        "f7f5"
+      ],
+      "themes": [
+        "endgame",
+        "long",
+        "mate",
+        "mateIn3"
+      ]
+    }
+  ]
+}
