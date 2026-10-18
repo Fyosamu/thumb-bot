@@ -1,0 +1,294 @@
+{
+  "slug": "chess_part1162",
+  "title": "12 Chess Puzzles: Drag the King Out of Shelter (Part 1162)",
+  "orientation": "landscape",
+  "thumb_text": "ATTRACTION",
+  "description": "Twelve attraction sacrifices that drag a piece where it hurts, one after another, each with a single best move. Every position comes from a real game and is rated between 1289 and 2093, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1MGyJ",
+      "fen": "8/8/1rp1kp2/8/3PK3/5P2/2R5/8 b - - 0 44",
+      "rating": 1568,
+      "uci": [
+        "b6a6",
+        "c2c6",
+        "a6c6",
+        "d4d5",
+        "e6d6",
+        "d5c6",
+        "d6c6",
+        "e4f5"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "endgame",
+        "fork",
+        "rookEndgame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "3GQIC",
+      "fen": "3r4/4r1p1/4Pp1p/p1k2P1P/P1pp2P1/8/2K5/1R1R4 b - - 0 36",
+      "rating": 2019,
+      "uci": [
+        "c5d5",
+        "d1d4",
+        "d5d4",
+        "b1d1",
+        "d4e4",
+        "d1d8"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "long",
+        "rookEndgame",
+        "sacrifice",
+        "skewer"
+      ]
+    },
+    {
+      "id": "1efOS",
+      "fen": "1k1r3r/ppp5/2b5/P2p1R2/6Q1/6NP/5RPK/1q6 b - - 5 33",
+      "rating": 1358,
+      "uci": [
+        "h8g8",
+        "g4g8",
+        "d8g8",
+        "f5f8",
+        "c6e8",
+        "f8g8"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "long",
+        "middlegame",
+        "pin",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0Xyxr",
+      "fen": "2r1kq2/1p1bn3/4p3/p2pN2p/3P4/PP1Q3B/5r2/5RRK b - - 3 29",
+      "rating": 2068,
+      "uci": [
+        "c8c2",
+        "d3c2",
+        "f2c2",
+        "f1f8",
+        "e8f8",
+        "e5d7"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "exposedKing",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "08Bb2",
+      "fen": "4r1k1/1p4b1/p1p1b1Pp/8/3P4/3B1P2/Pr2N1P1/R3RK2 b - - 2 27",
+      "rating": 1355,
+      "uci": [
+        "e6a2",
+        "a1a2",
+        "b2a2",
+        "d3c4",
+        "g8f8",
+        "c4a2"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "exposedKing",
+        "fork",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1CNrm",
+      "fen": "2r2rk1/7p/p4n2/1p6/8/P1PQ1N2/qPK3P1/3R3R w - - 3 30",
+      "rating": 1928,
+      "uci": [
+        "d3f5",
+        "c8c3",
+        "c2c3",
+        "a2c4",
+        "c3d2",
+        "f6e4",
+        "d2e3",
+        "f8f5"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "discoveredAttack",
+        "master",
+        "middlegame",
+        "pin",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1PSS7",
+      "fen": "6k1/4p1b1/1pq1p2p/3pP1p1/2rP1n2/4QN2/PP3PPP/R2R2K1 w - - 10 29",
+      "rating": 1289,
+      "uci": [
+        "d1c1",
+        "c4c1",
+        "a1c1",
+        "c6c1",
+        "e3c1",
+        "f4e2",
+        "g1f1",
+        "e2c1"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "fork",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1549N",
+      "fen": "2r1k3/p5pp/2N1n3/5p2/4K2P/8/P1R2PP1/8 w - - 0 31",
+      "rating": 1418,
+      "uci": [
+        "e4f5",
+        "c8c6",
+        "c2c6",
+        "e6d4",
+        "f5e4",
+        "d4c6"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "fork",
+        "long",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0LWCD",
+      "fen": "5rk1/8/7p/3nq1p1/1PQ1Np2/P2p4/5KP1/3R4 b - - 2 42",
+      "rating": 1438,
+      "uci": [
+        "f8e8",
+        "c4d5",
+        "e5d5",
+        "e4f6",
+        "g8f7",
+        "f6d5"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "fork",
+        "long",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "28AYG",
+      "fen": "r1bq1rk1/6b1/p3p1QB/3p4/8/8/PPP3PP/R4R1K b - - 2 19",
+      "rating": 2093,
+      "uci": [
+        "d8e7",
+        "h6g7",
+        "e7g7",
+        "f1f8",
+        "g8f8",
+        "a1f1",
+        "f8g8",
+        "g6e8"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "exposedKing",
+        "middlegame",
+        "pin",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1SUuy",
+      "fen": "8/8/p7/1pn1Q3/1k6/8/7P/2r2K2 w - - 1 52",
+      "rating": 1509,
+      "uci": [
+        "f1e2",
+        "c1e1",
+        "e2e1",
+        "c5d3",
+        "e1e2",
+        "d3e5"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "fork",
+        "long",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "303OJ",
+      "fen": "2kr3r/npp1nqpp/p4p2/1b1P2P1/3P4/1Q1B1N2/PP1N1P1P/2RK3R b - - 2 18",
+      "rating": 2025,
+      "uci": [
+        "b5d3",
+        "c1c7",
+        "c8c7",
+        "d5d6",
+        "d8d6",
+        "b3f7"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "discoveredAttack",
+        "long",
+        "middlegame",
+        "pin",
+        "queensideAttack",
+        "sacrifice"
+      ]
+    }
+  ]
+}

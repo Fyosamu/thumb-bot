@@ -1,0 +1,253 @@
+{
+  "slug": "chess_part1137",
+  "title": "12 Chess Puzzles: Pin It and It Never Moves (Part 1137)",
+  "orientation": "landscape",
+  "thumb_text": "THE PIN",
+  "description": "Twelve pins that freeze a defender, one after another, each with a single best move. Every position comes from a real game and is rated between 1317 and 2406, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "05Oxv",
+      "fen": "r4r1k/6p1/1q1p3p/p2Pp1bP/6R1/R1P3P1/1P2QPB1/6K1 w - - 9 33",
+      "rating": 1474,
+      "uci": [
+        "g2e4",
+        "f8f2",
+        "e2f2",
+        "g5e3",
+        "f2e3",
+        "b6e3"
+      ],
+      "themes": [
+        "crushing",
+        "kingsideAttack",
+        "long",
+        "middlegame",
+        "pin",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "2PuEX",
+      "fen": "r1b2rk1/pp3ppp/2p5/8/3P1B2/2P3Q1/PPqN1KPP/R7 b - - 5 16",
+      "rating": 1466,
+      "uci": [
+        "c2b2",
+        "f4h6",
+        "c8g4",
+        "g3g4"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "id": "02vjO",
+      "fen": "1r4k1/5ppp/2P1p3/4P3/PpR2P2/1P3b2/7P/6K1 b - - 1 33",
+      "rating": 1466,
+      "uci": [
+        "f3d5",
+        "c6c7",
+        "b8c8",
+        "c4b4",
+        "g8f8",
+        "b4b8"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "long",
+        "pin"
+      ]
+    },
+    {
+      "id": "3D9sM",
+      "fen": "1n1q3r/r4k2/p5p1/1p1Ppp1n/4B1p1/P1N3P1/1P4PP/2RQ1RK1 w - - 0 22",
+      "rating": 1550,
+      "uci": [
+        "e4f5",
+        "d8b6",
+        "f1f2",
+        "g6f5"
+      ],
+      "themes": [
+        "advantage",
+        "master",
+        "middlegame",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "id": "2wLKD",
+      "fen": "r5k1/pp4p1/4p3/3pP2q/P2P3B/5P1K/7P/2Q4R w - - 1 43",
+      "rating": 1634,
+      "uci": [
+        "c1f4",
+        "a8f8",
+        "f4g3",
+        "f8f3"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "id": "3AKam",
+      "fen": "2r2k2/4pN1p/3p2p1/pp6/1b2PPP1/1BrRQ2P/1qP1K3/3R4 w - - 1 25",
+      "rating": 2259,
+      "uci": [
+        "f4f5",
+        "c3b3",
+        "d3b3",
+        "b2c2"
+      ],
+      "themes": [
+        "capturingDefender",
+        "crushing",
+        "middlegame",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "id": "0L5eM",
+      "fen": "3rk3/R2n3p/1pB1p1p1/2p2p2/2P2K2/1P2P1P1/7P/8 b - - 1 27",
+      "rating": 2406,
+      "uci": [
+        "h7h6",
+        "a7d7",
+        "d8d7",
+        "f4e5",
+        "e8d8",
+        "c6d7",
+        "d8d7",
+        "e5f6",
+        "g6g5",
+        "f6g6",
+        "d7e7",
+        "h2h3"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "pin",
+        "sacrifice",
+        "veryLong",
+        "zugzwang"
+      ]
+    },
+    {
+      "id": "38Oz4",
+      "fen": "1n2r3/1r2qk2/p3p1p1/1pP1Pp1p/3Q1P2/1P6/P2R2PP/3R2K1 b - - 0 30",
+      "rating": 1317,
+      "uci": [
+        "b7d7",
+        "d4d7",
+        "b8d7",
+        "d2d7"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "id": "1bEV0",
+      "fen": "6k1/p1b2p1p/6p1/5P2/3PQ3/1r2P1RP/6RK/2q5 w - - 1 39",
+      "rating": 2273,
+      "uci": [
+        "f5f6",
+        "c1e3",
+        "e4e3",
+        "b3e3"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "id": "38MSv",
+      "fen": "8/6pk/4p2p/5rPQ/4q2P/8/5P2/3R2K1 b - - 2 41",
+      "rating": 1589,
+      "uci": [
+        "e4f3",
+        "g5g6",
+        "h7g8",
+        "d1d8",
+        "f5f8",
+        "h5f3"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "pin"
+      ]
+    },
+    {
+      "id": "2B1Ai",
+      "fen": "2r5/3kb1p1/p2p1pP1/1p2pP2/1P2P3/PN1R1K2/8/8 b - - 8 35",
+      "rating": 1981,
+      "uci": [
+        "e7d8",
+        "b3c5",
+        "d7e7",
+        "c5e6"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "id": "2RLdr",
+      "fen": "r1b1kb1r/1p3p1p/p1n3p1/3qP2n/Q2N4/7P/PP1BBPP1/R3K2R b KQkq - 0 16",
+      "rating": 1471,
+      "uci": [
+        "d5g2",
+        "e2f3",
+        "g2f3",
+        "d4f3"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "pin",
+        "short",
+        "trappedPiece"
+      ]
+    }
+  ]
+}
