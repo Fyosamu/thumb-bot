@@ -1,0 +1,289 @@
+{
+  "slug": "chess_part0091",
+  "title": "12 Chess Puzzles: The Attraction Tactic (Part 91)",
+  "orientation": "landscape",
+  "thumb_text": "ATTRACTION",
+  "description": "Twelve attraction sacrifices that drag a piece where it hurts, one after another, each with a single best move. Every position comes from a real game and is rated between 1382 and 2627, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "2Hor5",
+      "fen": "1r1q1rk1/6b1/5pPp/p2n1P2/2pP4/2B1PQ2/P7/1NKR3R w - - 1 27",
+      "rating": 1382,
+      "uci": [
+        "h1h2",
+        "b8b1",
+        "c1b1",
+        "d5c3",
+        "b1a1",
+        "c3d1"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "exposedKing",
+        "fork",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "1vt3m",
+      "fen": "5k1r/8/3nBr1q/p2Pp1RP/1b2Pp2/2N2P2/1PQ2P2/6RK w - - 3 37",
+      "rating": 2115,
+      "uci": [
+        "g1g2",
+        "f6g6",
+        "g5e5",
+        "g6g2",
+        "h1g2",
+        "h6g7",
+        "e6g4",
+        "g7e5"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "exposedKing",
+        "fork",
+        "middlegame",
+        "pin",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2KgQ1",
+      "fen": "8/2p3b1/1rP1kppp/1P2p3/2Kp3B/5P1P/6P1/1R6 b - - 0 38",
+      "rating": 2306,
+      "uci": [
+        "f6f5",
+        "h4d8",
+        "e6d6",
+        "b1a1",
+        "b6b8",
+        "d8c7",
+        "d6c7",
+        "a1a7"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "endgame",
+        "quietMove",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "3LK5C",
+      "fen": "8/4r3/2pkP1R1/5Pp1/3P2P1/1p6/2bK3P/8 b - - 3 45",
+      "rating": 1640,
+      "uci": [
+        "e7b7",
+        "e6e7",
+        "d6e7",
+        "g6g7",
+        "e7f6",
+        "g7b7"
+      ],
+      "themes": [
+        "advancedPawn",
+        "attraction",
+        "crushing",
+        "discoveredAttack",
+        "discoveredCheck",
+        "endgame",
+        "long",
+        "skewer"
+      ]
+    },
+    {
+      "id": "0ReZp",
+      "fen": "r4rk1/5pp1/p2P4/1pq2P1p/5QbP/2PR1N2/P1P5/2K3R1 b - - 2 27",
+      "rating": 2627,
+      "uci": [
+        "g4f3",
+        "g1g7",
+        "g8g7",
+        "f4g5",
+        "g7h7",
+        "d3f3",
+        "c5e5",
+        "f3g3",
+        "e5g3",
+        "g5g3"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "master",
+        "middlegame",
+        "quietMove",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "3JP8J",
+      "fen": "2kr3r/ppq2pp1/5n2/2b1nb2/1PP5/P4NP1/3NQ1BP/R1B2R1K w - - 1 17",
+      "rating": 2485,
+      "uci": [
+        "f3e5",
+        "h8h2",
+        "h1h2",
+        "d8h8",
+        "g2h3",
+        "f5h3"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "kingsideAttack",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1qxw9",
+      "fen": "4r3/1P3pk1/2n1q1p1/3p1p1p/Q2P4/4b1Pb/P3NP1P/1RR3KB w - - 1 27",
+      "rating": 2203,
+      "uci": [
+        "c1c3",
+        "e3f2",
+        "g1f2",
+        "e6e2",
+        "f2g1",
+        "e2d2",
+        "a4d1",
+        "d2c3"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "discoveredAttack",
+        "kingsideAttack",
+        "master",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1Q50B",
+      "fen": "2k3r1/pppr1R1b/6p1/8/8/2N4P/PP4P1/5R1K b - - 2 27",
+      "rating": 1818,
+      "uci": [
+        "g6g5",
+        "f7d7",
+        "c8d7",
+        "f1f7",
+        "d7d8",
+        "f7h7"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "endgame",
+        "fork",
+        "long"
+      ]
+    },
+    {
+      "id": "2EEjf",
+      "fen": "8/p4pp1/3P2k1/2n1q3/1p6/8/1P3NQ1/5K2 b - - 5 35",
+      "rating": 1545,
+      "uci": [
+        "e5g5",
+        "g2g5",
+        "g6g5",
+        "f2e4",
+        "c5e4",
+        "d6d7"
+      ],
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "attraction",
+        "endgame",
+        "exposedKing",
+        "long",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "3DX2T",
+      "fen": "3rr2k/p1p2p1p/1p3p2/5P2/2P3P1/P2BPb1P/1P1R4/2K3R1 w - - 3 23",
+      "rating": 1672,
+      "uci": [
+        "g1g3",
+        "e8e3",
+        "d3e2",
+        "d8d2",
+        "c1d2",
+        "e3e2"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "long",
+        "queensideAttack"
+      ]
+    },
+    {
+      "id": "3FUS3",
+      "fen": "2r3k1/5ppp/3q4/3p4/5N2/2n2Q1P/P4PP1/R5K1 w - - 3 26",
+      "rating": 1503,
+      "uci": [
+        "a2a4",
+        "d6f4",
+        "f3f4",
+        "c3e2",
+        "g1h2",
+        "e2f4"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "endgame",
+        "fork",
+        "long",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0Lfsg",
+      "fen": "3q4/2r3kp/Q2P2p1/4r3/P1p5/2Nn3P/1PB3P1/5R1K b - - 0 26",
+      "rating": 1522,
+      "uci": [
+        "c7f7",
+        "f1f7",
+        "g7f7",
+        "a6c4"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "master",
+        "middlegame",
+        "short"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+{
+  "slug": "chess_part0154",
+  "title": "12 Chess Puzzles: The Sacrifice Only You See (Part 154)",
+  "orientation": "landscape",
+  "thumb_text": "SACRIFICE",
+  "description": "Twelve sacrifices that open the position, one after another, each with a single best move. Every position comes from a real game and is rated between 1477 and 2716, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1EWJE",
+      "fen": "r5r1/ppp1qp1k/1b1p1pb1/6Pp/4P2B/5N1P/PP2QP1K/3RR3 b - - 0 20",
+      "rating": 1477,
+      "uci": [
+        "f6f5",
+        "e4f5",
+        "e7e2",
+        "f5g6",
+        "g8g6",
+        "e1e2"
+      ],
+      "themes": [
+        "crushing",
+        "exposedKing",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "09uTb",
+      "fen": "5rk1/ppr2pbp/1q1p2p1/1R1P1b2/2PNp3/1PQ1B2P/5PP1/5RK1 b - - 5 25",
+      "rating": 2716,
+      "uci": [
+        "g7d4",
+        "e3d4",
+        "b6b5",
+        "c3e3",
+        "b5e8",
+        "d4f6"
+      ],
+      "themes": [
+        "advantage",
+        "defensiveMove",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1gpJu",
+      "fen": "5k2/2q2p1p/4pQ2/3p1p2/3P4/5P1P/r5P1/1R5K b - - 0 33",
+      "rating": 1818,
+      "uci": [
+        "a2c2",
+        "b1b8",
+        "c7b8",
+        "f6h8",
+        "f8e7",
+        "h8b8"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "sacrifice",
+        "skewer"
+      ]
+    },
+    {
+      "id": "33xem",
+      "fen": "r3r2k/1bq3bP/pp3nn1/3p2N1/P7/7P/2pBNQP1/4RR1K b - - 3 27",
+      "rating": 2617,
+      "uci": [
+        "c7c5",
+        "f2f5",
+        "f6e4",
+        "e2f4",
+        "e4g3",
+        "h1h2",
+        "g3f1",
+        "e1f1"
+      ],
+      "themes": [
+        "crushing",
+        "master",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "17Xlw",
+      "fen": "8/8/3k4/pp1p1p2/8/P1P2KP1/5P2/8 w - - 1 44",
+      "rating": 2062,
+      "uci": [
+        "f3f4",
+        "d5d4",
+        "c3d4",
+        "b5b4",
+        "a3b4",
+        "a5a4"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "long",
+        "pawnEndgame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1NOnd",
+      "fen": "8/5pk1/4p1p1/p1P1P1RP/2pPbP2/2rp2R1/8/3K4 w - - 0 52",
+      "rating": 2236,
+      "uci": [
+        "c5c6",
+        "e4c6",
+        "h5g6",
+        "c6a4",
+        "d1e1",
+        "c3c1",
+        "e1f2",
+        "c1f1",
+        "f2f1",
+        "d3d2",
+        "g6f7",
+        "g7f7",
+        "g5g7",
+        "f7e8",
+        "g7g8",
+        "e8d7",
+        "g3g7",
+        "d7c6",
+        "d4d5",
+        "c6c5",
+        "g8c8",
+        "c5d4"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1O5Ud",
+      "fen": "6r1/5prk/3Rp2p/8/p2P4/P4pPP/1P2nP1K/2R1N3 w - - 3 40",
+      "rating": 2144,
+      "uci": [
+        "c1c2",
+        "g7g3",
+        "c2e2",
+        "g3g2",
+        "e1g2",
+        "g8g2"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "master",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0Gnd4",
+      "fen": "r5k1/pp4p1/6p1/3n1r2/2p5/2PqPN1P/PQ1N1PK1/R6R w - - 0 26",
+      "rating": 1848,
+      "uci": [
+        "a1d1",
+        "d5e3",
+        "f2e3",
+        "d3e2",
+        "g2g3",
+        "f5f3",
+        "d2f3",
+        "e2b2"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2NuZh",
+      "fen": "1r3rk1/p3p1bp/6p1/1qpPP3/4BP1B/Pp2Q3/1Pn2P2/1K1R3R w - - 2 27",
+      "rating": 1937,
+      "uci": [
+        "e3g3",
+        "c2a3",
+        "b2a3",
+        "b5e2",
+        "g3e3",
+        "e2a2"
+      ],
+      "themes": [
+        "crushing",
+        "long",
+        "middlegame",
+        "queensideAttack",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "2i05n",
+      "fen": "3r2k1/p3bppp/2n5/2p2Q2/1q4P1/1PN1BP2/P1P4P/2K4R w - - 0 21",
+      "rating": 2043,
+      "uci": [
+        "c3d5",
+        "b4a3",
+        "c1b1",
+        "d8d5",
+        "f5d5",
+        "c6b4",
+        "d5a8",
+        "e7f8"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0rKXM",
+      "fen": "8/1p2k2r/2b2R1p/p1Pr4/3Bp3/4P1PP/5R1K/8 w - - 0 40",
+      "rating": 1713,
+      "uci": [
+        "f6f8",
+        "d5d4",
+        "e3d4",
+        "e4e3",
+        "f2f5",
+        "e3e2",
+        "f5e5",
+        "e7f8"
+      ],
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "endgame",
+        "master",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2pXAO",
+      "fen": "8/1p1q2k1/3pR1Bp/p2P2b1/P1P2r1r/1P6/2Q2P2/5RK1 w - - 6 33",
+      "rating": 2304,
+      "uci": [
+        "g6h5",
+        "f4g4",
+        "h5g4",
+        "h4g4",
+        "g1h1",
+        "d7f7"
+      ],
+      "themes": [
+        "advantage",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    }
+  ]
+}
