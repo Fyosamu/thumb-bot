@@ -1,0 +1,248 @@
+{
+  "slug": "chess_part1633",
+  "title": "12 Chess Puzzles: Activate the Rook, Win the Game (Part 1633)",
+  "orientation": "landscape",
+  "thumb_text": "ROOK ENDING",
+  "description": "Twelve rook endgame technique, one after another, each with a single best move. Every position comes from a real game and is rated between 1270 and 2607, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "3A6YL",
+      "fen": "4r2k/1R2P3/5ppP/4p3/6P1/6K1/8/8 b - - 0 57",
+      "rating": 2607,
+      "uci": [
+        "h8g8",
+        "g4g5",
+        "f6g5",
+        "g3g4",
+        "e5e4",
+        "g4g5"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "rookEndgame"
+      ]
+    },
+    {
+      "id": "0mViD",
+      "fen": "6r1/8/5p1p/R5p1/4kP2/6K1/7P/8 w - - 0 45",
+      "rating": 1583,
+      "uci": [
+        "f4g5",
+        "g8g5",
+        "a5g5",
+        "h6g5"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "master",
+        "rookEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "1v7kh",
+      "fen": "6r1/5k2/p3p1R1/5p1P/1p3P2/1P6/P1K5/8 w - - 0 39",
+      "rating": 2333,
+      "uci": [
+        "c2d3",
+        "g8g6",
+        "h5g6",
+        "f7g6",
+        "d3c4",
+        "g6h5",
+        "c4b4",
+        "h5g4",
+        "b4c5",
+        "g4f4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "rookEndgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1xssZ",
+      "fen": "8/4R2p/5Kp1/3k4/6PP/3r4/8/8 b - - 2 46",
+      "rating": 1270,
+      "uci": [
+        "d3d4",
+        "e7d7",
+        "d5c5",
+        "d7d4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "rookEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "1fac4",
+      "fen": "8/6R1/1P1k4/6p1/8/1r2PK2/8/8 b - - 3 48",
+      "rating": 1508,
+      "uci": [
+        "b3b6",
+        "g7g6",
+        "d6c7",
+        "g6b6",
+        "c7b6",
+        "f3g4",
+        "b6c7",
+        "g4g5"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "master",
+        "rookEndgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "17Mu6",
+      "fen": "3r3k/7p/2p4R/p3Pp2/1p3P2/7P/PP1r1K2/6R1 w - - 4 34",
+      "rating": 1451,
+      "uci": [
+        "f2g3",
+        "d8g8",
+        "g3f3",
+        "g8g1"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "rookEndgame",
+        "short",
+        "skewer"
+      ]
+    },
+    {
+      "id": "0fgV1",
+      "fen": "3k4/5R2/1p3Kp1/6P1/2P2P2/pr6/8/8 b - - 0 66",
+      "rating": 2354,
+      "uci": [
+        "d8c8",
+        "f7a7",
+        "b3f3",
+        "f6g6"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "master",
+        "rookEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "0uKLJ",
+      "fen": "8/4k3/2p1p3/2P2p2/1PK2Pp1/3R2P1/8/2r5 w - - 9 43",
+      "rating": 1930,
+      "uci": [
+        "d3c3",
+        "c1c3",
+        "c4c3",
+        "e6e5",
+        "c3d2",
+        "e5f4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "rookEndgame"
+      ]
+    },
+    {
+      "id": "0jDBr",
+      "fen": "2r1r1k1/6p1/p1p3Rp/1pPP4/5p2/P2R1P1P/3K3P/8 b - - 0 31",
+      "rating": 1704,
+      "uci": [
+        "g8h7",
+        "g6c6",
+        "c8c6",
+        "d5c6"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "rookEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "2B7eC",
+      "fen": "8/2R5/6p1/1r3p1p/1k4r1/8/6P1/3R2K1 b - - 5 46",
+      "rating": 1470,
+      "uci": [
+        "b5c5",
+        "d1b1",
+        "b4c4",
+        "b1c1"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "rookEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "2rKUJ",
+      "fen": "8/pKP5/7R/2r1kpp1/7P/8/8/8 b - - 0 53",
+      "rating": 1662,
+      "uci": [
+        "g5h4",
+        "h6c6",
+        "c5c6",
+        "b7c6"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "rookEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "2uHeE",
+      "fen": "4R3/p5P1/2p2K2/1pk5/8/8/6r1/8 b - - 9 45",
+      "rating": 1392,
+      "uci": [
+        "a7a5",
+        "e8e5",
+        "c5b6",
+        "e5g5"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "rookEndgame",
+        "short"
+      ]
+    }
+  ]
+}
