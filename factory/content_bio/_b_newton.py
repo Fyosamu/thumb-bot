@@ -1,0 +1,205 @@
+# -*- coding: utf-8 -*-
+from _emit import emit
+
+LONG = {
+    "slug": "newton",
+    "title": "Isaac Newton's Life In Reverse | From Westminster Abbey to Woolsthorpe",
+    "orientation": "landscape",
+    "voice": "en-US-AvaMultilingualNeural",
+    "thumb_text": "ISAAC NEWTON",
+    "thumb_stock": "open book on lectern",
+    "description": "Isaac Newton's life runs backwards in this episode, opening with his burial in Westminster Abbey in 1727 and rewinding to his birth in a stone farmhouse in Lincolnshire in 1643. The journey steps through the star catalogue he forced into print, the quarrel over who invented the calculus, the year at Woolsthorpe when the university closed and the apprenticeship in the family fields that he never wanted. Every scene moves to an earlier year, so the laws of motion arrive in reverse order and the years of argument behind them come into view. Dates and places follow the documented record, and stories told about him later are reported as stories.\n\nMade with AI assistance.\n\n#IsaacNewton #Biography #LifeInReverse #ReverseChronology #Physics #Mathematics #RoyalSociety #WestminsterAbbey #InspiringStories #Documentary",
+    "tags": [
+        "biography",
+        "history",
+        "science",
+        "isaac newton",
+        "documentary",
+        "education",
+        "inspiring stories",
+        "physics",
+        "mathematics",
+        "calculus",
+        "royal society",
+        "principia",
+        "optics",
+        "cambridge",
+        "gravitation",
+        "reverse chronology"
+    ],
+    "scenes": [
+        {
+            "stock": "carved marble monument",
+            "narration": "A marble monument to him stands in the nave of Westminster Abbey, cut by a sculptor and set up in the year 1731, four years after his death. Visitors still find it on the north side as they walk toward the choir, and it names him among the men of learning whom the country chose to bury there."
+        },
+        {
+            "stock": "wax candle burning low",
+            "narration": "He died in London in March 1727, in his eighty-fourth year, after a period in which he had given up most of his work. He had been president of the Royal Society for twenty-four years and master of the Mint for twenty-eight, and he held both posts to the end. The papers in his rooms were gathered by his family."
+        },
+        {
+            "stock": "coffin carried through door",
+            "narration": "He was buried in Westminster Abbey, and the funeral was arranged as one of state. Noblemen served as pallbearers, the body had lain in state beforehand, and professors travelled down from Cambridge to walk behind the coffin. It was a public occasion for a man who had spent almost all of his life indoors."
+        },
+        {
+            "stock": "old printed book pages",
+            "narration": "A third edition of his great book on gravity went to the press in 1726, corrected and rearranged by a mathematician he paid to read the proofs. He had been revising it since the edition of 1713, and the two men corresponded over the pages until he was satisfied with them. He was eighty-three."
+        },
+        {
+            "stock": "night sky with stars",
+            "narration": "In 1712 he used the authority of the Royal Society to push through the printing of the star catalogue kept by the Astronomer Royal, who had wanted to publish it himself and on his own terms. The two men had worked together for years and then broke off all dealings. Their letters on the subject survive on both sides."
+        },
+        {
+            "stock": "manuscript pages stacked",
+            "narration": "In the same year he had the Royal Society appoint a committee to settle who had invented the calculus. The report found in his favour, and he is known to have drafted much of the argument himself. The quarrel with the German mathematician Gottfried Wilhelm Leibniz ran for decades and was never resolved by either man."
+        },
+        {
+            "stock": "crown on velvet cushion",
+            "narration": "In April 1705 Queen Anne knighted him at Trinity College in Cambridge during a visit to the university, and the honour arrived while a parliamentary election was being fought in the town. He was sixty-two. The distinction was uncommon for a man of learning, and he kept it quietly, returning to his work at the society and the Mint."
+        },
+        {
+            "stock": "prism light on wall",
+            "narration": "In 1704 he published his book on light and colour in English, opening it with the experiments he had made with prisms more than thirty years before and adding a long list of open questions at the end. It was the last full statement of his work on light, and he wrote nothing of that scale in the remaining years."
+        },
+        {
+            "stock": "oak chair in hall",
+            "narration": "He took the chair of the Royal Society in November 1703, a few months after the death of the man who had criticised his theory of light and held him back from printing it. He kept the presidency until his death, running meetings, signing letters and settling disputes. The society gave him a salary and a room to work in."
+        },
+        {
+            "stock": "mint workshop coins",
+            "narration": "In 1699 he was promoted to master of the Mint, the head of the office that struck the country's coins, and he held the post for the rest of his life. He had been warden there since 1696. The salary was good, the work was administrative, and he moved permanently out of Cambridge."
+        },
+        {
+            "stock": "brass curve on desk",
+            "narration": "In 1697 he answered a challenge set by a Swiss mathematician about the shape a bead takes sliding down a curved wire from one point to another in the least time. He sent his answer within a few weeks, published it without his name, and treated the whole business as a way of passing an evening."
+        },
+        {
+            "stock": "scottish coin dies",
+            "narration": "In 1696 he travelled to Edinburgh to oversee the recoinage of Scottish money, inspecting the mint there and reporting back on the work of melting old silver and striking new coins. The office in London kept him busy through the same years with prosecutions of counterfeiters, a duty he took seriously and pursued through the courts."
+        },
+        {
+            "stock": "letter by candlelight",
+            "narration": "In the autumn of 1693 he wrote agitated letters to two old friends, saying that he had not slept and could not settle his thoughts, and one of the friendships never recovered. He had been working without rest for years. The episode is known only because he described it in his own hand, and he returned to his duties in the spring."
+        },
+        {
+            "stock": "empty green benches",
+            "narration": "He sat in Parliament for the university of Cambridge from 1689 to 1690, in the sessions after the change of king. Those who noticed him said he spoke rarely. The two years he spent in London put him among astronomers, instrument makers and printers, and he went back to Cambridge when the parliament ended."
+        },
+        {
+            "stock": "open folio on stand",
+            "narration": "In July 1687 his book on the motion of the planets and the tides appeared, paid for out of the pocket of the astronomer who had pushed him to write it. It set out three laws of motion and the rule of inverse squares, and it used mathematics as its language throughout. The printing was slow, the first edition sold through over several years, and he revised it rarely in his lifetime."
+        },
+        {
+            "stock": "telescope on tripod",
+            "narration": "In August 1684 the astronomer Edmond Halley asked him in Cambridge whether an inverse square law would make a planet travel in an ellipse. Newton said he had calculated it years earlier and could not find the sheet, then wrote out the proof and sent it. Halley pressed him for more, and the book began as that answer."
+        },
+        {
+            "stock": "london street in fog",
+            "narration": "In October 1676 the German mathematician Leibniz came to London and the two men met briefly, both already at work on the same branch of mathematics by different roads. Nothing unpleasant was said at the time. The charge of theft came years later, and Newton answered it in print while still claiming that he had published first."
+        },
+        {
+            "stock": "alchemical glass vessels",
+            "narration": "Through the winter of 1675 and 1676 he filled notebooks with recipes for heating and mixing metals, reading them as a search for the hidden workings of matter. Alongside them he wrote more on the dates and prophecies of scripture than on the motion of the planets. Almost none of this was printed in his lifetime."
+        },
+        {
+            "stock": "private declaration paper",
+            "narration": "In 1675 he obtained the king's permission to be exempt from taking holy orders, a requirement that had hung over fellows at Cambridge and that he had no wish to meet. He wrote a short statement for the vice chancellor and asked that it be kept private. The exemption removed a pressure that had sat on him for years."
+        },
+        {
+            "stock": "meeting room chairs",
+            "narration": "By 1675 he had stopped going to the meetings of the Royal Society in London and had put aside the full book on light he once planned. The reason was the treatment his first paper had received. He stayed in his college, taught his students, and kept his results to himself for a long stretch of years."
+        },
+        {
+            "stock": "spectrum on white wall",
+            "narration": "His paper on light and colour was read to the Royal Society in February 1672 and drew a reply from the society's curator of experiments, who questioned the experiment itself. Newton wrote back, then wrote again, and finally withdrew into silence. He was twenty-nine, and the argument shaped how he dealt with critics for the rest of his life."
+        },
+        {
+            "stock": "small brass telescope",
+            "narration": "In December 1671 he sent the society a telescope he had built with his own hands, a tube that used a curved mirror instead of a lens and gave a sharper image than the long tubes of the day. The society asked for the instrument, examined it for months, and elected him a fellow in February 1672."
+        },
+        {
+            "stock": "college lecture room",
+            "narration": "In 1669, at twenty-six, he was appointed Lucasian professor of mathematics at Cambridge, taking the chair from the man who had just given it up. His first lectures were on optics and he kept them carefully. He had not published anything, but the college already knew what he could do with a lens."
+        },
+        {
+            "stock": "college quadrangle in rain",
+            "narration": "He took his bachelor's degree in the spring of 1665, was made a fellow of Trinity College in 1667, and took his master's in 1668, with rooms, meals and a small income secured. The fellowship required him to go into orders within a few years, a rule that later stood over him until he found a way around it. He was the first in his family to reach that position."
+        },
+        {
+            "stock": "orchard grass in summer",
+            "narration": "In 1666 he was living at his mother's house in Woolsthorpe while the plague kept the university shut, and he was twenty-three. He worked on the mathematics of change, let a beam of sunlight into a darkened room to split it with a prism, and asked how far the pull of the earth reaches. A later account has him watching an apple in the garden; he told that story himself in old age."
+        },
+        {
+            "stock": "closed college gate",
+            "narration": "In the spring of 1665 Cambridge closed its doors against the plague that was moving through the towns of England, and he went home to Lincolnshire. He had just finished his degree. The two years that followed were spent between his mother's house, the fields and his own calculations, and he produced most of the work that later made his name."
+        },
+        {
+            "stock": "market stall at fair",
+            "narration": "In the summer of 1664, as a student, he bought a glass prism at a fair held outside Cambridge and carried it back to his rooms. He had been reading about colour and wanted to try the work himself rather than take it on trust. The instrument sat in his desk until the plague sent him home."
+        },
+        {
+            "stock": "college dining hall",
+            "narration": "He came to Trinity College in June 1661 as a subsizar, which meant that he waited on wealthier students at table in exchange for his keep. He was eighteen, the son of a farmer with a little property and no father. He kept to himself, made two or three friends, and read far beyond the set books."
+        },
+        {
+            "stock": "stone farmhouse in rain",
+            "narration": "In 1659 his mother called him back from school to run the family farm at Woolsthorpe, and he was sixteen and hated it. He put the work on to a man he hired, let the animals wander, and spent his time reading in the fields. The farm did not prosper, and she sent him back to school the following year."
+        },
+        {
+            "stock": "village cottage garden",
+            "narration": "His father had died in October 1642, two months before he was born, and in 1645 his mother married a minister of the parish and left him behind with his grandmother. He was three years old. He did not forgive the arrangement easily, and later in life he wrote down his resentment in a private list of faults."
+        },
+        {
+            "stock": "lincolnshire fields in mist",
+            "narration": "He was born on Christmas Day, 1642, by the calendar then in use in England, in the village of Woolsthorpe in Lincolnshire, the only child of a yeoman farmer of the same name who had died two months earlier. The house was stone, the parish was small, and the nearest town was Grantham. Under the calendar adopted later, the date reads January 4, 1643."
+        }
+    ]
+}
+
+SHORT = {
+    "slug": "newton_short",
+    "title": "Isaac Newton's Life In Reverse, From Westminster Abbey to Woolsthorpe #Shorts",
+    "orientation": "portrait",
+    "voice": "en-US-AvaMultilingualNeural",
+    "thumb_text": "LIFE IN REVERSE",
+    "thumb_stock": "dark room with beam",
+    "description": "Isaac Newton's life runs backwards, from his burial in Westminster Abbey in 1727 to his birth in a stone farmhouse in Lincolnshire in 1643. The five steps pass the star catalogue of 1712, the book on gravity of 1687, the year the university closed and the farm he was sent to run at sixteen. Dates follow the documented record.\n\nMade with AI assistance.\n\n#IsaacNewton #Biography #LifeInReverse #Shorts #Physics #Mathematics #Documentary",
+    "tags": [
+        "biography",
+        "history",
+        "science",
+        "isaac newton",
+        "documentary",
+        "education",
+        "inspiring stories",
+        "physics",
+        "mathematics",
+        "gravitation",
+        "reverse chronology",
+        "shorts"
+    ],
+    "scenes": [
+        {
+            "stock": "carved marble monument",
+            "narration": "A nation buried a scientist with a state funeral in 1727, and a marble apple still marks the floor of Westminster Abbey where he lies."
+        },
+        {
+            "stock": "night sky with stars",
+            "narration": "Step backwards and he is forcing a rival's star catalogue into print in 1712, quarrelling for years over who invented the calculus."
+        },
+        {
+            "stock": "open folio on stand",
+            "narration": "Further back his book on gravity appears in 1687, funded by an astronomer who asked one question about an orbit in 1684."
+        },
+        {
+            "stock": "closed college gate",
+            "narration": "Before that the plague shuts Cambridge in 1665, and a young fellow goes home to split sunlight with a prism he bought at a fair."
+        },
+        {
+            "stock": "stone farmhouse in rain",
+            "narration": "At the start there is a fatherless boy born in 1643 in a Lincolnshire farmhouse, called back from school at sixteen to mind a farm he failed to run."
+        }
+    ]
+}
+
+emit("newton.json", LONG, "long")
+emit("newton_short.json", SHORT, "short")
