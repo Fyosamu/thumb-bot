@@ -1,0 +1,228 @@
+{
+  "slug": "chess_part1374",
+  "title": "12 Chess Puzzles: The Checkmate You Keep Missing (Part 1374)",
+  "orientation": "landscape",
+  "thumb_text": "MATE",
+  "description": "Twelve forced mating attacks, one after another, each with a single best move. Every position comes from a real game and is rated between 1320 and 2072, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "2ceSG",
+      "fen": "kr1r4/1R6/p1PNq2p/5p2/3Q4/3K4/8/8 b - - 0 45",
+      "rating": 1582,
+      "uci": [
+        "d8d6",
+        "b7a7"
+      ],
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn1",
+        "oneMove"
+      ]
+    },
+    {
+      "id": "0W4nK",
+      "fen": "5kb1/2R5/2B5/2P1N3/3P1K1P/8/p7/2r5 b - - 2 45",
+      "rating": 1454,
+      "uci": [
+        "a2a1q",
+        "e5g6"
+      ],
+      "themes": [
+        "endgame",
+        "master",
+        "mate",
+        "mateIn1",
+        "oneMove"
+      ]
+    },
+    {
+      "id": "1SrGn",
+      "fen": "4r1r1/p4p2/2q1kBp1/p3PQ1p/1np3P1/7P/5P2/1B1R2K1 b - - 5 35",
+      "rating": 1592,
+      "uci": [
+        "g6f5",
+        "b1f5"
+      ],
+      "themes": [
+        "master",
+        "mate",
+        "mateIn1",
+        "middlegame",
+        "oneMove"
+      ]
+    },
+    {
+      "id": "2Rop0",
+      "fen": "7k/p2Q3p/1p1p3q/1P1Pr3/2P5/P2P4/5KP1/5R2 w - - 5 42",
+      "rating": 1431,
+      "uci": [
+        "d7g4",
+        "h6e3"
+      ],
+      "themes": [
+        "dovetailMate",
+        "endgame",
+        "mate",
+        "mateIn1",
+        "oneMove"
+      ]
+    },
+    {
+      "id": "0rNYz",
+      "fen": "5rk1/Q4ppp/6r1/8/3n4/4q1B1/P5PP/2R2R1K b - - 0 23",
+      "rating": 1497,
+      "uci": [
+        "g6g3",
+        "a7f7",
+        "f8f7",
+        "c1c8",
+        "e3e8",
+        "c8e8",
+        "f7f8",
+        "f1f8"
+      ],
+      "themes": [
+        "mate",
+        "mateIn4",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "29qjc",
+      "fen": "4Rr2/ppp3p1/6k1/8/PP1KP1Q1/8/2p3P1/4q3 b - - 9 37",
+      "rating": 1330,
+      "uci": [
+        "g6f7",
+        "g4e6"
+      ],
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn1",
+        "oneMove",
+        "triangleMate"
+      ]
+    },
+    {
+      "id": "1Uirl",
+      "fen": "4rk2/pQ1p1p1p/Bp6/2q5/8/3n1P2/P3K1PP/R1R5 w - - 11 30",
+      "rating": 2072,
+      "uci": [
+        "e2d3",
+        "e8e3",
+        "d3d2",
+        "c5d4",
+        "d2c2",
+        "e3c3",
+        "c2b1",
+        "d4b4"
+      ],
+      "themes": [
+        "endgame",
+        "epauletteMate",
+        "exposedKing",
+        "mate",
+        "mateIn4",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2BPfb",
+      "fen": "4r1k1/p1q3pp/2p2p2/1p6/P2P4/1PP1nP1P/5r2/R1Q1R1K1 w - - 0 30",
+      "rating": 1409,
+      "uci": [
+        "g1f2",
+        "c7h2"
+      ],
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn1",
+        "oneMove"
+      ]
+    },
+    {
+      "id": "2avxl",
+      "fen": "r3rk2/p4p1Q/5q2/1p1pNbR1/2p5/P1P1P3/1P1N1PP1/2K4R b - - 0 26",
+      "rating": 1539,
+      "uci": [
+        "f6g5",
+        "h7f7"
+      ],
+      "themes": [
+        "mate",
+        "mateIn1",
+        "middlegame",
+        "oneMove"
+      ]
+    },
+    {
+      "id": "1P7dk",
+      "fen": "2r2k2/5p1p/1p1NpQpP/3p4/2r5/P1P3P1/1P3PK1/4q3 b - - 3 38",
+      "rating": 1706,
+      "uci": [
+        "c8c7",
+        "f6d8"
+      ],
+      "themes": [
+        "endgame",
+        "master",
+        "masterVsMaster",
+        "mate",
+        "mateIn1",
+        "oneMove"
+      ]
+    },
+    {
+      "id": "1O7Li",
+      "fen": "2b2r2/7R/p1Q3p1/1p2pPk1/5bP1/P5q1/1PP5/1K6 b - - 0 31",
+      "rating": 1320,
+      "uci": [
+        "g3g4",
+        "c6g6"
+      ],
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn1",
+        "oneMove"
+      ]
+    },
+    {
+      "id": "0cwVU",
+      "fen": "r2qr1k1/1pQ3pp/3pbpn1/p2N1N2/4PPP1/7P/PPP3R1/2KR4 b - - 0 23",
+      "rating": 1531,
+      "uci": [
+        "e6d5",
+        "c7g7"
+      ],
+      "themes": [
+        "kingsideAttack",
+        "mate",
+        "mateIn1",
+        "middlegame",
+        "oneMove"
+      ]
+    }
+  ]
+}

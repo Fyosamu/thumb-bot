@@ -1,0 +1,253 @@
+{
+  "slug": "chess_part1375",
+  "title": "12 Chess Puzzles: The Insert Nobody Finds (Part 1375)",
+  "orientation": "landscape",
+  "thumb_text": "INTERMEZZO",
+  "description": "Twelve intermezzos - the forcing move you play before recapturing, one after another, each with a single best move. Every position comes from a real game and is rated between 1267 and 2455, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "0xTv1",
+      "fen": "3r2k1/1p1q2p1/p1pp3p/8/P1P1P1bP/1P1R1rB1/2PQ1P2/4R1K1 w - - 1 28",
+      "rating": 1309,
+      "uci": [
+        "d3d6",
+        "f3g3",
+        "f2g3",
+        "d7d6",
+        "d2d6",
+        "d8d6"
+      ],
+      "themes": [
+        "advantage",
+        "intermezzo",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "35zDU",
+      "fen": "2r5/2p4p/bpRrNpkB/p2n4/3P4/P6P/1P3PP1/3R2K1 w - - 12 30",
+      "rating": 2093,
+      "uci": [
+        "e6f4",
+        "d5f4",
+        "c6d6",
+        "f4e2",
+        "g1h2",
+        "c7d6"
+      ],
+      "themes": [
+        "advantage",
+        "intermezzo",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "2YtSC",
+      "fen": "2kr3r/ppp5/2pb1Rq1/P2P4/4P1b1/1P6/1B1PQ3/R1KN4 b - - 0 25",
+      "rating": 1267,
+      "uci": [
+        "g6f6",
+        "e2g4",
+        "c8b8",
+        "b2f6"
+      ],
+      "themes": [
+        "crushing",
+        "hangingPiece",
+        "intermezzo",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "14lLV",
+      "fen": "2r2rk1/5pp1/p7/2qNp3/1p1n3p/4QP1P/PPPR2P1/1K1R4 w - - 2 30",
+      "rating": 1708,
+      "uci": [
+        "d2d4",
+        "c5c2",
+        "b1a1",
+        "e5d4"
+      ],
+      "themes": [
+        "advantage",
+        "intermezzo",
+        "middlegame",
+        "queensideAttack",
+        "short"
+      ]
+    },
+    {
+      "id": "2Si00",
+      "fen": "rnb1kb1r/1p3p2/p3p2p/q1ppP3/3P2PP/2N1B2R/PPPQ2P1/R4KN1 w kq - 0 14",
+      "rating": 2175,
+      "uci": [
+        "c3d5",
+        "a5b5",
+        "g1e2",
+        "e6d5"
+      ],
+      "themes": [
+        "advantage",
+        "intermezzo",
+        "master",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "20JHY",
+      "fen": "r7/2R3pp/3q2k1/p3p1b1/1p2P1b1/5N2/PB2QPPP/6K1 w - - 0 29",
+      "rating": 1345,
+      "uci": [
+        "b2e5",
+        "g4f3",
+        "e2f3",
+        "d6e5"
+      ],
+      "themes": [
+        "advantage",
+        "capturingDefender",
+        "intermezzo",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2qr9R",
+      "fen": "r2qk2r/2p1bppp/p7/1p1Q2B1/8/1BP2n2/PP3PKP/RN2R3 b kq - 0 14",
+      "rating": 1321,
+      "uci": [
+        "d8d5",
+        "e1e7",
+        "e8f8",
+        "b3d5"
+      ],
+      "themes": [
+        "advantage",
+        "intermezzo",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "3C85H",
+      "fen": "2r2bk1/1p1b2p1/p2q4/3p2BQ/3Pn3/3B2RP/PP3PP1/6K1 b - - 6 23",
+      "rating": 2330,
+      "uci": [
+        "e4g3",
+        "d3h7",
+        "g8h8",
+        "f2g3",
+        "d6h6",
+        "g5h6"
+      ],
+      "themes": [
+        "crushing",
+        "intermezzo",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "12d1f",
+      "fen": "8/8/4k3/p2ppp2/P2PP2p/3K1P1P/8/8 w - - 0 45",
+      "rating": 2455,
+      "uci": [
+        "d4e5",
+        "f5e4",
+        "f3e4",
+        "e6e5"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "intermezzo",
+        "pawnEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "1LbEK",
+      "fen": "5k2/1p1r2pp/p5r1/8/4pP2/P1Bb4/1P4PP/3RR1K1 w - - 0 32",
+      "rating": 1636,
+      "uci": [
+        "e1e4",
+        "g6g2",
+        "g1g2",
+        "d3e4",
+        "g2f2",
+        "d7d1"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "discoveredAttack",
+        "endgame",
+        "intermezzo",
+        "long"
+      ]
+    },
+    {
+      "id": "20M4a",
+      "fen": "3rr1k1/p3q2p/1p3bp1/4p3/4Q3/1P5P/PB2R1P1/4R1K1 w - - 4 25",
+      "rating": 2036,
+      "uci": [
+        "b2e5",
+        "e7c5",
+        "e4e3",
+        "e8e5",
+        "e3c5",
+        "e5c5"
+      ],
+      "themes": [
+        "advantage",
+        "discoveredAttack",
+        "intermezzo",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "2skGo",
+      "fen": "5r1k/pp3rp1/2p3Qp/2qp3N/8/P7/1P2RpPP/5RK1 w - - 0 36",
+      "rating": 2057,
+      "uci": [
+        "e2f2",
+        "c5d4",
+        "g6c2",
+        "f7f2",
+        "f1f2",
+        "f8f2",
+        "c2f2",
+        "d4d1"
+      ],
+      "themes": [
+        "advantage",
+        "intermezzo",
+        "middlegame",
+        "veryLong"
+      ]
+    }
+  ]
+}

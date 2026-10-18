@@ -1,0 +1,233 @@
+{
+  "slug": "chess_part1340",
+  "title": "12 Chess Puzzles: Break Him in the Middlegame (Part 1340)",
+  "orientation": "landscape",
+  "thumb_text": "CRUSHING",
+  "description": "Twelve crushing attacking games, one after another, each with a single best move. Every position comes from a real game and is rated between 1351 and 2574, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "0RFgg",
+      "fen": "8/p2R1pk1/5qpp/8/8/7P/Q4PPK/2r5 w - - 4 38",
+      "rating": 2022,
+      "uci": [
+        "a2a7",
+        "f6f4",
+        "g2g3",
+        "f4f3",
+        "d7f7",
+        "f3f7"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "2Qycj",
+      "fen": "2kr4/p4ppr/2p1pn2/q7/1b1p4/2NQR1B1/PPP2PPP/2KR4 w - - 0 17",
+      "rating": 1760,
+      "uci": [
+        "e3e5",
+        "d4c3",
+        "d3d8",
+        "a5d8",
+        "d1d8",
+        "c8d8"
+      ],
+      "themes": [
+        "crushing",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "0M1ZQ",
+      "fen": "8/5p1p/5k1p/8/4Q3/5PPK/5q1P/8 w - - 5 50",
+      "rating": 1509,
+      "uci": [
+        "h3h4",
+        "f2h2",
+        "h4g4",
+        "h6h5",
+        "g4f4",
+        "h2d2"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "queenEndgame"
+      ]
+    },
+    {
+      "id": "0F0PY",
+      "fen": "5rk1/p3R2p/1b4p1/6N1/8/P5QP/1q1r1PP1/5RK1 w - - 2 27",
+      "rating": 2574,
+      "uci": [
+        "g5h7",
+        "d2f2",
+        "g1h2",
+        "f2f1",
+        "g3g6",
+        "g8h8"
+      ],
+      "themes": [
+        "crushing",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "1t3C2",
+      "fen": "3r1rk1/ppp3bp/2n1p1p1/4Pn2/1q3B2/1PN2N2/P1P3PP/3RQR1K w - - 4 17",
+      "rating": 1578,
+      "uci": [
+        "c3e4",
+        "d8d1",
+        "e1d1",
+        "b4e4"
+      ],
+      "themes": [
+        "crushing",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "18t7z",
+      "fen": "r4rk1/2q2pp1/p3p3/1pNb4/PPn4p/5P1P/2P1BKP1/R2QR3 w - - 1 23",
+      "rating": 1456,
+      "uci": [
+        "a4b5",
+        "c7g3",
+        "f2g1",
+        "c4e3",
+        "e2f1",
+        "e3d1"
+      ],
+      "themes": [
+        "crushing",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "3F4zn",
+      "fen": "3r2k1/5pp1/pq2p2p/1p1r4/1P1N1P2/P2R4/6PP/2RQ3K w - - 0 24",
+      "rating": 2474,
+      "uci": [
+        "c1c6",
+        "b6c6",
+        "d4c6",
+        "d5d3",
+        "d1g1",
+        "d8d6"
+      ],
+      "themes": [
+        "crushing",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "30VZY",
+      "fen": "1r3rk1/3N1pp1/p1Q1b2p/3n4/8/6BP/q4PP1/2R1R1K1 b - - 1 26",
+      "rating": 1663,
+      "uci": [
+        "f8c8",
+        "c6c8",
+        "b8c8",
+        "c1c8",
+        "g8h7",
+        "d7f8"
+      ],
+      "themes": [
+        "crushing",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "20nkz",
+      "fen": "r1bq1r1k/ppp4p/1b1p2n1/6Q1/2B1P2N/8/PP3PPP/2R2RK1 w - - 1 17",
+      "rating": 1351,
+      "uci": [
+        "g5d8",
+        "f8d8",
+        "h4g6",
+        "h7g6"
+      ],
+      "themes": [
+        "crushing",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2qOWA",
+      "fen": "2k4r/ppp1Qppp/5n2/6q1/8/2N5/PPP2PPP/1K1R4 b - - 0 15",
+      "rating": 1613,
+      "uci": [
+        "g5g6",
+        "c3b5",
+        "f6d5",
+        "d1d5"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "0pyqq",
+      "fen": "2kr3r/pp1nR3/2p1R3/2Pp1ppq/3P4/2N3QP/PP4P1/6K1 b - - 0 25",
+      "rating": 2418,
+      "uci": [
+        "g5g4",
+        "c3d5",
+        "f5f4",
+        "d5f4"
+      ],
+      "themes": [
+        "crushing",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2ma16",
+      "fen": "4rrk1/1R3p2/4p2p/3pqp1Q/pR6/7P/6P1/7K b - - 1 31",
+      "rating": 1649,
+      "uci": [
+        "g8g7",
+        "b4g4",
+        "f5g4",
+        "h5e5"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "short"
+      ]
+    }
+  ]
+}

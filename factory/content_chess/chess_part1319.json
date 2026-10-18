@@ -1,0 +1,245 @@
+{
+  "slug": "chess_part1319",
+  "title": "12 Chess Puzzles: Count to Two and It Is Over (Part 1319)",
+  "orientation": "landscape",
+  "thumb_text": "MATE IN 2",
+  "description": "Twelve mates that end in exactly two moves, one after another, each with a single best move. Every position comes from a real game and is rated between 1282 and 2008, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1BWBA",
+      "fen": "5k1r/8/6Q1/3q1N2/1p6/2bp2P1/3R1P2/5K2 b - - 2 45",
+      "rating": 1434,
+      "uci": [
+        "c3d2",
+        "g6g7",
+        "f8e8",
+        "g7e7"
+      ],
+      "themes": [
+        "endgame",
+        "fork",
+        "master",
+        "mate",
+        "mateIn2",
+        "short"
+      ]
+    },
+    {
+      "id": "2S8FX",
+      "fen": "r7/p4kpp/1p3n2/2p2PB1/3p4/1PPP3q/1P5b/R2Q1R1K w - - 0 23",
+      "rating": 1445,
+      "uci": [
+        "d1f3",
+        "h2g3",
+        "h1g1",
+        "h3h2"
+      ],
+      "themes": [
+        "discoveredAttack",
+        "discoveredCheck",
+        "kingsideAttack",
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "329Cf",
+      "fen": "r1b5/ppp2NQp/2k5/4p3/2p4q/7P/PPPPn1P1/R1B3KR w - - 0 18",
+      "rating": 1348,
+      "uci": [
+        "g1h2",
+        "h4f4",
+        "g2g3",
+        "f4f2"
+      ],
+      "themes": [
+        "epauletteMate",
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "26qAZ",
+      "fen": "3r1r2/1kp5/8/PQ6/3P1q2/2P4p/4RPP1/6K1 b - - 0 37",
+      "rating": 2008,
+      "uci": [
+        "b7c8",
+        "b5a6",
+        "c8b8",
+        "e2b2"
+      ],
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "short"
+      ]
+    },
+    {
+      "id": "37R4U",
+      "fen": "r4rk1/pp3ppp/2p2R2/6N1/8/6Q1/q5PP/4R1K1 b - - 0 23",
+      "rating": 1362,
+      "uci": [
+        "g7f6",
+        "g5e6",
+        "g8h8",
+        "g3g7"
+      ],
+      "themes": [
+        "discoveredAttack",
+        "discoveredCheck",
+        "endgame",
+        "mate",
+        "mateIn2",
+        "short"
+      ]
+    },
+    {
+      "id": "00zQz",
+      "fen": "4rrk1/pB4pp/2N2p2/2p5/6b1/1PN3P1/P1P2P1P/R3nK2 w - - 0 21",
+      "rating": 1282,
+      "uci": [
+        "a1e1",
+        "g4h3",
+        "f1g1",
+        "e8e1"
+      ],
+      "themes": [
+        "deflection",
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "pillsburysMate",
+        "short"
+      ]
+    },
+    {
+      "id": "302jw",
+      "fen": "4r1r1/pp2p2k/2n4p/5P2/2QB1N2/bPP5/q2P2PP/4R1K1 b - - 4 25",
+      "rating": 1461,
+      "uci": [
+        "a2d2",
+        "c4f7",
+        "g8g7",
+        "f7g7"
+      ],
+      "themes": [
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "0Nxzm",
+      "fen": "4rrk1/ppp2ppp/1b3q2/nP1n4/6Q1/2P5/P1BP1PPP/RNB2RK1 w - - 1 13",
+      "rating": 1752,
+      "uci": [
+        "g4h3",
+        "f6f2",
+        "f1f2",
+        "e8e1"
+      ],
+      "themes": [
+        "kingsideAttack",
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "pin",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "29Ebc",
+      "fen": "1R6/5ppk/6p1/1p1p4/1PnP3P/3N1PP1/4R3/r2nK3 w - - 4 35",
+      "rating": 1840,
+      "uci": [
+        "e1f1",
+        "d1e3",
+        "f1f2",
+        "a1f1"
+      ],
+      "themes": [
+        "discoveredCheck",
+        "doubleCheck",
+        "endgame",
+        "mate",
+        "mateIn2",
+        "short"
+      ]
+    },
+    {
+      "id": "2A2zz",
+      "fen": "3rk1Q1/p7/1p5p/2p1B3/2P5/3q4/P5PP/6K1 b - - 2 28",
+      "rating": 1529,
+      "uci": [
+        "e8d7",
+        "g8f7",
+        "d7c6",
+        "f7c7"
+      ],
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "short"
+      ]
+    },
+    {
+      "id": "17hNW",
+      "fen": "4R3/pp3rkp/2p3p1/3p3N/3P1q2/3Q1P1b/PPB4P/6K1 b - - 2 26",
+      "rating": 1363,
+      "uci": [
+        "g6h5",
+        "d3h7",
+        "g7f6",
+        "h7g6"
+      ],
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "short"
+      ]
+    },
+    {
+      "id": "0At2e",
+      "fen": "6k1/Q1p2pp1/7p/2P5/8/7P/P1PrqPP1/2R3K1 w - - 1 27",
+      "rating": 1365,
+      "uci": [
+        "a7c7",
+        "e2f2",
+        "g1h2",
+        "f2g2"
+      ],
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "short"
+      ]
+    }
+  ]
+}

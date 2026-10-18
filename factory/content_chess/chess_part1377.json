@@ -1,0 +1,270 @@
+{
+  "slug": "chess_part1377",
+  "title": "12 Chess Puzzles: Send the Defender Away (Part 1377)",
+  "orientation": "landscape",
+  "thumb_text": "DEFLECTION",
+  "description": "Twelve deflection of the piece that holds everything, one after another, each with a single best move. Every position comes from a real game and is rated between 1317 and 2593, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "0qHbU",
+      "fen": "r3r3/2q2pk1/b1p1p1p1/p1P3N1/4Q3/P7/5PP1/1B2R1K1 b - - 1 24",
+      "rating": 2593,
+      "uci": [
+        "e8h8",
+        "g5e6",
+        "f7e6",
+        "e4g6",
+        "g7f8",
+        "g6f6",
+        "f8g8",
+        "e1e5",
+        "c7e5",
+        "f6e5"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "fork",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "044QL",
+      "fen": "r4r2/1b1R1pk1/p1p1QNp1/1p5p/P1p1P3/8/1q4PP/5RK1 b - - 0 26",
+      "rating": 2172,
+      "uci": [
+        "b7c8",
+        "d7f7",
+        "f8f7",
+        "f6e8",
+        "g7h6",
+        "e6f7"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "3Lo1p",
+      "fen": "8/p1p3k1/bp2P1pp/3p4/3P2QN/2P4P/PP3rPK/5q2 b - - 2 30",
+      "rating": 1463,
+      "uci": [
+        "f2f4",
+        "g4g6",
+        "g7f8",
+        "g6h6",
+        "f8e7",
+        "h4g6"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "2WRIN",
+      "fen": "8/7p/4k1p1/4P3/2RK4/7P/pr4P1/8 w - - 0 48",
+      "rating": 1589,
+      "uci": [
+        "c4a4",
+        "b2b4",
+        "a4b4",
+        "a2a1q"
+      ],
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "deflection",
+        "endgame",
+        "promotion",
+        "rookEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "0GiA0",
+      "fen": "4rr1k/R5p1/3Q3p/4pb2/7B/P3P3/1q3PPP/5BK1 b - - 0 27",
+      "rating": 2320,
+      "uci": [
+        "e8a8",
+        "h4f6",
+        "f8f6",
+        "a7a8"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "1ZKlI",
+      "fen": "8/2b4p/p1p3p1/3k4/3Bp1P1/1P5P/P1P2K2/8 w - - 4 42",
+      "rating": 1876,
+      "uci": [
+        "f2e3",
+        "c7f4",
+        "e3f4",
+        "d5d4"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "deflection",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "1E5At",
+      "fen": "1rk5/p2r1q1p/6p1/Q3Nb2/8/8/PP3PPP/4R1K1 b - - 7 27",
+      "rating": 1981,
+      "uci": [
+        "f7d5",
+        "e1c1",
+        "c8b7",
+        "c1c7",
+        "d7c7",
+        "a5d5"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "exposedKing",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "2xQEB",
+      "fen": "k1r5/1p2b3/pQn1P3/4N3/2P4p/1P3p2/P3BBRK/1q6 w - - 0 37",
+      "rating": 2237,
+      "uci": [
+        "e5c6",
+        "e7d6",
+        "c6e5",
+        "d6e5",
+        "h2h3",
+        "b1h1",
+        "h3g4",
+        "h1g2",
+        "g4f5",
+        "e5b8"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "deflection",
+        "exposedKing",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0aka8",
+      "fen": "2r2rk1/5pb1/p3pBpp/4P3/P1P1B3/2q5/2P2QPP/5R1K b - - 0 26",
+      "rating": 1317,
+      "uci": [
+        "c8c4",
+        "f6g7",
+        "g8g7",
+        "f2f6",
+        "g7g8",
+        "e4g6"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "deflection",
+        "kingsideAttack",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "341Vh",
+      "fen": "8/8/8/8/n7/1N1K4/p1P5/5k2 w - - 4 60",
+      "rating": 1450,
+      "uci": [
+        "c2c4",
+        "a4c5",
+        "b3c5",
+        "a2a1q"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "deflection",
+        "endgame",
+        "knightEndgame",
+        "promotion",
+        "short"
+      ]
+    },
+    {
+      "id": "2mNMe",
+      "fen": "8/7p/p2Q1ppk/4p3/P2pPn2/1q1P3P/5PP1/4NK2 b - - 0 38",
+      "rating": 1832,
+      "uci": [
+        "f4d3",
+        "d6f8",
+        "h6h5",
+        "g2g4",
+        "h5g5",
+        "e1f3",
+        "g5f4",
+        "f8f6"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "endgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "3LwJu",
+      "fen": "1r2r1k1/5pPp/p2p4/3Q2bP/4P3/2R5/PP4q1/K1B4R w - - 2 32",
+      "rating": 1960,
+      "uci": [
+        "d5d1",
+        "g5c1",
+        "d1c1",
+        "b8b2",
+        "c1b2",
+        "g2h1"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "long",
+        "middlegame"
+      ]
+    }
+  ]
+}
