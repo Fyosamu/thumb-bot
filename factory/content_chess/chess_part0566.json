@@ -1,0 +1,270 @@
+{
+  "slug": "chess_part0566",
+  "title": "12 Chess Puzzles: The Defender Had One Job (Part 566)",
+  "orientation": "landscape",
+  "thumb_text": "DEFLECTION",
+  "description": "Twelve deflection of the piece that holds everything, one after another, each with a single best move. Every position comes from a real game and is rated between 1509 and 2408, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "3Bxej",
+      "fen": "2kbQ3/pp3p2/5p2/7p/8/1P1q1N1P/P4PP1/6K1 w - - 1 32",
+      "rating": 1702,
+      "uci": [
+        "e8f7",
+        "d3d1",
+        "g1h2",
+        "d8c7",
+        "g2g3",
+        "d1f3",
+        "f7e6",
+        "c8d8"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "endgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0A4mX",
+      "fen": "8/8/5k2/1ppp1p1p/5K1P/PPP3P1/8/8 w - - 0 38",
+      "rating": 2031,
+      "uci": [
+        "a3a4",
+        "c5c4",
+        "b3c4",
+        "b5a4"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "endgame",
+        "pawnEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "1g2ql",
+      "fen": "B7/R3np1p/2P1p1p1/4k3/2r4P/6P1/5PK1/8 b - - 2 44",
+      "rating": 1755,
+      "uci": [
+        "e5d6",
+        "a7d7",
+        "d6e5",
+        "d7e7"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "0SiLw",
+      "fen": "r2r2k1/1q3ppp/pn2bb2/1p2N2Q/1P1B4/7P/2B2PP1/2R1R1K1 b - - 3 24",
+      "rating": 2408,
+      "uci": [
+        "d8d4",
+        "h5h7",
+        "g8f8",
+        "e5g6",
+        "f7g6",
+        "e1e6"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "discoveredAttack",
+        "kingsideAttack",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "0KQAn",
+      "fen": "r6r/3k1p2/Pq2p2p/1PbpPnp1/8/5Q1P/3B1PP1/1RR3K1 b - - 4 31",
+      "rating": 2330,
+      "uci": [
+        "h8h7",
+        "d2a5",
+        "b6a5",
+        "c1c5"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2nCfu",
+      "fen": "2r3k1/pp1B1ppp/1q2pB2/n3Pn2/3p4/3Q1P2/PP3P1P/3K2R1 b - - 1 22",
+      "rating": 2186,
+      "uci": [
+        "c8c7",
+        "d3f5",
+        "e6f5",
+        "g1g7",
+        "g8f8",
+        "g7h7",
+        "b6f6",
+        "e5f6"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "kingsideAttack",
+        "middlegame",
+        "pin",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0x3XU",
+      "fen": "k2r4/p7/bp5p/2pP1p1p/5Q1P/P1q2N2/K1P2PP1/3R4 w - - 0 32",
+      "rating": 1509,
+      "uci": [
+        "f4f5",
+        "a6c4",
+        "a2b1",
+        "c3a3"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "2ylTM",
+      "fen": "2k2r1r/pp1n4/2p1Q2p/3pP3/3P4/2q5/P2N1PP1/1R3RK1 b - - 1 20",
+      "rating": 1713,
+      "uci": [
+        "c3d2",
+        "b1b7",
+        "c8b7",
+        "e6d7",
+        "b7a6",
+        "d7c6"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "deflection",
+        "long",
+        "middlegame",
+        "queensideAttack"
+      ]
+    },
+    {
+      "id": "0SmCU",
+      "fen": "7k/3R4/2p1q1p1/1p2r1Pp/p6P/P1PQ4/1P3P2/5K2 w - - 2 38",
+      "rating": 1884,
+      "uci": [
+        "d7d6",
+        "e5e1",
+        "f1g2",
+        "e6g4",
+        "d3g3",
+        "g4e4",
+        "g3f3",
+        "e1g1",
+        "g2g1",
+        "e4f3"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "endgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2v7yp",
+      "fen": "6rk/6b1/5Q2/p3P1Pp/3q3P/P5B1/1P1p2PK/1B6 w - - 5 45",
+      "rating": 1912,
+      "uci": [
+        "f6g6",
+        "d4h4",
+        "g3h4",
+        "g7e5",
+        "g2g3",
+        "g8g6"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "discoveredAttack",
+        "endgame",
+        "long",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "03N7A",
+      "fen": "r3q2r/1Q4p1/p2kPp1p/3pb3/6P1/N1p5/PP6/3R1RK1 b - - 1 24",
+      "rating": 2322,
+      "uci": [
+        "e8c6",
+        "d1d5",
+        "d6d5",
+        "f1d1",
+        "e5d4",
+        "d1d4",
+        "d5d4",
+        "b7c6"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "deflection",
+        "middlegame",
+        "pin",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1OxfT",
+      "fen": "5rk1/1pp3pp/p1p2rp1/6q1/4P3/2NPP2b/PPPQ1RPP/5RK1 w - - 9 16",
+      "rating": 1949,
+      "uci": [
+        "d2e2",
+        "h3g2",
+        "f2g2",
+        "f6f1",
+        "e2f1",
+        "f8f1"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "kingsideAttack",
+        "long",
+        "middlegame"
+      ]
+    }
+  ]
+}

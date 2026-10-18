@@ -1,0 +1,234 @@
+{
+  "slug": "chess_part0504",
+  "title": "12 Chess Puzzles: One Idea, One Win (Part 504)",
+  "orientation": "landscape",
+  "thumb_text": "MIDDLEGAME",
+  "description": "Twelve middlegame plans and breaks, one after another, each with a single best move. Every position comes from a real game and is rated between 1424 and 2755, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "04WHB",
+      "fen": "r1bk3r/1pp5/p2pB1Qp/4n3/3bP2q/P1N3N1/1PP3PP/1R3R1K w - - 1 19",
+      "rating": 2100,
+      "uci": [
+        "g6g7",
+        "e5f3",
+        "g7h8",
+        "d4h8",
+        "f1f3",
+        "c8e6"
+      ],
+      "themes": [
+        "advantage",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "22MYA",
+      "fen": "6k1/r2q1pp1/6np/3P4/4r3/1Q2N1B1/1P3PP1/3R2K1 b - - 2 38",
+      "rating": 2312,
+      "uci": [
+        "g6f4",
+        "b3b8",
+        "g8h7",
+        "g3f4",
+        "a7b7",
+        "b8d6",
+        "d7a4",
+        "d6c6"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1eJCu",
+      "fen": "3r1rk1/ppqn1pp1/2pNp1np/4P3/1P1P4/P2Q1N1P/5PP1/2R2RK1 b - - 1 19",
+      "rating": 1514,
+      "uci": [
+        "d7e5",
+        "d4e5",
+        "g6e5",
+        "f3e5"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2Wt4Z",
+      "fen": "r1bq3r/pp1k4/4p1B1/2ppPp1p/3P3b/2P4P/PPK1Q3/RNB5 b - - 0 20",
+      "rating": 1587,
+      "uci": [
+        "h4g5",
+        "e2b5",
+        "d7c7",
+        "b5c5",
+        "c7b8",
+        "c1g5"
+      ],
+      "themes": [
+        "advantage",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "2Hpk6",
+      "fen": "2r1r2k/pp1b2pp/1q1p4/6Q1/4P3/2P5/P2N2PP/4RR1K b - - 0 22",
+      "rating": 1684,
+      "uci": [
+        "c8c3",
+        "f1f7",
+        "e8g8",
+        "f7d7"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "0eBna",
+      "fen": "r2r1bk1/1b3p1p/p3p1pB/1p1nq3/2p4Q/2P4P/PPBN1PP1/R3R1K1 b - - 1 20",
+      "rating": 1510,
+      "uci": [
+        "e5f6",
+        "h6g5",
+        "f6g7",
+        "g5d8"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "short",
+        "skewer"
+      ]
+    },
+    {
+      "id": "0IjE6",
+      "fen": "rn3k1r/ppp4p/5b2/7p/5p2/3P2PK/PPP4P/RNB4R w - - 0 19",
+      "rating": 1424,
+      "uci": [
+        "c1f4",
+        "f6b2",
+        "b1d2",
+        "b2a1"
+      ],
+      "themes": [
+        "equality",
+        "middlegame",
+        "short",
+        "trappedPiece"
+      ]
+    },
+    {
+      "id": "1kbyz",
+      "fen": "2r3kB/1p3p1p/1n1qp3/pP3b2/Pb1P4/5N1P/4BPP1/Q1R3K1 w - - 1 25",
+      "rating": 1492,
+      "uci": [
+        "d4d5",
+        "c8c1",
+        "a1c1",
+        "g8h8"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "073kK",
+      "fen": "r3r3/pp3pQp/3k4/3N2p1/5pnq/3P4/PPPB2PP/RN3K1R w - - 3 24",
+      "rating": 2350,
+      "uci": [
+        "g2g3",
+        "h4h3",
+        "f1g1",
+        "f4f3",
+        "d2b4",
+        "d6e6",
+        "d5c7",
+        "e6f5",
+        "g7h7",
+        "h3h7"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0o3LZ",
+      "fen": "r2q1r1k/ppp3pp/3pQb2/3Nn3/4P3/7P/PP3PP1/1RB1R1K1 w - - 0 16",
+      "rating": 2755,
+      "uci": [
+        "f2f4",
+        "f6h4",
+        "e1f1",
+        "f8e8"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "36kS7",
+      "fen": "2k2b1r/1p2rp1p/1B2bp2/P1p5/2BpP3/5P2/1PK3PP/R6R w - - 3 22",
+      "rating": 2212,
+      "uci": [
+        "b6c5",
+        "e6c4",
+        "c5e7",
+        "f8e7"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "0Eqs5",
+      "fen": "r4r2/1p3pkp/p1npp3/q6p/3PP3/2N2P2/PP1QBP2/2KR4 b - - 1 18",
+      "rating": 2740,
+      "uci": [
+        "a8c8",
+        "d1g1",
+        "g7f6",
+        "d4d5"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "short"
+      ]
+    }
+  ]
+}

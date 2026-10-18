@@ -1,0 +1,261 @@
+{
+  "slug": "chess_part0549",
+  "title": "12 Chess Puzzles: One Step From Promotion (Part 549)",
+  "orientation": "landscape",
+  "thumb_text": "PASSED PAWN",
+  "description": "Twelve advanced and passed pawns, one after another, each with a single best move. Every position comes from a real game and is rated between 1390 and 2464, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1dHFQ",
+      "fen": "8/8/3p1k2/5p1p/PPP3p1/2KP3P/8/8 w - - 0 42",
+      "rating": 1754,
+      "uci": [
+        "a4a5",
+        "g4h3",
+        "a5a6",
+        "h3h2"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "master",
+        "pawnEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "0YtGI",
+      "fen": "8/1p6/p5P1/4Pk1P/4r3/3pp1K1/PP6/4R3 w - - 0 50",
+      "rating": 1947,
+      "uci": [
+        "e1f1",
+        "f5e5",
+        "g6g7",
+        "e3e2",
+        "f1e1",
+        "d3d2"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "long",
+        "rookEndgame"
+      ]
+    },
+    {
+      "id": "24lMT",
+      "fen": "r5k1/5pp1/1p1Rp3/2p1P1B1/p7/4Q2P/1q3PP1/6K1 w - - 0 27",
+      "rating": 1882,
+      "uci": [
+        "g5d8",
+        "a4a3",
+        "g1h2",
+        "a3a2"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "2PpsT",
+      "fen": "1n6/1P2p3/3p4/3P4/2PK4/4Nkp1/8/8 w - - 1 69",
+      "rating": 1628,
+      "uci": [
+        "c4c5",
+        "d6c5",
+        "d4d3",
+        "c5c4",
+        "e3c4",
+        "g3g2"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "knightEndgame",
+        "long"
+      ]
+    },
+    {
+      "id": "1Gu4y",
+      "fen": "r3r1k1/5p2/B1RPb2p/p5p1/3p4/8/P1P2PPP/4R1K1 b - - 1 26",
+      "rating": 1595,
+      "uci": [
+        "e6a2",
+        "e1e8",
+        "a8e8",
+        "d6d7"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "master",
+        "short"
+      ]
+    },
+    {
+      "id": "2pmVu",
+      "fen": "8/8/8/7P/1kppPP2/2pP4/2P5/5K2 w - - 0 50",
+      "rating": 1390,
+      "uci": [
+        "h5h6",
+        "c4d3",
+        "h6h7",
+        "d3c2"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "pawnEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "1Modu",
+      "fen": "8/8/2P5/p5p1/P4p1p/1K3k1P/8/8 b - - 0 56",
+      "rating": 1532,
+      "uci": [
+        "g5g4",
+        "c6c7",
+        "g4g3",
+        "c7c8q"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "master",
+        "pawnEndgame",
+        "promotion",
+        "short"
+      ]
+    },
+    {
+      "id": "2wVKB",
+      "fen": "5rk1/Q4ppp/3Pp3/8/Pqp2P2/6P1/7P/3R2K1 b - - 0 31",
+      "rating": 1539,
+      "uci": [
+        "c4c3",
+        "d6d7",
+        "f8d8",
+        "a7c7"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "24Tqw",
+      "fen": "6rk/pp1n3p/2p2Rr1/4P1B1/3P3P/2P2Q2/1P2R1K1/1q6 b - - 2 30",
+      "rating": 2464,
+      "uci": [
+        "g6g5",
+        "h4g5",
+        "g8g5",
+        "g2h2",
+        "b1g1",
+        "h2h3",
+        "d7f6",
+        "e5f6",
+        "g5g8",
+        "f6f7"
+      ],
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0F7lV",
+      "fen": "3b4/8/3PK1kP/8/p7/1p6/8/2B5 b - - 0 47",
+      "rating": 2194,
+      "uci": [
+        "d8f6",
+        "h6h7",
+        "b3b2",
+        "c1b2"
+      ],
+      "themes": [
+        "advancedPawn",
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "0j7Ck",
+      "fen": "8/6R1/8/2p3n1/P5k1/7p/2P5/2K5 w - - 0 36",
+      "rating": 1451,
+      "uci": [
+        "g7g8",
+        "h3h2",
+        "g8h8",
+        "g5h3"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "1Nx0A",
+      "fen": "8/3R4/7P/8/4r1p1/P1pk4/3p4/3K4 b - - 3 52",
+      "rating": 2441,
+      "uci": [
+        "e4d4",
+        "d7d4",
+        "d3d4",
+        "d1e2",
+        "c3c2",
+        "e2d2",
+        "g4g3",
+        "h6h7",
+        "c2c1q",
+        "d2c1",
+        "g3g2",
+        "h7h8q"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "promotion",
+        "rookEndgame",
+        "veryLong"
+      ]
+    }
+  ]
+}

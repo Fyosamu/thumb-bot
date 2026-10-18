@@ -1,0 +1,247 @@
+{
+  "slug": "chess_part0590",
+  "title": "12 Chess Puzzles: Two Moves, One King, No Escape (Part 590)",
+  "orientation": "landscape",
+  "thumb_text": "MATE IN 2",
+  "description": "Twelve mates that end in exactly two moves, one after another, each with a single best move. Every position comes from a real game and is rated between 1251 and 2054, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "0qVL3",
+      "fen": "r2q1r2/pp3p1k/2p3pp/3nB3/3P2PN/2PQ4/PPB5/5RK1 b - - 0 22",
+      "rating": 1251,
+      "uci": [
+        "d8h4",
+        "f1f7",
+        "f8f7",
+        "d3g6"
+      ],
+      "themes": [
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "1DTLE",
+      "fen": "2krr3/1p2q1pp/1p2pn2/4Q3/2B1N3/3P3P/2P2PP1/R5K1 b - - 1 24",
+      "rating": 1608,
+      "uci": [
+        "f6e4",
+        "a1a8",
+        "c8d7",
+        "c4b5"
+      ],
+      "themes": [
+        "balestraMate",
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "queensideAttack",
+        "short"
+      ]
+    },
+    {
+      "id": "1oIkN",
+      "fen": "6k1/5p1p/2p3p1/p7/5b2/PrB4P/1P4P1/3R3K b - - 1 36",
+      "rating": 1500,
+      "uci": [
+        "h7h5",
+        "d1d8",
+        "g8h7",
+        "d8h8"
+      ],
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "short"
+      ]
+    },
+    {
+      "id": "03uQd",
+      "fen": "5k2/R7/5K1p/1p3Bp1/pr6/8/6Pb/8 b - - 3 42",
+      "rating": 1732,
+      "uci": [
+        "f8e8",
+        "a7a8",
+        "h2b8",
+        "a8b8"
+      ],
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "short"
+      ]
+    },
+    {
+      "id": "2FvhT",
+      "fen": "3r1rk1/pbp3b1/1p2p1Q1/6N1/8/2N3n1/PPPq2P1/RK5R b - - 11 27",
+      "rating": 1548,
+      "uci": [
+        "f8f6",
+        "h1h8",
+        "g8h8",
+        "g6h7"
+      ],
+      "themes": [
+        "attraction",
+        "kingsideAttack",
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "pin",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "1ydDI",
+      "fen": "6k1/2r4p/4R1p1/2r5/8/7P/B1pp2P1/5RK1 b - - 0 40",
+      "rating": 2054,
+      "uci": [
+        "d2d1q",
+        "e6g6",
+        "g8h8",
+        "g6g8"
+      ],
+      "themes": [
+        "discoveredCheck",
+        "doubleCheck",
+        "endgame",
+        "mate",
+        "mateIn2",
+        "operaMate",
+        "short"
+      ]
+    },
+    {
+      "id": "1chYp",
+      "fen": "8/7p/5k2/p1R5/P2p4/BP1P3P/1KP5/3n1r2 w - - 3 37",
+      "rating": 1605,
+      "uci": [
+        "b2c1",
+        "d1c3",
+        "c1d2",
+        "f1d1"
+      ],
+      "themes": [
+        "discoveredAttack",
+        "discoveredCheck",
+        "endgame",
+        "hookMate",
+        "mate",
+        "mateIn2",
+        "short"
+      ]
+    },
+    {
+      "id": "0ttnj",
+      "fen": "b7/4Q1kp/p4pp1/1p6/7P/2P3PK/PP1r1q2/6R1 b - - 1 33",
+      "rating": 1440,
+      "uci": [
+        "g7h6",
+        "e7f8",
+        "h6h5",
+        "g3g4"
+      ],
+      "themes": [
+        "endgame",
+        "fork",
+        "mate",
+        "mateIn2",
+        "short"
+      ]
+    },
+    {
+      "id": "0hXGa",
+      "fen": "r6r/ppQ2ppp/5kn1/3p1R2/1b5P/2P3B1/P5P1/qN4K1 b - - 0 21",
+      "rating": 1836,
+      "uci": [
+        "f6f5",
+        "c7f7",
+        "f5e4",
+        "f7f3"
+      ],
+      "themes": [
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "0EiJS",
+      "fen": "2Q5/1p3p1k/1p3P1p/3P2p1/2P5/1q5P/r3r1P1/5RRK w - - 5 39",
+      "rating": 1365,
+      "uci": [
+        "c8f8",
+        "b3h3",
+        "g2h3",
+        "e2h2"
+      ],
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "1xj01",
+      "fen": "7k/1R6/1p6/2p3Kp/P1P1pPp1/2P4r/8/8 b - - 5 35",
+      "rating": 1488,
+      "uci": [
+        "g4g3",
+        "g5g6",
+        "g3g2",
+        "b7b8"
+      ],
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "rookEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "1h1Dl",
+      "fen": "6k1/pR4pp/3p1n2/3P4/3Q1P2/1P4PK/PBr4P/5q2 w - - 5 30",
+      "rating": 1284,
+      "uci": [
+        "h3h4",
+        "c2h2",
+        "h4g5",
+        "h2h5"
+      ],
+      "themes": [
+        "endgame",
+        "hookMate",
+        "mate",
+        "mateIn2",
+        "short"
+      ]
+    }
+  ]
+}

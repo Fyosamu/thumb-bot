@@ -1,0 +1,285 @@
+{
+  "slug": "chess_part0567",
+  "title": "12 Chess Puzzles: The Attraction Tactic (Part 567)",
+  "orientation": "landscape",
+  "thumb_text": "ATTRACTION",
+  "description": "Twelve attraction sacrifices that drag a piece where it hurts, one after another, each with a single best move. Every position comes from a real game and is rated between 1341 and 2178, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1LriU",
+      "fen": "6k1/5p1p/1p1n4/1Pq3P1/7P/2N1QrK1/6P1/8 w - - 0 44",
+      "rating": 1822,
+      "uci": [
+        "e3f3",
+        "c5c3",
+        "f3c3",
+        "d6e4",
+        "g3f4",
+        "e4c3"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "fork",
+        "long",
+        "master",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0hCXr",
+      "fen": "5rk1/Q5bp/2Ppq1p1/3N1p2/5P2/4P2P/Pr4P1/2R2RK1 w - - 2 20",
+      "rating": 1731,
+      "uci": [
+        "c6c7",
+        "e6d5",
+        "f1f2",
+        "b2f2",
+        "g1f2",
+        "d5d2",
+        "f2f3",
+        "d2c1"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "fork",
+        "hangingPiece",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0AlSg",
+      "fen": "5r2/2p1k2R/pp3b2/4p3/8/2P1P3/1nBBKP2/8 b - - 1 35",
+      "rating": 1672,
+      "uci": [
+        "f8f7",
+        "h7f7",
+        "e7f7",
+        "c2b3",
+        "f7f8",
+        "d2c1",
+        "b2a4",
+        "b3a4"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "trappedPiece",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "11VFA",
+      "fen": "8/2P2p1k/pB4pp/P4qr1/1P6/8/5P1Q/2R2RK1 w - - 1 37",
+      "rating": 1992,
+      "uci": [
+        "h2g2",
+        "g5g2",
+        "g1g2",
+        "f5g4"
+      ],
+      "themes": [
+        "attraction",
+        "endgame",
+        "equality",
+        "short"
+      ]
+    },
+    {
+      "id": "2swjd",
+      "fen": "5rk1/6p1/4pq1p/1p2R3/p1pPR3/P1P3PK/1P2Qr1P/8 w - - 6 36",
+      "rating": 1552,
+      "uci": [
+        "e2g4",
+        "f2h2",
+        "h3h2",
+        "f6f2",
+        "h2h3",
+        "f2f1",
+        "h3h4",
+        "f1h1",
+        "g4h3",
+        "g7g5",
+        "e5g5",
+        "h6g5"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "endgame",
+        "pin",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "3GBef",
+      "fen": "5r1k/6pp/3p1q2/8/P2Np3/3nPp2/3Q1PPP/5RK1 w - - 0 31",
+      "rating": 2178,
+      "uci": [
+        "d4f3",
+        "e4f3",
+        "d2d3",
+        "f3g2",
+        "g1g2",
+        "f6f3"
+      ],
+      "themes": [
+        "advancedPawn",
+        "attraction",
+        "crushing",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "1wvay",
+      "fen": "8/pp3p1k/3B2pp/7b/4Q3/7P/PP1p1qP1/2R4K w - - 0 34",
+      "rating": 1429,
+      "uci": [
+        "c1g1",
+        "f2g1",
+        "h1g1",
+        "d2d1q"
+      ],
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "attraction",
+        "endgame",
+        "promotion",
+        "short"
+      ]
+    },
+    {
+      "id": "2tpew",
+      "fen": "r4k2/pp6/3pbb1Q/2p1p3/2P4P/2NB2q1/PP4P1/R5K1 b - - 0 24",
+      "rating": 2138,
+      "uci": [
+        "f8e7",
+        "h6f6",
+        "e7f6",
+        "c3e4",
+        "f6e7",
+        "e4g3"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "fork",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1ZdwJ",
+      "fen": "rn1N4/pp4rk/2p1R1qp/3n1p2/3P4/3Q1PP1/PP5P/R5K1 b - - 6 25",
+      "rating": 1569,
+      "uci": [
+        "d5f4",
+        "e6g6",
+        "f4d3",
+        "g6g7",
+        "h7g7",
+        "d8e6",
+        "g7f7",
+        "e6c7"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1LsSE",
+      "fen": "5rk1/5ppp/4p2q/8/1PNP2n1/P7/4Nb2/3R1RKQ w - - 0 29",
+      "rating": 1341,
+      "uci": [
+        "f1f2",
+        "h6h1",
+        "g1h1",
+        "g4f2",
+        "h1g2",
+        "f2d1"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "exposedKing",
+        "fork",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "2Xnkv",
+      "fen": "4q2k/8/1bp2p1p/3p4/1P1P4/3QP2P/8/r1NK2R1 w - - 2 33",
+      "rating": 1585,
+      "uci": [
+        "d3f5",
+        "a1c1",
+        "d1c1",
+        "e8e3",
+        "c1c2",
+        "e3g1"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "fork",
+        "long",
+        "master",
+        "masterVsMaster"
+      ]
+    },
+    {
+      "id": "00PUc",
+      "fen": "3r3k/pp4bp/3Bn1p1/7n/8/8/PP3P1K/R4RN1 w - - 1 27",
+      "rating": 1536,
+      "uci": [
+        "a1d1",
+        "d8d6",
+        "d1d6",
+        "g7e5",
+        "h2h1",
+        "e5d6"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "exposedKing",
+        "fork",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    }
+  ]
+}

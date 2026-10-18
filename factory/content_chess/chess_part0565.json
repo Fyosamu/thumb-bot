@@ -1,0 +1,275 @@
+{
+  "slug": "chess_part0565",
+  "title": "12 Chess Puzzles: Clear the Square, Take the Game (Part 565)",
+  "orientation": "landscape",
+  "thumb_text": "CLEARANCE",
+  "description": "Twelve clearance sacrifices that free a square or a line, one after another, each with a single best move. Every position comes from a real game and is rated between 1388 and 2407, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "0Tlvj",
+      "fen": "5k1r/p2q1p2/1p2R3/2ppP1Q1/3P3B/2P5/P1P3P1/6K1 b - - 0 28",
+      "rating": 1450,
+      "uci": [
+        "d7e6",
+        "g5d8",
+        "e6e8",
+        "h4e7",
+        "f8g7",
+        "e7f6"
+      ],
+      "themes": [
+        "clearance",
+        "crushing",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "2NXkv",
+      "fen": "6k1/5ppp/8/P7/8/5P2/3rpKPP/R2rR3 w - - 3 36",
+      "rating": 1529,
+      "uci": [
+        "a5a6",
+        "d1a1",
+        "e1a1",
+        "d2d1",
+        "f2e2",
+        "d1a1"
+      ],
+      "themes": [
+        "attraction",
+        "clearance",
+        "crushing",
+        "endgame",
+        "long",
+        "rookEndgame"
+      ]
+    },
+    {
+      "id": "3BsQS",
+      "fen": "r3rkn1/1pp2pnQ/p2p4/3Pp2p/4P2q/1B6/PPP2PPN/R3R1K1 w - - 0 21",
+      "rating": 1388,
+      "uci": [
+        "e1e3",
+        "g8f6",
+        "h7h8",
+        "f8e7",
+        "h8g7",
+        "e8g8"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "2WMlP",
+      "fen": "2r2k2/p4p1p/1p3qp1/3p4/8/4Q2P/P1P2PP1/4R1K1 b - - 1 24",
+      "rating": 1778,
+      "uci": [
+        "c8c2",
+        "e3h6",
+        "f6g7",
+        "e1e8",
+        "f8e8",
+        "h6g7"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "deflection",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "22c9h",
+      "fen": "7R/5k2/6p1/6P1/pKp2prP/P1P5/1P6/8 w - - 2 50",
+      "rating": 2407,
+      "uci": [
+        "b4c4",
+        "f4f3",
+        "c4d3",
+        "g4f4"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "discoveredAttack",
+        "endgame",
+        "rookEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "2RFYh",
+      "fen": "1r3r2/1p3R1p/5Qpk/2q5/8/8/PPP2KPP/4R3 w - - 3 27",
+      "rating": 1720,
+      "uci": [
+        "e1e3",
+        "f8f7",
+        "f6f7",
+        "b8f8",
+        "f7f8",
+        "c5f8"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "endgame",
+        "long",
+        "pin"
+      ]
+    },
+    {
+      "id": "0aYKh",
+      "fen": "3r1k2/8/p6p/1p2Ppp1/1P4b1/2P3P1/P1Qq1PP1/1BR3K1 w - - 3 33",
+      "rating": 1837,
+      "uci": [
+        "f2f3",
+        "d2e3",
+        "g1h2",
+        "d8d2",
+        "f3g4",
+        "d2c2"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "0E43M",
+      "fen": "2kr4/1p2qppp/ppnp2b1/5P2/2PPr1P1/1P4QP/PB2N3/2KRR3 b - - 0 22",
+      "rating": 2238,
+      "uci": [
+        "e4e2",
+        "e1e2",
+        "e7e2",
+        "d1e1",
+        "e2e1",
+        "g3e1"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "long",
+        "middlegame",
+        "trappedPiece"
+      ]
+    },
+    {
+      "id": "0Ibjc",
+      "fen": "r6r/pp2k2p/1q1pb1p1/1B2pPP1/7B/2N5/PPPR1PP1/2K4R b - - 0 18",
+      "rating": 1895,
+      "uci": [
+        "g6f5",
+        "g5g6",
+        "e7f8",
+        "h4f6",
+        "h8g8",
+        "g6h7"
+      ],
+      "themes": [
+        "advancedPawn",
+        "clearance",
+        "crushing",
+        "discoveredAttack",
+        "discoveredCheck",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "2otBQ",
+      "fen": "rn1qk2r/pppb1ppp/3b1n2/3P4/2B1p3/1N6/PPPP1PPP/RNBQK2R w KQkq - 8 8",
+      "rating": 1562,
+      "uci": [
+        "e1g1",
+        "d6h2",
+        "g1h2",
+        "f6g4",
+        "h2g1",
+        "d8h4"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "clearance",
+        "kingsideAttack",
+        "long",
+        "opening",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "3A3xJ",
+      "fen": "2r3k1/1b1Q1pp1/p1p1p2p/8/4B3/8/PqP2PPP/3R2K1 b - - 1 21",
+      "rating": 2001,
+      "uci": [
+        "b2b4",
+        "d7c8",
+        "b7c8",
+        "d1d8",
+        "b4f8",
+        "e4h7",
+        "g8h7",
+        "d8f8"
+      ],
+      "themes": [
+        "clearance",
+        "crushing",
+        "endgame",
+        "fork",
+        "pin",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0jGM0",
+      "fen": "6k1/2n5/r6b/PppNP1q1/3P4/2P2QP1/5P2/5K2 b - - 0 36",
+      "rating": 1779,
+      "uci": [
+        "c7e6",
+        "d5f6",
+        "g8h8",
+        "f3b7",
+        "g5c1",
+        "f1g2",
+        "e6f4",
+        "g3f4",
+        "a6f6",
+        "e5f6"
+      ],
+      "themes": [
+        "clearance",
+        "crushing",
+        "endgame",
+        "veryLong"
+      ]
+    }
+  ]
+}

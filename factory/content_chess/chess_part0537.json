@@ -1,0 +1,283 @@
+{
+  "slug": "chess_part0537",
+  "title": "12 Chess Puzzles: Clear the Square, Take the Game (Part 537)",
+  "orientation": "landscape",
+  "thumb_text": "CLEARANCE",
+  "description": "Twelve clearance sacrifices that free a square or a line, one after another, each with a single best move. Every position comes from a real game and is rated between 1561 and 2664, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "2w353",
+      "fen": "r1r5/ppqkb1pp/2n1pp2/2Pp4/Q2N4/4B1P1/P4P1P/1RR3K1 b - - 3 18",
+      "rating": 2347,
+      "uci": [
+        "e6e5",
+        "d4b5",
+        "c7d8",
+        "a4g4",
+        "f6f5",
+        "g4f5"
+      ],
+      "themes": [
+        "clearance",
+        "crushing",
+        "exposedKing",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "3KMnl",
+      "fen": "r4rk1/1b2b1pp/p2n1q2/1p1p4/5p2/1P3P1P/P1B3P1/1NRQ1RBK b - - 5 23",
+      "rating": 1612,
+      "uci": [
+        "d6f5",
+        "c2f5",
+        "f6f5",
+        "c1c7",
+        "f8e8",
+        "c7b7"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "fork",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "03niU",
+      "fen": "q3r1k1/5R2/1n2p1pp/1N1pN3/3PnPP1/1P1BPK1P/3Q4/r7 w - - 3 29",
+      "rating": 1561,
+      "uci": [
+        "d3e4",
+        "d5e4",
+        "f3g3",
+        "a1g1",
+        "g3h2",
+        "a8a1"
+      ],
+      "themes": [
+        "clearance",
+        "crushing",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "0WrwK",
+      "fen": "1r1r2k1/3P1p1p/6p1/2q1P1B1/2p3n1/p1P5/Q5PP/3R1R1K b - - 2 28",
+      "rating": 2335,
+      "uci": [
+        "b8b2",
+        "g5d8",
+        "c5e5",
+        "d8c7",
+        "e5c7",
+        "d7d8q",
+        "c7d8",
+        "d1d8"
+      ],
+      "themes": [
+        "advancedPawn",
+        "clearance",
+        "crushing",
+        "middlegame",
+        "promotion",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0qMYa",
+      "fen": "r6r/1b1pqk2/p2p1n1p/1p1P1Qp1/4N3/1B2P3/PP3PPP/R4RK1 w - - 3 20",
+      "rating": 1870,
+      "uci": [
+        "f2f4",
+        "e7e4",
+        "f4g5",
+        "e4f5",
+        "f1f5",
+        "h6g5",
+        "a1f1",
+        "h8h6"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1b0PZ",
+      "fen": "r4rk1/ppp2pp1/2n4p/6b1/4N1b1/1B2p3/PPQ3PP/R6K b - - 1 18",
+      "rating": 2041,
+      "uci": [
+        "g5f4",
+        "e4f6",
+        "g7f6",
+        "c2g6"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "kingsideAttack",
+        "middlegame",
+        "pin",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "2QBhO",
+      "fen": "1R1b4/5k1r/1p1p2nr/1PpNp1p1/2P1Ppq1/3P1N2/1B2Q2R/6K1 w - - 0 41",
+      "rating": 2015,
+      "uci": [
+        "h2g2",
+        "h6h1",
+        "g1f2",
+        "h7h2",
+        "f3e5",
+        "g6e5",
+        "e2g4",
+        "e5g4"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "kingsideAttack",
+        "master",
+        "middlegame",
+        "pin",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0MTGL",
+      "fen": "r2q1rk1/pp3pbp/1np3p1/8/3PB3/4B1P1/PPP4P/R2Q1RK1 w - - 3 15",
+      "rating": 2441,
+      "uci": [
+        "c2c3",
+        "d8e7",
+        "d1f3",
+        "a8e8"
+      ],
+      "themes": [
+        "clearance",
+        "crushing",
+        "defensiveMove",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "1Bcir",
+      "fen": "8/2k3p1/1PB2p1p/2PK1P2/6r1/8/8/8 b - - 0 42",
+      "rating": 2664,
+      "uci": [
+        "c7b8",
+        "d5d6",
+        "g4b4",
+        "c6d5",
+        "h6h5",
+        "c5c6",
+        "b4b6",
+        "d6d7",
+        "b8a7",
+        "c6c7"
+      ],
+      "themes": [
+        "advancedPawn",
+        "clearance",
+        "crushing",
+        "endgame",
+        "quietMove",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "05IZx",
+      "fen": "r1bq1rk1/ppp3p1/5n1p/4b3/8/2PBB3/PP3PPP/RN1QK2R w KQ - 0 12",
+      "rating": 1826,
+      "uci": [
+        "e1g1",
+        "e5h2",
+        "g1h2",
+        "f6g4",
+        "h2g1",
+        "d8h4"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "clearance",
+        "kingsideAttack",
+        "long",
+        "opening",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1SLVc",
+      "fen": "r1bqk1nr/ppp3pp/3b4/3pN3/8/4P3/PPP2PPP/RN1QKB1R w KQkq - 1 8",
+      "rating": 2411,
+      "uci": [
+        "d1h5",
+        "g7g6",
+        "e5g6",
+        "g8f6",
+        "h5h6",
+        "h8g8"
+      ],
+      "themes": [
+        "advantage",
+        "clearance",
+        "defensiveMove",
+        "long",
+        "opening"
+      ]
+    },
+    {
+      "id": "2VONn",
+      "fen": "2kr2r1/1p3Rpp/p3p3/3p4/3q4/PP6/K1P4P/R3Q3 b - - 4 25",
+      "rating": 2455,
+      "uci": [
+        "e6e5",
+        "e1a5",
+        "d8d7",
+        "a1f1",
+        "g8d8",
+        "f7d7",
+        "c8d7",
+        "f1f7",
+        "d7e6",
+        "a5c7"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "clearance",
+        "endgame",
+        "quietMove",
+        "veryLong"
+      ]
+    }
+  ]
+}

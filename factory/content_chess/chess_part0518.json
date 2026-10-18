@@ -1,0 +1,253 @@
+{
+  "slug": "chess_part0518",
+  "title": "12 Chess Puzzles: The Sacrifice Only You See (Part 518)",
+  "orientation": "landscape",
+  "thumb_text": "SACRIFICE",
+  "description": "Twelve sacrifices that open the position, one after another, each with a single best move. Every position comes from a real game and is rated between 1442 and 2682, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "0EQkz",
+      "fen": "r5r1/pp2pP1k/3qb2p/6pQ/8/2P5/P4RPP/5R1K b - - 0 27",
+      "rating": 1729,
+      "uci": [
+        "g8f8",
+        "f2f6",
+        "e7f6",
+        "f1f6",
+        "d6d1",
+        "h5d1"
+      ],
+      "themes": [
+        "advantage",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0I807",
+      "fen": "r3k1nr/pp1n1qb1/2pQ3p/3p2p1/3P1pP1/2NP1N1P/PP6/R1B2RK1 b kq - 4 17",
+      "rating": 2100,
+      "uci": [
+        "e8c8",
+        "c3b5",
+        "c6b5",
+        "c1f4"
+      ],
+      "themes": [
+        "crushing",
+        "middlegame",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "20kSl",
+      "fen": "4r1k1/1p3p2/2b5/p1Pn1Ppp/3B4/P1PB2Pq/5Q1P/5RK1 w - - 0 30",
+      "rating": 2679,
+      "uci": [
+        "f5f6",
+        "d5f4",
+        "g3f4",
+        "h5h4"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "middlegame",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "0ejF1",
+      "fen": "r5rk/1p1bb1pp/1q2p3/3pPp2/2nP1P1N/P5R1/2B2P1P/R1BQ3K b - - 5 22",
+      "rating": 2347,
+      "uci": [
+        "b6d8",
+        "h4g6",
+        "h7g6",
+        "g3g6"
+      ],
+      "themes": [
+        "advantage",
+        "kingsideAttack",
+        "middlegame",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "2KNh3",
+      "fen": "rn1q1rk1/ppp2p1p/1n2P1p1/4b3/2P5/P1NBBQ2/1P4PP/R4RK1 b - - 0 15",
+      "rating": 2244,
+      "uci": [
+        "d8d3",
+        "f3f7",
+        "f8f7",
+        "e6f7",
+        "g8f8",
+        "e3h6"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "kingsideAttack",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1HiRF",
+      "fen": "4rrk1/1pqnbppp/p1p2n2/4p1B1/7R/2NB1Q1P/PP3PP1/3R2K1 b - - 1 16",
+      "rating": 2159,
+      "uci": [
+        "b7b5",
+        "d3h7",
+        "f6h7",
+        "f3h5",
+        "f7f6",
+        "h5h7"
+      ],
+      "themes": [
+        "crushing",
+        "kingsideAttack",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1lLy4",
+      "fen": "1k1rb3/1p5p/pq6/4p3/5Qn1/N3n3/PP2B1PP/R1R4K w - - 0 28",
+      "rating": 2361,
+      "uci": [
+        "f4g3",
+        "e3d1",
+        "e2d1",
+        "g4f2",
+        "g3f2",
+        "b6f2"
+      ],
+      "themes": [
+        "advantage",
+        "kingsideAttack",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "2bmGs",
+      "fen": "4rr2/1bq2p1k/pp1b1p1p/2nP1Q2/P1B5/8/1PP3PP/R1BR3K b - - 3 23",
+      "rating": 2682,
+      "uci": [
+        "h7g7",
+        "c1h6",
+        "g7h6",
+        "a1a3"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "master",
+        "middlegame",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "0d82V",
+      "fen": "6k1/pp3p1p/6pb/5p2/1P1P4/P1R1rqP1/3QN2P/R5K1 w - - 0 29",
+      "rating": 2046,
+      "uci": [
+        "c3c2",
+        "e3e2",
+        "d2e2",
+        "h6e3"
+      ],
+      "themes": [
+        "advantage",
+        "kingsideAttack",
+        "middlegame",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "225hZ",
+      "fen": "r4rk1/b1qp1p2/p4Qpp/1p2Pp2/7R/P4N2/1P3PPP/R5K1 b - - 1 26",
+      "rating": 1850,
+      "uci": [
+        "h6h5",
+        "h4h5",
+        "g6h5",
+        "f6g5"
+      ],
+      "themes": [
+        "crushing",
+        "kingsideAttack",
+        "middlegame",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "0F7f3",
+      "fen": "4b3/4k2p/6pP/p2p2P1/1p1P4/1P2K3/8/1B6 b - - 6 48",
+      "rating": 1442,
+      "uci": [
+        "e8d7",
+        "b1g6",
+        "h7g6",
+        "h6h7"
+      ],
+      "themes": [
+        "advancedPawn",
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "master",
+        "sacrifice",
+        "short"
+      ]
+    },
+    {
+      "id": "0jRlZ",
+      "fen": "2r2rk1/pp3ppp/3q2n1/3N3Q/3P4/2P4P/PP1N2P1/5R1K b - - 2 25",
+      "rating": 2131,
+      "uci": [
+        "c8d8",
+        "d5f6",
+        "g7f6",
+        "d2e4",
+        "g8g7",
+        "e4d6"
+      ],
+      "themes": [
+        "advantage",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    }
+  ]
+}
