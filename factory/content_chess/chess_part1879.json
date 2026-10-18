@@ -1,0 +1,232 @@
+{
+  "slug": "chess_part1879",
+  "title": "12 Chess Puzzles: How the Masters Calculate (Part 1879)",
+  "orientation": "landscape",
+  "thumb_text": "MASTER GAME",
+  "description": "Twelve positions taken from master games, one after another, each with a single best move. Every position comes from a real game and is rated between 1392 and 2315, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "3DyBg",
+      "fen": "r2q1rk1/pbp1nppp/1p1p2n1/4P1N1/3P4/B1PB3P/P4PP1/R2Q1RK1 b - - 2 14",
+      "rating": 2217,
+      "uci": [
+        "e7d5",
+        "d1h5",
+        "h7h6",
+        "g5f7"
+      ],
+      "themes": [
+        "crushing",
+        "master",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "0e6MD",
+      "fen": "8/1kp5/2pb4/p6p/K1BBr3/1PP5/P1b3P1/5R2 w - - 3 32",
+      "rating": 1505,
+      "uci": [
+        "f1f5",
+        "e4d4",
+        "c3d4",
+        "c2f5"
+      ],
+      "themes": [
+        "endgame",
+        "master"
+      ]
+    },
+    {
+      "id": "1Q3pg",
+      "fen": "3r2k1/pp3ppp/8/4P3/3q1P2/3Bn1PP/PP1Q3K/2R5 w - - 1 29",
+      "rating": 1449,
+      "uci": [
+        "c1c3",
+        "e3f1",
+        "d3f1",
+        "d4d2"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "master",
+        "short"
+      ]
+    },
+    {
+      "id": "1wfX1",
+      "fen": "7k/p1R3p1/5r1p/1p6/1P2p1Q1/4P2P/q5PK/8 b - - 0 35",
+      "rating": 1790,
+      "uci": [
+        "f6f7",
+        "c7c8",
+        "f7f8",
+        "c8f8"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "master",
+        "short"
+      ]
+    },
+    {
+      "id": "1Vzth",
+      "fen": "2b2rk1/2Q1pp2/2pr2p1/p3q3/Pp3N2/1P1P1R2/2P3PP/5R1K b - - 7 26",
+      "rating": 1574,
+      "uci": [
+        "c8g4",
+        "f4g6",
+        "d6g6",
+        "c7e5"
+      ],
+      "themes": [
+        "crushing",
+        "master",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2VLz2",
+      "fen": "4Qnk1/1q3pp1/4p3/3pP1NP/1p1P2p1/1P4R1/2r2PK1/8 w - - 6 39",
+      "rating": 1693,
+      "uci": [
+        "g3g4",
+        "c2c8",
+        "e8f7",
+        "b7f7",
+        "g5f7",
+        "g8f7"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "long",
+        "master"
+      ]
+    },
+    {
+      "id": "2CRMg",
+      "fen": "2r5/p6p/6pk/P3Pp2/5P1P/6PK/3q1nQ1/1RR5 w - - 5 37",
+      "rating": 1915,
+      "uci": [
+        "h3h2",
+        "c8c1",
+        "b1c1",
+        "f2g4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "master",
+        "short"
+      ]
+    },
+    {
+      "id": "2loGY",
+      "fen": "2r2rk1/p2bpp1p/3p2p1/1P6/P2QPP2/5BPq/7P/R2R2K1 w - - 3 25",
+      "rating": 1392,
+      "uci": [
+        "d4a7",
+        "c8c2",
+        "a7f2",
+        "c2f2"
+      ],
+      "themes": [
+        "crushing",
+        "master",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "0yFX9",
+      "fen": "4r3/1p3k2/3qprp1/1P5p/2Q5/4R3/5PPP/4R1K1 b - - 0 30",
+      "rating": 1529,
+      "uci": [
+        "d6d5",
+        "c4d5",
+        "e6d5",
+        "e3e8"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "master",
+        "short"
+      ]
+    },
+    {
+      "id": "05pae",
+      "fen": "4r1k1/3Q1pqp/3p4/1p1P4/2p5/3n2B1/1P3PP1/3R2K1 b - - 1 33",
+      "rating": 2315,
+      "uci": [
+        "e8e2",
+        "d7c8",
+        "g7f8",
+        "c8g4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "master",
+        "short"
+      ]
+    },
+    {
+      "id": "0gJ5R",
+      "fen": "8/5Q2/1n2B1pk/7p/1KP5/8/q7/8 b - - 7 52",
+      "rating": 1959,
+      "uci": [
+        "h6g5",
+        "f7e7",
+        "g5h6",
+        "e7f8"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "master",
+        "masterVsMaster",
+        "short"
+      ]
+    },
+    {
+      "id": "1eueZ",
+      "fen": "3q1k2/pp6/1n3nQ1/5B2/2P5/4P3/P4PP1/6K1 w - - 5 42",
+      "rating": 2287,
+      "uci": [
+        "f5e6",
+        "d8d1",
+        "g1h2",
+        "d1d6"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "master",
+        "masterVsMaster",
+        "short"
+      ]
+    }
+  ]
+}

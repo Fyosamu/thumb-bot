@@ -1,0 +1,291 @@
+{
+  "slug": "chess_part1864",
+  "title": "12 Chess Puzzles: Pull Him In, Then Take Him (Part 1864)",
+  "orientation": "landscape",
+  "thumb_text": "ATTRACTION",
+  "description": "Twelve attraction sacrifices that drag a piece where it hurts, one after another, each with a single best move. Every position comes from a real game and is rated between 1519 and 2421, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "2vEPp",
+      "fen": "8/6pp/p1bk1p2/3p4/1Pr5/P2R2P1/3K1PBP/8 w - - 0 27",
+      "rating": 1519,
+      "uci": [
+        "d3c3",
+        "c4c3",
+        "d2c3",
+        "d5d4",
+        "c3c4",
+        "c6g2"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "discoveredAttack",
+        "endgame",
+        "exposedKing",
+        "long"
+      ]
+    },
+    {
+      "id": "0p5nI",
+      "fen": "r2q1rk1/pp3p1p/3Q2p1/2pn4/3pN3/1P1P3P/1PP2PP1/R4RK1 b - - 3 16",
+      "rating": 1617,
+      "uci": [
+        "b7b6",
+        "d6d5",
+        "d8d5",
+        "e4f6",
+        "g8g7",
+        "f6d5"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "fork",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1Mas3",
+      "fen": "r5r1/p4pk1/5P2/3p4/2P3PQ/8/P1P1B1K1/q7 b - - 0 32",
+      "rating": 1932,
+      "uci": [
+        "g7f8",
+        "h4h6",
+        "f8e8",
+        "h6e3",
+        "e8d7",
+        "e3e7",
+        "d7c6",
+        "c4d5",
+        "c6d5",
+        "e2f3"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1KCEE",
+      "fen": "7k/pp4p1/2n3bp/3NP3/3P4/P3b2q/1P4QN/5RK1 w - - 0 24",
+      "rating": 1846,
+      "uci": [
+        "g1h1",
+        "h3g2",
+        "h1g2",
+        "g6e4",
+        "g2g3",
+        "e4d5"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "exposedKing",
+        "fork",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "2CzKD",
+      "fen": "8/4bp2/5kp1/2p1p2p/2P1P3/4K1N1/5PPP/8 w - - 2 31",
+      "rating": 1749,
+      "uci": [
+        "f2f4",
+        "e5f4",
+        "e3f4",
+        "e7d6",
+        "f4f3",
+        "d6g3",
+        "f3g3",
+        "f6e5",
+        "g3f3",
+        "e5d4"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "endgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0xryh",
+      "fen": "1r6/1pq2pkp/2p2np1/3p4/3Q4/2N1P2P/3P1PP1/1R4K1 b - - 2 22",
+      "rating": 1640,
+      "uci": [
+        "c6c5",
+        "d4f6",
+        "g7f6",
+        "c3d5",
+        "f6e5",
+        "d5c7"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "fork",
+        "long",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0VOXK",
+      "fen": "rnb1k3/ppp2p1Q/4pb2/8/3P4/2P1q3/PP4PP/1K1R1R2 b q - 1 20",
+      "rating": 2028,
+      "uci": [
+        "e8e7",
+        "f1f6",
+        "e7f6",
+        "d1f1",
+        "f6e7",
+        "h7f7",
+        "e7d6",
+        "f7f8",
+        "d6d5",
+        "f8c5",
+        "d5e4",
+        "c5e5"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "fork",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2GHcf",
+      "fen": "8/4k3/P1R5/7p/3b1P1P/3B1K2/r4p2/8 w - - 5 39",
+      "rating": 1651,
+      "uci": [
+        "c6c4",
+        "a2a3",
+        "f3e4",
+        "a3d3",
+        "e4d3",
+        "f2f1q"
+      ],
+      "themes": [
+        "advancedPawn",
+        "attraction",
+        "crushing",
+        "endgame",
+        "long",
+        "pin",
+        "promotion"
+      ]
+    },
+    {
+      "id": "0b2XQ",
+      "fen": "3r1kr1/1QN1qp2/1P1bp2p/3p1p2/3P4/P7/2P2PPP/1R3RK1 w - - 3 26",
+      "rating": 2421,
+      "uci": [
+        "a3a4",
+        "g8g2",
+        "g1g2",
+        "e7g5",
+        "g2h1",
+        "g5f4",
+        "c7e6",
+        "f7e6",
+        "b7g7",
+        "f8g7"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0q9QX",
+      "fen": "3r2k1/5ppp/p4n2/1pb3q1/2p1p3/2P1P1P1/PPNBB2P/R4QK1 w - - 0 23",
+      "rating": 1633,
+      "uci": [
+        "a1d1",
+        "d8d2",
+        "d1d2",
+        "c5e3",
+        "g1g2",
+        "e3d2"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "fork",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "086qw",
+      "fen": "4r1rk/p1q2p1p/5n2/8/1Q1p4/1P1B1P2/P1PPKP1P/RN2R3 w - - 5 21",
+      "rating": 1877,
+      "uci": [
+        "e2d1",
+        "e8e1",
+        "d1e1",
+        "g8g1",
+        "e1e2",
+        "c7e5",
+        "d3e4",
+        "f6e4"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0N2il",
+      "fen": "r1b2rk1/pp3ppn/3p4/1BpNpPq1/8/3P3Q/PPP2P1P/R4R1K b - - 3 19",
+      "rating": 1574,
+      "uci": [
+        "c8f5",
+        "h3f5",
+        "g5f5",
+        "d5e7",
+        "g8h8",
+        "e7f5"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "fork",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    }
+  ]
+}
