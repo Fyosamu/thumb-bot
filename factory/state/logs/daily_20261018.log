@@ -9,3 +9,46 @@ bio: daily cap reached (0 left)
 
 daily run 2026-10-18 03:40
 
+daily run 2026-10-18 03:04
+
+chess: attempt 1 failed, retrying
+
+chess: render failed
+channel 2 (chess) -> content_chess/ (1999 episodes)
+Traceback (most recent call last):
+  File "/home/runner/work/thumb-bot/thumb-bot/factory/chess_factory.py", line 315, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/thumb-bot/thumb-bot/factory/chess_factory.py", line 305, in main
+    ff = get_ffmpeg()
+         ^^^^^^^^^^^^
+  File "/home/runner/work/thumb-bot/thumb-bot/bot/music_lib.py", line 13, in get_ffmpeg
+    import imageio_ffmpeg
+ModuleNotFoundError: No module named 'imageio_ffmpeg'
+
+science: attempt 1 failed, retrying
+
+science: render failed
+== m00000 (landscape, 34 scenes)
+  [1/5] tts (edge-tts, free)
+  FAILED: FileNotFoundError: [Errno 2] No such file or directory: 'ffprobe.exe'
+
+== m00000_short (portrait, 7 scenes)
+  [1/5] tts (edge-tts, free)
+  FAILED: FileNotFoundError: [Errno 2] No such file or directory: 'ffprobe.exe'
+
+rendered 0/2
+
+bio: attempt 1 failed, retrying
+
+bio: render failed
+== b00002 (landscape, 34 scenes)
+  [1/5] tts (edge-tts, free)
+  FAILED: FileNotFoundError: [Errno 2] No such file or directory: 'ffprobe.exe'
+
+== b00002_short (portrait, 7 scenes)
+  [1/5] tts (edge-tts, free)
+  FAILED: FileNotFoundError: [Errno 2] No such file or directory: 'ffprobe.exe'
+
+rendered 0/2
+
