@@ -152,8 +152,9 @@ live repo is wiped, but first a backup was taken —
 
 Deleted on purpose (all regenerable): `%TEMP%\opencode\`, `%TEMP%\gh_*`
 logs, `factory/work/`, `factory/out/`, `factory/_musictest.py`,
-`wiki_cache/`, `puzzles_db.zst`. KEPT: `puzzles_pool*.jsonl` (runtime
-input), topic lists, all banks, `yt_auth/`.
+`factory/_sample_src/`, `wiki_cache/`, `puzzles_db.zst`. KEPT:
+`puzzles_pool*.jsonl` (runtime input), topic lists, all banks,
+`yt_auth/`, `_check_uploads.py` (QA tool, committed).
 
 ## Operator cheat-sheet
 
