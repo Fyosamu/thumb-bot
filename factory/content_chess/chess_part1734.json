@@ -1,0 +1,269 @@
+{
+  "slug": "chess_part1734",
+  "title": "12 Chess Puzzles: Win Without Giving Check (Part 1734)",
+  "orientation": "landscape",
+  "thumb_text": "QUIET MOVE",
+  "description": "Twelve quiet moves that decide the position, one after another, each with a single best move. Every position comes from a real game and is rated between 1599 and 2720, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1yTZg",
+      "fen": "3Q4/1p3bpk/2p2p1p/p3p2P/P1q1P3/1n4P1/1B3P2/5BK1 b - - 3 30",
+      "rating": 1980,
+      "uci": [
+        "c4c5",
+        "f1h3",
+        "b3d4",
+        "b2d4"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "quietMove",
+        "short"
+      ]
+    },
+    {
+      "id": "3GE09",
+      "fen": "8/4k1pp/p3p3/P1p5/2P2PP1/2K4P/8/8 b - - 0 31",
+      "rating": 2113,
+      "uci": [
+        "e7d6",
+        "c3d3",
+        "e6e5",
+        "f4f5",
+        "e5e4",
+        "d3e4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "pawnEndgame",
+        "quietMove"
+      ]
+    },
+    {
+      "id": "2aRzX",
+      "fen": "8/4b3/5Pp1/2p2k1p/2P4P/2B2K2/5P2/8 b - - 0 38",
+      "rating": 1780,
+      "uci": [
+        "e7f6",
+        "c3f6",
+        "f5f6",
+        "f3f4",
+        "g6g5",
+        "h4g5",
+        "f6g6",
+        "f2f3",
+        "h5h4",
+        "f4g4",
+        "h4h3",
+        "g4h3"
+      ],
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "quietMove",
+        "veryLong",
+        "zugzwang"
+      ]
+    },
+    {
+      "id": "0QDML",
+      "fen": "r4r2/ppq2pkp/5np1/2p5/4p3/1P2P3/PQ2BPPP/2R2RK1 b - - 3 20",
+      "rating": 2074,
+      "uci": [
+        "b7b6",
+        "g2g4",
+        "c7e7",
+        "g4g5"
+      ],
+      "themes": [
+        "advantage",
+        "middlegame",
+        "quietMove",
+        "short"
+      ]
+    },
+    {
+      "id": "1l76l",
+      "fen": "1q6/1P4R1/7p/8/7k/6RP/6PK/8 w - - 3 50",
+      "rating": 2329,
+      "uci": [
+        "h2h1",
+        "h6h5",
+        "g7g4",
+        "h5g4",
+        "g3g4",
+        "h4h5",
+        "g4b4",
+        "h5g5",
+        "b4b2",
+        "g5h4"
+      ],
+      "themes": [
+        "endgame",
+        "equality",
+        "queenRookEndgame",
+        "quietMove",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1Aj1j",
+      "fen": "8/8/8/1p2k3/4P1K1/4pB2/8/8 w - - 0 51",
+      "rating": 2720,
+      "uci": [
+        "g4g3",
+        "b5b4",
+        "f3h5",
+        "b4b3",
+        "h5f7",
+        "b3b2",
+        "f7a2",
+        "e5d4"
+      ],
+      "themes": [
+        "advancedPawn",
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "quietMove",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0bXyn",
+      "fen": "r2q4/ppp1nkbQ/2n2pp1/3ppb2/3P3P/4P1B1/PPP2PP1/RN2K1NR w KQ - 1 11",
+      "rating": 1599,
+      "uci": [
+        "h4h5",
+        "g6g5",
+        "h7g7",
+        "f7g7"
+      ],
+      "themes": [
+        "crushing",
+        "master",
+        "middlegame",
+        "quietMove",
+        "short",
+        "trappedPiece"
+      ]
+    },
+    {
+      "id": "3MeYD",
+      "fen": "8/8/1k2p3/1p3p1p/1K1P2p1/2P3P1/5PP1/8 b - - 3 34",
+      "rating": 2319,
+      "uci": [
+        "b6c6",
+        "b4a5",
+        "f5f4",
+        "a5a6",
+        "c6d5",
+        "a6b5",
+        "d5e4",
+        "c3c4",
+        "h5h4",
+        "g3h4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "pawnEndgame",
+        "quietMove",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1rm9z",
+      "fen": "6k1/p2rnpp1/3q3p/8/3P4/3B3P/P4PP1/1Q3RK1 b - - 0 25",
+      "rating": 2146,
+      "uci": [
+        "d6d4",
+        "f1d1",
+        "e7g6",
+        "d3c2",
+        "d4d1",
+        "c2d1"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "quietMove"
+      ]
+    },
+    {
+      "id": "0Co6H",
+      "fen": "3Q4/P3rk2/4prpp/3pR1p1/3P4/q7/1R3P2/6K1 b - - 5 41",
+      "rating": 1638,
+      "uci": [
+        "a3a7",
+        "b2b8",
+        "a7b8",
+        "d8b8"
+      ],
+      "themes": [
+        "advantage",
+        "endgame",
+        "quietMove",
+        "short"
+      ]
+    },
+    {
+      "id": "1xfSQ",
+      "fen": "8/1R2k1p1/4p2p/8/5PK1/4bNP1/5r1P/8 b - - 11 38",
+      "rating": 1872,
+      "uci": [
+        "e7f6",
+        "f3e5",
+        "h6h5",
+        "g4h5"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "quietMove",
+        "short"
+      ]
+    },
+    {
+      "id": "0DmtV",
+      "fen": "3q3k/6p1/4N2p/B3Pp2/3Pn3/P6P/1P4PK/2r5 w - - 0 35",
+      "rating": 1933,
+      "uci": [
+        "e6d8",
+        "f5f4",
+        "d8e6",
+        "g7g5",
+        "e6f4",
+        "g5f4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "quietMove"
+      ]
+    }
+  ]
+}
