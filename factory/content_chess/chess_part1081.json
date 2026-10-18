@@ -1,0 +1,286 @@
+{
+  "slug": "chess_part1081",
+  "title": "12 Chess Puzzles: Lure Him to His Own Grave (Part 1081)",
+  "orientation": "landscape",
+  "thumb_text": "ATTRACTION",
+  "description": "Twelve attraction sacrifices that drag a piece where it hurts, one after another, each with a single best move. Every position comes from a real game and is rated between 1511 and 2315, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "0DvmP",
+      "fen": "4r3/5k2/2N5/2n1PP2/3K4/2P5/8/8 b - - 4 52",
+      "rating": 2287,
+      "uci": [
+        "c5d7",
+        "e5e6",
+        "e8e6",
+        "c6d8",
+        "f7f6",
+        "f5e6",
+        "d7b6",
+        "d4c5",
+        "b6a4",
+        "c5d6"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "exposedKing",
+        "fork",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0eJSE",
+      "fen": "1qr3k1/5ppp/8/3Qp3/Pp1n4/1P2R1P1/2P2P1P/R5K1 w - - 1 24",
+      "rating": 1814,
+      "uci": [
+        "e3e5",
+        "b8e5",
+        "d5e5",
+        "d4f3",
+        "g1f1",
+        "f3e5"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "fork",
+        "long",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "33ZRN",
+      "fen": "r6k/1pp3p1/3q1r1p/p1p4Q/P1B5/2PPNn1P/1P3PK1/R6R w - - 4 23",
+      "rating": 2086,
+      "uci": [
+        "e3g4",
+        "f6f5",
+        "h5f5",
+        "f3h4",
+        "g2g1",
+        "h4f5"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "fork",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "2Kprg",
+      "fen": "6k1/4Rpp1/p4rb1/2PP4/6Q1/6RP/P4PBq/1r3K2 w - - 1 30",
+      "rating": 1667,
+      "uci": [
+        "e7e1",
+        "b1e1",
+        "f1e1",
+        "h2g1"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "master",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "1W7Ce",
+      "fen": "3qrnk1/6b1/3p2R1/2p2p1Q/1pPnP2B/1P1PN2P/r7/1R5K b - - 0 30",
+      "rating": 2315,
+      "uci": [
+        "d8h4",
+        "g6g7",
+        "g8g7",
+        "b1g1",
+        "g7f6",
+        "h5h4"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "exposedKing",
+        "kingsideAttack",
+        "long",
+        "master",
+        "middlegame",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "0pGGa",
+      "fen": "8/3q2k1/4pp2/p3n2p/P1P4P/1P2Q1P1/3N1P2/6K1 w - - 0 45",
+      "rating": 1511,
+      "uci": [
+        "f2f4",
+        "d7d2",
+        "e3d2",
+        "e5f3",
+        "g1f2",
+        "f3d2"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "fork",
+        "long",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "2JPoD",
+      "fen": "r1bq1rk1/ppp2ppp/2n3n1/4p2Q/2B5/2PP1N2/PP3PPP/RN2K2R b KQ - 3 12",
+      "rating": 2175,
+      "uci": [
+        "e5e4",
+        "f3g5",
+        "h7h6",
+        "g5f7",
+        "f8f7",
+        "h5g6",
+        "c6e5",
+        "c4f7"
+      ],
+      "themes": [
+        "attraction",
+        "capturingDefender",
+        "crushing",
+        "kingsideAttack",
+        "opening",
+        "pin",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1HqbJ",
+      "fen": "r3r3/p3pkbp/2p3p1/q2p2B1/3P1Q2/2P2b2/P4PPP/R3R1K1 b - - 1 18",
+      "rating": 1852,
+      "uci": [
+        "g7f6",
+        "e1e7",
+        "f7e7",
+        "f4f6"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "middlegame",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "id": "2Y4ZP",
+      "fen": "1r3k2/2nq4/3p1PQp/2pPp3/2P2b2/1PB4P/6P1/5R1K b - - 2 30",
+      "rating": 2108,
+      "uci": [
+        "c7e8",
+        "f1f4",
+        "e5f4",
+        "g6h6",
+        "f8g8",
+        "f6f7",
+        "g8f7",
+        "h6h7"
+      ],
+      "themes": [
+        "advancedPawn",
+        "attraction",
+        "capturingDefender",
+        "crushing",
+        "exposedKing",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0Vyxm",
+      "fen": "7k/pp5p/2p4r/5N2/3P1p2/2P2R2/PPQ1K1r1/8 w - - 2 30",
+      "rating": 1860,
+      "uci": [
+        "f3f2",
+        "g2f2",
+        "e2f2",
+        "h6h2",
+        "f2f3",
+        "h2c2"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "exposedKing",
+        "long",
+        "skewer"
+      ]
+    },
+    {
+      "id": "2ddDw",
+      "fen": "r1b2r1k/pp5p/2pp1q2/5p1Q/5N2/3B1P2/PPP2PP1/2K1R3 b - - 3 19",
+      "rating": 2086,
+      "uci": [
+        "c8d7",
+        "e1e7",
+        "f6e7",
+        "f4g6",
+        "h8g7",
+        "g6e7"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "kingsideAttack",
+        "long",
+        "middlegame",
+        "pin",
+        "sacrifice"
+      ]
+    },
+    {
+      "id": "1UOl4",
+      "fen": "4r3/pp3pk1/2pp2p1/6N1/2P1b1P1/2K1N2P/PP2rP2/5R2 b - - 2 27",
+      "rating": 1715,
+      "uci": [
+        "g7f6",
+        "g5e4",
+        "e8e4",
+        "c3d3",
+        "e2b2",
+        "d3e4"
+      ],
+      "themes": [
+        "advantage",
+        "attraction",
+        "endgame",
+        "long"
+      ]
+    }
+  ]
+}
