@@ -1,0 +1,258 @@
+{
+  "slug": "chess_part1253",
+  "title": "12 Chess Puzzles: The Only Move That Works (Part 1253)",
+  "orientation": "landscape",
+  "thumb_text": "DEFENCE",
+  "description": "Twelve the single defensive resource that saves the game, one after another, each with a single best move. Every position comes from a real game and is rated between 1428 and 2689, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "1tUUU",
+      "fen": "1r1r3k/pB2Qp2/4p2p/6p1/P7/3P2NP/6PK/4q3 b - - 1 31",
+      "rating": 1428,
+      "uci": [
+        "d8f8",
+        "e7f6",
+        "h8g8",
+        "g3h5"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "00i8I",
+      "fen": "8/6kp/p4r2/1p6/4P3/P4R2/5KP1/8 w - - 1 48",
+      "rating": 2339,
+      "uci": [
+        "f2e3",
+        "f6f3",
+        "e3f3",
+        "g7f6"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "rookEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "30vny",
+      "fen": "8/8/3Kp3/8/3Pk2P/8/4Bn2/8 b - - 2 42",
+      "rating": 2143,
+      "uci": [
+        "e4d4",
+        "d6e6",
+        "f2e4",
+        "h4h5"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "3ECgt",
+      "fen": "8/8/p2ppp1p/k1p3p1/2PPPP2/P1K3P1/6P1/8 b - - 4 38",
+      "rating": 2065,
+      "uci": [
+        "a5a4",
+        "e4e5",
+        "c5d4",
+        "c3d4",
+        "d6e5",
+        "f4e5",
+        "f6f5",
+        "d4c5"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "pawnEndgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1bU3r",
+      "fen": "8/8/p4kpp/Pp2pp2/1P2PP2/4K1PP/8/8 b - - 0 36",
+      "rating": 2689,
+      "uci": [
+        "g6g5",
+        "f4e5",
+        "f6e5",
+        "e4f5",
+        "e5f5",
+        "e3d4",
+        "h6h5",
+        "d4d5",
+        "g5g4",
+        "h3h4"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "pawnEndgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1wpSG",
+      "fen": "8/8/7r/8/1R6/3KP2p/8/2k5 w - - 3 59",
+      "rating": 2385,
+      "uci": [
+        "b4c4",
+        "c1d1",
+        "c4b4",
+        "d1e1"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "rookEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "31sjl",
+      "fen": "7r/p1p2R2/Qb1k4/1p2q2p/2B5/2P5/PP4PP/7K w - - 0 30",
+      "rating": 2373,
+      "uci": [
+        "a6a3",
+        "d6c6",
+        "c4f1",
+        "e5e3",
+        "f1b5",
+        "c6b5"
+      ],
+      "themes": [
+        "advantage",
+        "defensiveMove",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "2v9FJ",
+      "fen": "8/8/6K1/2k4p/7P/8/8/8 b - - 0 52",
+      "rating": 1470,
+      "uci": [
+        "c5d5",
+        "g6h5",
+        "d5e6",
+        "h5g6",
+        "e6e7",
+        "g6g7"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "long",
+        "master",
+        "pawnEndgame"
+      ]
+    },
+    {
+      "id": "0mxyY",
+      "fen": "r4k1r/2qn1p2/pb6/5PQ1/R2p4/1P1B2P1/2P4P/4R1K1 b - - 2 25",
+      "rating": 2433,
+      "uci": [
+        "d7e5",
+        "g5f6",
+        "e5f3",
+        "g1f2",
+        "h8h2",
+        "f2f3"
+      ],
+      "themes": [
+        "advantage",
+        "defensiveMove",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "0BbsY",
+      "fen": "8/8/1p6/1p3k2/1K6/P7/8/8 b - - 3 54",
+      "rating": 1463,
+      "uci": [
+        "f5e5",
+        "b4b5",
+        "e5d6",
+        "b5b6",
+        "d6d7",
+        "b6b7"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "long",
+        "pawnEndgame"
+      ]
+    },
+    {
+      "id": "1xldk",
+      "fen": "4r1k1/1p3pp1/5b2/7p/2Q5/2P1B3/Pq3PPP/R5K1 w - - 0 25",
+      "rating": 1444,
+      "uci": [
+        "a1c1",
+        "e8e3",
+        "c4c8",
+        "g8h7"
+      ],
+      "themes": [
+        "advantage",
+        "defensiveMove",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "id": "2aaHK",
+      "fen": "8/8/4k3/p7/P2K2p1/3N3p/4p1P1/8 w - - 0 47",
+      "rating": 2264,
+      "uci": [
+        "g2h3",
+        "g4h3",
+        "d3f4",
+        "e6f5",
+        "f4e2",
+        "f5g4"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "knightEndgame",
+        "long"
+      ]
+    }
+  ]
+}

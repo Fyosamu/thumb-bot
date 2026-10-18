@@ -1,0 +1,264 @@
+{
+  "slug": "chess_part1281",
+  "title": "12 Chess Puzzles: Count the Tempi (Part 1281)",
+  "orientation": "landscape",
+  "thumb_text": "PAWN ENDING",
+  "description": "Twelve pawn endings, opposition and tempi, one after another, each with a single best move. Every position comes from a real game and is rated between 1723 and 2722, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "2Fqgu",
+      "fen": "8/8/pp2k1pp/3p4/3K1PPP/2P5/P7/8 w - - 0 35",
+      "rating": 2037,
+      "uci": [
+        "c3c4",
+        "d5c4",
+        "d4c4",
+        "h6h5"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "pawnEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "0zmII",
+      "fen": "8/5p2/4p2p/p3PPp1/1k2P1P1/1P6/1K5P/8 w - - 10 44",
+      "rating": 1947,
+      "uci": [
+        "b2a2",
+        "a5a4",
+        "b3a4",
+        "b4a4",
+        "a2b2",
+        "a4b4",
+        "f5f6",
+        "b4c4",
+        "b2c2",
+        "c4d4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "pawnEndgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1WX5C",
+      "fen": "8/5p2/2k3p1/4P1P1/1p1K1P1p/7P/8/8 b - - 0 42",
+      "rating": 1951,
+      "uci": [
+        "c6b5",
+        "f4f5",
+        "g6f5",
+        "e5e6"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "pawnEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "005gP",
+      "fen": "8/8/3p4/2kP4/1p4P1/2pK4/P7/8 w - - 1 42",
+      "rating": 1723,
+      "uci": [
+        "g4g5",
+        "c5d5",
+        "g5g6",
+        "d5e6",
+        "g6g7",
+        "e6f7",
+        "a2a4",
+        "b4a3",
+        "g7g8r",
+        "f7g8"
+      ],
+      "themes": [
+        "crushing",
+        "enPassant",
+        "endgame",
+        "pawnEndgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2xpbn",
+      "fen": "8/8/3k2p1/1p5p/p4K1P/P1P3P1/8/8 b - - 0 41",
+      "rating": 2465,
+      "uci": [
+        "d6e6",
+        "f4e4",
+        "e6d6",
+        "e4d4",
+        "d6c6",
+        "c3c4",
+        "b5b4",
+        "a3b4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "pawnEndgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0WpTr",
+      "fen": "8/1k6/1pp1p2p/p2pP1p1/PPPP2P1/2K4P/8/8 w - - 1 36",
+      "rating": 2400,
+      "uci": [
+        "c3b3",
+        "d5c4",
+        "b3c4",
+        "a5b4",
+        "c4b4",
+        "b7a6",
+        "a4a5",
+        "b6a5"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "pawnEndgame",
+        "veryLong",
+        "zugzwang"
+      ]
+    },
+    {
+      "id": "2AH7h",
+      "fen": "8/8/1p4p1/p1p1k1P1/P1P3Kp/1P5P/8/8 w - - 8 40",
+      "rating": 2625,
+      "uci": [
+        "g4h4",
+        "e5f4",
+        "b3b4",
+        "c5b4",
+        "c4c5",
+        "f4e5",
+        "c5b6",
+        "e5d6",
+        "b6b7",
+        "d6c7",
+        "b7b8q",
+        "c7b8"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "pawnEndgame",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2spda",
+      "fen": "8/8/8/p1p1k1p1/Pp3pP1/1PPP1P2/3K4/8 w - - 1 35",
+      "rating": 2023,
+      "uci": [
+        "c3c4",
+        "e5d4",
+        "d2c2",
+        "d4e3",
+        "d3d4",
+        "c5d4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "pawnEndgame",
+        "zugzwang"
+      ]
+    },
+    {
+      "id": "2O2hg",
+      "fen": "8/8/8/2pk1pp1/P7/4K3/1P4P1/8 w - - 2 38",
+      "rating": 1757,
+      "uci": [
+        "a4a5",
+        "d5c6",
+        "e3d3",
+        "c6b5"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "pawnEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "1cOL0",
+      "fen": "8/p1k5/7p/P2K2p1/8/6P1/7P/8 b - - 0 41",
+      "rating": 2722,
+      "uci": [
+        "c7d7",
+        "h2h4",
+        "g5h4",
+        "g3h4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "pawnEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "2Vj20",
+      "fen": "8/6p1/8/1pp2k1p/5P1P/PP3K2/8/8 w - - 0 50",
+      "rating": 1883,
+      "uci": [
+        "a3a4",
+        "c5c4",
+        "b3b4",
+        "b5a4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "pawnEndgame",
+        "short"
+      ]
+    },
+    {
+      "id": "24kHJ",
+      "fen": "8/5k2/3p2p1/1pp2pP1/pP3P2/P1PK3P/8/8 b - - 0 43",
+      "rating": 2322,
+      "uci": [
+        "f7e6",
+        "b4c5",
+        "d6c5",
+        "c3c4"
+      ],
+      "themes": [
+        "crushing",
+        "endgame",
+        "master",
+        "pawnEndgame",
+        "short"
+      ]
+    }
+  ]
+}

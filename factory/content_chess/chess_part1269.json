@@ -1,0 +1,286 @@
+{
+  "slug": "chess_part1269",
+  "title": "12 Chess Puzzles: Send the Defender Away (Part 1269)",
+  "orientation": "landscape",
+  "thumb_text": "DEFLECTION",
+  "description": "Twelve deflection of the piece that holds everything, one after another, each with a single best move. Every position comes from a real game and is rated between 1399 and 2783, so the difficulty stays honest from the first puzzle to the last.\n\nPause on each board and find the move before you read on. The answers are posted in the comments of the next episode.\n\nMade with AI assistance.\n\n#chess #chesstactics #chesspuzzles #tactics #chesstraining #endgame #calculation #chessclub",
+  "tags": [
+    "chess",
+    "chess puzzles",
+    "tactics",
+    "chess tactics",
+    "puzzle",
+    "calculation",
+    "mating patterns",
+    "chess training",
+    "endgame",
+    "chess improvement",
+    "positional chess",
+    "chess combination",
+    "chess club",
+    "solve chess",
+    "grandmaster puzzles"
+  ],
+  "puzzles": [
+    {
+      "id": "3ESM6",
+      "fen": "r7/4p1kn/3p2p1/p1p3Pp/2B3q1/2P1Q3/PP5P/5R1K b - - 0 25",
+      "rating": 1419,
+      "uci": [
+        "g4g5",
+        "f1f7",
+        "g7h6",
+        "f7h7",
+        "h6h7",
+        "e3g5"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "0CNRD",
+      "fen": "5rk1/4pp1p/6p1/p2n4/2R2B2/4Pq1P/Pb3P2/3R1QK1 w - - 0 23",
+      "rating": 1399,
+      "uci": [
+        "f4g3",
+        "d5e3",
+        "f2e3",
+        "f3g3"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "master",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "id": "2mUvR",
+      "fen": "4r1k1/3R1p1p/p5pP/1p4P1/4NPK1/r7/8/b6R b - - 3 34",
+      "rating": 2103,
+      "uci": [
+        "b5b4",
+        "h1a1",
+        "a3a1",
+        "e4f6",
+        "g8f8",
+        "f6h7",
+        "f8g8",
+        "h7f6"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "endgame",
+        "fork",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1FToC",
+      "fen": "r1q2rk1/4bp1p/4pnp1/3p2B1/3P4/p2Q1RNP/P1B2PP1/6K1 b - - 4 25",
+      "rating": 1560,
+      "uci": [
+        "g8g7",
+        "g5f6",
+        "e7f6",
+        "g3h5",
+        "g7h8",
+        "h5f6"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "1ypKc",
+      "fen": "r5k1/pp4q1/8/3pb1p1/7r/2PB1Q2/PP3R2/R5K1 b - - 5 27",
+      "rating": 1525,
+      "uci": [
+        "a8f8",
+        "f3d5",
+        "g8h8",
+        "f2f8",
+        "g7f8",
+        "d5e5"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "discoveredAttack",
+        "exposedKing",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "id": "15kE0",
+      "fen": "7r/6p1/1p1p2k1/p1p1p3/P1PnP1N1/1P1P1PKp/3B4/5B2 w - - 6 47",
+      "rating": 2257,
+      "uci": [
+        "d2e1",
+        "h3h2",
+        "g4h2",
+        "h8h2",
+        "g3h2",
+        "d4f3",
+        "h2g3",
+        "f3e1"
+      ],
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "attraction",
+        "capturingDefender",
+        "deflection",
+        "endgame",
+        "fork",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "0pVwD",
+      "fen": "rn1q1r2/pb2bkpp/1p2pn2/2p2P2/2B1p3/1PN5/PBPP2PP/R2Q1RK1 b - - 0 11",
+      "rating": 2049,
+      "uci": [
+        "b7d5",
+        "f5e6",
+        "d5e6",
+        "d1h5",
+        "f7g8",
+        "c4e6"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "long",
+        "opening",
+        "pin"
+      ]
+    },
+    {
+      "id": "1sRxf",
+      "fen": "5k2/3b1p2/2p3P1/3p2q1/2pP2P1/r1P1R3/3NQ1K1/8 b - - 0 43",
+      "rating": 2249,
+      "uci": [
+        "d7g4",
+        "e3e8",
+        "f8g7",
+        "e8g8",
+        "g7h6",
+        "g6f7",
+        "g4e2",
+        "g8g5",
+        "h6g5",
+        "f7f8q"
+      ],
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "deflection",
+        "discoveredAttack",
+        "endgame",
+        "master",
+        "promotion",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "2UW8W",
+      "fen": "r3k2r/1bqp1ppp/pp2pn2/4b3/2PN4/1PN1B2P/P3B1P1/R2Q1RK1 w kq - 0 15",
+      "rating": 2215,
+      "uci": [
+        "a1c1",
+        "e5h2",
+        "g1h1",
+        "b7g2",
+        "h1g2",
+        "c7g3",
+        "g2h1",
+        "g3h3",
+        "e2g4",
+        "f6g4",
+        "d1g4",
+        "h3g4"
+      ],
+      "themes": [
+        "attraction",
+        "crushing",
+        "deflection",
+        "fork",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ]
+    },
+    {
+      "id": "1LvEE",
+      "fen": "6k1/5ppp/4p3/p1qp4/2rb4/8/PP1Q1PPP/2R1R1K1 w - - 2 27",
+      "rating": 2022,
+      "uci": [
+        "b2b3",
+        "d4f2",
+        "d2f2",
+        "c4c1",
+        "f2c5",
+        "c1c5"
+      ],
+      "themes": [
+        "advantage",
+        "deflection",
+        "endgame",
+        "fork",
+        "long"
+      ]
+    },
+    {
+      "id": "1TxyK",
+      "fen": "5r2/1p2r1k1/p7/6Rp/1R3p1K/1BP3p1/P1P2n2/8 b - - 1 36",
+      "rating": 2783,
+      "uci": [
+        "g7h6",
+        "b4b6",
+        "h6h7",
+        "g5h5",
+        "h7g7",
+        "h5h6"
+      ],
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "deflection",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "id": "3CzLs",
+      "fen": "7r/1r3pk1/3Q2p1/2pP4/1pP3n1/1P3N2/q5PP/1R2R1K1 w - - 3 33",
+      "rating": 1779,
+      "uci": [
+        "h2h3",
+        "a2f2",
+        "g1h1",
+        "h8h3",
+        "g2h3",
+        "f2f3"
+      ],
+      "themes": [
+        "crushing",
+        "deflection",
+        "long",
+        "middlegame"
+      ]
+    }
+  ]
+}
