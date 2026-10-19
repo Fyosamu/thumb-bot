@@ -83,21 +83,69 @@ jobs:
 
       # the robot only marks a video processed after a successful render
       # (and upload when the token is set); commit the state back so every
-      # run resumes exactly where the last one stopped - same retry loop
-      # the daily 3-channel workflow uses.
+      # run resumes exactly where the last one stopped.
+      # NO rebase/merge ever: two runs appending different entries to the
+      # same json can never reconcile on replay (39274672528 failed 5x on
+      # exactly that). Instead: save our outputs, reset to origin's tip,
+      # copy them back, UNION the state json, commit, push - repeat.
       - name: commit state
         if: always()
         run: |
           git config user.name "factory-bot"
           git config user.email "actions@users.noreply.github.com"
           mkdir -p factory/content_pd projects/pdrip/state
-          git add factory/state factory/content_pd projects/pdrip/state
-          git diff --cached --quiet || git commit -m "state: pd-daily $(date -u +%F)"
-          # the owner's machine can push mid-run; rebase and retry
+
+          # what this run generated, against this run's checkout
+          STATE_JSON="projects/pdrip/state/processed_pd.json"
+          CHANGED=$(git status --porcelain | awk '{print $2}')
+          rm -rf /tmp/pdmine && mkdir -p /tmp/pdmine
+          for f in $CHANGED; do
+            if [ -e "$f" ]; then
+              mkdir -p "/tmp/pdmine/$(dirname "$f")"
+              cp -a "$f" "/tmp/pdmine/$f"
+            fi
+          done
+
           for i in 1 2 3 4 5; do
-            git pull --rebase origin main && git push && exit 0
+            git fetch origin main
+            git reset --hard origin/main
+
+            for f in $CHANGED; do
+              [ "$f" = "$STATE_JSON" ] && continue   # unioned below
+              mkdir -p "$(dirname "$f")"
+              cp -a "/tmp/pdmine/$f" "$f"
+            done
+            python3 - <<'PY'
+          import json
+          import pathlib
+
+          p = pathlib.Path("projects/pdrip/state/processed_pd.json")
+          ours = pathlib.Path("/tmp/pdmine/projects/pdrip/state/processed_pd.json")
+
+          def load(path):
+              try:
+                  return json.loads(path.read_text(encoding="utf-8"))
+              except Exception:
+                  return {}
+
+          theirs, mine = load(p), load(ours)
+          merged = {k: {**theirs.get(k, {}), **mine.get(k, {})}
+                    for k in ("processed", "failed")}
+          p.parent.mkdir(parents=True, exist_ok=True)
+          p.write_text(json.dumps(merged, ensure_ascii=False, indent=1),
+                       encoding="utf-8")
+          PY
+
+            git add -A
+            if git diff --cached --quiet; then
+              echo "nothing to commit"
+              exit 0
+            fi
+            git commit -m "state: pd-daily $(date -u +%F)"
+            if git push; then
+              exit 0
+            fi
             echo "push attempt $i rejected, retrying"
-            git rebase --abort 2>/dev/null || true
-            sleep 20
+            sleep 15
           done
           exit 1
