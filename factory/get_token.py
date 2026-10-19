@@ -36,9 +36,14 @@ def template_client() -> dict:
 
 def main() -> int:
     key = (sys.argv[1] if len(sys.argv) > 1 else "").strip()
+    # 1-4 keep their named labels; a multichan channel (5..104) files its
+    # token as m<id>_token.json, which is exactly what the matrix job reads.
+    if key not in TOKENS and (key.isdigit() and 5 <= int(key) <= 104):
+        TOKENS[key] = f"m{key}"
     label = (sys.argv[2] if len(sys.argv) > 2 else TOKENS.get(key, "")).strip()
     if key not in TOKENS or not label:
-        raise SystemExit("usage: python get_token.py <1|2|3|4> <label>")
+        raise SystemExit("usage: python get_token.py <1|2|3|4> <label>"
+                         "   |   python get_token.py <5..104>")
 
     from google_auth_oauthlib.flow import InstalledAppFlow
 
@@ -66,6 +71,11 @@ def main() -> int:
     }, indent=2), encoding="utf-8")
     print(f"saved {out}")
     print(f"channel: {ch['snippet']['title']} ({ch['id']})")
+    print()
+    print(f"next, hand it to the runner:")
+    print(f"  gh secret set YT{key}_TOKEN_JSON < {out}")
+    print(f"  (then add {key} to projects/multichan/state/active_channels.json"
+          " and push - the matrix wakes up)")
     return 0
 
 

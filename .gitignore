@@ -32,3 +32,7 @@ factory/content_chess_backup_*/
 # not source (the 10k bank itself IS committed as one jsonl)
 projects/webads/_work/
 projects/webads/out/
+
+# multichan brand art (200 jpgs, 19 MB) ships to the public brands repo,
+# never to this one - the banner URLs in set_brand.py point at raw GitHub
+projects/multichan/brands/

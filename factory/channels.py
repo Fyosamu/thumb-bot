@@ -100,6 +100,39 @@ PROFILES: dict[str, dict] = {
 }
 
 
+def _register_multichan() -> None:
+    """Channels 5..104 live in projects/multichan/channels.json (generated
+    by gen_channels.py).  Registering them here means factory/upload/get_token
+    treat a personal-development side channel exactly like the originals -
+    its own folders, its own ledger, its own YT<n>_TOKEN_JSON secret."""
+    import json
+
+    reg = HERE.parent / "projects" / "multichan" / "channels.json"
+    if not reg.exists():
+        return
+    for e in json.loads(reg.read_text(encoding="utf-8")).get("channels", []):
+        cid = str(e["id"])
+        PROFILES[cid] = {
+            "key": f"{cid}_{e['slug']}",
+            "label": e["slug"],
+            "content": HERE / f"content_m{cid}",
+            "out": HERE / f"out_m{cid}",
+            "work": HERE / f"work_m{cid}",
+            "cursor": _state(f"cursor_m{cid}.json"),
+            "manifest": _state(f"uploaded_m{cid}.json"),
+            "count": _state(f"upload_count_m{cid}.json"),
+            "token_used": _state(f"token_used_m{cid}.json"),
+            "token_env": f"YT{cid}_TOKEN_JSON",
+            "category": e.get("yt_category", "27"),
+            "cron": e.get("cron", "0 13 * * *"),
+            "daily_cap": 1,
+            "spacing_hours": 6,
+        }
+
+
+_register_multichan()
+
+
 def profile(channel: str | None = None) -> dict:
     """Resolve a channel number into its paths, token and defaults."""
     key = str(channel or os.environ.get("YT_CHANNEL") or "1").strip()

@@ -199,6 +199,41 @@ logs, `factory/work/`, `factory/out/`, `factory/_musictest.py`,
   (pre-aparat no-ops), 39189278908 (av-19 crash, fixed), 39189838070
   (first full end-to-end attempt).
 
+## Multichan — 100 personal-development channels (2026-10-19)
+
+The fleet expansion: 100 category channels (ids 5..104) on the same
+rip-translate-rebuild machinery as channel 4, one video/day each,
+engineered so 100x1/day renders fit GitHub's free tier **once the repo
+is public** (private = 2000 min/month ≈ 3-4 channels; public = unlimited).
+Nothing runs - or costs a cent of minutes - until a channel has a token.
+
+- `projects/multichan/gen_channels.py` → `channels.json`: 25 categories
+  (habits, goals, psychology, mindfulness, stoicism, career, reading…)
+  x 4 channels = 100 unique names, Persian aparat queries per category,
+  EN description, palette, rotating edge-tts voice (4 voices).
+- `make_brand.py` → `brands/`: 2560x1440 banner + 800x800 avatar per
+  channel (19.4 MB, gitignored here) — published to the **public
+  `Fyosamu/brands` repo** so YouTube can fetch them by URL:
+  `raw.githubusercontent.com/Fyosamu/brands/main/<id>_banner.jpg` (live,
+  HTTP 200).
+- `factory/channels.py` auto-registers ids 5..104 from the registry
+  (own folders `content_m<n>/out_m<n>/work_m<n>`, own ledgers, token env
+  `YT<n>_TOKEN_JSON`); `get_token.py <5..104>` mints + prints the exact
+  `gh secret set` line.
+- `projects/pdrip/robot.py --channel <n>`: discovery switches to that
+  category's queries, TTS to that channel's voice, render/upload under
+  that profile. ZWNJ is stripped before the aparat search API (400
+  otherwise); state file stays shared so one source video feeds exactly
+  one channel, ever.
+- `.github/workflows/multichan.yml`: cron `0 13 * * *` → prep job reads
+  `state/active_channels.json` → dynamic matrix (max 20 parallel) →
+  per channel: branding (once, recorded per channel), robot, whisper
+  cache, union state commit with 8 push retries. Empty active list =
+  the whole wave costs one ~30s job.
+- `set_brand.py`: title + description + keywords + banner via
+  `channels.update`, recorded in `state/branded_m<n>.json` so a manual
+  Studio edit is never overwritten afterwards.
+
 ## Operator cheat-sheet
 
 ```powershell

@@ -1,0 +1,217 @@
+# The 100 personal-development category channels (ids 5..104), one daily
+# wave: a prep job reads state/active_channels.json (the ids whose OAuth
+# token exists as secret YT<n>_TOKEN_JSON), fans the run out over a matrix
+# of 20 parallel runners, and every active channel runs the same
+# rip-translate-rebuild robot as channel 4 - but discovers sources from
+# ITS category's Persian queries, speaks with ITS voice, renders into ITS
+# folders and uploads cap-1 into ITS own manifest.
+# Idle by design: with no token registered the prep outputs an empty
+# matrix and the whole wave costs one 30-second job.
+name: multichan
+
+on:
+  schedule:
+    - cron: "0 13 * * *"      # 13:00 UTC wave, off the other crons
+  workflow_dispatch:
+    inputs:
+      channels:
+        description: "comma channel ids (5..104); empty = active list"
+        required: false
+        default: ""
+      no_upload:
+        description: "true = render only, skip the upload line"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: multichan
+  cancel-in-progress: false
+
+jobs:
+  prep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      has: ${{ steps.plan.outputs.has }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: plan
+        env:
+          INPUT_CHANNELS: ${{ inputs.channels }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os, pathlib
+
+          ids = []
+          p = pathlib.Path("projects/multichan/state/active_channels.json")
+          try:
+              ids = [int(x) for x in json.loads(p.read_text())["channels"]]
+          except Exception:
+              ids = []
+          inp = os.environ.get("INPUT_CHANNELS", "").strip()
+          if inp:
+              ids = [int(x) for x in inp.replace(";", ",").split(",") if x.strip()]
+          ids = sorted({i for i in ids if 5 <= i <= 104})
+          print(f"matrix={json.dumps({'ch': ids})}")
+          print(f"has={'true' if ids else 'false'}")
+          PY
+
+  channel:
+    needs: prep
+    if: needs.prep.outputs.has == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 140
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix: ${{ fromJSON(needs.prep.outputs.matrix) }}
+    env:
+      CH: ${{ matrix.ch }}
+      YT_TOKEN: ${{ secrets[format('YT{0}_TOKEN_JSON', matrix.ch)] }}
+      YTDLP_COOKIES: ${{ secrets.YTDLP_COOKIES }}
+      NO_UPLOAD: ${{ inputs.no_upload }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: idle (no token for this channel yet)
+        if: env.YT_TOKEN == ''
+        run: echo "::notice::channel $CH has no token - idle"
+
+      - name: materialize token + cookies
+        if: env.YT_TOKEN != ''
+        env:
+          COOKIES_RAW: ${{ secrets.YTDLP_COOKIES }}
+        run: |
+          umask 077
+          echo "YT${CH}_TOKEN_JSON=$YT_TOKEN" >> "$GITHUB_ENV"
+          if [ -n "$COOKIES_RAW" ]; then
+            printf '%s' "$COOKIES_RAW" > "$RUNNER_TEMP/cookies.txt"
+            echo "cookies materialized"
+          fi
+
+      - uses: actions/setup-python@v5
+        if: env.YT_TOKEN != ''
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            factory/requirements.txt
+            projects/pdrip/requirements.txt
+
+      - name: system deps
+        if: env.YT_TOKEN != ''
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+
+      # same restore + always() save pattern as pd-daily: the model must
+      # survive failed jobs too
+      - name: restore whisper model
+        if: env.YT_TOKEN != ''
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-small-int8
+
+      - name: python deps
+        if: env.YT_TOKEN != ''
+        run: |
+          pip install -r factory/requirements.txt
+          pip install -r projects/pdrip/requirements.txt
+
+      # title/description/banner once per channel, pulled from the public
+      # brands repo by URL; idempotent (skips when already applied)
+      - name: channel branding
+        if: env.YT_TOKEN != ''
+        env:
+          PYTHONUTF8: "1"
+        run: python -u projects/multichan/set_brand.py --channel "$CH"
+
+      - name: run the robot
+        if: env.YT_TOKEN != ''
+        env:
+          PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
+          PYTHONUTF8: "1"
+          COOKIES_FILE: ${{ runner.temp }}/cookies.txt
+        run: |
+          if [ "$NO_UPLOAD" = "true" ]; then
+            python -u projects/pdrip/robot.py --channel "$CH" --no-upload
+          else
+            python -u projects/pdrip/robot.py --channel "$CH"
+          fi
+
+      - name: save whisper model
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-small-int8
+
+      # NO rebase/merge ever - same converged union as pd-daily. All 100
+      # channels append to the shared processed_pd.json, so every job
+      # resets to origin's tip, copies its own outputs back, UNIONS the
+      # state json and pushes with retries; per-channel folders never
+      # collide because each job only ever touches its own ids.
+      - name: commit state
+        if: always()
+        run: |
+          git config user.name "factory-bot"
+          git config user.email "actions@users.noreply.github.com"
+
+          STATE_JSON="projects/pdrip/state/processed_pd.json"
+          CHANGED=$(git status --porcelain | awk '{print $2}')
+          rm -rf /tmp/pdmine && mkdir -p /tmp/pdmine
+          for f in $CHANGED; do
+            if [ -e "$f" ]; then
+              mkdir -p "/tmp/pdmine/$(dirname "$f")"
+              cp -a "$f" "/tmp/pdmine/$f"
+            fi
+          done
+
+          for i in 1 2 3 4 5 6 7 8; do
+            git fetch origin main
+            git reset --hard origin/main
+
+            for f in $CHANGED; do
+              [ "$f" = "$STATE_JSON" ] && continue   # unioned below
+              mkdir -p "$(dirname "$f")"
+              cp -a "/tmp/pdmine/$f" "$f"
+            done
+            python3 - <<'PY'
+          import json
+          import pathlib
+
+          p = pathlib.Path("projects/pdrip/state/processed_pd.json")
+          ours = pathlib.Path("/tmp/pdmine/projects/pdrip/state/processed_pd.json")
+
+          def load(path):
+              try:
+                  return json.loads(path.read_text(encoding="utf-8"))
+              except Exception:
+                  return {}
+
+          theirs, mine = load(p), load(ours)
+          merged = {k: {**theirs.get(k, {}), **mine.get(k, {})}
+                    for k in ("processed", "failed")}
+          p.parent.mkdir(parents=True, exist_ok=True)
+          p.write_text(json.dumps(merged, ensure_ascii=False, indent=1),
+                       encoding="utf-8")
+          PY
+
+            git add -A
+            if git diff --cached --quiet; then
+              echo "nothing to commit"
+              exit 0
+            fi
+            git commit -m "state: multichan ch$CH $(date -u +%F)"
+            if git push; then
+              exit 0
+            fi
+            echo "push attempt $i rejected, retrying"
+            sleep 20
+          done
+          exit 1

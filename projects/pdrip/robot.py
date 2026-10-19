@@ -15,6 +15,9 @@ Every day, forever:
     python robot.py                     # normal daily run
     python robot.py --video <url>       # force one specific source video
     python robot.py --no-upload         # build + render only
+    python robot.py --channel 47        # run as multichan channel 47
+                                        # (category queries + voice from
+                                        # projects/multichan/channels.json)
 
 Token: repo secret PD_TOKEN_JSON -> env YT4_TOKEN_JSON.  Without it the
 robot still discovers/translates/renders and just skips the upload line,
@@ -45,6 +48,22 @@ import channels  # noqa: E402
 
 PROF = channels.profile("4")
 CONTENT, OUTDIR = PROF["content"], PROF["out"]
+CHANNEL = "4"                       # overridden by --channel / PD_CHANNEL
+QUERIES = CONFIG["queries"]         # per-channel from the multichan registry
+VOICE = CONFIG["voice"]             # rotating edge-tts voice per channel
+
+
+def _registry(cid: str) -> dict | None:
+    """projects/multichan/channels.json entry for this channel, if it is one
+    of the 100 category channels - then discovery searches ITS category's
+    Persian queries and TTS speaks with ITS voice."""
+    p = HERE.parent / "multichan" / "channels.json"
+    if not p.exists():
+        return None
+    for e in json.loads(p.read_text(encoding="utf-8")).get("channels", []):
+        if str(e["id"]) == str(cid):
+            return e
+    return None
 
 
 # ---------------------------------------------------------------- state ----
@@ -143,7 +162,7 @@ def discover_aparat(state: dict) -> list[dict]:
     want = CONFIG.get("aparat_results", 6)
 
     pool: list[dict] = []
-    for q in CONFIG["queries"]:
+    for q in QUERIES:
         for a in _aparat_search(q):
             uid = a.get("uid") or ""
             if uid and not any(c.get("uid") == uid for c in pool):
@@ -218,7 +237,7 @@ def discover(state: dict, force_url: str | None) -> list[dict]:
 
     aparat_cands = discover_aparat(state)
 
-    for q in CONFIG["queries"]:
+    for q in QUERIES:
         r = ytdlp(["--flat-playlist", "-J",
                    f"ytsearch{CONFIG['search_results']}:{q}"], check=False)
         if r.returncode != 0:
@@ -799,7 +818,7 @@ def make_script(info: dict, en_segs: list[str]) -> dict:
         "topic": title_en,
         "title": title_en,
         "orientation": "landscape",
-        "voice": CONFIG["voice"],
+        "voice": VOICE,
         "thumb_text": " ".join(title_en.split()[:5]).upper(),
         "thumb_stock": scenes[0]["stock"],
         "description": desc,
@@ -854,10 +873,25 @@ def pd_thumb(src_jpg: Path | None, dest: Path, title_en: str) -> None:
 
 # ------------------------------------------------------------- main ----
 def main() -> int:
+    global PROF, CONTENT, OUTDIR, CHANNEL, QUERIES, VOICE
+
     ap = argparse.ArgumentParser()
     ap.add_argument("--video", default="")
     ap.add_argument("--no-upload", action="store_true")
+    ap.add_argument("--channel", default=os.environ.get("PD_CHANNEL", "4"),
+                    help="channel profile to render/upload under "
+                         "(4 = flagship, 5..104 = multichan categories)")
     args = ap.parse_args()
+
+    CHANNEL = str(args.channel).strip()
+    PROF = channels.profile(CHANNEL)
+    CONTENT, OUTDIR = PROF["content"], PROF["out"]
+    entry = _registry(CHANNEL)
+    if entry:
+        QUERIES = list(entry["queries"])
+        VOICE = entry["voice"]
+        print(f"[pdrip] channel {CHANNEL} = {entry['name']} "
+              f"({entry['category']}) queries={QUERIES}")
 
     state = load_state()
     state.setdefault("failed", {})
@@ -877,7 +911,7 @@ def main() -> int:
             continue
         print(f"[pdrip] candidate: {info.get('title', '')[:60]}")
 
-        work = FACTORY / "work_pd" / (info.get("id") or "forced")
+        work = PROF["work"] / (info.get("id") or "forced")
         work.mkdir(parents=True, exist_ok=True)
         vid = info.get("id") or ""
         src = info.get("source", "youtube")
@@ -919,7 +953,7 @@ def main() -> int:
 
         rc = subprocess.run(
             [sys.executable, str(FACTORY / "factory.py"),
-             "--batch", "--channel", "4", "--only", script["slug"]],
+             "--batch", "--channel", CHANNEL, "--only", script["slug"]],
             encoding="utf-8", errors="replace").returncode
         if rc != 0:
             print("[pdrip] render failed - not marking as processed")
@@ -931,13 +965,13 @@ def main() -> int:
 
         if args.no_upload:
             print("[pdrip] --no-upload: render ready, stopping here")
-        elif not os.environ.get("YT4_TOKEN_JSON", "").strip():
-            print("[pdrip] YT4_TOKEN_JSON not set - render ready, "
+        elif not os.environ.get(PROF["token_env"], "").strip():
+            print(f"[pdrip] {PROF['token_env']} not set - render ready, "
                   "upload skipped")
         else:
             up = subprocess.run(
                 [sys.executable, str(FACTORY / "upload.py"),
-                 "--channel", "4", "--only", script["slug"]],
+                 "--channel", CHANNEL, "--only", script["slug"]],
                 encoding="utf-8", errors="replace")
             if up.returncode != 0:
                 print("[pdrip] upload failed - not marking as processed")
