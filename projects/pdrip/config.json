@@ -54,5 +54,16 @@
     "default": "cinematic nature landscape"
   },
   "thumb_band_color": [14, 16, 32],
-  "thumb_accent": [198, 255, 61]
+  "thumb_accent": [198, 255, 61],
+  "caption_proxies": [
+    "https://pipedapi.adminforge.de",
+    "https://api.piped.private.coffee",
+    "https://pipedapi.ducks.party",
+    "https://pipedapi.kavin.rocks"
+  ],
+  "invidious_proxies": [
+    "https://inv.nadeko.net",
+    "https://yewtu.be",
+    "https://invidious.nerdvpn.de"
+  ]
 }
