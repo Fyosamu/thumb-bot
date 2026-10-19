@@ -13,6 +13,7 @@ belong to the wrong channel.
 """
 import json
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -23,11 +24,16 @@ TOKENS = {"1": "sci", "2": "chess", "3": "bio", "4": "pd"}
 
 
 def template_client() -> dict:
-    for name in ("chess_token.json", "sci_token.json", "yt_token.json"):
+    # fleet_client.json (projects/multichan era, project mindseries-fleet)
+    # wins for NEW mints: it belongs to aryn82674's project, so its creator
+    # can authorize it in testing mode without the old client's test-user
+    # wall.  Existing tokens keep the client embedded in their own file.
+    for name in ("fleet_client.json", "chess_token.json", "sci_token.json",
+                 "yt_token.json"):
         p = YT_AUTH / name
         if p.exists():
             d = json.loads(p.read_text(encoding="utf-8"))
-            if d.get("client_id"):
+            if d.get("client_id") and d.get("client_secret"):
                 return {"client_id": d["client_id"],
                         "client_secret": d["client_secret"]}
     raise SystemExit("no existing token file carries a client_id; "
@@ -56,7 +62,26 @@ def main() -> int:
 
     from googleapiclient.discovery import build
     yt = build("youtube", "v3", credentials=creds, cache_discovery=False)
-    ch = yt.channels().list(part="snippet", mine=True).execute()["items"][0]
+    items = yt.channels().list(part="snippet", mine=True).execute().get(
+        "items", [])
+    if not items:
+        # a brand-new Google account has no YouTube channel yet - the
+        # owner creates one in the browser window that is already open,
+        # and this waits for it instead of crashing the OAuth session
+        print("[wait] no YouTube channel on this account yet.")
+        print("[wait] open youtube.com -> avatar -> Create a channel; "
+              "polling up to 10 minutes...")
+        for _ in range(40):
+            time.sleep(15)
+            items = yt.channels().list(part="snippet", mine=True).execute().get(
+                "items", [])
+            if items:
+                break
+        else:
+            print("[wait] timed out - create the channel, then run this "
+                  "command again (you are signed in, it is one click)")
+            return 1
+    ch = items[0]
     out = YT_AUTH / f"{label}_token.json"
     out.write_text(json.dumps({
         "access_token": creds.token,
