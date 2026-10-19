@@ -93,6 +93,8 @@ def _gradient() -> Image.Image:
 
 
 def _browser_card(img: Image.Image, box: tuple[int, int, int, int]) -> None:
+    """Browser mockup that adapts to ANY card height: header always, body
+    lines when they fit, CTA when they fit, columns only when they fit."""
     d = ImageDraw.Draw(img)
     x0, y0, x1, y1 = box
     d.rounded_rectangle(box, radius=28, fill=CARD, outline=(210, 212, 224), width=3)
@@ -101,22 +103,32 @@ def _browser_card(img: Image.Image, box: tuple[int, int, int, int]) -> None:
     d.rounded_rectangle([x0 + 180, y0 + 20, x1 - 26, y0 + 56], radius=18, fill=GREY)
     f = _load(24, False)
     d.text((x0 + 200, y0 + 26), "yourbusiness.com", font=f, fill=(110, 112, 128))
-    # mini mockup inside the card
+
     pad = 30
-    cx0, cy0, cx1, cy1 = x0 + pad, y0 + 86, x1 - pad, y1 - pad
+    cx0, cx1 = x0 + pad, x1 - pad
+    cy0 = y0 + 86
+    content_h = (y1 - pad) - cy0
+    if content_h < 70:
+        return
     cw = cx1 - cx0
-    d.rounded_rectangle([cx0, cy0, cx0 + cw, cy0 + 56], radius=12, fill=VIOLET)
+    d.rounded_rectangle([cx0, cy0, cx1, cy0 + 56], radius=12, fill=VIOLET)
+    if content_h < 120:
+        return
     d.rectangle([cx0, cy0 + 76, cx0 + int(cw * 0.62), cy0 + 100], fill=(60, 62, 90))
+    if content_h < 150:
+        return
     d.rectangle([cx0, cy0 + 116, cx0 + int(cw * 0.45), cy0 + 136], fill=(60, 62, 90))
-    d.rounded_rectangle([cx0, cy0 + 168, cx0 + 210, cy0 + 218], radius=12, fill=LIME)
-    col_y = cy0 + 250
-    col_w = (cw - 2 * 20) // 3
-    for i in range(3):
-        x = cx0 + i * (col_w + 20)
-        d.rounded_rectangle([x, col_y, x + col_w, col_y + 130], radius=14,
-                            outline=(205, 207, 220), width=3)
-        d.rectangle([x + 18, col_y + 24, x + col_w - 18, col_y + 44], fill=GREY)
-        d.rectangle([x + 18, col_y + 60, x + col_w - 40, col_y + 76], fill=GREY)
+    if content_h >= 330:
+        d.rounded_rectangle([cx0, cy0 + 168, cx0 + 210, cy0 + 218], radius=12,
+                            fill=LIME)
+        col_y = (y1 - pad) - 130
+        col_w = (cw - 2 * 20) // 3
+        for i in range(3):
+            x = cx0 + i * (col_w + 20)
+            d.rounded_rectangle([x, col_y, x + col_w, col_y + 130], radius=14,
+                                outline=(205, 207, 220), width=3)
+            d.rectangle([x + 18, col_y + 24, x + col_w - 18, col_y + 44], fill=GREY)
+            d.rectangle([x + 18, col_y + 60, x + col_w - 40, col_y + 76], fill=GREY)
 
 
 def _badge(img: Image.Image, cx: int, cy: int, r: int, line1: str, line2: str) -> None:
@@ -166,7 +178,7 @@ def render(script: dict, out: Path) -> None:
         for ln in lines:
             d.text((W // 2, y), ln, font=f, fill=WHITE, anchor="mm")
             y += f.size + 18
-        _browser_card(img, (150, y + 100, W - 150, 1400))
+        _browser_card(img, (150, y + 60, W - 150, 1620))
     elif tpl == "checklist":
         card = (110, 300, W - 110, 1330)
         d.rounded_rectangle(card, radius=28, fill=CARD)
