@@ -31,6 +31,7 @@ import re
 import subprocess
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -69,65 +70,134 @@ def ytdlp(args: list[str], check: bool = True) -> subprocess.CompletedProcess:
                           encoding="utf-8", errors="replace")
 
 
-def _aparat_search(query: str) -> list[str]:
-    """Aparat search is server-rendered - pull video slugs from the HTML."""
+def _aparat_slugs() -> list[str]:
+    """Freshest video hashes from aparat's sitemaps - the safety net for
+    when the search API itself is down."""
+    import requests
+    slugs: list[str] = []
+    for n in (1, 2, 3):
+        try:
+            r = requests.get(f"https://www.aparat.com/sitemap_{n}.xml",
+                             timeout=20, headers={"User-Agent": "Mozilla/5.0"})
+            found = re.findall(
+                r"<loc>https://www\.aparat\.com/v/([A-Za-z0-9]+)</loc>", r.text)
+            for s in found:
+                if s not in slugs:
+                    slugs.append(s)
+        except Exception as exc:            # noqa: BLE001 - next sitemap
+            print(f"[pdrip] sitemap_{n}: {type(exc).__name__}")
+    return slugs
+
+
+STRONG = ("توسعه فردی", "انگیزش", "روانشناسی", "موفقیت", "عادت", "هدف",
+          "پیشرفت", "خودسازی", "اعتماد به نفس", "تمرکز", "مدیریت زمان",
+          "شادی", "یادگیری", "ذهن", "ذهنیت", "آگاهی", "رفتار", "هیجان")
+WEAK = ("زندگی", "قدرت", "ایمان", "امید", "مغز", "مثبت", "درس")
+
+
+def _aparat_show(video_hash: str) -> dict | None:
+    import requests
+    try:
+        r = requests.get(
+            "https://www.aparat.com/api/fa/v1/video/video/show/videohash/"
+            + video_hash,
+            timeout=10, headers={"User-Agent": "Mozilla/5.0"})
+        if r.ok:
+            return (r.json().get("data") or {}).get("attributes") or None
+    except Exception:                       # noqa: BLE001 - drop candidate
+        pass
+    return None
+
+
+def _aparat_search(query: str) -> list[dict]:
+    """Aparat's own search API - real topical results, json:api envelope
+    (videos live in .included[].attributes)."""
     import urllib.parse
 
     import requests
-    url = f"https://www.aparat.com/search/{urllib.parse.quote(query)}"
+    url = ("https://www.aparat.com/api/fa/v1/video/video/search/text/"
+           + urllib.parse.quote(query) + "/?type_search=search")
     try:
-        r = requests.get(url, timeout=20,
+        r = requests.get(url, timeout=15,
                          headers={"User-Agent": "Mozilla/5.0"})
-        html = r.text
+        if not r.ok:
+            print(f"[pdrip] aparat search {query!r}: HTTP {r.status_code}")
+            return []
+        return [(a.get("attributes") or {})
+                for a in (r.json().get("included") or [])]
     except Exception as exc:                # noqa: BLE001 - next query
         print(f"[pdrip] aparat search {query!r}: {type(exc).__name__}")
         return []
-    slugs = re.findall(r"/v/([A-Za-z0-9]{3,})/", html)
-    out, seen = [], set()
-    for s in slugs:
-        if s.lower() not in seen and s.lower() not in ("v", "search"):
-            seen.add(s.lower())
-            out.append(s)
-    return out
 
 
 def discover_aparat(state: dict) -> list[dict]:
     """First-choice source: an Iranian platform with no bot-checks at all,
-    exactly the Iranian personal-development shelf the owner asked for."""
+    exactly the Iranian personal-development shelf the owner asked for.
+    Discovery = aparat search API (topical) -> topic/quality filters ->
+    show API for the pre-signed CDN files."""
     if not CONFIG.get("aparat", True):
         return []
     seen, failed = state["processed"], state.get("failed", {})
-    slugs: list[str] = []
+    want = CONFIG.get("aparat_results", 6)
+
+    pool: list[dict] = []
     for q in CONFIG["queries"]:
-        for s in _aparat_search(q):
-            if s not in slugs:
-                slugs.append(s)
-        if len(slugs) >= 14:
-            break
+        for a in _aparat_search(q):
+            uid = a.get("uid") or ""
+            if uid and not any(c.get("uid") == uid for c in pool):
+                pool.append(a)
+        time.sleep(0.3)
+
+    if not pool:
+        # search dead - random newest videos, so topicality needs the
+        # keyword score here and only here
+        print("[pdrip] aparat search empty - sitemap fallback probing")
+        slugs = _aparat_slugs()
+        with ThreadPoolExecutor(max_workers=10) as ex:
+            for a in ex.map(_aparat_show, slugs[:288]):
+                if a:
+                    a["_random"] = True
+                    pool.append(a)
+
+    # talks before clips: longest duration within the window wins
+    pool.sort(key=lambda a: -int(a.get("duration") or 0))
     cands: list[dict] = []
-    for slug in slugs:
-        if len(cands) >= 6:
+    for a in pool:
+        if len(cands) >= want:
             break
-        url = f"https://www.aparat.com/v/{slug}/"
+        dur = int(a.get("duration") or 0)
+        title = a.get("title") or ""
+        desc = (a.get("description") or "")[:300]
+        text = title + " " + desc
+        if not (CONFIG["min_duration"] <= dur <= CONFIG["max_duration"]):
+            continue
+        if any(w in text for w in CONFIG["skip_words"]):
+            continue
+        if a.get("_random"):
+            score = sum(2 for k in STRONG if k in text) + \
+                sum(1 for k in WEAK if k in text)
+            if score < 2:
+                continue
+        uid = a.get("uid") or ""
+        url = f"https://www.aparat.com/v/{uid}"
         if url in seen or failed.get(url) in ("no transcript",
                                               "translation too short"):
             continue
-        r = ytdlp(["-J", "--skip-download", url], check=False)
-        if r.returncode != 0:
+        full = a if a.get("file_link_all") else (_aparat_show(uid) or {})
+        files = [(f.get("profile") or "",
+                  (f.get("urls") or [""])[0])
+                 for f in (full.get("file_link_all") or [])
+                 if f.get("urls")]
+        if not files:
             continue
-        try:
-            info = json.loads(r.stdout)
-        except json.JSONDecodeError:
-            continue
-        dur = info.get("duration") or 0
-        title = info.get("title") or ""
-        if not (CONFIG["min_duration"] <= dur <= CONFIG["max_duration"]):
-            continue
-        if any(w in title for w in CONFIG["skip_words"]):
-            continue
-        info["url"] = url
-        info["source"] = "aparat"
-        cands.append(info)
+        cands.append({
+            "url": url, "id": uid, "source": "aparat",
+            "title": title, "duration": dur,
+            "thumbnail": full.get("big_poster") or a.get("big_poster") or "",
+            "files": files,
+            "_description": desc,
+        })
+    print(f"[pdrip] aparat: {len(pool)} in pool -> {len(cands)} candidates")
     return cands
 
 
@@ -248,6 +318,53 @@ def fetch_thumb(video_id: str, work: Path) -> Path | None:
                 return dest
         except Exception:                   # noqa: BLE001 - next size
             continue
+    return None
+
+
+def fetch_aparat_poster(info: dict, work: Path) -> Path | None:
+    """The aparat creator's own thumbnail from the CDN, straight from the
+    show API (big_poster) - no bot-check there either."""
+    import requests
+    src = info.get("thumbnail") or ""
+    if not src:
+        return None
+    try:
+        r = requests.get(src, timeout=20)
+        if r.ok and len(r.content) > 5000:
+            dest = work / "source_thumb.jpg"
+            dest.write_bytes(r.content)
+            return dest
+    except Exception:                       # noqa: BLE001 - keep factory one
+        pass
+    return None
+
+
+def download_aparat(info: dict, work: Path) -> Path | None:
+    """Direct pre-signed CDN files from the show API.  Whisper only needs
+    the audio track, so the smallest usable profile wins (144p first)."""
+    import requests
+    pairs = sorted(info.get("files") or [],
+                   key=lambda p: int(re.sub(r"\D", "", p[0]) or "999"))
+    for profile, url in pairs[:3]:
+        if not url:
+            continue
+        try:
+            with requests.get(url, timeout=180, stream=True) as r:
+                if not r.ok:
+                    print(f"[pdrip] aparat {profile}: HTTP {r.status_code}")
+                    continue
+                dest = work / "source.mp4"
+                size = 0
+                with open(dest, "wb") as fh:
+                    for chunk in r.iter_content(1 << 16):
+                        fh.write(chunk)
+                        size += len(chunk)
+            if size > 100_000:
+                print(f"[pdrip] aparat source via {profile} "
+                      f"({size // 1024} KB)")
+                return dest
+        except Exception as exc:            # noqa: BLE001 - next profile
+            print(f"[pdrip] aparat {profile}: {type(exc).__name__}")
     return None
 
 
@@ -690,16 +807,19 @@ def main() -> int:
         work.mkdir(parents=True, exist_ok=True)
         vid = info.get("id") or ""
         src = info.get("source", "youtube")
-        thumb_jpg = fetch_thumb(vid, work) if (vid and src != "aparat") \
-            else None
-        # the player sits behind the bot-check on datacenter IPs, so the
-        # audio may never arrive - it is best effort; the transcript API
-        # above is the primary path and the output never uses source audio
-        audio, dl_thumb = download(url, work, src)
-        if thumb_jpg is None:
-            thumb_jpg = dl_thumb
-        if audio is None and vid and src != "aparat":
-            audio = _proxy_audio(vid, work)
+        if src == "aparat":
+            thumb_jpg = fetch_aparat_poster(info, work)
+            audio = download_aparat(info, work)
+        else:
+            thumb_jpg = fetch_thumb(vid, work) if vid else None
+            # the player sits behind the bot-check on datacenter IPs, so
+            # the audio may never arrive - it is best effort; the output
+            # never uses source audio anyway
+            audio, dl_thumb = download(url, work, src)
+            if thumb_jpg is None:
+                thumb_jpg = dl_thumb
+            if audio is None and vid:
+                audio = _proxy_audio(vid, work)
         segs_fa = transcript(work, audio, vid, src)
         if not segs_fa:
             state["failed"][url] = "no transcript"
