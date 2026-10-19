@@ -161,9 +161,9 @@ def discover_aparat(state: dict) -> list[dict]:
                     a["_random"] = True
                     pool.append(a)
 
-    # sweet spot ~10 min: long enough to be a talk, short enough that
-    # whisper + render stay well inside the runner's budget
-    pool.sort(key=lambda a: abs(int(a.get("duration") or 0) - 600))
+    # sweet spot ~7.5 min: real talk length, and every minute of source
+    # is a minute of whisper + translate + render, so shorter = faster
+    pool.sort(key=lambda a: abs(int(a.get("duration") or 0) - 450))
     cands: list[dict] = []
     for a in pool:
         if len(cands) >= want:
