@@ -1,4 +1,6 @@
 yt-dlp>=2025.1.1
 deep-translator>=1.11.4
 faster-whisper>=1.0.3
+# av 19 dropped the metadata_errors kwarg faster-whisper still passes
+av>=14,<19
 youtube-transcript-api>=1.0.3

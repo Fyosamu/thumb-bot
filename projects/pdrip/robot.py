@@ -115,6 +115,8 @@ def _aparat_search(query: str) -> list[dict]:
     import urllib.parse
 
     import requests
+    # zero-width non-joiner (نیم‌فاصله) makes the endpoint answer 400
+    query = " ".join(query.replace("\u200c", " ").split())
     url = ("https://www.aparat.com/api/fa/v1/video/video/search/text/"
            + urllib.parse.quote(query) + "/?type_search=search")
     try:
@@ -159,8 +161,9 @@ def discover_aparat(state: dict) -> list[dict]:
                     a["_random"] = True
                     pool.append(a)
 
-    # talks before clips: longest duration within the window wins
-    pool.sort(key=lambda a: -int(a.get("duration") or 0))
+    # sweet spot ~10 min: long enough to be a talk, short enough that
+    # whisper + render stay well inside the runner's budget
+    pool.sort(key=lambda a: abs(int(a.get("duration") or 0) - 600))
     cands: list[dict] = []
     for a in pool:
         if len(cands) >= want:

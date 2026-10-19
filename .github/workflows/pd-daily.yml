@@ -53,8 +53,10 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg
 
-      - name: cache whisper model
-        uses: actions/cache@v4
+      # restore + a separate always() save: a plain cache@v4 never writes
+      # on a failed job, which is exactly when the model is freshly pulled
+      - name: restore whisper model
+        uses: actions/cache/restore@v4
         with:
           path: ~/.cache/huggingface
           key: whisper-small-int8
@@ -71,6 +73,13 @@ jobs:
           PYTHONUTF8: "1"
           COOKIES_FILE: ${{ runner.temp }}/cookies.txt
         run: python -u projects/pdrip/robot.py
+
+      - name: save whisper model
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-small-int8
 
       # the robot only marks a video processed after a successful render
       # (and upload when the token is set); commit the state back so every
