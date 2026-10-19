@@ -1,0 +1,58 @@
+{
+  "queries": [
+    "توسعه فردی انگیزشی",
+    "خودسازی و پیشرفت شخصی",
+    "عادت‌های موفقیت",
+    "روانشناسی موفقیت",
+    "هدفگذاری و برنامه‌ریزی",
+    "مدیتیشن و آرامش ذهن"
+  ],
+  "channels": [],
+  "search_results": 12,
+  "min_duration": 240,
+  "max_duration": 1500,
+  "max_scenes": 55,
+  "words_per_scene": 42,
+  "voice": "en-US-ChristopherNeural",
+  "sub_langs": ["fa", "fa-IR", "pes"],
+  "skip_words": [
+    "دوره", "ثبت‌نام", "کانال تلگرام", "لینک توضیحات", "کد تخفیف",
+    "دانلود رایگان", "اینستاگرام", "پیج ما", "کسب درآمد", "شارژ حساب"
+  ],
+  "personal_patterns": [
+    "t\\.me/\\S+",
+    "telegram(?:\\.me|\\.dog|\\.org|\\.ir)/\\S+",
+    "instagram\\.com/\\S+",
+    "wa\\.me/\\S+",
+    "whatsapp://\\S+",
+    "https?://\\S+",
+    "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
+    "(?:\\+?98|0)9\\d{9}",
+    "@[A-Za-z][A-Za-z0-9_]{4,}"
+  ],
+  "stock_map": {
+    "success": "sunrise mountain summit",
+    "goal": "target arrow dartboard",
+    "habit": "calendar planner checklist",
+    "morning": "sunrise coffee window",
+    "mind": "brain abstract neural",
+    "focus": "person working desk lamp",
+    "read": "reading library books",
+    "book": "open book pages",
+    "money": "coins stack growth",
+    "business": "office handshake meeting",
+    "sport": "running training gym",
+    "health": "healthy food running shoes",
+    "calm": "meditation calm lake",
+    "nature": "aerial nature cinematic",
+    "city": "city timelapse night",
+    "learn": "student notebook study",
+    "fear": "dark corridor silhouette",
+    "time": "hourglass sand closeup",
+    "team": "team working together",
+    "dream": "starry night sky",
+    "default": "cinematic nature landscape"
+  },
+  "thumb_band_color": [14, 16, 32],
+  "thumb_accent": [198, 255, 61]
+}

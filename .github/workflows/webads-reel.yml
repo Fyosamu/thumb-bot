@@ -1,0 +1,55 @@
+# Daily reel for the web-design ad project: render today's episode from
+# bank.jsonl through the same factory shorts pipeline (captions, mellow
+# bed at 0.10, portrait 1080x1920), overwrite the thumbnail with the ad
+# style, and drop the ready-to-post pack as an artifact:
+#   gh run download -n daily-reel   ->  <slug>.mp4 + <slug>.jpg + caption.txt
+# The actual Instagram auto-post arms once the account exists (secrets).
+name: webads-reel
+
+on:
+  schedule:
+    - cron: "0 14 * * *"   # 14:00 UTC, daily, independent of the 3 channels
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: webads-reel
+  cancel-in-progress: false
+
+jobs:
+  reel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: factory/requirements.txt
+
+      - name: system deps
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+
+      - name: python deps
+        run: pip install -r factory/requirements.txt
+
+      - name: render today's reel
+        env:
+          PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
+          PYTHONUTF8: "1"
+        # day index = days since 2026-01-01 (the bank epoch)
+        run: |
+          idx=$(( ($(date +%s) / 86400) - 20454 ))
+          python projects/webads/reel_robot.py --index "$idx" --bank-fallback
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: daily-reel
+          path: projects/webads/out/
+          retention-days: 30

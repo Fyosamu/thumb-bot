@@ -27,3 +27,8 @@ topics_sci_old_generic.txt
 
 # local chess backups never belong in git
 factory/content_chess_backup_*/
+
+# webads project scratch: rendered reels and thumb tests are artifacts,
+# not source (the 10k bank itself IS committed as one jsonl)
+projects/webads/_work/
+projects/webads/out/

@@ -19,7 +19,7 @@ from pathlib import Path
 YT_AUTH = Path(r"C:\Users\USER\Desktop\chess-repo\yt_auth")
 SCOPES = ["https://www.googleapis.com/auth/youtube"]
 # label used by daily_local.py for this channel's token file
-TOKENS = {"1": "sci", "2": "chess", "3": "bio"}
+TOKENS = {"1": "sci", "2": "chess", "3": "bio", "4": "pd"}
 
 
 def template_client() -> dict:
@@ -38,7 +38,7 @@ def main() -> int:
     key = (sys.argv[1] if len(sys.argv) > 1 else "").strip()
     label = (sys.argv[2] if len(sys.argv) > 2 else TOKENS.get(key, "")).strip()
     if key not in TOKENS or not label:
-        raise SystemExit("usage: python get_token.py <1|2|3> <label>")
+        raise SystemExit("usage: python get_token.py <1|2|3|4> <label>")
 
     from google_auth_oauthlib.flow import InstalledAppFlow
 

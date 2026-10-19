@@ -76,6 +76,27 @@ PROFILES: dict[str, dict] = {
         "daily_cap": 1,
         "spacing_hours": 6,
     },
+    # channel 4 = personal development: projects/pdrip/robot.py discovers a
+    # Persian source video, translates it, writes the script HERE, renders
+    # and uploads through the exact same machinery (upload.py + manifest +
+    # daily cap).  Its own token env: YT4_TOKEN_JSON (repo secret PD_TOKEN_JSON).
+    "4": {
+        "key": "4_personaldev",
+        "label": "personaldev",
+        "content": HERE / "content_pd",
+        "out": HERE / "out_pd",
+        "work": HERE / "work_pd",
+        "cursor": _state("cursor_pd.json"),
+        "manifest": _state("uploaded_pd.json"),
+        "count": _state("upload_count_pd.json"),
+        "token_used": _state("token_used_pd.json"),
+        "token_env": "YT4_TOKEN_JSON",
+        "category": "27",          # Education
+        "cron": "30 14 * * *",
+        # one translated long a day, forever - the robot never stops
+        "daily_cap": 1,
+        "spacing_hours": 6,
+    },
 }
 
 
