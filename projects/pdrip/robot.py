@@ -66,16 +66,17 @@ def ytdlp(args: list[str], check: bool = True) -> subprocess.CompletedProcess:
                           encoding="utf-8", errors="replace")
 
 
-def discover(state: dict, force_url: str | None) -> dict | None:
+def discover(state: dict, force_url: str | None) -> list[dict]:
     seen = state["processed"]
+    failed = state.get("failed", {})
     cands: list[dict] = []
 
     if force_url:
         r = ytdlp(["-J", "--skip-download", force_url], check=False)
         if r.returncode != 0:
             print(f"[pdrip] cannot read {force_url}: {r.stderr[-300:]}")
-            return None
-        return json.loads(r.stdout)
+            return []
+        return [json.loads(r.stdout)]
 
     for q in CONFIG["queries"]:
         r = ytdlp(["--flat-playlist", "-J",
@@ -95,7 +96,7 @@ def discover(state: dict, force_url: str | None) -> dict | None:
             title = e.get("title") or ""
             if not (CONFIG["min_duration"] <= dur <= CONFIG["max_duration"]):
                 continue
-            if url in seen:
+            if url in seen or url in failed:
                 continue
             if any(w in title for w in CONFIG["skip_words"]):
                 continue
@@ -105,29 +106,48 @@ def discover(state: dict, force_url: str | None) -> dict | None:
 
     if not cands:
         print("[pdrip] no fresh candidate (bank of sources exhausted for now)")
-        return None
-    pick = cands[0]
-    print(f"[pdrip] candidate: {pick['title'][:70]} ({pick['duration']}s)")
-    r = ytdlp(["-J", "--skip-download", pick["url"]], check=False)
-    return json.loads(r.stdout) if r.returncode == 0 else pick
+        return []
+    print(f"[pdrip] {len(cands)} fresh candidates, "
+          f"first: {cands[0]['title'][:60]}")
+    return cands
 
 
 # ----------------------------------------------------------- download ----
+# YouTube bot-checks datacenter IPs on the default web client; the tv /
+# android / ios clients speak different APIs and sail through.  Try each,
+# fall back to default, before giving up on a candidate.
+CLIENT_ROTATION = [
+    ["--extractor-args", "youtube:player_client=tv_simply"],
+    ["--extractor-args", "youtube:player_client=android"],
+    ["--extractor-args", "youtube:player_client=ios"],
+    [],
+]
+
+
 def download(url: str, work: Path) -> tuple[Path | None, Path | None]:
     work.mkdir(parents=True, exist_ok=True)
     subs = ",".join(CONFIG["sub_langs"])
-    r = ytdlp([
-        "-f", "ba[ext=m4a]/ba",
-        "-o", str(work / "source.%(ext)s"),
-        "--write-info-json",
-        "--write-auto-subs", "--write-subs",
-        "--sub-langs", subs,
-        "--sub-format", "json3/best",
-        "--write-thumbnail", "--convert-thumbnails", "jpg",
-        url,
-    ], check=False)
-    if r.returncode != 0:
-        print(f"[pdrip] download failed: {r.stderr[-400:]}")
+    for extra in CLIENT_ROTATION:
+        r = ytdlp([
+            *extra,
+            "-f", "ba[ext=m4a]/ba",
+            "-o", str(work / "source.%(ext)s"),
+            "--write-info-json",
+            "--write-auto-subs", "--write-subs",
+            "--sub-langs", subs,
+            "--sub-format", "json3/best",
+            "--write-thumbnail", "--convert-thumbnails", "jpg",
+            "--retries", "3",
+            url,
+        ], check=False)
+        if r.returncode == 0:
+            if extra:
+                print(f"[pdrip] downloaded via {extra[-1].split('=')[-1]}")
+            break
+        print(f"[pdrip] download attempt "
+              f"{(extra[-1].split('=')[-1] if extra else 'default')} failed")
+    else:
+        print(f"[pdrip] all clients failed for {url}")
         return None, None
     audio = next((p for p in work.glob("source.*")
                   if p.suffix not in (".json", ".jpg", ".vtt", ".json3")), None)
@@ -366,66 +386,85 @@ def main() -> int:
     args = ap.parse_args()
 
     state = load_state()
-    info = discover(state, args.video or None)
-    if not info:
-        return 0
-    url = (info.get("webpage_url") or info.get("original_url")
-           or (f"https://youtu.be/{info['id']}" if info.get("id") else ""))
-    if not url or url in state["processed"]:
-        print("[pdrip] already processed, stopping")
+    state.setdefault("failed", {})
+    cands = discover(state, args.video or None)
+    if not cands:
         return 0
 
-    work = FACTORY / "work_pd" / (info.get("id") or "forced")
-    audio, thumb_jpg = download(url, work)
-    segs_fa = transcript(work, audio)
-    if not segs_fa:
+    for info in cands[:3]:
+        url = (info.get("webpage_url") or info.get("original_url")
+               or info.get("url")
+               or (f"https://youtu.be/{info['id']}" if info.get("id") else ""))
+        if not url or url in state["processed"]:
+            continue
+
+        work = FACTORY / "work_pd" / (info.get("id") or "forced")
+        audio, thumb_jpg = download(url, work)
+        if audio is None:
+            state["failed"][url] = "download"
+            continue
+        segs_fa = transcript(work, audio)
+        if not segs_fa:
+            state["failed"][url] = "no transcript"
+            continue
+        clean_fa, dropped = sanitize_fa(segs_fa)
+        print(f"[pdrip] fa cues {len(segs_fa)} -> clean {len(clean_fa)} "
+              f"(dropped {dropped} personal/promo)")
+        en = translate(clean_fa)
+        if len(" ".join(en)) < 300:
+            print("[pdrip] translation too short - next candidate")
+            state["failed"][url] = "translation too short"
+            continue
+
+        script = make_script(info, en)
+        CONTENT.mkdir(parents=True, exist_ok=True)
+        OUTDIR.mkdir(parents=True, exist_ok=True)
+        src_json = CONTENT / f"{script['slug']}.json"
+        src_json.write_text(json.dumps(script, ensure_ascii=False, indent=2),
+                            encoding="utf-8")
+        print(f"[pdrip] script: {script['slug']} "
+              f"({len(script['scenes'])} scenes)")
+
+        rc = subprocess.run(
+            [sys.executable, str(FACTORY / "factory.py"),
+             "--batch", "--channel", "4", "--only", script["slug"]],
+            encoding="utf-8", errors="replace").returncode
+        if rc != 0:
+            print("[pdrip] render failed - not marking as processed")
+            save_state(state)
+            return rc
+
+        pd_thumb(thumb_jpg, OUTDIR / f"{script['slug']}.jpg",
+                 script["title"])
+
+        if args.no_upload:
+            print("[pdrip] --no-upload: render ready, stopping here")
+        elif not os.environ.get("YT4_TOKEN_JSON", "").strip():
+            print("[pdrip] YT4_TOKEN_JSON not set - render ready, "
+                  "upload skipped")
+        else:
+            up = subprocess.run(
+                [sys.executable, str(FACTORY / "upload.py"),
+                 "--channel", "4", "--only", script["slug"]],
+                encoding="utf-8", errors="replace")
+            if up.returncode != 0:
+                print("[pdrip] upload failed - not marking as processed")
+                save_state(state)
+                return up.returncode
+
+        state["processed"][url] = {
+            "slug": script["slug"], "title_en": script["title"],
+            "source_title": script["_source_title_fa"],
+            "date": dt.date.today().isoformat(),
+            "scenes": len(script["scenes"]),
+        }
+        state["failed"].pop(url, None)
+        save_state(state)
+        print(f"[pdrip] done: {script['slug']}")
         return 0
-    clean_fa, dropped = sanitize_fa(segs_fa)
-    print(f"[pdrip] fa cues {len(segs_fa)} -> clean {len(clean_fa)} "
-          f"(dropped {dropped} personal/promo)")
-    en = translate(clean_fa)
-    if len(" ".join(en)) < 300:
-        print("[pdrip] translation too short - skipping candidate")
-        return 0
 
-    script = make_script(info, en)
-    CONTENT.mkdir(parents=True, exist_ok=True)
-    OUTDIR.mkdir(parents=True, exist_ok=True)
-    src_json = CONTENT / f"{script['slug']}.json"
-    src_json.write_text(json.dumps(script, ensure_ascii=False, indent=2),
-                        encoding="utf-8")
-    print(f"[pdrip] script: {script['slug']} ({len(script['scenes'])} scenes)")
-
-    rc = subprocess.run([sys.executable, str(FACTORY / "factory.py"),
-                         "--batch", "--channel", "4", "--only", script["slug"]],
-                        encoding="utf-8", errors="replace").returncode
-    if rc != 0:
-        print("[pdrip] render failed - not marking as processed")
-        return rc
-
-    pd_thumb(thumb_jpg, OUTDIR / f"{script['slug']}.jpg",
-             script["title"])
-
-    if args.no_upload:
-        print("[pdrip] --no-upload: render ready, stopping here")
-    elif not os.environ.get("YT4_TOKEN_JSON", "").strip():
-        print("[pdrip] YT4_TOKEN_JSON not set - render ready, upload skipped")
-    else:
-        up = subprocess.run([sys.executable, str(FACTORY / "upload.py"),
-                             "--channel", "4", "--only", script["slug"]],
-                            encoding="utf-8", errors="replace")
-        if up.returncode != 0:
-            print("[pdrip] upload failed - not marking as processed")
-            return up.returncode
-
-    state["processed"][url] = {
-        "slug": script["slug"], "title_en": script["title"],
-        "source_title": script["_source_title_fa"],
-        "date": dt.date.today().isoformat(),
-        "scenes": len(script["scenes"]),
-    }
     save_state(state)
-    print(f"[pdrip] done: {script['slug']}")
+    print("[pdrip] every candidate failed today - nothing published")
     return 0
 
 
