@@ -156,6 +156,49 @@ logs, `factory/work/`, `factory/out/`, `factory/_musictest.py`,
 `puzzles_pool*.jsonl` (runtime input), topic lists, all banks,
 `yt_auth/`, `_check_uploads.py` (QA tool, committed).
 
+## Two new self-running factories (2026-10-19)
+
+**A. webads — 10k ad videos, 1 Instagram reel/day (channel-independent).**
+
+- `projects/webads/` — `concept.md`, `ad-copy.md` (FA+EN, "$1000 and up"),
+  `pinterest-brief.md`, `gen_scripts.py` (10,000 scripts, ~70 words each,
+  EN voice `en-US-AvaMultilingualNeural`, 7 scenes ≈30s), `make_thumb.py`
+  (6 custom templates, height-adaptive text), `reel_robot.py`
+  (date-index reel pick from `bank.jsonl`, renders via `factory.py --render`,
+  uploads nothing — output ships as the `daily-reel` artifact).
+- `.github/workflows/webads-reel.yml` — cron `0 14 * * *`, artifact
+  `daily-reel` (mp4 + jpg, nothing mp4 committed).
+- Verified: run **39178839281** SUCCESS — ep291, stat template, 7 segs,
+  30.7s, mellow bed at 0.10 under the voice, custom thumb, 2m30s total.
+
+**B. pdrip — rip-translate robot, 1 upload/day on new channel 4, forever.**
+
+- `projects/pdrip/` — `robot.py`: discover → sanitize personal info →
+  FA→EN sentence-exact translate → rebuild copyright-free through
+  `factory.py --channel 4` → source-style thumbnail (Persian text on the
+  original poster replaced by English) → `upload.py channel 4` (own token,
+  cap 1) → state in `projects/pdrip/state/processed_pd.json`.
+- Discovery story: YouTube is bot-walled from runners (yt-dlp 7 clients,
+  transcript API `RequestBlocked`, Piped/Invidious dead, SEs unreliable),
+  so the robot went **Aparat-first**: `GET /api/fa/v1/video/video/search/text/<q>/?type_search=search`
+  (real topical results, ZWNJ must be stripped or the endpoint answers 400),
+  `.../show/videohash/<hash>` for pre-signed CDN files (144p audio source),
+  sitemap probing as safety net. Local proof: 8 real PD candidates
+  (TEDx Amirkabir, نیک‌درس کمال‌گرایی, MBSR talks).
+- Whisper path: `faster-whisper small int8`, HF cache restored by
+  `actions/cache/restore` + saved `if: always()` (plain cache@v4 never
+  writes on a failed job — exactly when the model is freshly pulled).
+  **`av` pinned `<19`** — av 19.0.1 removed `metadata_errors`, which
+  faster-whisper still passes → `TypeError` (run 39189278908).
+- `.github/workflows/pd-daily.yml` — cron `30 14 * * *`, optional
+  `YTDLP_COOKIES` secret re-enables YouTube, state commit `if: always()`
+  with rebase-retry push. Upload line stays dormant until the owner mints
+  the token: `python factory/get_token.py 4 pd` →
+  `gh secret set PD_TOKEN_JSON < yt_auth/pd_token.json`.
+- Runs: 39178845701/39179425977/39180401644/39183077628/39183895979
+  (pre-aparat no-ops), 39189278908 (av-19 crash, fixed), 39189838070
+  (first full end-to-end attempt).
+
 ## Operator cheat-sheet
 
 ```powershell
