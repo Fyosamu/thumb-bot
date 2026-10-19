@@ -155,6 +155,23 @@ def download(url: str, work: Path) -> tuple[Path | None, Path | None]:
     return audio, thumb
 
 
+def fetch_thumb(video_id: str, work: Path) -> Path | None:
+    """The source creator's thumbnail, straight from the image CDN
+    (no player, no bot-check).  maxres -> sd -> default, first hit wins."""
+    import requests
+    dest = work / "source_thumb.jpg"
+    for name in ("maxresdefault", "sddefault", "hqdefault"):
+        url = f"https://i.ytimg.com/vi/{video_id}/{name}.jpg"
+        try:
+            r = requests.get(url, timeout=15)
+            if r.ok and len(r.content) > 5000:
+                dest.write_bytes(r.content)
+                return dest
+        except Exception:                   # noqa: BLE001 - next size
+            continue
+    return None
+
+
 # ---------------------------------------------------------- transcript ----
 def _parse_vtt(path: Path) -> list[str]:
     lines_out, prev = [], ""
@@ -197,7 +214,31 @@ def _dedupe_tail(segs: list[str]) -> list[str]:
     return out
 
 
-def transcript(work: Path, audio: Path | None) -> list[str]:
+def _api_transcript(video_id: str) -> list[str]:
+    """Primary path on runners: the caption API speaks a different endpoint
+    than the video player, so it is not behind the bot-check wall."""
+    langs = CONFIG["sub_langs"]
+    try:
+        from youtube_transcript_api import YouTubeTranscriptApi
+    except ImportError:
+        return []
+    try:
+        api = YouTubeTranscriptApi()
+        fetched = api.fetch(video_id, languages=langs)
+        return [s.text.replace("\n", " ").strip() for s in fetched if s.text]
+    except Exception:                       # noqa: BLE001 - try legacy static API
+        pass
+    try:
+        from youtube_transcript_api import YouTubeTranscriptApi as Legacy
+        rows = Legacy.get_transcript(video_id, languages=langs)
+        return [r.get("text", "").replace("\n", " ").strip() for r in rows
+                if r.get("text")]
+    except Exception as exc:                # noqa: BLE001 - report and move on
+        print(f"[pdrip] caption API: {type(exc).__name__}")
+        return []
+
+
+def transcript(work: Path, audio: Path | None, video_id: str = "") -> list[str]:
     for sub in sorted(work.glob("source.*.*")):
         if sub.suffix == ".json3":
             segs = _parse_json3(sub)
@@ -208,6 +249,11 @@ def transcript(work: Path, audio: Path | None) -> list[str]:
         if len(" ".join(segs)) > 400:
             print(f"[pdrip] transcript from {sub.suffix[1:]} captions "
                   f"({len(segs)} cues)")
+            return segs
+    if video_id:
+        segs = _api_transcript(video_id)
+        if len(" ".join(segs)) > 400:
+            print(f"[pdrip] transcript from caption API ({len(segs)} cues)")
             return segs
     if audio is not None:
         try:
@@ -283,7 +329,10 @@ def stock_for(chunk: str, idx: int) -> str:
 def make_script(info: dict, en_segs: list[str]) -> dict:
     now = dt.datetime.now(dt.timezone.utc)
     src_url = (info.get("webpage_url") or info.get("original_url")
-               or info.get("url") or now.isoformat())
+               or info.get("url") or "")
+    if not src_url.startswith("http"):
+        src_url = f"https://youtu.be/{info.get('id', '')}" if \
+            info.get("id") else now.isoformat()
     slug = "pdrip_" + now.strftime("%Y%m%d") + "_" + \
         hashlib.sha1(src_url.encode()).hexdigest()[:6]
 
@@ -399,11 +448,14 @@ def main() -> int:
             continue
 
         work = FACTORY / "work_pd" / (info.get("id") or "forced")
-        audio, thumb_jpg = download(url, work)
-        if audio is None:
-            state["failed"][url] = "download"
-            continue
-        segs_fa = transcript(work, audio)
+        work.mkdir(parents=True, exist_ok=True)
+        vid = info.get("id") or ""
+        thumb_jpg = fetch_thumb(vid, work) if vid else None
+        # the player sits behind the bot-check on datacenter IPs, so the
+        # audio may never arrive - it is best effort; the transcript API
+        # above is the primary path and the output never uses source audio
+        audio, _ = download(url, work)
+        segs_fa = transcript(work, audio, vid)
         if not segs_fa:
             state["failed"][url] = "no transcript"
             continue
