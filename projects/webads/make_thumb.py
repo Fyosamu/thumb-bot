@@ -168,7 +168,7 @@ def render(script: dict, out: Path) -> None:
             d.text((W // 2, y), ln, font=f, fill=WHITE, anchor="mm")
             y += f.size + 22
         _badge(img, W // 2, y + 260, 220, "FROM", "$1,000")
-        _browser_card(img, (150, y + 560, W - 150, 1330))
+        _browser_card(img, (150, y + 540, W - 150, 1620))
     elif tpl == "stat":
         f_big = _load(300)
         d.text((W // 2, 520), "-7%", font=f_big, fill=LIME, anchor="mm")

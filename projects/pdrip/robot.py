@@ -62,8 +62,73 @@ def save_state(state: dict) -> None:
 # ------------------------------------------------------------ discover ----
 def ytdlp(args: list[str], check: bool = True) -> subprocess.CompletedProcess:
     cmd = [sys.executable, "-m", "yt_dlp", *args]
+    cookies = os.environ.get("COOKIES_FILE", "").strip()
+    if cookies and Path(cookies).exists() and "--cookies" not in args:
+        cmd += ["--cookies", cookies]
     return subprocess.run(cmd, capture_output=True, text=True, check=check,
                           encoding="utf-8", errors="replace")
+
+
+def _aparat_search(query: str) -> list[str]:
+    """Aparat search is server-rendered - pull video slugs from the HTML."""
+    import urllib.parse
+
+    import requests
+    url = f"https://www.aparat.com/search/{urllib.parse.quote(query)}"
+    try:
+        r = requests.get(url, timeout=20,
+                         headers={"User-Agent": "Mozilla/5.0"})
+        html = r.text
+    except Exception as exc:                # noqa: BLE001 - next query
+        print(f"[pdrip] aparat search {query!r}: {type(exc).__name__}")
+        return []
+    slugs = re.findall(r"/v/([A-Za-z0-9]{3,})/", html)
+    out, seen = [], set()
+    for s in slugs:
+        if s.lower() not in seen and s.lower() not in ("v", "search"):
+            seen.add(s.lower())
+            out.append(s)
+    return out
+
+
+def discover_aparat(state: dict) -> list[dict]:
+    """First-choice source: an Iranian platform with no bot-checks at all,
+    exactly the Iranian personal-development shelf the owner asked for."""
+    if not CONFIG.get("aparat", True):
+        return []
+    seen, failed = state["processed"], state.get("failed", {})
+    slugs: list[str] = []
+    for q in CONFIG["queries"]:
+        for s in _aparat_search(q):
+            if s not in slugs:
+                slugs.append(s)
+        if len(slugs) >= 14:
+            break
+    cands: list[dict] = []
+    for slug in slugs:
+        if len(cands) >= 6:
+            break
+        url = f"https://www.aparat.com/v/{slug}/"
+        if url in seen or failed.get(url) in ("no transcript",
+                                              "translation too short"):
+            continue
+        r = ytdlp(["-J", "--skip-download", url], check=False)
+        if r.returncode != 0:
+            continue
+        try:
+            info = json.loads(r.stdout)
+        except json.JSONDecodeError:
+            continue
+        dur = info.get("duration") or 0
+        title = info.get("title") or ""
+        if not (CONFIG["min_duration"] <= dur <= CONFIG["max_duration"]):
+            continue
+        if any(w in title for w in CONFIG["skip_words"]):
+            continue
+        info["url"] = url
+        info["source"] = "aparat"
+        cands.append(info)
+    return cands
 
 
 def discover(state: dict, force_url: str | None) -> list[dict]:
@@ -77,6 +142,8 @@ def discover(state: dict, force_url: str | None) -> list[dict]:
             print(f"[pdrip] cannot read {force_url}: {r.stderr[-300:]}")
             return []
         return [json.loads(r.stdout)]
+
+    aparat_cands = discover_aparat(state)
 
     for q in CONFIG["queries"]:
         r = ytdlp(["--flat-playlist", "-J",
@@ -108,11 +175,13 @@ def discover(state: dict, force_url: str | None) -> list[dict]:
                           "duration": dur, "channel": e.get("channel") or ""})
         time.sleep(0.5)
 
+    cands = aparat_cands + cands
     if not cands:
         print("[pdrip] no fresh candidate (bank of sources exhausted for now)")
         return []
-    print(f"[pdrip] {len(cands)} fresh candidates, "
-          f"first: {cands[0]['title'][:60]}")
+    print(f"[pdrip] {len(aparat_cands)} aparat + "
+          f"{len(cands) - len(aparat_cands)} youtube candidates, first: "
+          f"{cands[0].get('title', '')[:60]}")
     return cands
 
 
@@ -131,10 +200,13 @@ CLIENT_ROTATION = [
 ]
 
 
-def download(url: str, work: Path) -> tuple[Path | None, Path | None]:
+def download(url: str, work: Path, source: str = "youtube"
+             ) -> tuple[Path | None, Path | None]:
     work.mkdir(parents=True, exist_ok=True)
     subs = ",".join(CONFIG["sub_langs"])
-    for extra in CLIENT_ROTATION:
+    # aparat has no player wall - one plain call; youtube needs clients
+    attempts = [[]] if source == "aparat" else CLIENT_ROTATION
+    for extra in attempts:
         r = ytdlp([
             *extra,
             "-f", "ba[ext=m4a]/ba",
@@ -401,7 +473,8 @@ def _proxy_transcript(video_id: str) -> list[str]:
     return []
 
 
-def transcript(work: Path, audio: Path | None, video_id: str = "") -> list[str]:
+def transcript(work: Path, audio: Path | None, video_id: str = "",
+               source: str = "youtube") -> list[str]:
     for sub in sorted(work.glob("source.*.*")):
         if sub.suffix == ".json3":
             segs = _parse_json3(sub)
@@ -413,7 +486,7 @@ def transcript(work: Path, audio: Path | None, video_id: str = "") -> list[str]:
             print(f"[pdrip] transcript from {sub.suffix[1:]} captions "
                   f"({len(segs)} cues)")
             return segs
-    if video_id:
+    if video_id and source != "aparat":
         segs = _api_transcript(video_id)
         if len(" ".join(segs)) > 400:
             print(f"[pdrip] transcript from caption API ({len(segs)} cues)")
@@ -616,14 +689,18 @@ def main() -> int:
         work = FACTORY / "work_pd" / (info.get("id") or "forced")
         work.mkdir(parents=True, exist_ok=True)
         vid = info.get("id") or ""
-        thumb_jpg = fetch_thumb(vid, work) if vid else None
+        src = info.get("source", "youtube")
+        thumb_jpg = fetch_thumb(vid, work) if (vid and src != "aparat") \
+            else None
         # the player sits behind the bot-check on datacenter IPs, so the
         # audio may never arrive - it is best effort; the transcript API
         # above is the primary path and the output never uses source audio
-        audio, _ = download(url, work)
-        if audio is None and vid:
+        audio, dl_thumb = download(url, work, src)
+        if thumb_jpg is None:
+            thumb_jpg = dl_thumb
+        if audio is None and vid and src != "aparat":
             audio = _proxy_audio(vid, work)
-        segs_fa = transcript(work, audio, vid)
+        segs_fa = transcript(work, audio, vid, src)
         if not segs_fa:
             state["failed"][url] = "no transcript"
             continue

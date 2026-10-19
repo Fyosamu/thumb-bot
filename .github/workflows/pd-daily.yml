@@ -23,8 +23,22 @@ jobs:
   pd:
     runs-on: ubuntu-latest
     timeout-minutes: 130
+    env:
+      # optional: a Netscape cookies.txt exported from the owner's browser,
+      # stored as repo secret YTDLP_COOKIES. When present, YouTube stops
+      # bot-checking the runner and the youtube path works too.
+      YTDLP_COOKIES: ${{ secrets.YTDLP_COOKIES }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: materialize cookies (optional)
+        if: env.YTDLP_COOKIES != ''
+        env:
+          COOKIES_RAW: ${{ secrets.YTDLP_COOKIES }}
+        run: |
+          umask 077
+          printf '%s' "$COOKIES_RAW" > "$RUNNER_TEMP/cookies.txt"
+          echo "cookies materialized"
 
       - uses: actions/setup-python@v5
         with:
@@ -55,6 +69,7 @@ jobs:
           PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
           YT4_TOKEN_JSON: ${{ secrets.PD_TOKEN_JSON }}
           PYTHONUTF8: "1"
+          COOKIES_FILE: ${{ runner.temp }}/cookies.txt
         run: python -u projects/pdrip/robot.py
 
       # the robot only marks a video processed after a successful render
