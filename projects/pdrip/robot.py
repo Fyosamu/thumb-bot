@@ -623,7 +623,7 @@ def transcript(work: Path, audio: Path | None, video_id: str = "",
         print("[pdrip] whisper fallback (this is the slow path)...")
         model = WhisperModel("small", device="cpu", compute_type="int8")
         segs, _ = model.transcribe(str(audio), language="fa",
-                                   vad_filter=True)
+                                   vad_filter=True, beam_size=1)
         return [s.text.strip() for s in segs if s.text.strip()]
     return []
 
@@ -651,21 +651,87 @@ def sanitize_fa(segs: list[str]) -> tuple[list[str], int]:
 
 
 # ---------------------------------------------------------- translate ----
+# deep-translator talks to translate.google.com's HTML endpoint, which
+# 429s datacenter IPs on the very first request (run 39189838070: 181/181
+# lines rejected for 85 straight minutes). The chain here: Google's gtx
+# JSON endpoint (the browser API itself, chunked with newline-joined
+# sentences so one request covers ~10 lines) -> MyMemory line by line.
+_GTX = ("https://translate.googleapis.com/translate_a/single"
+        "?client=gtx&sl=fa&tl=en&dt=t&q=")
+_MYMEM = "https://api.mymemory.translated.net/get?langpair=fa|en&q="
+
+
+def _chunks(lines: list[str], cap: int = 1000):
+    buf: list[str] = []
+    n = 0
+    for s in lines:
+        if buf and n + len(s) + 1 > cap:
+            yield buf
+            buf, n = [], 0
+        buf.append(s)
+        n += len(s) + 1
+    if buf:
+        yield buf
+
+
 def translate(segs: list[str]) -> list[str]:
-    from deep_translator import GoogleTranslator
-    tr = GoogleTranslator(source="fa", target="en")
-    out = []
-    for s in segs:
-        for attempt in range(3):
+    import html as htmllib
+    import urllib.parse
+
+    import requests
+    out: list[str] = []
+    n_drop = 0
+    for buf in _chunks(segs):
+        done = False
+        for attempt in range(2):
             try:
-                out.append(tr.translate(s))
-                break
-            except Exception as exc:            # noqa: BLE001 - retry, then skip
-                if attempt == 2:
-                    print(f"[pdrip] translate dropped a line: {exc}")
-                time.sleep(1.5 * (attempt + 1))
-        time.sleep(0.35)
-    return [s for s in out if s and s.strip()]
+                r = requests.get(
+                    _GTX + urllib.parse.quote("\n".join(buf)),
+                    timeout=25, headers={"User-Agent": "Mozilla/5.0"})
+                r.raise_for_status()
+                text = "".join(s[0] for s in r.json()[0] if s[0])
+                parts = [p.strip() for p in text.split("\n")]
+                if len(parts) == len(buf):
+                    out.extend(parts)
+                    done = True
+                    break
+                if len(buf) == 1:
+                    out.append(text.strip())
+                    done = True
+                    break
+                break                       # merged lines -> line backend
+            except Exception as exc:        # noqa: BLE001 - backoff, then next
+                print(f"[pdrip] gtx chunk: {type(exc).__name__}")
+                time.sleep(2 + 4 * attempt)
+        if done:
+            continue
+        for line in buf:                    # MyMemory, one line at a time
+            pieces = [line[j:j + 440] for j in range(0, len(line), 440)]
+            got: list[str] = []
+            for piece in pieces:
+                text = None
+                for attempt in range(3):
+                    try:
+                        r = requests.get(
+                            _MYMEM + urllib.parse.quote(piece), timeout=25)
+                        r.raise_for_status()
+                        text = htmllib.unescape(
+                            r.json()["responseData"]["translatedText"])
+                        break
+                    except Exception:       # noqa: BLE001 - backoff, then drop
+                        time.sleep(1.5 * (attempt + 1))
+                if text is None:
+                    break
+                got.append(text)
+                time.sleep(0.45)
+            if len(got) == len(pieces):
+                out.append(" ".join(got).strip())
+            else:
+                n_drop += 1
+    if n_drop:
+        print(f"[pdrip] translate dropped {n_drop} line(s)")
+    print(f"[pdrip] translated {len(out)}/{len(segs)} lines")
+    return out
 
 
 # --------------------------------------------------------- build script ----
@@ -799,12 +865,17 @@ def main() -> int:
     if not cands:
         return 0
 
+    print(f"[pdrip] {len(cands)} total, trying up to "
+          f"{min(3, len(cands))} per run")
     for info in cands[:3]:
         url = (info.get("webpage_url") or info.get("original_url")
                or info.get("url")
                or (f"https://youtu.be/{info['id']}" if info.get("id") else ""))
         if not url or url in state["processed"]:
+            print(f"[pdrip] skip: {url[:70] or '<no url>'} "
+                  f"({'dup' if url else 'no url at all'})")
             continue
+        print(f"[pdrip] candidate: {info.get('title', '')[:60]}")
 
         work = FACTORY / "work_pd" / (info.get("id") or "forced")
         work.mkdir(parents=True, exist_ok=True)
@@ -825,6 +896,7 @@ def main() -> int:
                 audio = _proxy_audio(vid, work)
         segs_fa = transcript(work, audio, vid, src)
         if not segs_fa:
+            print(f"[pdrip] no transcript from {src} - next candidate")
             state["failed"][url] = "no transcript"
             continue
         clean_fa, dropped = sanitize_fa(segs_fa)
