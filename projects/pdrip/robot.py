@@ -974,8 +974,8 @@ def main() -> int:
         return 0
 
     print(f"[pdrip] {len(cands)} total, trying up to "
-          f"{min(3, len(cands))} per run")
-    for info in cands[:3]:
+          f"{min(5, len(cands))} per run")
+    for info in cands[:5]:
         url = (info.get("webpage_url") or info.get("original_url")
                or info.get("url")
                or (f"https://youtu.be/{info['id']}" if info.get("id") else ""))
