@@ -243,3 +243,19 @@ gh run list -R Fyosamu/thumb-bot                       # watch runs
 python factory/_check_uploads.py                       # live-URL + bank check
 python _verify_subs.py <slug>                          # caption overlap QA
 ```
+
+## 2026-10-20 — multichan: fleet channel 5 (Vanta Mind) E2E
+- New Cloud project **mindseries-fleet** (innate-entry-512120-s2, aryn82674): YouTube Data API v3 enabled,
+  OAuth consent "MindSeries Fleet" (External/Testing), **aryn82674 added as test user** (Testing mode blocks
+  even the owner otherwise - access_denied decoded to test-user wall).
+- Fleet client: 976930622070-3doq... (yt_auth/fleet_client.json, no BOM). Old client 712282483181 = Testing wall,
+  unusable for new accounts without test-user adds.
+- Channel created: **Vanta Mind @? / UCtlDMTc7wfyArTSw5KqThHA** (name Vanta Mind; @vantamind taken -> handle
+  chosen from YouTube suggestion at creation time; token minted via localhost:8090 PKCE).
+- Secret YT5_TOKEN_JSON set via **stdin pipe** (PS --body arg mangles embedded quotes; CRLF from file pipe
+  breaks GITHUB_ENV). Single-line compact JSON = the only safe form.
+- active_channels schema = {"channels": [5]} (bare [5] silently -> empty matrix).
+- Run history: 39341219535 empty-matrix (schema), 39341474535 GITHUB_ENV CRLF, 39342273704 json quote mangling,
+  39342736693 = first full attempt (branding + pdrip robot + upload).
+- Banner/profile for id5 live on Fyosamu/brands (raw 200). Avatar (Google account photo) still pending -
+  myaccount photo tile click no-ops + studio.youtube.com shows generic error in automation browser.
