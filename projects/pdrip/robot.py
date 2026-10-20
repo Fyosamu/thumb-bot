@@ -955,11 +955,19 @@ def main() -> int:
 
     state = load_state()
     state.setdefault("failed", {})
-    # one post per channel per day, and later waves (the cron fires a few
-    # times) only exist to rescue a day the earlier waves could not fill
-    if any((v or {}).get("date") == dt.date.today().isoformat()
-           for v in state.get("processed", {}).values()):
-        print("[pdrip] already published today - standing down")
+    # one pair (long + Short) per channel per day; the cron fires a few
+    # times and each later wave only exists to rescue a day the earlier
+    # waves could not fill.  The count file is the channel's OWN ledger,
+    # so one channel publishing never silences another.
+    try:
+        cnt = json.loads(Path(PROF["count"]).read_text(encoding="utf-8"))
+        posted = int(cnt.get("count", 0)) if cnt.get("date") == \
+            dt.date.today().isoformat() else 0
+    except Exception:                         # noqa: BLE001 - no ledger yet
+        posted = 0
+    if posted >= int(PROF.get("daily_cap", 2)):
+        print(f"[pdrip] channel {CHANNEL} already posted {posted} today "
+              "- standing down")
         return 0
     cands = discover(state, args.video or None)
     if not cands:

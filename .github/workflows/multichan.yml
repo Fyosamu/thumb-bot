@@ -12,6 +12,9 @@ name: multichan
 on:
   schedule:
     - cron: "0 13 * * *"      # 13:00 UTC wave, off the other crons
+    - cron: "0 16 * * *"      # rescue wave: aparat 504 bursts pass in hours
+    - cron: "0 19 * * *"      # last rescue - a channel that already posted
+                              # twice today stands down instantly
   workflow_dispatch:
     inputs:
       channels:
