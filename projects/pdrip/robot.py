@@ -168,6 +168,24 @@ def _aparat_search(query: str) -> list[dict]:
         return []
 
 
+FAILED_TTL = 12 * 3600   # seconds - an outage must not poison later waves:
+                         # aparat 504s at 13:00, recovers by 16:00, and the
+                         # rescue wave must still be allowed to retry the
+                         # exact same candidates
+
+
+def _fail(state: dict, url: str, reason: str) -> None:
+    state.setdefault("failed", {})[url] = {"reason": reason,
+                                           "at": time.time()}
+
+
+def _failed_recent(state: dict, url: str) -> bool:
+    mark = state.get("failed", {}).get(url)
+    if not isinstance(mark, dict):
+        return False          # legacy string marks are already expired
+    return time.time() - float(mark.get("at", 0)) < FAILED_TTL
+
+
 def discover_aparat(state: dict) -> list[dict]:
     """First-choice source: an Iranian platform with no bot-checks at all,
     exactly the Iranian personal-development shelf the owner asked for.
@@ -219,8 +237,7 @@ def discover_aparat(state: dict) -> list[dict]:
                 continue
         uid = a.get("uid") or ""
         url = f"https://www.aparat.com/v/{uid}"
-        if url in seen or failed.get(url) in ("no transcript",
-                                              "translation too short"):
+        if url in seen or _failed_recent(state, url):
             continue
         full = a if a.get("file_link_all") else (_aparat_show(uid) or {})
         files = [(f.get("profile") or "",
@@ -272,11 +289,10 @@ def discover(state: dict, force_url: str | None) -> list[dict]:
             title = e.get("title") or ""
             if not (CONFIG["min_duration"] <= dur <= CONFIG["max_duration"]):
                 continue
-            # only a real content failure (no transcript / too short) blocks
-            # a URL for good; old "download" reasons are obsolete now that
-            # the transcript API is the primary path
-            if url in seen or failed.get(url) in ("no transcript",
-                                                  "translation too short"):
+            # a real content failure (no transcript / too short) blocks a
+            # URL for FAILED_TTL seconds only - a 13:00 outage wave must
+            # never poison the 19:00 rescue wave
+            if url in seen or _failed_recent(state, url):
                 continue
             if any(w in title for w in CONFIG["skip_words"]):
                 continue
@@ -1005,7 +1021,7 @@ def main() -> int:
         segs_fa = transcript(work, audio, vid, src)
         if not segs_fa:
             print(f"[pdrip] no transcript from {src} - next candidate")
-            state["failed"][url] = "no transcript"
+            _fail(state, url, "no transcript")
             continue
         clean_fa, dropped = sanitize_fa(segs_fa)
         print(f"[pdrip] fa cues {len(segs_fa)} -> clean {len(clean_fa)} "
@@ -1013,7 +1029,7 @@ def main() -> int:
         en = translate(clean_fa)
         if len(" ".join(en)) < 300:
             print("[pdrip] translation too short - next candidate")
-            state["failed"][url] = "translation too short"
+            _fail(state, url, "translation too short")
             continue
 
         script = make_script(info, en)
