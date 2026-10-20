@@ -125,7 +125,8 @@ def _register_multichan() -> None:
             "token_env": f"YT{cid}_TOKEN_JSON",
             "category": e.get("yt_category", "27"),
             "cron": e.get("cron", "0 13 * * *"),
-            "daily_cap": 1,
+            # long + its Short = two posts a day off one source video
+            "daily_cap": 2,
             "spacing_hours": 6,
         }
 

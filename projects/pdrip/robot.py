@@ -955,6 +955,12 @@ def main() -> int:
 
     state = load_state()
     state.setdefault("failed", {})
+    # one post per channel per day, and later waves (the cron fires a few
+    # times) only exist to rescue a day the earlier waves could not fill
+    if any((v or {}).get("date") == dt.date.today().isoformat()
+           for v in state.get("processed", {}).values()):
+        print("[pdrip] already published today - standing down")
+        return 0
     cands = discover(state, args.video or None)
     if not cands:
         return 0
@@ -1023,6 +1029,29 @@ def main() -> int:
         pd_thumb(thumb_jpg, OUTDIR / f"{script['slug']}.jpg",
                  script["title"])
 
+        # one Short per long: same story condensed, portrait, factory's
+        # own thumbnail (1080x1920, the style every other channel uses)
+        short_slug = ""
+        try:
+            import make_shorts
+            short = make_shorts.make_short(script)
+            short_slug = short["slug"]
+            (CONTENT / f"{short_slug}.json").write_text(
+                json.dumps(short, ensure_ascii=False, indent=2),
+                encoding="utf-8")
+            sr = subprocess.run(
+                [sys.executable, str(FACTORY / "factory.py"),
+                 "--batch", "--channel", CHANNEL, "--only", short_slug],
+                encoding="utf-8", errors="replace").returncode
+            if sr != 0:
+                print("[pdrip] short render failed - long still ships")
+                short_slug = ""
+            else:
+                print(f"[pdrip] short ready: {short_slug}")
+        except Exception as exc:            # noqa: BLE001 - short is a bonus
+            print(f"[pdrip] short skipped: {type(exc).__name__}: {exc}")
+            short_slug = ""
+
         if args.no_upload:
             print("[pdrip] --no-upload: render ready, stopping here")
         elif not os.environ.get(PROF["token_env"], "").strip():
@@ -1031,7 +1060,8 @@ def main() -> int:
         else:
             up = subprocess.run(
                 [sys.executable, str(FACTORY / "upload.py"),
-                 "--channel", CHANNEL, "--only", script["slug"]],
+                 "--channel", CHANNEL,
+                 "--only", f"{script['slug']} {short_slug}".strip()],
                 encoding="utf-8", errors="replace")
             if up.returncode != 0:
                 print("[pdrip] upload failed - not marking as processed")
