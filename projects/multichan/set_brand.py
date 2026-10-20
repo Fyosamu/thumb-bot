@@ -92,15 +92,47 @@ def main() -> int:
         },
     }
 
+    # NOTE: youtube forbids part=brandingSettings alongside any other part
+    # on channels.update ("branding_settings cannot be used with other
+    # parts"), and part=snippet is not updatable at all for channels
+    # (ERROR_PART_UNEXPECTED) - title/description/keywords live inside
+    # brandingSettings.channel and go in this single call, banner too.
     try:
-        yt.channels().update(body=body,
-                             part="snippet,brandingSettings").execute()
+        yt.channels().update(part="brandingSettings", body={
+            "id": ch["id"],
+            "brandingSettings": body["brandingSettings"],
+        }).execute()
     except HttpError as exc:
         # most often the banner URL being 404 (brands repo not pushed yet)
         # or an unverified new channel - record nothing, retry next wave
         print(f"[brand] update failed for channel {cid}: "
               f"{getattr(exc, 'resp', exc)}")
+        print(getattr(exc, "content", b"").decode("utf-8", "replace")[:400])
         return 0
+
+    # youtube accepts the call (200) yet can silently drop fields:
+    # a personal-account channel keeps its title tied to the google
+    # account name, and brand-new channels often ignore bannerExternalUrl
+    # until they age / get phone-verified. read back, warn, keep going -
+    # description + keywords do apply, and the account rename fixes the
+    # title on its own.
+    try:
+        back = yt.channels().list(part="snippet,brandingSettings",
+                                  id=ch["id"]).execute()
+        item = (back.get("items") or [{}])[0]
+        got_title = item.get("snippet", {}).get("title", "")
+        got_img = (item.get("brandingSettings", {})
+                   .get("image", {}).get("bannerExternalUrl", ""))
+        if got_title != entry["name"]:
+            print(f"[brand] NOTE: title still {got_title!r} - personal "
+                  f"channel titles follow the google account name; "
+                  f"rename the account to {entry['name']!r} to apply")
+        if not got_img:
+            print(f"[brand] NOTE: banner not applied yet for channel "
+                  f"{cid} (new-channel lag) - daily cron will keep the "
+                  f"rest; set it in Studio > Customization if it sticks")
+    except HttpError as exc:
+        print(f"[brand] readback failed: {getattr(exc, 'resp', exc)}")
 
     marker.write_text(json.dumps({
         "channel_id": ch["id"],
