@@ -89,22 +89,43 @@ def ytdlp(args: list[str], check: bool = True) -> subprocess.CompletedProcess:
                           encoding="utf-8", errors="replace")
 
 
+def _aparat_get(url: str, tries: int = 4, timeout: int = 20) -> object | None:
+    """aparat's edge answers 504 in bursts (2026-10-20: homepage, search,
+    show API - everything, for hours) - retry with backoff instead of
+    collapsing the whole discovery pass into '0 candidates'."""
+    import requests
+    delay = 1.5
+    for i in range(tries):
+        try:
+            r = requests.get(url, timeout=timeout,
+                             headers={"User-Agent": "Mozilla/5.0"})
+            if r.ok and r.content:
+                return r
+            print(f"[pdrip] aparat http {r.status_code} "
+                  f"(try {i + 1}/{tries})")
+        except Exception as exc:                # noqa: BLE001 - retry
+            print(f"[pdrip] aparat {type(exc).__name__} "
+                  f"(try {i + 1}/{tries})")
+        time.sleep(delay)
+        delay *= 2
+    return None
+
+
 def _aparat_slugs() -> list[str]:
     """Freshest video hashes from aparat's sitemaps - the safety net for
     when the search API itself is down."""
-    import requests
     slugs: list[str] = []
-    for n in (1, 2, 3):
-        try:
-            r = requests.get(f"https://www.aparat.com/sitemap_{n}.xml",
-                             timeout=20, headers={"User-Agent": "Mozilla/5.0"})
-            found = re.findall(
-                r"<loc>https://www\.aparat\.com/v/([A-Za-z0-9]+)</loc>", r.text)
-            for s in found:
-                if s not in slugs:
-                    slugs.append(s)
-        except Exception as exc:            # noqa: BLE001 - next sitemap
-            print(f"[pdrip] sitemap_{n}: {type(exc).__name__}")
+    for n in (1, 2, 3, 4, 5):
+        r = _aparat_get(f"https://www.aparat.com/sitemap_{n}.xml",
+                        tries=2, timeout=25)
+        if r is None:
+            continue
+        found = re.findall(
+            r"<loc>https://www\.aparat\.com/v/([A-Za-z0-9]+)</loc>", r.text)
+        for s in found:
+            if s not in slugs:
+                slugs.append(s)
+    print(f"[pdrip] aparat sitemaps: {len(slugs)} slugs")
     return slugs
 
 
@@ -115,16 +136,14 @@ WEAK = ("زندگی", "قدرت", "ایمان", "امید", "مغز", "مثبت"
 
 
 def _aparat_show(video_hash: str) -> dict | None:
-    import requests
-    try:
-        r = requests.get(
-            "https://www.aparat.com/api/fa/v1/video/video/show/videohash/"
-            + video_hash,
-            timeout=10, headers={"User-Agent": "Mozilla/5.0"})
-        if r.ok:
+    r = _aparat_get(
+        "https://www.aparat.com/api/fa/v1/video/video/show/videohash/"
+        + video_hash, tries=2, timeout=12)
+    if r is not None:
+        try:
             return (r.json().get("data") or {}).get("attributes") or None
-    except Exception:                       # noqa: BLE001 - drop candidate
-        pass
+        except Exception:                       # noqa: BLE001 - drop it
+            pass
     return None
 
 
@@ -138,12 +157,10 @@ def _aparat_search(query: str) -> list[dict]:
     query = " ".join(query.replace("\u200c", " ").split())
     url = ("https://www.aparat.com/api/fa/v1/video/video/search/text/"
            + urllib.parse.quote(query) + "/?type_search=search")
+    r = _aparat_get(url, tries=3, timeout=18)
+    if r is None:
+        return []
     try:
-        r = requests.get(url, timeout=15,
-                         headers={"User-Agent": "Mozilla/5.0"})
-        if not r.ok:
-            print(f"[pdrip] aparat search {query!r}: HTTP {r.status_code}")
-            return []
         return [(a.get("attributes") or {})
                 for a in (r.json().get("included") or [])]
     except Exception as exc:                # noqa: BLE001 - next query
@@ -296,12 +313,20 @@ def download(url: str, work: Path, source: str = "youtube"
              ) -> tuple[Path | None, Path | None]:
     work.mkdir(parents=True, exist_ok=True)
     subs = ",".join(CONFIG["sub_langs"])
-    # aparat has no player wall - one plain call; youtube needs clients
-    attempts = [[]] if source == "aparat" else CLIENT_ROTATION
-    for extra in attempts:
+    # aparat has no player wall - one plain call; youtube needs clients.
+    # audio-only selectors (ba[ext=m4a]) died with the SABR experiment -
+    # clients skip formats without a URL, so the whole selector misses.
+    # progressive b/ba/best always resolves (it is what worked when every
+    # client rotation failed); the output never uses source video anyway.
+    if source == "aparat":
+        attempts = [([], "ba[ext=m4a]/ba"), ([], "b/ba/best")]
+    else:
+        attempts = [(e, "ba[ext=m4a]/ba") for e in CLIENT_ROTATION] + \
+                   [(e, "b/ba/best") for e in CLIENT_ROTATION]
+    for extra, fmt in attempts:
         r = ytdlp([
             *extra,
-            "-f", "ba[ext=m4a]/ba",
+            "-f", fmt,
             "-o", str(work / "source.%(ext)s"),
             "--write-info-json",
             "--write-auto-subs", "--write-subs",
@@ -313,10 +338,12 @@ def download(url: str, work: Path, source: str = "youtube"
         ], check=False)
         if r.returncode == 0:
             if extra:
-                print(f"[pdrip] downloaded via {extra[-1].split('=')[-1]}")
+                print(f"[pdrip] downloaded via {extra[-1].split('=')[-1]} "
+                      f"({fmt})")
             break
         print(f"[pdrip] download attempt "
-              f"{(extra[-1].split('=')[-1] if extra else 'default')} failed")
+              f"{(extra[-1].split('=')[-1] if extra else 'default')} "
+              f"failed ({fmt})")
     else:
         print(f"[pdrip] all clients failed for {url}")
         return None, None
