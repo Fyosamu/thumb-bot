@@ -801,10 +801,13 @@ def make_script(info: dict, en_segs: list[str]) -> dict:
     lead = " ".join(en_segs[:2])[:350]
     source_url = src_url
 
-    desc = (f"{lead}\n\nFull narration translated from a public Persian "
-            f"video, rebuilt with original visuals.\n\n"
+    desc = (f"{lead}\n\n"
+            f"Full narration translated from a public Persian video, "
+            f"rebuilt with original visuals. New episode every day.\n\n"
             f"Source (public): {source_url}\n\n"
-            "#personaldevelopment #selfimprovement #motivation")
+            "#personaldevelopment #selfimprovement #motivation "
+            "#habits #discipline #success #psychology #growth "
+            "#mindseries")
 
     words = re.findall(r"[A-Za-z']{5,}", " ".join(en_segs).lower())
     freq: dict[str, int] = {}
@@ -848,26 +851,56 @@ def pd_thumb(src_jpg: Path | None, dest: Path, title_en: str) -> None:
     d = ImageDraw.Draw(img)
     band = tuple(CONFIG["thumb_band_color"])
     accent = tuple(CONFIG["thumb_accent"])
-    d.rectangle([0, 0, tw, 300], fill=band)
+    yellow = (255, 214, 0)
+    d.rectangle([0, 0, tw, 340], fill=band)
     d.rectangle([0, th - 120, tw, th], fill=band)
-    d.rectangle([0, 300, tw, 312], fill=accent)
+    d.rectangle([0, 340, tw, 356], fill=accent)
 
     fp = next((p for p in [r"C:\Windows\Fonts\arialbd.ttf",
                            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"]
                if Path(p).exists()), None)
-    size = 96
-    while fp and size > 40:
-        f = ImageFont.truetype(fp, size)
-        if d.textlength(title_en, font=f) <= tw - 160 and \
-                len(title_en) * size * 0.55 <= tw - 160:
-            break
-        size -= 6
-    f = ImageFont.truetype(fp, size) if fp else ImageFont.load_default()
-    d.text((tw // 2, 150), title_en, font=f, fill=(255, 255, 255), anchor="mm")
-    fs = ImageFont.truetype(fp, 44) if fp else ImageFont.load_default()
-    d.text((tw // 2, th - 60), "Translated  *  Original visuals  *  Daily",
-           font=fs, fill=accent, anchor="mm")
-    img.save(dest, "JPEG", quality=88)
+
+    def fit(text: str, box_w: int, start: int) -> tuple:
+        size = start
+        while fp and size >= 56:
+            f = ImageFont.truetype(fp, size)
+            if d.textlength(text, font=f) <= box_w:
+                return f, size
+            size -= 6
+        f = ImageFont.truetype(fp, max(size, 40)) if fp \
+            else ImageFont.load_default()
+        return f, max(size, 40)
+
+    words = title_en.split()
+    if len(words) >= 4 and len(title_en) > 26:
+        cut, best = len(words), 1 << 30
+        for i in range(1, len(words)):
+            a = " ".join(words[:i])
+            b = " ".join(words[i:])
+            bal = abs(len(a) - len(b))
+            if bal < best and d.textlength(a, font=ImageFont.load_default()) >= 0:
+                best, cut = bal, i
+        line1, line2 = " ".join(words[:cut]), " ".join(words[cut:])
+    else:
+        line1, line2 = title_en, ""
+
+    f, _ = fit(line1, tw - 120, 132)
+    d.text((tw // 2, 118), line1, font=f, fill=(255, 255, 255),
+           anchor="mm", stroke_width=8, stroke_fill=(0, 0, 0))
+    if line2:
+        f2, _ = fit(line2, tw - 120, 132)
+        d.text((tw // 2, 250), line2, font=f2, fill=yellow,
+               anchor="mm", stroke_width=8, stroke_fill=(0, 0, 0))
+    uw = int(min(d.textlength(line1, font=f), tw - 320))
+    d.rectangle([tw // 2 - uw // 2, 300, tw // 2 + uw // 2, 316],
+                fill=accent)
+
+    fs = ImageFont.truetype(fp, 46) if fp else ImageFont.load_default()
+    d.text((tw // 2, th - 60),
+           "Translated  *  Original visuals  *  New every day",
+           font=fs, fill=yellow, anchor="mm", stroke_width=3,
+           stroke_fill=(0, 0, 0))
+    img.save(dest, "JPEG", quality=90)
     print(f"[pdrip] source-style thumbnail: {dest.name}")
 
 
