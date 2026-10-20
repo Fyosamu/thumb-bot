@@ -259,3 +259,13 @@ python _verify_subs.py <slug>                          # caption overlap QA
   39342736693 = first full attempt (branding + pdrip robot + upload).
 - Banner/profile for id5 live on Fyosamu/brands (raw 200). Avatar (Google account photo) still pending -
   myaccount photo tile click no-ops + studio.youtube.com shows generic error in automation browser.
+
+## 2026-10-20 - fleet channel 5 LIVE end-to-end
+- Run 39342736693 SUCCESS: branding step + full robot (source Aparat -> translate -> render -> upload).
+- Video live: https://www.youtube.com/watch?v=Mnsk21LO4b4 (10:42 long, public, tags set).
+- Branding: description + keywords applied via brandingSettings (part=snippet is NOT updatable on
+  channels - ERROR_PART_UNEXPECTED; part=brandingSettings must be the ONLY part). Title stuck at
+  "Vanta Mind" because personal channel titles follow the Google account name (rename account =
+  Keystone Habits to apply). Banner silently dropped by API on the new channel - readback warns.
+- pdrip: description hashtags expanded, pd_thumb upgraded (2-line stroke title + accent bar).
+- Repo flipped PUBLIC: runner minutes now unlimited; token files gitignored (verified clean).
