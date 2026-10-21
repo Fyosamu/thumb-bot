@@ -3,13 +3,22 @@
 #   personal trace -> translate FA->EN -> rebuild as our own copyright-free
 #   episode (stock scenes, captions, TTS voice, source-style thumbnail)
 #   -> upload through upload.py (its own token, own manifest, cap 1).
-# Without the PD_TOKEN_JSON secret it still does everything except the
-# upload line, so the pipeline is never cold when the token arrives.
+# DISABLED since 2026-10-22 (cron removed, manual dispatch kept):
+#   * the PD_TOKEN_JSON secret never existed, so this job could render
+#     but never upload - every run consumed one source video from the
+#     shared projects/pdrip/state/processed_pd.json queue and threw the
+#     render away with the runner (a leaked episode per day);
+#   * personal-dev is covered by the multichan fleet channel 6 (Habit
+#     Forge, cap 2 = long + Short per day), which shares that queue;
+#   * uploads ride one OAuth client (10 000 units/day, 1600 per insert);
+#     multichan 2 + science 1 + chess 1 + bio 1 = 5 inserts is the safe
+#     ceiling - a 6th daily insert leaves no retry headroom.
+# Re-enable only if a real ch4 token arrives AND quota headroom exists.
 name: pd-daily
 
 on:
-  schedule:
-    - cron: "30 14 * * *"   # 14:30 UTC, off the other crons' slots
+  # schedule:                      # disabled 2026-10-22, see header
+  #   - cron: "30 14 * * *"
   workflow_dispatch: {}
 
 permissions:
