@@ -42,12 +42,43 @@ jobs:
       - name: python deps
         run: pip install -r factory/requirements.txt
 
+      # offline voice fallback.  LOCALAPPDATA is empty on Linux so
+      # factory.py resolves ./piper/voices RELATIVE TO ITS CWD - and
+      # daily_local.py spawns factory.py with cwd=REPO, so the model must
+      # live at the REPO ROOT's piper/voices, not factory/piper/voices.
+      - name: restore piper voice
+        uses: actions/cache/restore@v4
+        with:
+          path: piper/voices
+          key: piper-voice-enUS-lessac-medium-v1
+
+      - name: install piper voice
+        env:
+          PYTHONUTF8: "1"
+        run: |
+          if ! ls piper/voices/*.onnx >/dev/null 2>&1; then
+            python -m piper.download_voices en_US-lessac-medium --download-dir piper/voices
+          fi
+          ls -la piper/voices/
+
+      - name: save piper voice
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: piper/voices
+          key: piper-voice-enUS-lessac-medium-v1
+
       - name: render + upload all three channels
         working-directory: factory
+        # owner's call (2026-10-21): everything publishes on the ONE healthy
+        # channel - Habit Forge (ch6, aryn account, fleet client).  The old
+        # science/chess/bio tokens are revoked and their accounts need a
+        # manual login, so all three profiles borrow ch6's live token; each
+        # keeps its own folders, ledger and dedupe.
         env:
-          YT2_TOKEN_JSON: ${{ secrets.CHESS_TOKEN_JSON }}
-          YT1_TOKEN_JSON: ${{ secrets.SCI_TOKEN_JSON }}
-          YT3_TOKEN_JSON: ${{ secrets.BIO_TOKEN_JSON }}
+          YT2_TOKEN_JSON: ${{ secrets.YT6_TOKEN_JSON }}
+          YT1_TOKEN_JSON: ${{ secrets.YT6_TOKEN_JSON }}
+          YT3_TOKEN_JSON: ${{ secrets.YT6_TOKEN_JSON }}
         run: python -u daily_local.py
 
       - name: chess thumbnail drip
@@ -56,7 +87,7 @@ jobs:
         continue-on-error: true
         working-directory: factory
         env:
-          YT2_TOKEN_JSON: ${{ secrets.CHESS_TOKEN_JSON }}
+          YT2_TOKEN_JSON: ${{ secrets.YT6_TOKEN_JSON }}
         run: python -u _set_thumbs.py 2
 
       - name: commit state

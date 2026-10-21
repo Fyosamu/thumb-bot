@@ -66,6 +66,30 @@ jobs:
           pip install -r factory/requirements.txt
           pip install -r projects/pdrip/requirements.txt
 
+      # offline voice fallback: factory.py looks for ./piper/voices/*.onnx
+      # (LOCALAPPDATA is empty on Linux, so the path is repo-root relative)
+      - name: restore piper voice
+        uses: actions/cache/restore@v4
+        with:
+          path: piper/voices
+          key: piper-voice-enUS-lessac-medium-v1
+
+      - name: install piper voice
+        env:
+          PYTHONUTF8: "1"
+        run: |
+          if ! ls piper/voices/*.onnx >/dev/null 2>&1; then
+            python -m piper.download_voices en_US-lessac-medium --download-dir piper/voices
+          fi
+          ls -la piper/voices/
+
+      - name: save piper voice
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: piper/voices
+          key: piper-voice-enUS-lessac-medium-v1
+
       - name: run the robot
         env:
           PEXELS_KEY: ${{ secrets.PEXELS_KEY }}

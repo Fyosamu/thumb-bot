@@ -126,6 +126,34 @@ jobs:
           pip install -r factory/requirements.txt
           pip install -r projects/pdrip/requirements.txt
 
+      # piper is the offline voice that keeps every render alive when the
+      # edge-tts service is unreachable from a runner IP.  factory.py looks
+      # for the model under ./piper/voices/*.onnx (LOCALAPPDATA is empty on
+      # Linux, so the path resolves relative to the repo root).
+      - name: restore piper voice
+        if: env.YT_TOKEN != ''
+        uses: actions/cache/restore@v4
+        with:
+          path: piper/voices
+          key: piper-voice-enUS-lessac-medium-v1
+
+      - name: install piper voice
+        if: env.YT_TOKEN != ''
+        env:
+          PYTHONUTF8: "1"
+        run: |
+          if ! ls piper/voices/*.onnx >/dev/null 2>&1; then
+            python -m piper.download_voices en_US-lessac-medium --download-dir piper/voices
+          fi
+          ls -la piper/voices/
+
+      - name: save piper voice
+        if: always() && env.YT_TOKEN != ''
+        uses: actions/cache/save@v4
+        with:
+          path: piper/voices
+          key: piper-voice-enUS-lessac-medium-v1
+
       # title/description/banner once per channel, pulled from the public
       # brands repo by URL; idempotent (skips when already applied)
       - name: channel branding

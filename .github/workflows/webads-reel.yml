@@ -39,6 +39,29 @@ jobs:
       - name: python deps
         run: pip install -r factory/requirements.txt
 
+      # offline voice fallback for the factory render (repo-root cwd) -
+      # must land BEFORE the render step
+      - name: restore piper voice
+        uses: actions/cache/restore@v4
+        with:
+          path: piper/voices
+          key: piper-voice-enUS-lessac-medium-v1
+
+      - name: install piper voice
+        env:
+          PYTHONUTF8: "1"
+        run: |
+          if ! ls piper/voices/*.onnx >/dev/null 2>&1; then
+            python -m piper.download_voices en_US-lessac-medium --download-dir piper/voices
+          fi
+
+      - name: save piper voice
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: piper/voices
+          key: piper-voice-enUS-lessac-medium-v1
+
       - name: render today's reel
         env:
           PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
