@@ -36,3 +36,6 @@ projects/webads/out/
 # multichan brand art (200 jpgs, 19 MB) ships to the public brands repo,
 # never to this one - the banner URLs in set_brand.py point at raw GitHub
 projects/multichan/brands/
+
+piper/
+# offline TTS voices are 60 MB each - cache, never git
