@@ -73,13 +73,15 @@ jobs:
         # owner's call (2026-10-22): every channel publishes its own daily
         # video.  bio goes home (Arian Ensafnia, project A token, verified
         # refreshing).  chess goes home too - a fresh token was minted for
-        # Dazai Osamu via the owner's 2FA approval (2026-10-22).  science
-        # still borrows ch6's token: secret_key sits on akhob59's account,
-        # whose password is not on record.  Each profile keeps its own
-        # folders, ledger and dedupe.
+        # Dazai Osamu via the owner's 2FA approval (2026-10-22).  science's
+        # native home (secret_key on akhob59's Google account) is behind a
+        # recovery wall Google closed on this machine, so science now posts
+        # to Vanta Mind (ch5, own token, verified refreshing) - Vanta Mind's
+        # mindscience brand fits the content exactly.  Each profile keeps
+        # its own folders, ledger and dedupe.
         env:
           YT2_TOKEN_JSON: ${{ secrets.YT2_TOKEN_JSON }}
-          YT1_TOKEN_JSON: ${{ secrets.YT6_TOKEN_JSON }}
+          YT1_TOKEN_JSON: ${{ secrets.YT5_TOKEN_JSON }}
           YT3_TOKEN_JSON: ${{ secrets.YT3_TOKEN_JSON }}
         run: python -u daily_local.py
 
