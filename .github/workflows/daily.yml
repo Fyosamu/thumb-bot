@@ -71,13 +71,14 @@ jobs:
       - name: render + upload all three channels
         working-directory: factory
         # owner's call (2026-10-22): every channel publishes its own daily
-        # video.  bio goes home - its own channel (Arian Ensafnia) via the
-        # bio token, which still lives on the old GCP project and refreshes
-        # fine.  science and chess still borrow ch6's token: their channels
-        # sit on hkay7645's Google account, unreachable until that login is
-        # back.  Each profile keeps its own folders, ledger and dedupe.
+        # video.  bio goes home (Arian Ensafnia, project A token, verified
+        # refreshing).  chess goes home too - a fresh token was minted for
+        # Dazai Osamu via the owner's 2FA approval (2026-10-22).  science
+        # still borrows ch6's token: secret_key sits on akhob59's account,
+        # whose password is not on record.  Each profile keeps its own
+        # folders, ledger and dedupe.
         env:
-          YT2_TOKEN_JSON: ${{ secrets.YT6_TOKEN_JSON }}
+          YT2_TOKEN_JSON: ${{ secrets.YT2_TOKEN_JSON }}
           YT1_TOKEN_JSON: ${{ secrets.YT6_TOKEN_JSON }}
           YT3_TOKEN_JSON: ${{ secrets.YT3_TOKEN_JSON }}
         run: python -u daily_local.py
@@ -88,7 +89,7 @@ jobs:
         continue-on-error: true
         working-directory: factory
         env:
-          YT2_TOKEN_JSON: ${{ secrets.YT6_TOKEN_JSON }}
+          YT2_TOKEN_JSON: ${{ secrets.YT2_TOKEN_JSON }}
         run: python -u _set_thumbs.py 2
 
       - name: commit state
