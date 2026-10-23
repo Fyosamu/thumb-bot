@@ -70,16 +70,18 @@ jobs:
 
       - name: render + upload all three channels
         working-directory: factory
-        # owner's call (2026-10-23): biography goes back onto the same old
-        # YouTube channel it always rode - ch6 (Habit Forge, fleet token)
-        # - where every bio video lived before the rehome.  Arian's old-GCP
-        # token stays in yt_auth/bio_token.json as a spare.  science keeps
-        # Vanta Mind (ch5), chess keeps its own Dazai Osamu channel.
-        # Each profile keeps its own folders, ledger and dedupe.
+        # owner's call (2026-10-23, final map): every stream rides its own
+        # dedicated token now.  bio (channel 3) keeps its OWN Arian Ensafnia
+        # token - the very channel bio posted on from the start ("the old
+        # channel" per the owner).  science (channel 1) rides Vanta Mind
+        # (ch5).  chess (channel 2) rides its freshly minted Dazai Osamu
+        # token.  personal-dev (channel 4) rides Vanta Mind + Habit Forge
+        # through multichan's YT5/YT6 secrets.  All refresh tokens are
+        # permanent - no re-login, no site, no human needed.
         env:
           YT2_TOKEN_JSON: ${{ secrets.YT2_TOKEN_JSON }}
           YT1_TOKEN_JSON: ${{ secrets.YT5_TOKEN_JSON }}
-          YT3_TOKEN_JSON: ${{ secrets.YT6_TOKEN_JSON }}
+          YT3_TOKEN_JSON: ${{ secrets.YT3_TOKEN_JSON }}
         run: python -u daily_local.py
 
       - name: chess thumbnail drip
