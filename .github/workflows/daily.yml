@@ -70,19 +70,16 @@ jobs:
 
       - name: render + upload all three channels
         working-directory: factory
-        # owner's call (2026-10-22): every channel publishes its own daily
-        # video.  bio goes home (Arian Ensafnia, project A token, verified
-        # refreshing).  chess goes home too - a fresh token was minted for
-        # Dazai Osamu via the owner's 2FA approval (2026-10-22).  science's
-        # native home (secret_key on akhob59's Google account) is behind a
-        # recovery wall Google closed on this machine, so science now posts
-        # to Vanta Mind (ch5, own token, verified refreshing) - Vanta Mind's
-        # mindscience brand fits the content exactly.  Each profile keeps
-        # its own folders, ledger and dedupe.
+        # owner's call (2026-10-23): biography goes back onto the same old
+        # YouTube channel it always rode - ch6 (Habit Forge, fleet token)
+        # - where every bio video lived before the rehome.  Arian's old-GCP
+        # token stays in yt_auth/bio_token.json as a spare.  science keeps
+        # Vanta Mind (ch5), chess keeps its own Dazai Osamu channel.
+        # Each profile keeps its own folders, ledger and dedupe.
         env:
           YT2_TOKEN_JSON: ${{ secrets.YT2_TOKEN_JSON }}
           YT1_TOKEN_JSON: ${{ secrets.YT5_TOKEN_JSON }}
-          YT3_TOKEN_JSON: ${{ secrets.YT3_TOKEN_JSON }}
+          YT3_TOKEN_JSON: ${{ secrets.YT6_TOKEN_JSON }}
         run: python -u daily_local.py
 
       - name: chess thumbnail drip
