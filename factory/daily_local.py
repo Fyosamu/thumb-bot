@@ -138,6 +138,7 @@ def main() -> int:
         print(chunk, flush=True)
 
     emit(f"daily run {stamp}")
+    failures: list[str] = []
     for key in CHANNELS:
         for attempt in (1, 2):
             try:
@@ -149,7 +150,14 @@ def main() -> int:
                 emit(f"{CHANNELS[key][0]}: attempt 1 failed, retrying")
                 continue
             emit(text)
+            # a dead token, rejected upload or empty queue must turn the
+            # run red - a green run here hid a 9-day chess outage
+            if re.search(r"failed|crashed", text):
+                failures.append(text.splitlines()[0])
             break
+    if failures:
+        emit("FAILURES: " + " | ".join(failures))
+        return 1
     return 0
 
 
