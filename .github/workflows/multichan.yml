@@ -90,7 +90,12 @@ jobs:
           COOKIES_RAW: ${{ secrets.YTDLP_COOKIES }}
         run: |
           umask 077
-          echo "YT${CH}_TOKEN_JSON=$YT_TOKEN" >> "$GITHUB_ENV"
+          # token JSON is pretty-printed (multi-line); plain echo breaks GITHUB_ENV
+          {
+            echo "YT${CH}_TOKEN_JSON<<__YT_EOF"
+            echo "$YT_TOKEN"
+            echo "__YT_EOF"
+          } >> "$GITHUB_ENV"
           if [ -n "$COOKIES_RAW" ]; then
             printf '%s' "$COOKIES_RAW" > "$RUNNER_TEMP/cookies.txt"
             echo "cookies materialized"
